@@ -8,6 +8,29 @@ The Sysdig integration collects two type of logs:
 
 **Event** The event data stream collected through the Sysdig integration consists of Sysdig Security Events. See more details about Security Events in [Sysdig's Events Feed Documentation](https://docs.sysdig.com/en/docs/sysdig-secure/threats/activity/events-feed/).
 
+---
+title: sysdig Vulnerability Results
+---
+erDiagram
+
+  PACKAGE {
+    ref layerRef
+    ref[] vulnerabilitiesRefs
+  }
+  LAYER {
+    ref[] baseImagesRef
+  }
+  VULNERABILITY {
+    ref[] riskAcceptRefs
+  }
+  BASE_IMAGE {}
+  RISK_ACCEPT {}
+
+  PACKAGE 0+--1 LAYER : "included in"
+  LAYER 0+--0+ BASE_IMAGE : "built on"
+  PACKAGE 1+--0+ VULNERABILITY : "has"
+  VULNERABILITY 0+--0+ RISK_ACCEPT : "has"
+
 ## Requirements
 
 ### Agent-based installation

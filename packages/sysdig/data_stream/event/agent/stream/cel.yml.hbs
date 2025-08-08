@@ -47,6 +47,28 @@ program: |
       },
     }).do_request().as(resp, resp.StatusCode == 200 ?
       bytes(resp.Body).decode_json().as(body, {
+        // ---
+        // title: sysdig Vulnerability Results
+        // ---
+        // erDiagram
+        // 
+        //   PACKAGE {
+        //     ref layerRef
+        //     ref[] vulnerabilitiesRefs
+        //   }
+        //   LAYER {
+        //     ref[] baseImagesRef
+        //   }
+        //   VULNERABILITY {
+        //     ref[] riskAcceptRefs
+        //   }
+        //   BASE_IMAGE {}
+        //   RISK_ACCEPT {}
+        // 
+        //   PACKAGE 0+--1 LAYER : "included in"
+        //   LAYER 0+--0+ BASE_IMAGE : "built on"
+        //   PACKAGE 1+--0+ VULNERABILITY : "has"
+        //   VULNERABILITY 0+--0+ RISK_ACCEPT : "has"
         "events": body.data.map(e, {
           "message": e.encode_json(),
         }),
