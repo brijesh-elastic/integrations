@@ -3,7 +3,7 @@
   changes:
     - description: Fix ingest pipeline to parse cluster notifications in audit data stream.
       type: bugfix
-      link: https://github.com/elastic/integrations/pull/1
+      link: https://github.com/elastic/integrations/pull/17830
 - version: "2.47.1"
   changes:
     - description: Fix gke network metrics fields and dashboard.
