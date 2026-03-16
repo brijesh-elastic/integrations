@@ -13,6 +13,13 @@ processors:
   - json:
       field: event.original
       target_field: json
+      if: ctx.event?.original != null
+      on_failure:
+        # Parse cluster notification on failure
+        - set:
+            field: gcp.audit.notification
+            copy_from: event.original
+            ignore_empty_value: true
   - set:
       field: gcp.audit.type
       copy_from: "json.protoPayload.@type"
@@ -61,6 +68,8 @@ processors:
       timezone: UTC
       formats:
         - ISO8601
+      if: ctx.json?.timestamp != null && ctx.json.timestamp != ''
+
 ##
 # MonitoredResource
 # .resource
@@ -502,6 +511,14 @@ processors:
       field: gcp.audit.labels
       copy_from: json.labels
       if: ctx.json?.labels != null
+  - json:
+      field: labels.payload
+      tag: json_labels_payload
+      if: ctx.labels?.payload != null
+      on_failure:
+        - append:
+            field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
 
 ##
 # RequestMetadata
