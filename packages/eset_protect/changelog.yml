@@ -4,7 +4,7 @@
     - description: |
         Add support to collect ECOS Detection logs using the `/v2/detections` endpoint. These logs are then routed to the `detection` data stream for parsing and indexing.
       type: enhancement
-      link: https://github.com/elastic/integrations/pull/1
+      link: https://github.com/elastic/integrations/pull/17858
 - version: "2.0.0"
   changes:
     - description: |
