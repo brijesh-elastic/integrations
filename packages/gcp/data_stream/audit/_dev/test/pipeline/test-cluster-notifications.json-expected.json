@@ -37,6 +37,10 @@
                 "cluster": {
                     "name": "test-qa"
                 },
+                "resource": {
+                    "name": "projects/elastic-test/locations/us-central1-a/clusters/test-qa/nodePools/test-custom",
+                    "type": "NODE_POOL"
+                },
                 "type": "kubernetes"
             },
             "tags": [
