@@ -80,6 +80,12 @@ processors:
       copy_from: json.resource.labels.project_id
       if: ctx.json?.resource?.labels?.project_id != null
   - set:
+      field: cloud.project.id
+      copy_from: labels.project_id
+      override: false
+      ignore_empty_value: true
+      if: ctx.cloud?.project?.id == null && ctx.labels?.project_id != null
+  - set:
       field: cloud.instance.id
       copy_from: json.resource.labels.instance_id
       if: ctx.json?.resource?.labels?.instance_id != null
@@ -101,6 +107,17 @@ processors:
       copy_from: json.resource.labels.cluster_name
       ignore_empty_value: true
       if: ctx.json?.resource?.type != null && (ctx.json?.resource?.type == 'k8s_cluster' || ctx.json?.resource?.type == 'gke_cluster')
+  - set:
+      field: orchestrator.type
+      value: kubernetes
+      override: false
+      if: ctx.orchestrator?.type == null && ctx.labels?.cluster_name != null
+  - set:
+      field: orchestrator.cluster.name
+      copy_from: labels.cluster_name
+      ignore_empty_value: true
+      override: false
+      if: ctx.orchestrator?.cluster?.name == null && ctx.labels?.cluster_name != null
   - set:
       field: _temp.type
       copy_from: json.protoPayload.resourceName

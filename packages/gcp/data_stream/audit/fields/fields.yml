@@ -108,6 +108,8 @@
         The name of the service method or operation. For API calls, this  should be the name of the API method.  For example, 'google.datastore.v1.Datastore.RunQuery'.
     - name: notification
       type: keyword
+      description: |
+        Plain-text GKE cluster notification message (for example, upgrade notifications) captured when the event cannot be parsed as JSON.
     - name: num_response_items
       type: long
       description: |

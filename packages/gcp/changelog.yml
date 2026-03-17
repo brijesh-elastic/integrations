@@ -2,7 +2,7 @@
 - version: "2.47.2"
   changes:
     - description: Fix ingest pipeline to parse cluster notifications in audit data stream.
-      type: bugfix
+      type: enhancement
       link: https://github.com/elastic/integrations/pull/17830
 - version: "2.47.1"
   changes:

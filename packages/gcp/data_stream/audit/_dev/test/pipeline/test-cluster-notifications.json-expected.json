@@ -2,6 +2,9 @@
     "expected": [
         {
             "cloud": {
+                "project": {
+                    "id": "elastic-test"
+                },
                 "provider": "gcp"
             },
             "ecs": {
@@ -17,9 +20,6 @@
                     "notification": "Node pool projects/elastic-test/locations/us-central1-a/clusters/test-qa/nodePools/test-custom is upgrading to version 1.33.5-gke.2326000."
                 }
             },
-            "input": {
-                "type": "gcp-pubsub"
-            },
             "labels": {
                 "cluster_location": "us-central1-a",
                 "cluster_name": "test-qa",
@@ -32,6 +32,12 @@
                 },
                 "project_id": "elastic-test",
                 "type_url": "type.googleapis.com/google.container.v1beta1.UpgradeEvent"
+            },
+            "orchestrator": {
+                "cluster": {
+                    "name": "test-qa"
+                },
+                "type": "kubernetes"
             },
             "tags": [
                 "preserve_original_event"
