@@ -1,10 +1,10 @@
-title: Collect Detection logs from ESET PROTECT
+title: Collect Detection logs detected by ESET Cloud Office Security
 type: logs
-dataset: eset_protect.detection
+dataset: eset_protect.ecos_detection
 streams:
   - input: cel
-    title: Detection Logs
-    description: Collect Detection logs from ESET PROTECT.
+    title: ECOS Detection Logs
+    description: Collect Detection logs detected by ESET Cloud Office Security.
     template_path: cel.yml.hbs
     enabled: false
     vars:
@@ -20,7 +20,7 @@ streams:
         type: text
         title: Interval
         description: Duration between requests to the ESET Connect API. Supported units for this parameter are h/m/s.
-        default: 1m
+        default: 5m
         multi: false
         required: true
         show_user: true
@@ -48,7 +48,7 @@ streams:
         show_user: false
         default:
           - forwarded
-          - eset_protect-detection
+          - eset_protect-ecos_detection
       - name: preserve_original_event
         required: true
         show_user: true

@@ -1,0 +1,7 @@
+- source_dataset: eset_protect.ecos_detection
+  rules:
+    - target_dataset: eset_protect.detection
+      if: ctx.tags != null && ctx.tags.contains('eset_protect-ecos_detection')
+      namespace:
+        - "{{data_stream.namespace}}"
+        - default

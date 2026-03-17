@@ -1,0 +1,20 @@
+{
+    "expected": [
+        {
+            "data_stream": {
+                "dataset": "eset_protect.detection",
+                "namespace": "default",
+                "type": "logs"
+            },
+            "ecs": {
+                "version": "8.11.0"
+            },
+            "message": "{\"uuid\":\"eabcdefd-1234-5678-abcd-abcdef123456\",\"typeName\":\"Spam\",\"category\":\"DETECTION_CATEGORY_UNSPECIFIED\",\"displayName\":\"Antispam reason: URL example.com found on cloud blacklist\",\"objectName\":\"\",\"objectTypeName\":\"\",\"objectHashSha1\":\"\",\"objectUrl\":\"\",\"edrRuleUuid\":\"\",\"circumstances\":\"\",\"severityLevel\":\"SEVERITY_LEVEL_UNSPECIFIED\",\"occurTime\":\"2026-01-01T12:30:00.000Z\",\"note\":\"\",\"severityScore\":0,\"resolved\":false,\"responses\":[],\"userName\":\"\",\"objectSizeBytes\":\"0\",\"cloudOfficeTenantUuid\":\"123456789\",\"email\":{\"reference\":\"\",\"to\":\"example@example.com\",\"mailboxUserUuid\":\"12345678901234567890\",\"cc\":\"\",\"from\":\"example@example.com\",\"subject\":\"Example subject\",\"bodyParts\":[],\"attachments\":[],\"headers\":[],\"containedUrls\":[],\"isReadOnly\":false,\"internetMessageId\":\"12345678901234\",\"senderIpAddress\":\"\",\"origin\":\"OBJECT_ORIGIN_GOOGLE_WORKSPACE\",\"mailboxUuid\":\"\"},\"scanUuid\":\"\"}",
+            "tags": [
+                "preserve_original_event",
+                "preserve_duplicate_custom_fields",
+                "eset_protect-ecos_detection"
+            ]
+        }
+    ]
+}

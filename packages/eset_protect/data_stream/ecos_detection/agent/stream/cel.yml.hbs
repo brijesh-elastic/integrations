@@ -1,9 +1,9 @@
 config_version: 2
 interval: {{interval}}
-{{#if enable_request_tracer}}
-resource.tracer.filename: "../../logs/cel/http-request-trace-*.ndjson"
-resource.tracer.maxbackups: 5
-{{/if}}
+resource.tracer:
+  enabled: {{enable_request_tracer}}
+  filename: "../../logs/cel/http-request-trace-*.ndjson"
+  maxbackups: 5
 {{#if proxy_url}}
 resource.proxy_url: {{proxy_url}}
 {{/if}}
@@ -49,11 +49,11 @@ program: |
   ).as(state,
     request(
       "GET",
-      state.url.trim_right("/") + "/v1/detections?" + {
-        "page_size": [state.page_size],
-        "start_time": [state.start_time],
-        "end_time": [state.end_time],
-        "page_token": [state.page_token]
+      state.url.trim_right("/") + "/v2/detections?" + {
+        "pageSize": [state.page_size],
+        "startTime": [state.start_time],
+        "endTime": [state.end_time],
+        "pageToken": [state.page_token]
       }.format_query()
     ).as(request, (
       has(state.cursor) && has(state.cursor.response_id) && state.cursor.response_id != null
@@ -129,7 +129,7 @@ program: |
                 "error": {
                   "code": string(resp.StatusCode),
                   "id": string(resp.Status),
-                  "message": "GET " + state.url.trim_right("/") + "/v1/detections :" + (
+                  "message": "GET " + state.url.trim_right("/") + "/v2/detections :" + (
                     size(resp.Body) != 0 ?
                       string(resp.Body)
                     :
