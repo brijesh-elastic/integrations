@@ -264,7 +264,7 @@ Please refer to the following [document](https://www.elastic.co/guide/en/ecs/cur
 | gcp.audit.logentry_operation.producer | Optional. An arbitrary producer identifier. The combination of id and producer must be globally unique. | keyword |
 | gcp.audit.metadata | Service-specific data about the request, response, and other information associated with the current audited event. | flattened |
 | gcp.audit.method_name | The name of the service method or operation. For API calls, this  should be the name of the API method.  For example, 'google.datastore.v1.Datastore.RunQuery'. | keyword |
-| gcp.audit.notification |  | keyword |
+| gcp.audit.notification | Plain-text GKE cluster notification message (for example, upgrade notifications). | keyword |
 | gcp.audit.num_response_items | The number of items returned from a List or Query API method, if applicable. | long |
 | gcp.audit.policy_violation_info.payload | Resource payload that is currently in scope and is subjected to orgpolicy conditions. | flattened |
 | gcp.audit.policy_violation_info.resource_tags | Tags referenced on the resource at the time of evaluation. | flattened |
@@ -341,9 +341,9 @@ An example event for `audit` looks as following:
         }
     },
     "agent": {
-        "ephemeral_id": "3a9df32b-0e06-4f33-bcbd-3c0129eaddd9",
-        "id": "4290ef8d-0821-4261-8691-4dab9e9ae8fe",
-        "name": "elastic-agent-36885",
+        "ephemeral_id": "659a4bb5-7b36-4a57-abad-eb6aba39e521",
+        "id": "07e82ae8-126c-474c-95bc-4578333ce328",
+        "name": "elastic-agent-89132",
         "type": "filebeat",
         "version": "8.13.0"
     },
@@ -361,14 +361,14 @@ An example event for `audit` looks as following:
     },
     "data_stream": {
         "dataset": "gcp.audit",
-        "namespace": "60754",
+        "namespace": "61726",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "4290ef8d-0821-4261-8691-4dab9e9ae8fe",
+        "id": "07e82ae8-126c-474c-95bc-4578333ce328",
         "snapshot": false,
         "version": "8.13.0"
     },
@@ -379,10 +379,10 @@ An example event for `audit` looks as following:
             "network",
             "configuration"
         ],
-        "created": "2026-03-16T06:45:34.072Z",
+        "created": "2026-03-17T09:46:42.521Z",
         "dataset": "gcp.audit",
         "id": "yonau2dg2zi",
-        "ingested": "2026-03-16T06:45:36Z",
+        "ingested": "2026-03-17T09:46:45Z",
         "kind": "event",
         "outcome": "success",
         "provider": "data_access",

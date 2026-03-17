@@ -109,7 +109,7 @@
     - name: notification
       type: keyword
       description: |
-        Plain-text GKE cluster notification message (for example, upgrade notifications) captured when the event cannot be parsed as JSON.
+        Plain-text GKE cluster notification message (for example, upgrade notifications).
     - name: num_response_items
       type: long
       description: |
