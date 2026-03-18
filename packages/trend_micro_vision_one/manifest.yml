@@ -1,7 +1,7 @@
 format_version: "3.3.2"
 name: trend_micro_vision_one
 title: Trend Micro Vision One
-version: "2.10.0"
+version: "2.11.0"
 description: Collect logs from Trend Micro Vision One with Elastic Agent.
 type: integration
 categories:
@@ -17,6 +17,14 @@ conditions:
 screenshots:
   - src: /img/trend-micro-vision-one-alert-dashboard-screenshot.png
     title: Trend Micro Vision One Alert Dashboard Screenshot
+    size: 600x600
+    type: image/png
+  - src: /img/trend-micro-vision-one-audit-dashboard-screenshot.png
+    title: Trend Micro Vision One Audit Dashboard Screenshot
+    size: 600x600
+    type: image/png
+  - src: /img/trend-micro-vision-one-detection-dashboard-screenshot.png
+    title: Trend Micro Vision One Detection Dashboard Screenshot
     size: 600x600
     type: image/png
   - src: /img/trend-micro-vision-one-endpoint-activity-dashboard-screenshot.png
