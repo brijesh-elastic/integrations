@@ -3,7 +3,7 @@
   changes:
     - description: Update deprecated visualization charts and implemented best practices in the existing dashboards.
       type: enhancement
-      link: https://github.com/elastic/integrations/pull/1
+      link: https://github.com/elastic/integrations/pull/17872
 - version: "2.10.0"
   changes:
     - description: Enable Agentless deployment.
