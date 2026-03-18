@@ -2,10 +2,10 @@ rules:
   - path: /v1/detections
     methods: ["GET"]
     query_params:
-      end_time: "{end_time:.*}"
-      page_size: 1
-      page_token: xxxxxx
-      start_time: "{start_time:.*}"
+      endTime: "{endTime:.*}"
+      pageSize: 1
+      pageToken: xxxxxx
+      startTime: "{startTime:.*}"
     responses:
       - status_code: 200
         body: |
@@ -13,10 +13,10 @@ rules:
   - path: /v1/detections
     methods: ["GET"]
     query_params:
-      end_time: "{end_time:.*}"
-      page_size: 1
-      page_token: ""
-      start_time: "{start_time:.*}"
+      endTime: "{endTime:.*}"
+      pageSize: 1
+      pageToken: ""
+      startTime: "{startTime:.*}"
     responses:
       - status_code: 200
         body: |

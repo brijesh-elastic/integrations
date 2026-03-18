@@ -50,10 +50,10 @@ program: |
     request(
       "GET",
       state.url.trim_right("/") + "/v1/detections?" + {
-        "page_size": [state.page_size],
-        "start_time": [state.start_time],
-        "end_time": [state.end_time],
-        "page_token": [state.page_token]
+        "pageSize": [state.page_size],
+        "startTime": [state.start_time],
+        "endTime": [state.end_time],
+        "pageToken": [state.page_token]
       }.format_query()
     ).as(request, (
       has(state.cursor) && has(state.cursor.response_id) && state.cursor.response_id != null
