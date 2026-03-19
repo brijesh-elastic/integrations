@@ -4,7 +4,7 @@ dataset: eset_protect.ecos_detection
 streams:
   - input: cel
     title: ECOS Detection Logs
-    description: Collect Detection logs detected by ESET Cloud Office Security.
+    description: Collect Detection logs detected by ESET Cloud Office Security, which are then routed to the primary `detection` data stream for parsing and indexing.
     template_path: cel.yml.hbs
     enabled: false
     vars:
