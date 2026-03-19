@@ -130,9 +130,9 @@ An example event for `audit` looks as following:
         }
     },
     "agent": {
-        "ephemeral_id": "69b1f75c-defd-48cc-bc31-bc2091d24fd9",
-        "id": "927a7504-d3e5-4409-8a16-ba5f57fa0c1e",
-        "name": "elastic-agent-35168",
+        "ephemeral_id": "d3d085d3-8938-4909-9bcb-9a9ec8bc1665",
+        "id": "7fc8d2fb-f718-4f96-9c78-1118e4203336",
+        "name": "elastic-agent-81621",
         "type": "filebeat",
         "version": "8.18.0"
     },
@@ -150,14 +150,14 @@ An example event for `audit` looks as following:
     },
     "data_stream": {
         "dataset": "gcp.audit",
-        "namespace": "47619",
+        "namespace": "55990",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "927a7504-d3e5-4409-8a16-ba5f57fa0c1e",
+        "id": "7fc8d2fb-f718-4f96-9c78-1118e4203336",
         "snapshot": false,
         "version": "8.18.0"
     },
@@ -168,18 +168,23 @@ An example event for `audit` looks as following:
             "network",
             "configuration"
         ],
-        "created": "2026-03-18T10:18:11.870Z",
+        "created": "2026-03-19T05:40:34.897Z",
         "dataset": "gcp.audit",
-        "id": "yonau3dc2zi",
-        "ingested": "2026-03-18T10:18:14Z",
+        "id": "yonau2dg2zi",
+        "ingested": "2026-03-19T05:40:37Z",
         "kind": "event",
-        "outcome": "failure",
-        "provider": "data_access"
+        "outcome": "success",
+        "provider": "data_access",
+        "type": [
+            "access",
+            "allowed"
+        ]
     },
     "gcp": {
         "audit": {
             "authorization_info": [
                 {
+                    "granted": true,
                     "permission": "compute.instances.list",
                     "resource_attributes": {
                         "name": "projects/elastic-beats",
@@ -202,9 +207,17 @@ An example event for `audit` looks as following:
                 ]
             },
             "resource_name": "projects/elastic-beats/global/instances",
-            "status": {
-                "code": 7,
-                "message": "PERMISSION_DENIED"
+            "response": {
+                "@type": "core.k8s.io/v1.Status",
+                "apiVersion": "v1",
+                "details": {
+                    "group": "batch",
+                    "kind": "jobs",
+                    "name": "gsuite-exporter-1589294700",
+                    "uid": "2beff34a-945f-11ea-bacf-42010a80007f"
+                },
+                "kind": "Status",
+                "status_value": "Success"
             },
             "type": "type.googleapis.com/google.cloud.audit.AuditLog"
         }
@@ -255,6 +268,7 @@ An example event for `audit` looks as following:
         }
     },
     "user": {
+        "email": "xxx@xxx.xxx",
         "entity": {
             "id": [
                 "xxx@xxx.xxx"
