@@ -4,7 +4,7 @@ ESET PROTECT enables you to manage ESET products on workstations and servers in 
 
 ## Data streams
 
-The ESET PROTECT integration collects following types of logs:
+The ESET PROTECT integration collects the following types of logs:
 
 **[Detection](https://help.eset.com/protect_cloud/en-US/admin_ct.html?threats.html)** is used to retrieve detections via the [Incident Management - List detections (v1)](https://help.eset.com/eset_connect/en-US/incident_management_v1_detections_get.html) endpoint.
 
