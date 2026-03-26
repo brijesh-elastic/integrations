@@ -1,7 +1,7 @@
 format_version: 3.3.2
 name: eset_protect
 title: ESET PROTECT
-version: "2.1.0"
+version: "2.2.0"
 description: Collect logs from ESET PROTECT with Elastic Agent.
 type: integration
 categories:
@@ -65,11 +65,11 @@ policy_templates:
             secret: true
           - name: enable_request_tracer
             type: bool
+            default: false
             title: Enable request tracing
             multi: false
             required: false
             show_user: false
-            default: false
             description: The request tracer logs requests and responses to the agent's local file-system for debugging configurations. Enabling this request tracing compromises security and should only be used for debugging. See [documentation](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-input-cel.html#_resource_tracer_filename) for details.
           - name: proxy_url
             type: text
