@@ -1,10 +1,10 @@
 ---
-description: Benchmark 1000 cloudflare_logpush.audit events ingested
+description: Benchmark 10000 cloudflare_logpush.audit events ingested
 data_stream:
   name: audit
 corpora:
   generator:
-    total_events: 1000
+    total_events: 10000
     template:
       type: gotext
       path: ./audit-benchmark/template.ndjson

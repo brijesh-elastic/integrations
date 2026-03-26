@@ -1,5 +1,5 @@
 ---
-description: Benchmark 1000 casb events ingested
+description: Benchmark 10000 casb events ingested
 input: http_endpoint
 vars:
   listen_address: 0.0.0.0
@@ -16,7 +16,7 @@ corpora:
     name: cloudflare-logpush-casb
     signal: SIGHUP
   generator:
-    total_events: 1000
+    total_events: 10000
     template:
       path: ./casb-benchmark/template.ndjson
       type: gotext
