@@ -1,0 +1,14 @@
+---
+description: Benchmark 1000 cloudflare_logpush.dlp_forensic_copies events ingested
+data_stream:
+  name: dlp_forensic_copies
+corpora:
+  generator:
+    total_events: 1000
+    template:
+      type: gotext
+      path: ./dlp-forensic-copies-benchmark/template.ndjson
+    config:
+      path: ./dlp-forensic-copies-benchmark/config.yml
+    fields:
+      path: ./dlp-forensic-copies-benchmark/fields.yml
