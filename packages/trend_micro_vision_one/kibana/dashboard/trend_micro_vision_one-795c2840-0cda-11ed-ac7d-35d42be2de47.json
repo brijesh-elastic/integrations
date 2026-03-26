@@ -70,7 +70,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Trend Micro Vision One Detection Events Overview.",
+        "description": "TrendAI Vision One Detection Events Overview.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
@@ -853,7 +853,7 @@
                         "description": "",
                         "params": {
                             "fontSize": 12,
-                            "markdown": "This dashboard provides an overview of the detection logs collected by the Trend Micro Vision One integration.\n\nThe dashboard highlights detection trends over time. It features tables showing the top malware, rule names, and action results, as well as pie charts that break down detections by protocol. Additionally, it includes a bar chart showing the breakdown of detections by event action and blocking reason.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
+                            "markdown": "This dashboard provides an overview of the detection logs collected by the TrendAI Vision One integration.\n\nThe dashboard highlights detection trends over time. It features tables showing the top malware, rule names, and action results, as well as pie charts that break down detections by protocol. Additionally, it includes a bar chart showing the breakdown of detections by event action and blocking reason.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
                             "openLinksInNewTab": false
                         },
                         "title": "",
@@ -1533,7 +1533,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Trend Micro Vision One] Detection",
+        "title": "[Logs TrendAI Vision One] Detection",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",

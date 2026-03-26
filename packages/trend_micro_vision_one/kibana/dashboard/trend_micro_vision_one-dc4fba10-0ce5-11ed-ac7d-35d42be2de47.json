@@ -70,7 +70,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Trend Micro Vision One Alert Events Overview.",
+        "description": "TrendAI Vision One Alert Events Overview.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
@@ -1005,7 +1005,7 @@
                         "description": "",
                         "params": {
                             "fontSize": 12,
-                            "markdown": "This dashboard provides an overview of the alert logs collected by the Trend Micro Vision One integration.\n\nThe dashboard highlights alert trends over time. It features tables showing the top matched rules, as well as pie charts that break down alerts by severity and entity type. Additionally, it includes a bar chart showing the breakdown of alerts by investigation result and indicator type.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
+                            "markdown": "This dashboard provides an overview of the alert logs collected by the TrendAI Vision One integration.\n\nThe dashboard highlights alert trends over time. It features tables showing the top matched rules, as well as pie charts that break down alerts by severity and entity type. Additionally, it includes a bar chart showing the breakdown of alerts by investigation result and indicator type.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
                             "openLinksInNewTab": false
                         },
                         "title": "",
@@ -1544,7 +1544,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Trend Micro Vision One] Alert",
+        "title": "[Logs TrendAI Vision One] Alert",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",

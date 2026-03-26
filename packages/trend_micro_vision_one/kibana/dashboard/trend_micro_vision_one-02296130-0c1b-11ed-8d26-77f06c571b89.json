@@ -51,7 +51,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Trend Micro Vision One Audit Events Overview.",
+        "description": "TrendAI Vision One Audit Events Overview.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
@@ -399,7 +399,7 @@
                         "description": "",
                         "params": {
                             "fontSize": 12,
-                            "markdown": "This dashboard provides an overview of the audit logs collected by the Trend Micro Vision One integration.\n\nThe dashboard highlights audit activity over time. It features tables showing the top audit activities, as well as pie charts that break down audits by access type and result. Additionally, it includes a bar chart showing the breakdown of audits by category.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
+                            "markdown": "This dashboard provides an overview of the audit logs collected by the TrendAI Vision One integration.\n\nThe dashboard highlights audit activity over time. It features tables showing the top audit activities, as well as pie charts that break down audits by access type and result. Additionally, it includes a bar chart showing the breakdown of audits by category.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
                             "openLinksInNewTab": false
                         },
                         "title": "",
@@ -1162,7 +1162,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Trend Micro Vision One] Audit",
+        "title": "[Logs TrendAI Vision One] Audit",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",

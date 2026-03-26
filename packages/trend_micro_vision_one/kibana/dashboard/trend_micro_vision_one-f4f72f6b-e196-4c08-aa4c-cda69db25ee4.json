@@ -51,7 +51,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Trend Micro Vision One Network Activity Events Overview.",
+        "description": "TrendAI Vision One Network Activity Events Overview.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
@@ -568,7 +568,7 @@
                         "description": "",
                         "params": {
                             "fontSize": 12,
-                            "markdown": "This dashboard provides an overview of the network activity logs collected by the Trend Micro Vision One integration.\n\nThis dashboard highlights the top source and destination IPs to uncover suspicious connections or potential attack origins. Event trends over time reveal spikes, anomalies, and evolving patterns. Additional breakdowns by host OS, user name, and hostname provide context on which systems or identities are most impacted. The Top Rule Category chart further surfaces dominant detection types, enabling faster triage and prioritization. Together, these insights strengthen visibility and support proactive threat investigation.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
+                            "markdown": "This dashboard provides an overview of the network activity logs collected by the TrendAI Vision One integration.\n\nThis dashboard highlights the top source and destination IPs to uncover suspicious connections or potential attack origins. Event trends over time reveal spikes, anomalies, and evolving patterns. Additional breakdowns by host OS, user name, and hostname provide context on which systems or identities are most impacted. The Top Rule Category chart further surfaces dominant detection types, enabling faster triage and prioritization. Together, these insights strengthen visibility and support proactive threat investigation.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
                             "openLinksInNewTab": false
                         },
                         "title": "",
@@ -1616,7 +1616,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Trend Micro Vision One] Network Activity",
+        "title": "[Logs TrendAI Vision One] Network Activity",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",

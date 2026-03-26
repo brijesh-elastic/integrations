@@ -70,7 +70,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Trend Micro Vision One Telemetry Overview.",
+        "description": "TrendAI Vision One Telemetry Overview.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
@@ -872,7 +872,7 @@
                         "description": "",
                         "params": {
                             "fontSize": 12,
-                            "markdown": "This dashboard provides an overview of the telemetry logs collected by the Trend Micro Vision One integration.\n\nThe dashboard highlights telemetry events over time, broken down by event type. It features tables showing telemetry event counts by event type and subtype, as well as pie charts that break down events by type and subtype.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
+                            "markdown": "This dashboard provides an overview of the telemetry logs collected by the TrendAI Vision One integration.\n\nThe dashboard highlights telemetry events over time, broken down by event type. It features tables showing telemetry event counts by event type and subtype, as well as pie charts that break down events by type and subtype.\n\n[**Integration Page**](/app/integrations/detail/trend_micro_vision_one/overview)",
                             "openLinksInNewTab": false
                         },
                         "title": "",
@@ -893,7 +893,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Trend Micro Vision One] Telemetry",
+        "title": "[Logs TrendAI Vision One] Telemetry",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
