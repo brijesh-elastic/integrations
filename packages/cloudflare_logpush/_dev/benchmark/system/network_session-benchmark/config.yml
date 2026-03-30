@@ -27,8 +27,6 @@ fields:
     enum: ["TLS 1.2", "TLS 1.3"]
   - name: connection_close_reason
     enum: [CLIENT_CLOSED, SERVER_CLOSED, TIMEOUT, ERROR, UNKNOWN]
-  - name: connection_reuse
-    enum: ["true", "false"]
   - name: destination_tunnel_id
     cardinality: 100
   - name: device_id

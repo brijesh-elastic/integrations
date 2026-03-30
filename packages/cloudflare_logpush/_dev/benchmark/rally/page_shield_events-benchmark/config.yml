@@ -11,7 +11,5 @@ fields:
     cardinality: 100
   - name: resource_type
     enum: [script, xhr, fetch, websocket, other]
-  - name: url_contains_cdn_cgi_path
-    enum: ["true", "false"]
   - name: url_host
     cardinality: 5000

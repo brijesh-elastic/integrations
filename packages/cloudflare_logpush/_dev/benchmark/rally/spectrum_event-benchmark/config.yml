@@ -43,8 +43,6 @@ fields:
     cardinality: 200
   - name: event
     enum: [connect, disconnect, clientHello, tlsError, originError, originConnect]
-  - name: ip_firewall
-    enum: ["true", "false"]
   - name: origin_bytes
     range:
       min: 0
