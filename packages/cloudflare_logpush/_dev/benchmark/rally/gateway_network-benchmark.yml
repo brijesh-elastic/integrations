@@ -1,10 +1,10 @@
 ---
-description: Benchmark 1000 cloudflare_logpush.gateway_network events ingested
+description: Benchmark 10000 cloudflare_logpush.gateway_network events ingested
 data_stream:
   name: gateway_network
 corpora:
   generator:
-    total_events: 1000
+    total_events: 10000
     template:
       type: gotext
       path: ./gateway_network-benchmark/template.ndjson

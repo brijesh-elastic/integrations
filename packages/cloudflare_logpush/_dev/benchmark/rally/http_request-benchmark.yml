@@ -1,10 +1,10 @@
 ---
-description: Benchmark 1000 cloudflare_logpush.http_request events ingested
+description: Benchmark 10000 cloudflare_logpush.http_request events ingested
 data_stream:
   name: http_request
 corpora:
   generator:
-    total_events: 1000
+    total_events: 10000
     template:
       type: gotext
       path: ./http_request-benchmark/template.ndjson
