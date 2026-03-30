@@ -17,7 +17,7 @@ conditions:
 screenshots:
   - src: /img/trendai-vision-one-alert-dashboard-screenshot.png
     title: TrendAI Vision One Alert Dashboard Screenshot
-    size: 1300x1319
+    size: 1300x1656
     type: image/png
   - src: /img/trendai-vision-one-audit-dashboard-screenshot.png
     title: TrendAI Vision One Audit Dashboard Screenshot

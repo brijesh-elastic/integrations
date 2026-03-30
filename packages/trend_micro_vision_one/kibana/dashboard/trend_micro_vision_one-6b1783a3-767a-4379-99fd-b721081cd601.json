@@ -1409,7 +1409,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-03-18T05:48:54.743Z",
+    "created_at": "2026-03-30T12:49:10.291Z",
     "id": "trend_micro_vision_one-6b1783a3-767a-4379-99fd-b721081cd601",
     "references": [
         {
@@ -1524,6 +1524,5 @@
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.3.0",
-    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
+    "typeMigrationVersion": "10.3.0"
 }
