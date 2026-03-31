@@ -54,9 +54,11 @@ response.pagination:
 response.split:
   target: body.value
   ignore_empty_value: true
+{{#if include_alerts}}
   split:
     target: body.alerts
     keep_parent: true
+{{/if}}
 cursor:
   last_update_time:
     value: >-

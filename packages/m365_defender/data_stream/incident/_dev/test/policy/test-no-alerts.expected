@@ -57,9 +57,6 @@ inputs:
                 value: '[[if (eq (len .last_response.body.value) 50)]][[add (toInt (.last_response.url.params.Get "$skip")) 50]][[end]]'
           response.split:
             ignore_empty_value: true
-            split:
-                keep_parent: true
-                target: body.alerts
             target: body.value
           tags:
             - forwarded
