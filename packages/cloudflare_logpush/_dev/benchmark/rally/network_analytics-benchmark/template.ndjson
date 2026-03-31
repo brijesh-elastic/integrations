@@ -1,18 +1,20 @@
 {{- $timestamp := generate "timestamp" -}}
 {{- $attack_campaign_id := generate "attack_campaign_id" -}}
 {{- $attack_id := generate "attack_id" -}}
+{{- $attack_vector := generate "attack_vector" -}}
+{{- $colo_city := generate "colo_city" -}}
+{{- $colo_code := generate "colo_code" -}}
 {{- $colo_country := generate "colo_country" -}}
 {{- $colo_geo_hash := generate "colo_geo_hash" -}}
-{{- $colo_id := generate "colo_id" -}}
 {{- $colo_name := generate "colo_name" -}}
 {{- $destination_asn := generate "destination_asn" -}}
-{{- $destination_asn_description := generate "destination_asn_description" -}}
+{{- $destination_asn_name := generate "destination_asn_name" -}}
 {{- $destination_country := generate "destination_country" -}}
 {{- $destination_geo_hash := generate "destination_geo_hash" -}}
 {{- $destination_port := generate "destination_port" -}}
 {{- $direction := generate "direction" -}}
 {{- $gre_checksum := generate "gre_checksum" -}}
-{{- $gre_ethertype := generate "gre_ethertype" -}}
+{{- $gre_ether_type := generate "gre_ether_type" -}}
 {{- $gre_header_length := generate "gre_header_length" -}}
 {{- $gre_key := generate "gre_key" -}}
 {{- $gre_sequence_number := generate "gre_sequence_number" -}}
@@ -50,11 +52,12 @@
 {{- $outcome := generate "outcome" -}}
 {{- $protocol_state := generate "protocol_state" -}}
 {{- $rule_id := generate "rule_id" -}}
+{{- $rule_name := generate "rule_name" -}}
 {{- $ruleset_id := generate "ruleset_id" -}}
 {{- $ruleset_override_id := generate "ruleset_override_id" -}}
 {{- $sample_interval := generate "sample_interval" -}}
 {{- $source_asn := generate "source_asn" -}}
-{{- $source_asn_description := generate "source_asn_description" -}}
+{{- $source_asn_name := generate "source_asn_name" -}}
 {{- $source_country := generate "source_country" -}}
 {{- $source_geo_hash := generate "source_geo_hash" -}}
 {{- $source_port := generate "source_port" -}}
@@ -66,7 +69,7 @@
 {{- $tcp_mss := generate "tcp_mss" -}}
 {{- $tcp_options := generate "tcp_options" -}}
 {{- $tcp_sack_blocks := generate "tcp_sack_blocks" -}}
-{{- $tcp_sacks_permitted := generate "tcp_sacks_permitted" -}}
+{{- $tcp_sack_permitted := generate "tcp_sack_permitted" -}}
 {{- $tcp_sequence_number := generate "tcp_sequence_number" -}}
 {{- $tcp_timestamp_ecr := generate "tcp_timestamp_ecr" -}}
 {{- $tcp_timestamp_value := generate "tcp_timestamp_value" -}}
@@ -95,7 +98,7 @@
         "snapshot": false,
         "version": "8.19.7"
     },
-    "message": "{\"AttackCampaignID\":\"{{ $attack_campaign_id }}\",\"AttackID\":\"{{ $attack_id }}\",\"ColoCountry\":\"{{ $colo_country }}\",\"ColoGeoHash\":\"{{ $colo_geo_hash }}\",\"ColoID\":{{ $colo_id }},\"ColoName\":\"{{ $colo_name }}\",\"Datetime\":\"{{ $timestamp.Format "2006-01-02T15:04:05Z07:00" }}\",\"DestinationASN\":{{ $destination_asn }},\"DestinationASNDescription\":\"{{ $destination_asn_description }}\",\"DestinationCountry\":\"{{ $destination_country }}\",\"DestinationGeoHash\":\"{{ $destination_geo_hash }}\",\"DestinationPort\":{{ $destination_port }},\"Direction\":\"{{ $direction }}\",\"GREChecksum\":{{ $gre_checksum }},\"GREEthertype\":{{ $gre_ethertype }},\"GREHeaderLength\":{{ $gre_header_length }},\"GREKey\":{{ $gre_key }},\"GRESequenceNumber\":{{ $gre_sequence_number }},\"GREVersion\":{{ $gre_version }},\"ICMPChecksum\":{{ $icmp_checksum }},\"ICMPCode\":{{ $icmp_code }},\"ICMPType\":{{ $icmp_type }},\"IPDestinationAddress\":\"{{ $ip_destination_address }}\",\"IPDestinationSubnet\":\"{{ $ip_destination_subnet }}\",\"IPFragmentOffset\":{{ $ip_fragment_offset }},\"IPHeaderLength\":{{ $ip_header_length }},\"IPMoreFragments\":{{ $ip_more_fragments }},\"IPProtocol\":{{ $ip_protocol }},\"IPProtocolName\":\"{{ $ip_protocol_name }}\",\"IPSourceAddress\":\"{{ $ip_source_address }}\",\"IPSourceSubnet\":\"{{ $ip_source_subnet }}\",\"IPTotalLength\":{{ $ip_total_length }},\"IPTotalLengthBuckets\":{{ $ip_total_length_buckets }},\"IPTtl\":{{ $ip_ttl }},\"IPTtlBuckets\":{{ $ip_ttl_buckets }},\"IPv4Checksum\":{{ $ipv4_checksum }},\"IPv4DontFragment\":{{ $ipv4_dont_fragment }},\"IPv4Dscp\":{{ $ipv4_dscp }},\"IPv4Ecn\":{{ $ipv4_ecn }},\"IPv4Identification\":{{ $ipv4_identification }},\"IPv4Options\":{{ $ipv4_options }},\"IPv6Dscp\":{{ $ipv6_dscp }},\"IPv6Ecn\":{{ $ipv6_ecn }},\"IPv6ExtensionHeaders\":\"{{ $ipv6_extension_headers }}\",\"IPv6FlowLabel\":{{ $ipv6_flow_label }},\"IPv6Identification\":{{ $ipv6_identification }},\"MitigationReason\":\"{{ $mitigation_reason }}\",\"MitigationScope\":\"{{ $mitigation_scope }}\",\"MitigationSystem\":\"{{ $mitigation_system }}\",\"Outcome\":\"{{ $outcome }}\",\"ProtocolState\":\"{{ $protocol_state }}\",\"RuleID\":\"{{ $rule_id }}\",\"RulesetID\":\"{{ $ruleset_id }}\",\"RulesetOverrideID\":\"{{ $ruleset_override_id }}\",\"SampleInterval\":{{ $sample_interval }},\"SourceASN\":{{ $source_asn }},\"SourceASNDescription\":\"{{ $source_asn_description }}\",\"SourceCountry\":\"{{ $source_country }}\",\"SourceGeoHash\":\"{{ $source_geo_hash }}\",\"SourcePort\":{{ $source_port }},\"TCPAcknowledgementNumber\":{{ $tcp_acknowledgement_number }},\"TCPChecksum\":{{ $tcp_checksum }},\"TCPDataOffset\":{{ $tcp_data_offset }},\"TCPFlags\":{{ $tcp_flags }},\"TCPFlagsString\":\"{{ $tcp_flags_string }}\",\"TCPMss\":{{ $tcp_mss }},\"TCPOptions\":\"{{ $tcp_options }}\",\"TCPSackBlocks\":{{ $tcp_sack_blocks }},\"TCPSacksPermitted\":{{ $tcp_sacks_permitted }},\"TCPSequenceNumber\":{{ $tcp_sequence_number }},\"TCPTimestampEcr\":{{ $tcp_timestamp_ecr }},\"TCPTimestampValue\":{{ $tcp_timestamp_value }},\"TCPUrgentPointer\":{{ $tcp_urgent_pointer }},\"TCPWindowScale\":{{ $tcp_window_scale }},\"TCPWindowSize\":{{ $tcp_window_size }},\"UDPChecksum\":{{ $udp_checksum }},\"UDPPayloadLength\":{{ $udp_payload_length }},\"Verdict\":\"{{ $verdict }}\"}",
+    "message": "{\"AttackCampaignID\":\"{{ $attack_campaign_id }}\",\"AttackID\":\"{{ $attack_id }}\",\"AttackVector\":\"{{ $attack_vector }}\",\"ColoCity\":\"{{ $colo_city }}\",\"ColoCode\":\"{{ $colo_code }}\",\"ColoCountry\":\"{{ $colo_country }}\",\"ColoGeoHash\":\"{{ $colo_geo_hash }}\",\"ColoName\":\"{{ $colo_name }}\",\"Datetime\":\"{{ $timestamp.Format "2006-01-02T15:04:05Z07:00" }}\",\"DestinationASN\":{{ $destination_asn }},\"DestinationASNName\":\"{{ $destination_asn_name }}\",\"DestinationCountry\":\"{{ $destination_country }}\",\"DestinationGeoHash\":\"{{ $destination_geo_hash }}\",\"DestinationPort\":{{ $destination_port }},\"Direction\":\"{{ $direction }}\",\"GREChecksum\":{{ $gre_checksum }},\"GREEtherType\":{{ $gre_ether_type }},\"GREHeaderLength\":{{ $gre_header_length }},\"GREKey\":{{ $gre_key }},\"GRESequenceNumber\":{{ $gre_sequence_number }},\"GREVersion\":{{ $gre_version }},\"ICMPChecksum\":{{ $icmp_checksum }},\"ICMPCode\":{{ $icmp_code }},\"ICMPType\":{{ $icmp_type }},\"IPDestinationAddress\":\"{{ $ip_destination_address }}\",\"IPDestinationSubnet\":\"{{ $ip_destination_subnet }}\",\"IPFragmentOffset\":{{ $ip_fragment_offset }},\"IPHeaderLength\":{{ $ip_header_length }},\"IPMoreFragments\":{{ $ip_more_fragments }},\"IPProtocol\":{{ $ip_protocol }},\"IPProtocolName\":\"{{ $ip_protocol_name }}\",\"IPSourceAddress\":\"{{ $ip_source_address }}\",\"IPSourceSubnet\":\"{{ $ip_source_subnet }}\",\"IPTotalLength\":{{ $ip_total_length }},\"IPTotalLengthBuckets\":{{ $ip_total_length_buckets }},\"IPTTL\":{{ $ip_ttl }},\"IPTTLBuckets\":{{ $ip_ttl_buckets }},\"IPv4Checksum\":{{ $ipv4_checksum }},\"IPv4DontFragment\":{{ $ipv4_dont_fragment }},\"IPv4DSCP\":{{ $ipv4_dscp }},\"IPv4ECN\":{{ $ipv4_ecn }},\"IPv4Identification\":{{ $ipv4_identification }},\"IPv4Options\":{{ $ipv4_options }},\"IPv6DSCP\":{{ $ipv6_dscp }},\"IPv6ECN\":{{ $ipv6_ecn }},\"IPv6ExtensionHeaders\":\"{{ $ipv6_extension_headers }}\",\"IPv6FlowLabel\":{{ $ipv6_flow_label }},\"IPv6Identification\":{{ $ipv6_identification }},\"MitigationReason\":\"{{ $mitigation_reason }}\",\"MitigationScope\":\"{{ $mitigation_scope }}\",\"MitigationSystem\":\"{{ $mitigation_system }}\",\"Outcome\":\"{{ $outcome }}\",\"ProtocolState\":\"{{ $protocol_state }}\",\"RuleID\":\"{{ $rule_id }}\",\"RuleName\":\"{{ $rule_name }}\",\"RulesetID\":\"{{ $ruleset_id }}\",\"RulesetOverrideID\":\"{{ $ruleset_override_id }}\",\"SampleInterval\":{{ $sample_interval }},\"SourceASN\":{{ $source_asn }},\"SourceASNName\":\"{{ $source_asn_name }}\",\"SourceCountry\":\"{{ $source_country }}\",\"SourceGeoHash\":\"{{ $source_geo_hash }}\",\"SourcePort\":{{ $source_port }},\"TCPAcknowledgementNumber\":{{ $tcp_acknowledgement_number }},\"TCPChecksum\":{{ $tcp_checksum }},\"TCPDataOffset\":{{ $tcp_data_offset }},\"TCPFlags\":{{ $tcp_flags }},\"TCPFlagsString\":\"{{ $tcp_flags_string }}\",\"TCPMSS\":{{ $tcp_mss }},\"TCPOptions\":\"{{ $tcp_options }}\",\"TCPSACKBlocks\":{{ $tcp_sack_blocks }},\"TCPSACKPermitted\":{{ $tcp_sack_permitted }},\"TCPSequenceNumber\":{{ $tcp_sequence_number }},\"TCPTimestampECR\":{{ $tcp_timestamp_ecr }},\"TCPTimestampValue\":{{ $tcp_timestamp_value }},\"TCPUrgentPointer\":{{ $tcp_urgent_pointer }},\"TCPWindowScale\":{{ $tcp_window_scale }},\"TCPWindowSize\":{{ $tcp_window_size }},\"UDPChecksum\":{{ $udp_checksum }},\"UDPPayloadLength\":{{ $udp_payload_length }},\"Verdict\":\"{{ $verdict }}\"}",
     "event": {
         "dataset": "cloudflare_logpush.network_analytics"
     },

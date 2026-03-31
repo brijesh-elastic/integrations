@@ -5,21 +5,23 @@ fields:
     cardinality: 1000
   - name: attack_id
     cardinality: 1000
+  - name: attack_vector
+    cardinality: 100
+  - name: colo_city
+    cardinality: 200
+  - name: colo_code
+    cardinality: 200
   - name: colo_country
     cardinality: 200
   - name: colo_geo_hash
     cardinality: 5000
-  - name: colo_id
-    range:
-      min: 1
-      max: 1000
   - name: colo_name
     cardinality: 200
   - name: destination_asn
     range:
       min: 1
       max: 65535
-  - name: destination_asn_description
+  - name: destination_asn_name
     cardinality: 1000
   - name: destination_country
     cardinality: 200
@@ -33,7 +35,7 @@ fields:
     enum: [ingress, egress]
   - name: gre_checksum
     value: 10
-  - name: gre_ethertype
+  - name: gre_ether_type
     value: 10
   - name: gre_header_length
     value: 1024
@@ -113,17 +115,19 @@ fields:
     enum: [OPEN, CLOSED, ESTABLISHED, SYN_SENT, SYN_RECEIVED, FIN_WAIT]
   - name: rule_id
     cardinality: 1000
+  - name: rule_name
+    cardinality: 1000
   - name: ruleset_id
     cardinality: 100
   - name: ruleset_override_id
     cardinality: 100
   - name: sample_interval
-    value: 1
+    value: 100
   - name: source_asn
     range:
       min: 1
       max: 65535
-  - name: source_asn_description
+  - name: source_asn_name
     cardinality: 1000
   - name: source_country
     cardinality: 200
@@ -149,7 +153,7 @@ fields:
     cardinality: 50
   - name: tcp_sack_blocks
     value: 1
-  - name: tcp_sacks_permitted
+  - name: tcp_sack_permitted
     value: 1
   - name: tcp_sequence_number
     value: 100

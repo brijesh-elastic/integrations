@@ -4,17 +4,21 @@
   type: keyword
 - name: attack_id
   type: keyword
+- name: attack_vector
+  type: keyword
+- name: colo_city
+  type: keyword
+- name: colo_code
+  type: keyword
 - name: colo_country
   type: keyword
 - name: colo_geo_hash
   type: keyword
-- name: colo_id
-  type: long
 - name: colo_name
   type: keyword
 - name: destination_asn
   type: long
-- name: destination_asn_description
+- name: destination_asn_name
   type: keyword
 - name: destination_country
   type: keyword
@@ -26,7 +30,7 @@
   type: keyword
 - name: gre_checksum
   type: long
-- name: gre_ethertype
+- name: gre_ether_type
   type: long
 - name: gre_header_length
   type: long
@@ -102,6 +106,8 @@
   type: keyword
 - name: rule_id
   type: keyword
+- name: rule_name
+  type: keyword
 - name: ruleset_id
   type: keyword
 - name: ruleset_override_id
@@ -110,7 +116,7 @@
   type: long
 - name: source_asn
   type: long
-- name: source_asn_description
+- name: source_asn_name
   type: keyword
 - name: source_country
   type: keyword
@@ -134,7 +140,7 @@
   type: keyword
 - name: tcp_sack_blocks
   type: long
-- name: tcp_sacks_permitted
+- name: tcp_sack_permitted
   type: long
 - name: tcp_sequence_number
   type: long

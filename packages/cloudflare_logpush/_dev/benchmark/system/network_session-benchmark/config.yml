@@ -24,9 +24,9 @@ fields:
       min: 0
       max: 1000
   - name: client_tls_version
-    enum: ["TLS 1.2", "TLS 1.3"]
+    enum: ["none", "TLS 1.2", "TLS 1.3"]
   - name: connection_close_reason
-    enum: [CLIENT_CLOSED, SERVER_CLOSED, TIMEOUT, ERROR, UNKNOWN]
+    enum: [CLIENT_CLOSED, CLIENT_TLS_ERROR, SERVER_CLOSED, TIMEOUT, ERROR, UNKNOWN]
   - name: destination_tunnel_id
     cardinality: 100
   - name: device_id
