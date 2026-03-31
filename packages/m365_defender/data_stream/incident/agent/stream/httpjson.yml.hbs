@@ -35,9 +35,11 @@ request.transforms:
   - set:
       target: url.params.$orderby
       value: 'lastUpdateDateTime asc'
+{{#if include_alerts}}
   - set:
       target: url.params.$expand
       value: 'alerts'
+{{/if}}
 response.pagination:
   - set:
       target: url.params.$filter
