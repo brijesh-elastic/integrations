@@ -3,7 +3,7 @@
   changes:
     - description: Add support of new fields to vulnerability data stream.
       type: enhancement
-      link: https://github.com/elastic/integrations/pull/1
+      link: https://github.com/elastic/integrations/pull/18274
 - version: "2.1.0"
   changes:
     - description: Fix API sorting in vulnerability data stream.
