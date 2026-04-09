@@ -339,12 +339,11 @@ processors:
       field: json.ClientTlsProtocol
       target_field: cloudflare_logpush.spectrum_event.client.tls.protocol
       ignore_missing: true
-  - grok:
-      if: ctx.cloudflare_logpush?.spectrum_event?.client?.tls?.protocol != 'none' && ctx.cloudflare_logpush?.spectrum_event?.client?.tls?.protocol != 'unknown'
+  - dissect:
+      if: ctx.cloudflare_logpush?.spectrum_event?.client?.tls?.protocol != null && ctx.cloudflare_logpush.spectrum_event.client.tls.protocol != 'none' && ctx.cloudflare_logpush.spectrum_event.client.tls.protocol != 'unknown'
       field: cloudflare_logpush.spectrum_event.client.tls.protocol
-      patterns:
-        - "^%{DATA:tls.version_protocol}v%{DATA:tls.version}$"
-      ignore_failure: true
+      pattern: '%{tls.version_protocol}v%{tls.version}'
+      ignore_missing: true
   - lowercase:
       field: tls.version_protocol
       ignore_missing: true

@@ -217,10 +217,10 @@ processors:
       field: json.ClientRequestProtocol
       target_field: cloudflare_logpush.firewall_event.client.request.protocol
       ignore_missing: true
-  - grok:
+  - dissect:
       field: cloudflare_logpush.firewall_event.client.request.protocol
-      patterns:
-        - "^%{DATA:network.protocol}/%{DATA:http.version}$"
+      pattern: '%{network.protocol}/%{http.version}'
+      ignore_missing: true
       ignore_failure: true
   - lowercase:
       field: network.protocol
