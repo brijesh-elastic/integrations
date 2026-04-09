@@ -12,7 +12,6 @@ processors:
   - json:
       field: event.original
       target_field: json
-      ignore_failure: true
   - set:
       field: event.category
       value: [network]
