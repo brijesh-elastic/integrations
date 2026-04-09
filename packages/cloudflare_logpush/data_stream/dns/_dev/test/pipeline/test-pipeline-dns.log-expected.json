@@ -28,10 +28,11 @@
             "dns": {
                 "question": {
                     "name": "example.com"
-                }
+                },
+                "response_code": "NoError"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -85,10 +86,11 @@
             "dns": {
                 "question": {
                     "name": "example.com"
-                }
+                },
+                "response_code": "NoError"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -142,10 +144,11 @@
             "dns": {
                 "question": {
                     "name": "example.com"
-                }
+                },
+                "response_code": "NoError"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [

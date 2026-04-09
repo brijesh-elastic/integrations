@@ -69,11 +69,13 @@
                         "type": "A",
                         "type_id": 1
                     },
-                    "resolved_ip": [
-                        "67.43.156.1",
-                        "67.43.156.2",
-                        "67.43.156.3"
-                    ],
+                    "resolved_ip_details": {
+                        "ips": [
+                            "67.43.156.1",
+                            "67.43.156.2",
+                            "67.43.156.3"
+                        ]
+                    },
                     "resolver_decision": "allowedOnNoPolicyMatch",
                     "response_code": "0",
                     "source": {
@@ -111,6 +113,9 @@
                 "ip": "89.160.20.129",
                 "port": 443
             },
+            "device": {
+                "id": "083a8354-d56c-11ed-9771-6a842b111aaa"
+            },
             "dns": {
                 "answers": [
                     {
@@ -138,7 +143,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -165,12 +170,14 @@
                     "zt-test-vm1"
                 ],
                 "ip": [
+                    "89.160.20.129",
                     "67.43.156.2",
-                    "89.160.20.129"
+                    "67.43.156.1",
+                    "67.43.156.3"
                 ],
                 "user": [
-                    "166befbb-00e3-5e20-bd6e-27245000000",
-                    "user@test.com"
+                    "user@test.com",
+                    "166befbb-00e3-5e20-bd6e-27245000000"
                 ]
             },
             "source": {
@@ -267,11 +274,13 @@
                         "type": "A",
                         "type_id": 1
                     },
-                    "resolved_ip": [
-                        "67.43.156.1",
-                        "67.43.156.2",
-                        "67.43.156.3"
-                    ],
+                    "resolved_ip_details": {
+                        "ips": [
+                            "67.43.156.1",
+                            "67.43.156.2",
+                            "67.43.156.3"
+                        ]
+                    },
                     "resolver_decision": "allowedOnNoPolicyMatch",
                     "response_code": "0",
                     "source": {
@@ -309,6 +318,9 @@
                 "ip": "89.160.20.129",
                 "port": 443
             },
+            "device": {
+                "id": "083a8354-d56c-11ed-9771-6a842b111aaa"
+            },
             "dns": {
                 "answers": [
                     {
@@ -336,7 +348,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -363,12 +375,14 @@
                     "zt-test-vm1"
                 ],
                 "ip": [
+                    "89.160.20.129",
                     "67.43.156.2",
-                    "89.160.20.129"
+                    "67.43.156.1",
+                    "67.43.156.3"
                 ],
                 "user": [
-                    "166befbb-00e3-5e20-bd6e-27245000000",
-                    "user@test.com"
+                    "user@test.com",
+                    "166befbb-00e3-5e20-bd6e-27245000000"
                 ]
             },
             "source": {
@@ -465,11 +479,13 @@
                         "type": "A",
                         "type_id": 1
                     },
-                    "resolved_ip": [
-                        "67.43.156.1",
-                        "67.43.156.2",
-                        "67.43.156.3"
-                    ],
+                    "resolved_ip_details": {
+                        "ips": [
+                            "67.43.156.1",
+                            "67.43.156.2",
+                            "67.43.156.3"
+                        ]
+                    },
                     "resolver_decision": "allowedOnNoPolicyMatch",
                     "response_code": "0",
                     "source": {
@@ -507,6 +523,9 @@
                 "ip": "89.160.20.129",
                 "port": 443
             },
+            "device": {
+                "id": "083a8354-d56c-11ed-9771-6a842b111aaa"
+            },
             "dns": {
                 "answers": [
                     {
@@ -534,7 +553,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -561,12 +580,14 @@
                     "zt-test-vm1"
                 ],
                 "ip": [
+                    "89.160.20.129",
                     "67.43.156.2",
-                    "89.160.20.129"
+                    "67.43.156.1",
+                    "67.43.156.3"
                 ],
                 "user": [
-                    "166befbb-00e3-5e20-bd6e-27245000000",
-                    "user@test.com"
+                    "user@test.com",
+                    "166befbb-00e3-5e20-bd6e-27245000000"
                 ]
             },
             "source": {
@@ -677,7 +698,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -704,8 +725,8 @@
                     "81.2.69.144"
                 ],
                 "user": [
-                    "10d3bda2088ec9b9d71caa6d7f3a6657",
-                    "me@example.com"
+                    "me@example.com",
+                    "10d3bda2088ec9b9d71caa6d7f3a6657"
                 ]
             },
             "source": {
@@ -803,7 +824,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -830,8 +851,8 @@
                     "81.2.69.144"
                 ],
                 "user": [
-                    "10d3bda2088ec9b9d71caa6d7f3a6657",
-                    "me@example.com"
+                    "me@example.com",
+                    "10d3bda2088ec9b9d71caa6d7f3a6657"
                 ]
             },
             "source": {
