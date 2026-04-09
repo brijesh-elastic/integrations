@@ -1,4 +1,10 @@
 # newer versions go on top
+- version: "1.44.0"
+  changes:
+    - description: |
+        Add support for new fields, improve error handling, and ECS field mappings across all data streams.
+      type: enhancement
+      link: https://github.com/elastic/integrations/pull/18257
 - version: "1.43.3"
   changes:
     - description: Use triple-brace Mustache templating when referencing variables in ingest pipelines.
