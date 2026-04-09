@@ -1,6 +1,5 @@
 - name: cloudflare_logpush.sinkhole_http
   type: group
-  description: Integration for parsing Cloudflare Logpush Sinkhole HTTP logs.
   fields:
     - name: account_id
       type: keyword
