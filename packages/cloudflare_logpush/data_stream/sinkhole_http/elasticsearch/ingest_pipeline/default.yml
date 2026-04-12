@@ -39,6 +39,10 @@ processors:
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
 # Timestamp
+  - convert:
+      field: json.Timestamp
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_timestamp_to_milli
@@ -69,11 +73,12 @@ processors:
       tag: set_timestamp
 
 # Handle destination IP
-  - rename:
+  - convert:
       field: json.DestAddr
       target_field: cloudflare_logpush.sinkhole_http.destination.ip
+      type: ip
       ignore_missing: true
-      tag: rename_destination_ip
+      if: ctx.json?.DestAddr != ''
   - set:
       field: destination.ip
       copy_from: cloudflare_logpush.sinkhole_http.destination.ip
@@ -105,11 +110,12 @@ processors:
       tag: rename_destination_as_org
 
 # Handle source IP
-  - rename:
+  - convert:
       field: json.SrcAddr
       target_field: cloudflare_logpush.sinkhole_http.source.ip
+      type: ip
       ignore_missing: true
-      tag: rename_source_ip
+      if: ctx.json?.SrcAddr != ''
   - set:
       field: source.ip
       copy_from: cloudflare_logpush.sinkhole_http.source.ip
@@ -151,11 +157,12 @@ processors:
       copy_from: cloudflare_logpush.sinkhole_http.request.body.content
       ignore_empty_value: true
       tag: set_http_body
-  - rename:
+  - convert:
       field: json.BodyLength
       target_field: cloudflare_logpush.sinkhole_http.request.body.bytes
+      type: long
       ignore_missing: true
-      tag: rename_http_body_bytes
+      if: ctx.json?.BodyLength != ''
   - set:
       field: http.request.body.bytes
       copy_from: cloudflare_logpush.sinkhole_http.request.body.bytes

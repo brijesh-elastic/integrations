@@ -39,6 +39,10 @@ processors:
         must be removed.
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
+  - convert:
+      field: json.When
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_when_to_milli

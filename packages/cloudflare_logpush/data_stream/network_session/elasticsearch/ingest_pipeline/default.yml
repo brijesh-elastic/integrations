@@ -33,6 +33,14 @@ processors:
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
 # ECS fields
+  - convert:
+      field: json.SessionStartTime
+      type: long
+      ignore_missing: true
+  - convert:
+      field: json.SessionEndTime
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_session_start_time_to_milli
@@ -96,18 +104,22 @@ processors:
   - set:
       field: cloudflare_logpush.network_session.timestamp
       copy_from: "@timestamp"
-  - rename:
+  - convert:
       field: json.BytesReceived
       target_field: cloudflare_logpush.network_session.destination.bytes
+      type: long
       ignore_missing: true
+      if: ctx.json?.BytesReceived != ''
   - set:
       field: destination.bytes
       copy_from: cloudflare_logpush.network_session.destination.bytes
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.BytesSent
       target_field: cloudflare_logpush.network_session.source.bytes
+      type: long
       ignore_missing: true
+      if: ctx.json?.BytesSent != ''
   - set:
       field: source.bytes
       copy_from: cloudflare_logpush.network_session.source.bytes
@@ -132,10 +144,12 @@ processors:
       field: host.name
       copy_from: cloudflare_logpush.network_session.host.name
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.OriginIP
       target_field: cloudflare_logpush.network_session.destination.ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.OriginIP != ''
   - set:
       field: destination.ip
       copy_from: cloudflare_logpush.network_session.destination.ip
@@ -160,10 +174,12 @@ processors:
       field: destination.as.organization_name
       target_field: destination.as.organization.name
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.OriginPort
       target_field: cloudflare_logpush.network_session.destination.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.OriginPort != ''
   - set:
       field: destination.port
       copy_from: cloudflare_logpush.network_session.destination.port
@@ -192,26 +208,32 @@ processors:
       field: event.id
       copy_from: cloudflare_logpush.network_session.session.id
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.SessionStartTime
       target_field: cloudflare_logpush.network_session.session.start
+      type: long
       ignore_missing: true
+      if: ctx.json?.SessionStartTime != ''
   - set:
       field: event.start
       copy_from: cloudflare_logpush.network_session.session.start
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.SessionEndTime
       target_field: cloudflare_logpush.network_session.session.end
+      type: long
       ignore_missing: true
+      if: ctx.json?.SessionEndTime != ''
   - set:
       field: event.end
       copy_from: cloudflare_logpush.network_session.session.end
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.SourceIP
       target_field: cloudflare_logpush.network_session.source.ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.SourceIP != ''
   - set:
       field: source.ip
       copy_from: cloudflare_logpush.network_session.source.ip
@@ -236,10 +258,12 @@ processors:
       field: source.as.organization_name
       target_field: source.as.organization.name
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.SourcePort
       target_field: cloudflare_logpush.network_session.source.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.SourcePort != ''
   - set:
       field: source.port
       copy_from: cloudflare_logpush.network_session.source.port
@@ -273,17 +297,20 @@ processors:
       field: json.AccountID
       target_field: cloudflare_logpush.network_session.account_id
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.ClientTCPHandshakeDurationMs
       target_field: cloudflare_logpush.network_session.tcp.client.handshake_time_ms
+      type: long
       ignore_missing: true
+      if: ctx.json?.ClientTCPHandshakeDurationMs != ''
   - rename:
       field: json.ConnectionCloseReason
       target_field: cloudflare_logpush.network_session.tcp.connection.close_reason
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.ConnectionReuse
       target_field: cloudflare_logpush.network_session.tcp.connection.reuse
+      type: boolean
       ignore_missing: true
   - rename:
       field: json.DestinationTunnelID
@@ -293,14 +320,18 @@ processors:
       field: json.EgressColoName
       target_field: cloudflare_logpush.network_session.egress.colo_name
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.EgressIP
       target_field: cloudflare_logpush.network_session.egress.ip
+      type: ip
       ignore_missing: true
-  - rename:
+      if: ctx.json?.EgressIP != ''
+  - convert:
       field: json.EgressPort
       target_field: cloudflare_logpush.network_session.egress.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.EgressPort != ''
   - rename:
       field: json.EgressRuleID
       target_field: cloudflare_logpush.network_session.egress.rule.id
@@ -317,22 +348,28 @@ processors:
       field: json.Offramp
       target_field: cloudflare_logpush.network_session.offramp
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.RuleEvaluationDurationMs
       target_field: cloudflare_logpush.network_session.rule_evaluation.time_ms
+      type: long
       ignore_missing: true
-  - rename:
+      if: ctx.json?.RuleEvaluationDurationMs != ''
+  - convert:
       field: json.SourceInternalIP
       target_field: cloudflare_logpush.network_session.source.internal_ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.SourceInternalIP != ''
   - rename:
       field: json.ClientTLSCipher
       target_field: cloudflare_logpush.network_session.tls.client.cipher
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.ClientTLSHandshakeDurationMs
       target_field: cloudflare_logpush.network_session.tls.client.handshake_time_ms
+      type: long
       ignore_missing: true
+      if: ctx.json?.ClientTLSHandshakeDurationMs != ''
   - rename:
       field: json.ClientTLSVersion
       target_field: cloudflare_logpush.network_session.tls.client.version
@@ -345,10 +382,12 @@ processors:
       field: json.OriginTLSCipher
       target_field: cloudflare_logpush.network_session.tls.server.cipher
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.OriginTLSHandshakeDurationMs
       target_field: cloudflare_logpush.network_session.tls.server.handshake_time_ms
+      type: long
       ignore_missing: true
+      if: ctx.json?.OriginTLSHandshakeDurationMs != ''
   - rename:
       field: json.OriginTLSVersion
       target_field: cloudflare_logpush.network_session.tls.server.version

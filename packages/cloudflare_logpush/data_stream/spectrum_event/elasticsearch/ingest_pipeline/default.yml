@@ -32,6 +32,18 @@ processors:
         must be removed.
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
+  - convert:
+      field: json.Timestamp
+      type: long
+      ignore_missing: true
+  - convert:
+      field: json.DisconnectTimestamp
+      type: long
+      ignore_missing: true
+  - convert:
+      field: json.ConnectTimestamp
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_timestamp_to_milli
@@ -346,9 +358,10 @@ processors:
       field: json.ColoCode
       target_field: cloudflare_logpush.spectrum_event.colo.code
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.IpFirewall
       target_field: cloudflare_logpush.spectrum_event.ip_firewall
+      type: boolean
       ignore_missing: true
   - rename:
       field: json.OriginProto

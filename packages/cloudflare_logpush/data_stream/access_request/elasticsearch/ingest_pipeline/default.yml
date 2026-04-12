@@ -33,6 +33,10 @@ processors:
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
 # ECS fields
+  - convert:
+      field: json.CreatedAt
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_created_at_to_milli
@@ -67,9 +71,10 @@ processors:
       field: event.action
       copy_from: cloudflare_logpush.access_request.action
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.Allowed
       target_field: cloudflare_logpush.access_request.allowed
+      type: boolean
       ignore_missing: true
 # Enrich event.type based on the allowed field
   - append:
@@ -114,10 +119,12 @@ processors:
       field: user.email
       copy_from: cloudflare_logpush.access_request.user.email
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.IPAddress
       target_field: cloudflare_logpush.access_request.client.ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.IPAddress != ''
   - set:
       field: client.ip
       copy_from: cloudflare_logpush.access_request.client.ip
@@ -162,10 +169,12 @@ processors:
       field: json.TemporaryAccessApprovers
       target_field: cloudflare_logpush.access_request.temp_access.approvers
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.TemporaryAccessDuration
       target_field: cloudflare_logpush.access_request.temp_access.duration
+      type: long
       ignore_missing: true
+      if: ctx.json?.TemporaryAccessDuration != ''
   - rename:
       field: json.UserUID
       target_field: cloudflare_logpush.access_request.user.id

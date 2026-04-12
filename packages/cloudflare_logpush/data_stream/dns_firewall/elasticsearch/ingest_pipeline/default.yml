@@ -39,6 +39,10 @@ processors:
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
 # Timestamp
+  - convert:
+      field: json.Timestamp
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_timestamp_to_milli
@@ -69,11 +73,12 @@ processors:
       tag: set_timestamp
 
 # Handle source IP
-  - rename:
+  - convert:
       field: json.SourceIP
       target_field: cloudflare_logpush.dns_firewall.source.ip
+      type: ip
       ignore_missing: true
-      tag: rename_source_ip
+      if: ctx.json?.SourceIP != ''
   - set:
       field: source.ip
       copy_from: cloudflare_logpush.dns_firewall.source.ip
@@ -182,36 +187,39 @@ processors:
       target_field: cloudflare_logpush.dns_firewall.colo.code
       ignore_missing: true
       tag: rename_colo_code
-  - rename:
+  - convert:
       field: json.EDNSSubnet
       target_field: cloudflare_logpush.dns_firewall.edns.subnet
+      type: ip
       ignore_missing: true
-      tag: rename_edns_subnet
-  - rename:
+      if: ctx.json?.EDNSSubnet != ''
+  - convert:
       field: json.EDNSSubnetLength
       target_field: cloudflare_logpush.dns_firewall.edns.subnet_length
+      type: long
       ignore_missing: true
-      tag: rename_edns_subnet_length
-  - rename:
+      if: ctx.json?.EDNSSubnetLength != ''
+  - convert:
       field: json.QueryDO
       target_field: cloudflare_logpush.dns_firewall.question.dnssec_ok
+      type: boolean
       ignore_missing: true
-      tag: rename_question_do
-  - rename:
+  - convert:
       field: json.QueryRD
       target_field: cloudflare_logpush.dns_firewall.question.recursion_desired
+      type: boolean
       ignore_missing: true
-      tag: rename_question_recursion_desired
-  - rename:
+  - convert:
       field: json.QuerySize
       target_field: cloudflare_logpush.dns_firewall.question.size
+      type: long
       ignore_missing: true
-      tag: rename_question_size
-  - rename:
+      if: ctx.json?.QuerySize != ''
+  - convert:
       field: json.QueryTCP
       target_field: cloudflare_logpush.dns_firewall.question.tcp
+      type: boolean
       ignore_missing: true
-      tag: rename_question_tcp
   - set:
       field: network.transport
       value: tcp
@@ -222,11 +230,11 @@ processors:
       value: udp
       if: ctx.cloudflare_logpush?.dns_firewall?.question?.tcp == false
       tag: set_network_transport_udp
-  - rename:
+  - convert:
       field: json.QueryType
       target_field: cloudflare_logpush.dns_firewall.question.type
+      type: long
       ignore_missing: true
-      tag: rename_question_type
   - script:
       lang: painless
       if: ctx.cloudflare_logpush?.dns_firewall?.question?.type != null
@@ -336,31 +344,33 @@ processors:
         if (params.containsKey(queryType)) {
           ctx.dns.question.type = params[queryType];
         }
-  - rename:
+  - convert:
       field: json.ResponseCached
       target_field: cloudflare_logpush.dns_firewall.response.cached
+      type: boolean
       ignore_missing: true
-      tag: rename_dns_response_cached
   - rename:
       field: json.ResponseReason
       target_field: cloudflare_logpush.dns_firewall.response.reason
       ignore_missing: true
       tag: rename_dns_response_reason
-  - rename:
+  - convert:
       field: json.ResponseCachedStale
       target_field: cloudflare_logpush.dns_firewall.response.cached_stale
+      type: boolean
       ignore_missing: true
-      tag: rename_dns_response_cached_stale
-  - rename:
+  - convert:
       field: json.UpstreamIP
       target_field: cloudflare_logpush.dns_firewall.upstream.ip
+      type: ip
       ignore_missing: true
-      tag: rename_dns_upstream_ip
-  - rename:
+      if: ctx.json?.UpstreamIP != ''
+  - convert:
       field: json.UpstreamResponseTimeMs
       target_field: cloudflare_logpush.dns_firewall.upstream.response_time_ms
+      type: long
       ignore_missing: true
-      tag: rename_dns_upstream_response_time_ms
+      if: ctx.json?.UpstreamResponseTimeMs != ''
 
 # Create related fields
   - append:
