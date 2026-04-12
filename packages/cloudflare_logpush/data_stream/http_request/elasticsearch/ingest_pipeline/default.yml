@@ -2,29 +2,36 @@
 description: Pipeline for parsing Cloudflare HTTP Request logs.
 processors:
   - set:
+      tag: set_ecs_version_b777da29
       field: ecs.version
       value: '9.3.0'
   - rename:
       field: message
+      tag: rename_message_to_event_original
       target_field: event.original
       ignore_missing: true
       description: Renames the original `message` field to `event.original` to store a copy of the original message. The `event.original` field is not touched if the document already has one; it may happen when Logstash sends the document.
       if: ctx.event?.original == null
   - remove:
       field: message
+      tag: remove_message
       ignore_missing: true
       description: The `message` field is no longer required if the document has an `event.original` field.
       if: ctx.event?.original != null
   - json:
+      tag: json_event_original_to_json_5e54dc16
       field: event.original
       target_field: json
   - set:
+      tag: set_event_category_dbab8a4e
       field: event.category
       value: [network]
   - set:
+      tag: set_event_kind_de80643c
       field: event.kind
       value: event
   - set:
+      tag: set_event_type_ec95f7f2
       field: event.type
       value: [info]
   ## AWS S3 input does _id Based Deduplication and generates "_id" by default.
@@ -32,28 +39,33 @@ processors:
   ## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
   - remove:
       field: _id
+      tag: remove_id_based_deduplication
       description: >
         When data deduplication is disabled, the _id field (used for _id Based Deduplication)
         must be removed.
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
   - convert:
+      tag: convert_json_EdgeStartTimestamp_3a05abf9
       field: json.EdgeStartTimestamp
       type: long
       if: ctx.json?.EdgeStartTimestamp != null && ctx.json.EdgeStartTimestamp != ''
       ignore_failure: true
   - convert:
+      tag: convert_json_EdgeEndTimestamp_56e7554c
       field: json.EdgeEndTimestamp
       type: long
       if: ctx.json?.EdgeEndTimestamp != null && ctx.json.EdgeEndTimestamp != ''
       ignore_failure: true
   - convert:
+      tag: convert_json_Datetime_712ea5a9
       field: json.Datetime
       type: long
       if: ctx.json?.Datetime != null && ctx.json.Datetime != ''
       ignore_failure: true
   - script:
       lang: painless
+      tag: painless_edge_start_timestamp_to_milli
       source: |
         def convertToMillis(long timestamp) {
           if (timestamp > (long)(1e18)) {
@@ -74,9 +86,11 @@ processors:
         }
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_edcb660c
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
+      tag: date_json_EdgeStartTimestamp_to_cloudflare_logpush_http_request_edge_start_time_6e9e517a
       field: json.EdgeStartTimestamp
       if: ctx.json?.EdgeStartTimestamp != null && ctx.json.EdgeStartTimestamp != ''
       formats:
@@ -87,9 +101,11 @@ processors:
       target_field: cloudflare_logpush.http_request.edge.start_time
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_0749b228
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
+      tag: date_json_EdgeEndTimestamp_to_cloudflare_logpush_http_request_edge_end_time_b977f372
       field: json.EdgeEndTimestamp
       if: ctx.json?.EdgeEndTimestamp != null && ctx.json.EdgeEndTimestamp != ''
       formats:
@@ -100,9 +116,11 @@ processors:
       target_field: cloudflare_logpush.http_request.edge.end_time
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_d27501b8
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
+      tag: date_json_Datetime_to_cloudflare_logpush_http_request_datetime_9a7be6f2
       field: json.Datetime
       if: ctx.json?.Datetime != null && ctx.json.Datetime != ''
       formats:
@@ -113,17 +131,21 @@ processors:
       target_field: cloudflare_logpush.http_request.datetime
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_bb7462c8
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
+      tag: set_timestamp_b2955a8a
       field: '@timestamp'
       copy_from: cloudflare_logpush.http_request.datetime
       ignore_empty_value: true
   - set:
+      tag: set_timestamp_f04385f0
       field: '@timestamp'
       copy_from: cloudflare_logpush.http_request.edge.start_time
       ignore_empty_value: true
   - date:
+      tag: date_json_OriginResponseHTTPExpires_to_cloudflare_logpush_http_request_origin_response_http_expires_1c6e26fc
       field: json.OriginResponseHTTPExpires
       if: ctx.json?.OriginResponseHTTPExpires != null && ctx.json.OriginResponseHTTPExpires != ''
       formats:
@@ -138,9 +160,11 @@ processors:
       target_field: cloudflare_logpush.http_request.origin.response.http.expires
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_7907381e
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
+      tag: date_json_OriginResponseHTTPLastModified_to_cloudflare_logpush_http_request_origin_response_http_last_modified_3ed0cc17
       field: json.OriginResponseHTTPLastModified
       if: ctx.json?.OriginResponseHTTPLastModified != null && ctx.json.OriginResponseHTTPLastModified != ''
       timezone: UTC
@@ -155,9 +179,11 @@ processors:
       target_field: cloudflare_logpush.http_request.origin.response.http.last_modified
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_3701b701
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginIP_to_cloudflare_logpush_http_request_origin_ip_4c213612
       field: json.OriginIP
       target_field: cloudflare_logpush.http_request.origin.ip
       if: ctx.json?.OriginIP != ''
@@ -165,63 +191,78 @@ processors:
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_7461deb4
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
+      tag: set_destination_ip_76755d6d
       field: destination.ip
       copy_from: cloudflare_logpush.http_request.origin.ip
       ignore_empty_value: true
   - rename:
+      tag: rename_json_ClientRequestMethod_to_cloudflare_logpush_http_request_client_request_method_f40864a4
       field: json.ClientRequestMethod
       target_field: cloudflare_logpush.http_request.client.request.method
       ignore_missing: true
   - set:
+      tag: set_http_request_method_08f4da24
       field: http.request.method
       copy_from: cloudflare_logpush.http_request.client.request.method
       ignore_empty_value: true
   - rename:
+      tag: rename_json_EdgeResponseContentType_to_cloudflare_logpush_http_request_edge_response_content_type_5fd766bf
       field: json.EdgeResponseContentType
       target_field: cloudflare_logpush.http_request.edge.response.content_type
       ignore_missing: true
   - set:
+      tag: set_http_response_mime_type_1f0cd015
       field: http.response.mime_type
       copy_from: cloudflare_logpush.http_request.edge.response.content_type
       ignore_empty_value: true
   - convert:
+      tag: convert_json_EdgeResponseStatus_to_cloudflare_logpush_http_request_edge_response_status_52bdf495
       field: json.EdgeResponseStatus
       target_field: cloudflare_logpush.http_request.edge.response.status
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_44de6703
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
+      tag: set_http_response_status_code_ae85d3c4
       field: http.response.status_code
       copy_from: cloudflare_logpush.http_request.edge.response.status
       ignore_empty_value: true
   - convert:
+      tag: convert_json_ClientASN_to_cloudflare_logpush_http_request_client_asn_1d5bbc87
       field: json.ClientASN
       target_field: cloudflare_logpush.http_request.client.asn
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_0d91873d
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
+      tag: set_source_as_number_bff92218
       field: source.as.number
       copy_from: cloudflare_logpush.http_request.client.asn
       ignore_empty_value: true
   - rename:
+      tag: rename_json_ClientCountry_to_cloudflare_logpush_http_request_client_country_f44be20c
       field: json.ClientCountry
       target_field: cloudflare_logpush.http_request.client.country
       ignore_missing: true
   - set:
+      tag: set_source_geo_country_iso_code_1764ada0
       field: source.geo.country_iso_code
       copy_from: cloudflare_logpush.http_request.client.country
       ignore_empty_value: true
   - convert:
+      tag: convert_json_ClientIP_to_cloudflare_logpush_http_request_client_ip_0150280f
       field: json.ClientIP
       target_field: cloudflare_logpush.http_request.client.ip
       if: ctx.json?.ClientIP != ''
@@ -229,374 +270,462 @@ processors:
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_c126a271
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
+      tag: set_source_ip_a2ad6d49
       field: source.ip
       copy_from: cloudflare_logpush.http_request.client.ip
       ignore_empty_value: true
   - convert:
       field: json.BotDetectionIDs
       target_field: cloudflare_logpush.http_request.bot.detection_ids
+      tag: convert_bot_detection_ids
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_3a583ff4
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.BotDetectionTags
       target_field: cloudflare_logpush.http_request.bot.detection_tags
+      tag: rename_bot_detections_tags
       ignore_missing: true
   - convert:
       field: json.BotScore
       target_field: cloudflare_logpush.http_request.bot.score.value
+      tag: convert_bot_score_value
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_1c29ba40
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.BotScoreSrc
       target_field: cloudflare_logpush.http_request.bot.score.src
+      tag: rename_bot_score_src
       ignore_missing: true
   - rename:
       field: json.BotTags
       target_field: cloudflare_logpush.http_request.bot.tag
+      tag: rename_bot_tags
       ignore_missing: true
   - rename:
+      tag: rename_json_CacheCacheStatus_to_cloudflare_logpush_http_request_cache_status_1744173a
       field: json.CacheCacheStatus
       target_field: cloudflare_logpush.http_request.cache.status
       ignore_missing: true
   - convert:
+      tag: convert_json_CacheReserveUsed_to_cloudflare_logpush_http_request_cache_reserve_used_6cf7bbd8
       field: json.CacheReserveUsed
       target_field: cloudflare_logpush.http_request.cache.reserve_used
       type: boolean
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_331e1306
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_CacheResponseBytes_to_cloudflare_logpush_http_request_cache_response_bytes_af475a81
       field: json.CacheResponseBytes
       target_field: cloudflare_logpush.http_request.cache.response.bytes
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_416e43ef
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_CacheResponseStatus_to_cloudflare_logpush_http_request_cache_response_status_02873249
       field: json.CacheResponseStatus
       target_field: cloudflare_logpush.http_request.cache.response.status
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_2c5f6807
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_CacheTieredFill_to_cloudflare_logpush_http_request_cache_tiered_fill_c15adcf8
       field: json.CacheTieredFill
       target_field: cloudflare_logpush.http_request.cache.tiered_fill
       type: boolean
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_6af6a9d6
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_ClientCity_to_cloudflare_logpush_http_request_client_city_c3f90d8e
       field: json.ClientCity
       target_field: cloudflare_logpush.http_request.client.city
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientDeviceType_to_cloudflare_logpush_http_request_client_device_type_1a6d51fa
       field: json.ClientDeviceType
       target_field: cloudflare_logpush.http_request.client.device.type
       ignore_missing: true
   - set:
       field: device.type
+      tag: set_device_type_from_client_device_type
       copy_from: cloudflare_logpush.http_request.client.device.type
       ignore_empty_value: true
   - rename:
+      tag: rename_json_ClientIPClass_to_cloudflare_logpush_http_request_client_ip_class_5adb6839
       field: json.ClientIPClass
       target_field: cloudflare_logpush.http_request.client.ip_class
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientLatitude_to_cloudflare_logpush_http_request_client_latitude_06f27c28
       field: json.ClientLatitude
       target_field: cloudflare_logpush.http_request.client.latitude
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientLongitude_to_cloudflare_logpush_http_request_client_longitude_b4f7387c
       field: json.ClientLongitude
       target_field: cloudflare_logpush.http_request.client.longitude
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientMTLSAuthCertFingerprint_to_cloudflare_logpush_http_request_client_mtls_auth_fingerprint_735ba6be
       field: json.ClientMTLSAuthCertFingerprint
       target_field: cloudflare_logpush.http_request.client.mtls.auth.fingerprint
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientMTLSAuthStatus_to_cloudflare_logpush_http_request_client_mtls_auth_status_b0179374
       field: json.ClientMTLSAuthStatus
       target_field: cloudflare_logpush.http_request.client.mtls.auth.status
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRegionCode_to_cloudflare_logpush_http_request_client_region_code_01e279bb
       field: json.ClientRegionCode
       target_field: cloudflare_logpush.http_request.client.region_code
       ignore_missing: true
   - convert:
+      tag: convert_json_ClientRequestBytes_to_cloudflare_logpush_http_request_client_request_bytes_4f8136e9
       field: json.ClientRequestBytes
       target_field: cloudflare_logpush.http_request.client.request.bytes
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_a30f5c3f
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: http.request.bytes
+      tag: set_http_request_bytes_from_client_request_bytes
       copy_from: cloudflare_logpush.http_request.client.request.bytes
       ignore_empty_value: true
   - rename:
+      tag: rename_json_ContentScanObjResults_to_cloudflare_logpush_http_request_content_scan_results_9bec8ee2
       field: json.ContentScanObjResults
       target_field: cloudflare_logpush.http_request.content_scan.results
       ignore_missing: true
   - convert:
+      tag: convert_json_ContentScanObjSizes_to_cloudflare_logpush_http_request_content_scan_sizes_a8b04a6d
       field: json.ContentScanObjSizes
       target_field: cloudflare_logpush.http_request.content_scan.sizes
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_c1f2642b
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_ContentScanObjTypes_to_cloudflare_logpush_http_request_content_scan_types_a06b8342
       field: json.ContentScanObjTypes
       target_field: cloudflare_logpush.http_request.content_scan.types
       ignore_missing: true
   - rename:
+      tag: rename_json_LeakedCredentialCheckResult_to_cloudflare_logpush_http_request_leaked_credential_check_d4d0d473
       field: json.LeakedCredentialCheckResult
       target_field: cloudflare_logpush.http_request.leaked_credential_check
       ignore_missing: true
   - set:
+      tag: set_url_scheme_212f97c8
       field: url.scheme
       copy_from: json.ClientRequestScheme
       ignore_empty_value: true
       if: ctx.url?.scheme == null
   - set:
+      tag: set_url_scheme_26af34b2
       field: url.scheme
       value: https
       ignore_empty_value: true
       if: ctx.url?.scheme == null && ctx.cloudflare?.client?.ssl?.protocol != null
   - set:
+      tag: set_url_scheme_cb50bce2
       field: url.scheme
       value: http
       ignore_empty_value: true
       if: ctx.url?.scheme == null
   - set:
+      tag: set_url_domain_72a6f745
       field: url.domain
       copy_from: json.ClientRequestHost
       ignore_empty_value: true
       if: ctx.url?.domain == null
   - set:
+      tag: set_url_path_b062c440
       field: url.path
       copy_from: json.ClientRequestPath
       ignore_empty_value: true
       if: ctx.url?.path == null
   - set:
+      tag: set_url_query_a659fb29
       field: url.query
       copy_from: json.ClientRequestQuery
       ignore_empty_value: true
       if: ctx.url?.query == null
   - set:
       field: tmp.constructed_uri
+      tag: set_tmp_constructed_uri
       value: '{{{url.scheme}}}://{{{url.domain}}}{{{json.ClientRequestURI}}}'
       if: ctx.json?.ClientRequestURI != null && ctx.url?.scheme != null && ctx.url?.domain != null && ctx.json.ClientRequestURI.startsWith('/')
   - set:
       field: tmp.constructed_uri
+      tag: set_tmp_constructed_uri_from_ClientRequestURI
       copy_from: json.ClientRequestURI
       if: ctx.json?.ClientRequestURI != null && !ctx.json.ClientRequestURI.startsWith('/')
   - uri_parts:
       field: tmp.constructed_uri
+      tag: uri_parts_tmp_constructed_uri
       ignore_failure: true
       if: ctx.tmp?.constructed_uri != null
   - remove:
+      tag: remove_tmp_constructed_uri_9f65bf9e
       field: tmp.constructed_uri
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRequestHost_to_cloudflare_logpush_http_request_client_request_host_d4498d5e
       field: json.ClientRequestHost
       target_field: cloudflare_logpush.http_request.client.request.host
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRequestPath_to_cloudflare_logpush_http_request_client_request_path_f5f75878
       field: json.ClientRequestPath
       target_field: cloudflare_logpush.http_request.client.request.path
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRequestProtocol_to_cloudflare_logpush_http_request_client_request_protocol_07c944a2
       field: json.ClientRequestProtocol
       target_field: cloudflare_logpush.http_request.client.request.protocol
       ignore_missing: true
   - dissect:
       field: cloudflare_logpush.http_request.client.request.protocol
+      tag: dissect_client_request_protocol
       pattern: '%{network.protocol}/%{http.version}'
       ignore_missing: true
       ignore_failure: true
   - lowercase:
+      tag: lowercase_network_protocol_49872259
       field: network.protocol
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRequestReferer_to_cloudflare_logpush_http_request_client_request_referer_e413e594
       field: json.ClientRequestReferer
       target_field: cloudflare_logpush.http_request.client.request.referer
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRequestScheme_to_cloudflare_logpush_http_request_client_request_scheme_349d1500
       field: json.ClientRequestScheme
       target_field: cloudflare_logpush.http_request.client.request.scheme
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRequestSource_to_cloudflare_logpush_http_request_client_request_source_1b28f824
       field: json.ClientRequestSource
       target_field: cloudflare_logpush.http_request.client.request.source
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientRequestURI_to_cloudflare_logpush_http_request_client_request_uri_9f914974
       field: json.ClientRequestURI
       target_field: cloudflare_logpush.http_request.client.request.uri
       ignore_missing: true
   - user_agent:
+      tag: user_agent_json_ClientRequestUserAgent_a0e18c70
       field: json.ClientRequestUserAgent
       if: ctx.json?.ClientRequestUserAgent != ''
       ignore_failure: true
   - rename:
+      tag: rename_json_ClientRequestUserAgent_to_cloudflare_logpush_http_request_client_request_user_agent_712bf2d0
       field: json.ClientRequestUserAgent
       target_field: cloudflare_logpush.http_request.client.request.user.agent
       ignore_missing: true
   - rename:
+      tag: rename_json_ClientSSLCipher_to_cloudflare_logpush_http_request_client_ssl_cipher_91147e80
       field: json.ClientSSLCipher
       target_field: cloudflare_logpush.http_request.client.ssl.cipher
       ignore_missing: true
   - set:
+      tag: set_tls_cipher_d8c6958f
       field: tls.cipher
       copy_from: cloudflare_logpush.http_request.client.ssl.cipher
       ignore_empty_value: true
   - rename:
+      tag: rename_json_ClientSSLProtocol_to_cloudflare_logpush_http_request_client_ssl_protocol_146b34d6
       field: json.ClientSSLProtocol
       target_field: cloudflare_logpush.http_request.client.ssl.protocol
       ignore_missing: true
   - dissect:
       field: cloudflare_logpush.http_request.client.ssl.protocol
+      tag: dissect_client_ssl_protocol
       pattern: '%{tls.version_protocol}v%{tls.version}'
       ignore_missing: true
       ignore_failure: true
   - lowercase:
+      tag: lowercase_tls_version_protocol_b840a1f9
       field: tls.version_protocol
       ignore_missing: true
   - convert:
+      tag: convert_json_ClientSrcPort_to_cloudflare_logpush_http_request_client_src_port_3d226ea5
       field: json.ClientSrcPort
       target_field: cloudflare_logpush.http_request.client.src.port
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_0552caab
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: source.port
+      tag: set_source_port_from_client_src_port
       copy_from: cloudflare_logpush.http_request.client.src.port
       ignore_empty_value: true
   - convert:
+      tag: convert_json_ClientTCPRTTMs_to_cloudflare_logpush_http_request_client_tcp_rtt_ms_ae6167b8
       field: json.ClientTCPRTTMs
       target_field: cloudflare_logpush.http_request.client.tcp_rtt.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_d64f5576
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_ClientXRequestedWith_to_cloudflare_logpush_http_request_client_xrequested_with_4fbd479f
       field: json.ClientXRequestedWith
       target_field: cloudflare_logpush.http_request.client.xrequested_with
       ignore_missing: true
   - rename:
+      tag: rename_json_Cookies_to_cloudflare_logpush_http_request_cookies_1ddf2546
       field: json.Cookies
       target_field: cloudflare_logpush.http_request.cookies
       ignore_missing: true
   - convert:
+      tag: convert_json_EdgeCFConnectingO2O_to_cloudflare_logpush_http_request_edge_cf_connecting_o2o_3c573565
       field: json.EdgeCFConnectingO2O
       target_field: cloudflare_logpush.http_request.edge.cf_connecting_o2o
       type: boolean
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_8a86f07b
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_EdgeColoCode_to_cloudflare_logpush_http_request_edge_colo_code_78f5d638
       field: json.EdgeColoCode
       target_field: cloudflare_logpush.http_request.edge.colo.code
       ignore_missing: true
   - convert:
+      tag: convert_json_EdgeColoID_to_cloudflare_logpush_http_request_edge_colo_id_23567a5d
       field: json.EdgeColoID
       target_field: cloudflare_logpush.http_request.edge.colo.id
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_ee6472bb
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_EdgePathingOp_to_cloudflare_logpush_http_request_edge_pathing_op_d3b079a8
       field: json.EdgePathingOp
       target_field: cloudflare_logpush.http_request.edge.pathing.op
       ignore_missing: true
   - rename:
+      tag: rename_json_EdgePathingSrc_to_cloudflare_logpush_http_request_edge_pathing_src_247c1a48
       field: json.EdgePathingSrc
       target_field: cloudflare_logpush.http_request.edge.pathing.src
       ignore_missing: true
   - rename:
+      tag: rename_json_EdgePathingStatus_to_cloudflare_logpush_http_request_edge_pathing_status_efbc6d66
       field: json.EdgePathingStatus
       target_field: cloudflare_logpush.http_request.edge.pathing.status
       ignore_missing: true
   - rename:
+      tag: rename_json_EdgeRateLimitAction_to_cloudflare_logpush_http_request_edge_rate_limit_action_ee838a82
       field: json.EdgeRateLimitAction
       target_field: cloudflare_logpush.http_request.edge.rate.limit.action
       ignore_missing: true
   - convert:
+      tag: convert_json_EdgeRateLimitID_to_cloudflare_logpush_http_request_edge_rate_limit_id_08f59c5d
       field: json.EdgeRateLimitID
       target_field: cloudflare_logpush.http_request.edge.rate.limit.id
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_2897a9cb
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_EdgeRequestHost_to_cloudflare_logpush_http_request_edge_request_host_92a86166
       field: json.EdgeRequestHost
       target_field: cloudflare_logpush.http_request.edge.request.host
       ignore_missing: true
   - convert:
+      tag: convert_json_EdgeResponseBodyBytes_to_cloudflare_logpush_http_request_edge_response_body_bytes_e749ab58
       field: json.EdgeResponseBodyBytes
       target_field: cloudflare_logpush.http_request.edge.response.body_bytes
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_26361976
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_EdgeResponseBytes_to_cloudflare_logpush_http_request_edge_response_bytes_0d7be1cd
       field: json.EdgeResponseBytes
       target_field: cloudflare_logpush.http_request.edge.response.bytes
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_ac846933
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: http.response.bytes
+      tag: set_http_response_bytes_from_edge_response_bytes
       copy_from: cloudflare_logpush.http_request.edge.response.bytes
       ignore_empty_value: true
   - convert:
+      tag: convert_json_EdgeResponseCompressionRatio_to_cloudflare_logpush_http_request_edge_response_compression_ratio_504133a9
       field: json.EdgeResponseCompressionRatio
       target_field: cloudflare_logpush.http_request.edge.response.compression_ratio
       type: double
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_d444eaf3
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_EdgeServerIP_to_cloudflare_logpush_http_request_edge_server_ip_2a497892
       field: json.EdgeServerIP
       target_field: cloudflare_logpush.http_request.edge.server.ip
       if: ctx.json?.EdgeServerIP != ''
@@ -604,222 +733,273 @@ processors:
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_b0769278
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_EdgeTimeToFirstByteMs_to_cloudflare_logpush_http_request_edge_time_to_first_byte_ms_6df0c524
       field: json.EdgeTimeToFirstByteMs
       target_field: cloudflare_logpush.http_request.edge.time_to_first_byte.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_d0ac58aa
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_SecurityActions_to_cloudflare_logpush_http_request_firewall_matches_action_5da10512
       field: json.SecurityActions
       target_field: cloudflare_logpush.http_request.firewall.matches.action
       ignore_missing: true
   - rename:
+      tag: rename_json_FirewallMatchesActions_to_cloudflare_logpush_http_request_firewall_matches_action_d95e64b7
       field: json.FirewallMatchesActions
       target_field: cloudflare_logpush.http_request.firewall.matches.action
       ignore_missing: true
       if: ctx.cloudflare_logpush?.http_request?.firewall?.matches?.action == null
   - rename:
+      tag: rename_json_SecurityRuleIDs_to_cloudflare_logpush_http_request_firewall_matches_rule_id_a6a1429b
       field: json.SecurityRuleIDs
       target_field: cloudflare_logpush.http_request.firewall.matches.rule_id
       ignore_missing: true
   - rename:
+      tag: rename_json_FirewallMatchesRuleIDs_to_cloudflare_logpush_http_request_firewall_matches_rule_id_e5128330
       field: json.FirewallMatchesRuleIDs
       target_field: cloudflare_logpush.http_request.firewall.matches.rule_id
       ignore_missing: true
       if: ctx.cloudflare_logpush?.http_request?.firewall?.matches?.rule_id == null
   - rename:
+      tag: rename_json_SecuritySources_to_cloudflare_logpush_http_request_firewall_matches_sources_3be8a2a9
       field: json.SecuritySources
       target_field: cloudflare_logpush.http_request.firewall.matches.sources
       ignore_missing: true
   - rename:
+      tag: rename_json_FirewallMatchesSources_to_cloudflare_logpush_http_request_firewall_matches_sources_4c6b7d3e
       field: json.FirewallMatchesSources
       target_field: cloudflare_logpush.http_request.firewall.matches.sources
       ignore_missing: true
       if: ctx.cloudflare_logpush?.http_request?.firewall?.matches?.sources == null
   - rename:
+      tag: rename_json_JA3Hash_to_cloudflare_logpush_http_request_ja3_hash_e226d5df
       field: json.JA3Hash
       target_field: cloudflare_logpush.http_request.ja3_hash
       ignore_missing: true
   - set:
       field: tls.client.ja3
+      tag: set_tls_client_ja3_from_ja3_hash
       copy_from: cloudflare_logpush.http_request.ja3_hash
       ignore_empty_value: true
   - rename:
+      tag: rename_json_JA4_to_cloudflare_logpush_http_request_ja4_59bce106
       field: json.JA4
       target_field: cloudflare_logpush.http_request.ja4
       ignore_missing: true
   - rename:
+      tag: rename_json_JA4Signals_to_cloudflare_logpush_http_request_ja4_signals_d95118dd
       field: json.JA4Signals
       target_field: cloudflare_logpush.http_request.ja4_signals
       ignore_missing: true
   - convert:
+      tag: convert_json_OriginDNSResponseTimeMs_to_cloudflare_logpush_http_request_origin_dns_response_time_ms_238f4dc1
       field: json.OriginDNSResponseTimeMs
       target_field: cloudflare_logpush.http_request.origin.dns_response_time.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_1f662457
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginRequestHeaderSendDurationMs_to_cloudflare_logpush_http_request_origin_request_header_send_duration_ms_c405f76e
       field: json.OriginRequestHeaderSendDurationMs
       target_field: cloudflare_logpush.http_request.origin.request_header_send_duration.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_d93093cc
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginResponseBytes_to_cloudflare_logpush_http_request_origin_response_bytes_79b5b47b
       field: json.OriginResponseBytes
       target_field: cloudflare_logpush.http_request.origin.response.bytes
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_ed99c121
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginResponseDurationMs_to_cloudflare_logpush_http_request_origin_response_duration_ms_71a69769
       field: json.OriginResponseDurationMs
       target_field: cloudflare_logpush.http_request.origin.response.duration.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_105e6a3f
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginResponseHeaderReceiveDurationMs_to_cloudflare_logpush_http_request_origin_response_header_receive_duration_ms_f2a7abbf
       field: json.OriginResponseHeaderReceiveDurationMs
       target_field: cloudflare_logpush.http_request.origin.response.header_receive_duration.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_5e5033a5
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginResponseStatus_to_cloudflare_logpush_http_request_origin_response_status_853ca57d
       field: json.OriginResponseStatus
       target_field: cloudflare_logpush.http_request.origin.response.status
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_a4cd8cbb
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginResponseTime_to_cloudflare_logpush_http_request_origin_response_time_13cb781d
       field: json.OriginResponseTime
       target_field: cloudflare_logpush.http_request.origin.response.time
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_c822a97b
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_OriginSSLProtocol_to_cloudflare_logpush_http_request_origin_ssl_protocol_beee50a5
       field: json.OriginSSLProtocol
       target_field: cloudflare_logpush.http_request.origin.ssl_protocol
       ignore_missing: true
   - convert:
+      tag: convert_json_OriginTCPHandshakeDurationMs_to_cloudflare_logpush_http_request_origin_tcp_handshake_duration_ms_af335fe5
       field: json.OriginTCPHandshakeDurationMs
       target_field: cloudflare_logpush.http_request.origin.tcp_handshake_duration.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_72cc2dcb
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_OriginTLSHandshakeDurationMs_to_cloudflare_logpush_http_request_origin_tls_handshake_duration_ms_8da6ac79
       field: json.OriginTLSHandshakeDurationMs
       target_field: cloudflare_logpush.http_request.origin.tls_handshake_duration.ms
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_98b7c29f
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_ParentRayID_to_cloudflare_logpush_http_request_parent_ray_id_f27e6a53
       field: json.ParentRayID
       target_field: cloudflare_logpush.http_request.parent_ray.id
       ignore_missing: true
   - rename:
+      tag: rename_json_RayID_to_cloudflare_logpush_http_request_ray_id_5aae985a
       field: json.RayID
       target_field: cloudflare_logpush.http_request.ray.id
       ignore_missing: true
   - set:
+      tag: set_event_id_a8495d8d
       field: event.id
       copy_from: cloudflare_logpush.http_request.ray.id
       ignore_empty_value: true
   - rename:
+      tag: rename_json_RequestHeaders_to_cloudflare_logpush_http_request_request_headers_34660b94
       field: json.RequestHeaders
       target_field: cloudflare_logpush.http_request.request.headers
       ignore_missing: true
   - rename:
+      tag: rename_json_ResponseHeaders_to_cloudflare_logpush_http_request_response_headers_c65dbfec
       field: json.ResponseHeaders
       target_field: cloudflare_logpush.http_request.response.headers
       ignore_missing: true
   - rename:
+      tag: rename_json_SecurityLevel_to_cloudflare_logpush_http_request_security_level_b8abdf6d
       field: json.SecurityLevel
       target_field: cloudflare_logpush.http_request.security_level
       ignore_missing: true
   - convert:
+      tag: convert_json_SmartRouteColoID_to_cloudflare_logpush_http_request_smart_route_colo_id_66ce0128
       field: json.SmartRouteColoID
       target_field: cloudflare_logpush.http_request.smart_route.colo.id
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_acc3f3ee
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_UpperTierColoID_to_cloudflare_logpush_http_request_upper_tier_colo_id_16454d92
       field: json.UpperTierColoID
       target_field: cloudflare_logpush.http_request.upper_tier.colo.id
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_544372a8
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_SecurityAction_to_cloudflare_logpush_http_request_waf_action_5e276a4c
       field: json.SecurityAction
       target_field: cloudflare_logpush.http_request.waf.action
       ignore_missing: true
   - rename:
+      tag: rename_json_WAFAction_to_cloudflare_logpush_http_request_waf_action_d16779f0
       field: json.WAFAction
       target_field: cloudflare_logpush.http_request.waf.action
       ignore_missing: true
       if: ctx.cloudflare_logpush?.http_request?.waf?.action == null
   - rename:
+      tag: rename_json_WAFFlags_to_cloudflare_logpush_http_request_waf_flag_f6f072ab
       field: json.WAFFlags
       target_field: cloudflare_logpush.http_request.waf.flag
       ignore_missing: true
   - rename:
+      tag: rename_json_WAFMatchedVar_to_cloudflare_logpush_http_request_waf_matched_var_d988df35
       field: json.WAFMatchedVar
       target_field: cloudflare_logpush.http_request.waf.matched_var
       ignore_missing: true
   - rename:
+      tag: rename_json_WAFProfile_to_cloudflare_logpush_http_request_waf_profile_2fd3fefe
       field: json.WAFProfile
       target_field: cloudflare_logpush.http_request.waf.profile
       ignore_missing: true
   - rename:
+      tag: rename_json_SecurityRuleID_to_cloudflare_logpush_http_request_waf_rule_id_a0ada520
       field: json.SecurityRuleID
       target_field: cloudflare_logpush.http_request.waf.rule.id
       ignore_missing: true
   - rename:
+      tag: rename_json_WAFRuleID_to_cloudflare_logpush_http_request_waf_rule_id_e3b580fa
       field: json.WAFRuleID
       target_field: cloudflare_logpush.http_request.waf.rule.id
       ignore_missing: true
       if: ctx.cloudflare_logpush?.http_request?.waf?.rule?.id == null
   - rename:
+      tag: rename_json_SecurityRuleDescription_to_cloudflare_logpush_http_request_waf_rule_message_8ceb7d17
       field: json.SecurityRuleDescription
       target_field: cloudflare_logpush.http_request.waf.rule.message
       ignore_missing: true
   - rename:
+      tag: rename_json_WAFRuleMessage_to_cloudflare_logpush_http_request_waf_rule_message_dbbafec4
       field: json.WAFRuleMessage
       target_field: cloudflare_logpush.http_request.waf.rule.message
       ignore_missing: true
@@ -829,190 +1009,233 @@ processors:
       target_field: cloudflare_logpush.http_request.waf.score.global
       type: long
       ignore_missing: true
+      tag: convert_waf_score_global
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_df678495
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
       field: json.WAFRCEAttackScore
       target_field: cloudflare_logpush.http_request.waf.score.rce
       type: long
       ignore_missing: true
+      tag: convert_waf_score_rce
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_dbfbe5a3
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
       field: json.WAFSQLiAttackScore
       target_field: cloudflare_logpush.http_request.waf.score.sqli
       type: long
       ignore_missing: true
+      tag: convert_waf_score_sqli
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_e0da2880
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
       field: json.WAFXSSAttackScore
       target_field: cloudflare_logpush.http_request.waf.score.xss
       type: long
       ignore_missing: true
+      tag: convert_waf_score_xss
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_90bea843
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_WorkerCPUTime_to_cloudflare_logpush_http_request_worker_cpu_time_e75c505a
       field: json.WorkerCPUTime
       target_field: cloudflare_logpush.http_request.worker.cpu_time
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_0b102990
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_WorkerStatus_to_cloudflare_logpush_http_request_worker_status_a56133c4
       field: json.WorkerStatus
       target_field: cloudflare_logpush.http_request.worker.status
       ignore_missing: true
   - convert:
+      tag: convert_json_WorkerSubrequest_to_cloudflare_logpush_http_request_worker_subrequest_value_7706e15e
       field: json.WorkerSubrequest
       target_field: cloudflare_logpush.http_request.worker.subrequest.value
       type: boolean
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_52c6be14
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_WorkerSubrequestCount_to_cloudflare_logpush_http_request_worker_subrequest_count_d61893fb
       field: json.WorkerSubrequestCount
       target_field: cloudflare_logpush.http_request.worker.subrequest.count
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_da2d1ae1
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_WorkerWallTimeUs_to_cloudflare_logpush_http_request_worker_wall_time_us_2198e815
       field: json.WorkerWallTimeUs
       target_field: cloudflare_logpush.http_request.worker.wall_time_us
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_e4ace5bb
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_ZoneID_to_cloudflare_logpush_http_request_zone_id_4909bd85
       field: json.ZoneID
       target_field: cloudflare_logpush.http_request.zone.id
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_a6429433
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_ZoneName_to_cloudflare_logpush_http_request_zone_name_21fed8d2
       field: json.ZoneName
       target_field: cloudflare_logpush.http_request.zone.name
       ignore_missing: true
   - rename:
+      tag: rename_json_FraudAttack_to_cloudflare_logpush_http_request_fraud_attack_8a45d67a
       field: json.FraudAttack
       target_field: cloudflare_logpush.http_request.fraud.attack
       ignore_missing: true
   - convert:
+      tag: convert_json_FraudDetectionIDs_to_cloudflare_logpush_http_request_fraud_detection_ids_05ff211e
       field: json.FraudDetectionIDs
       target_field: cloudflare_logpush.http_request.fraud.detection_ids
       type: long
       ignore_missing: true
       on_failure:
         - append:
-                  field: error.message
+            tag: append_error_message_ee7a733c
+            field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
+      tag: rename_json_FraudDetectionTags_to_cloudflare_logpush_http_request_fraud_detection_tags_2dcf7c41
       field: json.FraudDetectionTags
       target_field: cloudflare_logpush.http_request.fraud.detection_tags
       ignore_missing: true
   - rename:
+      tag: rename_json_FraudEmailRisk_to_cloudflare_logpush_http_request_fraud_email_risk_1caf224b
       field: json.FraudEmailRisk
       target_field: cloudflare_logpush.http_request.fraud.email_risk
       ignore_missing: true
   - rename:
+      tag: rename_json_FraudUserID_to_cloudflare_logpush_http_request_fraud_user_id_eb218e7f
       field: json.FraudUserID
       target_field: cloudflare_logpush.http_request.fraud.user_id
       ignore_missing: true
   - rename:
+      tag: rename_json_JSDetectionPassed_to_cloudflare_logpush_http_request_js_detection_passed_09fbbdc6
       field: json.JSDetectionPassed
       target_field: cloudflare_logpush.http_request.js_detection_passed
       ignore_missing: true
   - rename:
+      tag: rename_json_PayPerCrawlStatus_to_cloudflare_logpush_http_request_pay_per_crawl_status_962677d5
       field: json.PayPerCrawlStatus
       target_field: cloudflare_logpush.http_request.pay_per_crawl_status
       ignore_missing: true
   - rename:
+      tag: rename_json_VerifiedBotCategory_to_cloudflare_logpush_http_request_verified_bot_category_286debc8
       field: json.VerifiedBotCategory
       target_field: cloudflare_logpush.http_request.verified_bot_category
       ignore_missing: true
   - rename:
+      tag: rename_json_WebAssetsLabelsManaged_to_cloudflare_logpush_http_request_web_assets_labels_managed_681f6654
       field: json.WebAssetsLabelsManaged
       target_field: cloudflare_logpush.http_request.web_assets.labels_managed
       ignore_missing: true
   - rename:
+      tag: rename_json_WebAssetsOperationID_to_cloudflare_logpush_http_request_web_assets_operation_id_d3e3500e
       field: json.WebAssetsOperationID
       target_field: cloudflare_logpush.http_request.web_assets.operation_id
       ignore_missing: true
   - rename:
+      tag: rename_json_WorkerScriptName_to_cloudflare_logpush_http_request_worker_script_name_a6f79051
       field: json.WorkerScriptName
       target_field: cloudflare_logpush.http_request.worker.script_name
       ignore_missing: true
   - append:
+      tag: append_related_hash_8ac40ba9
       field: related.hash
       value: '{{{cloudflare_logpush.http_request.ja3_hash}}}'
       if: ctx.cloudflare_logpush?.http_request?.ja3_hash != null
       allow_duplicates: false
   - append:
+      tag: append_related_hash_69d4e071
       field: related.hash
       value: '{{{cloudflare_logpush.http_request.ja4}}}'
       if: ctx.cloudflare_logpush?.http_request?.ja4 != null
       allow_duplicates: false
   - append:
+      tag: append_related_hash_70f73950
       field: related.hash
       value: '{{{cloudflare_logpush.http_request.client.mtls.auth.fingerprint}}}'
       if: ctx.cloudflare_logpush?.http_request?.client?.mtls?.auth?.fingerprint != null
       allow_duplicates: false
   - append:
+      tag: append_related_hosts_995ec422
       field: related.hosts
       value: '{{{cloudflare_logpush.http_request.client.request.host}}}'
       if: ctx.cloudflare_logpush?.http_request?.client?.request?.host != null
       allow_duplicates: false
   - append:
+      tag: append_related_hosts_3478de2e
       field: related.hosts
       value: '{{{cloudflare_logpush.http_request.edge.request.host}}}'
       if: ctx.cloudflare_logpush?.http_request?.edge?.request?.host != null
       allow_duplicates: false
   - append:
+      tag: append_related_user_7ed39041
       field: related.user
       value: '{{{cloudflare_logpush.http_request.fraud.user_id}}}'
       if: ctx.cloudflare_logpush?.http_request?.fraud?.user_id != null
       allow_duplicates: false
   - append:
+      tag: append_related_ip_f8980c4d
       field: related.ip
       value: '{{{cloudflare_logpush.http_request.client.ip}}}'
       if: ctx.cloudflare_logpush?.http_request?.client?.ip != null
       allow_duplicates: false
   - append:
+      tag: append_related_ip_31f510cd
       field: related.ip
       value: '{{{cloudflare_logpush.http_request.origin.ip}}}'
       if: ctx.cloudflare_logpush?.http_request?.origin?.ip != null
       allow_duplicates: false
   - append:
+      tag: append_related_ip_10ccce4e
       field: related.ip
       value: '{{{cloudflare_logpush.http_request.edge.server.ip}}}'
       if: ctx.cloudflare_logpush?.http_request?.edge?.server?.ip != null
       allow_duplicates: false
   - remove:
+      tag: remove_json_conf
       field:
         - json
         - _conf
       ignore_missing: true
   - remove:
+      tag: remove_c0e686cf
       field:
         - cloudflare_logpush.http_request.origin.ip
         - cloudflare_logpush.http_request.client.request.method
@@ -1032,6 +1255,7 @@ processors:
       ignore_failure: true
       ignore_missing: true
   - script:
+      tag: script_to_drop_null_values
       lang: painless
       description: This script processor iterates over the whole document to remove fields with null values.
       source: |-
@@ -1058,9 +1282,11 @@ processors:
         handleMap(ctx);
   - set:
       field: event.kind
+      tag: set_pipeline_error_into_event_kind
       value: pipeline_error
       if: ctx.error?.message != null
   - append:
+      tag: append_tags_9fe66b2c
       field: tags
       value: preserve_original_event
       allow_duplicates: false
@@ -1071,6 +1297,7 @@ on_failure:
       value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.kind
+      tag: set_pipeline_error_to_event_kind
       value: pipeline_error
   - append:
       field: tags
