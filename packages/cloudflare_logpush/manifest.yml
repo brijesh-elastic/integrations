@@ -187,6 +187,14 @@ policy_templates:
             show_user: false
             default: ""
             description: URL of the entry point for an AWS web service.
+          - name: region
+            type: text
+            title: Region
+            multi: false
+            required: false
+            show_user: false
+            default: ""
+            description: The name of the AWS region of the end point. Required when using a non-AWS S3-compatible bucket (e.g. Cloudflare R2).
           - name: default_region
             type: text
             title: Default AWS Region
