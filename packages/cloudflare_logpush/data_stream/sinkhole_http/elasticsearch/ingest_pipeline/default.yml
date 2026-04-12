@@ -42,24 +42,14 @@ processors:
   - script:
       lang: painless
       tag: painless_timestamp_to_milli
-      if: ctx.json?.Timestamp != null
+      if: ctx.json?.Timestamp != null && ctx.json.Timestamp instanceof Number
       source: |
-        try {
-          long t;
-          if (ctx.json.Timestamp instanceof String) {
-            t = Long.parseLong(ctx.json.Timestamp);
-          } else if (ctx.json.Timestamp instanceof Number) {
-            t = (long)(ctx.json.Timestamp);
-          } else {
-            return;
-          }
-          if (t > (long)(1e18)) {
-            ctx.json.Timestamp = t/(long)(1e6)
-          } else if (t < (long)(1e10))  {
-            ctx.json.Timestamp = t*(long)(1e3)
-          }
+        long t = (long)(ctx.json.Timestamp);
+        if (t > (long)(1e18)) {
+          ctx.json.Timestamp = t/(long)(1e6)
+        } else if (t < (long)(1e10))  {
+          ctx.json.Timestamp = t*(long)(1e3)
         }
-        catch (Exception e) {}
   - date:
       field: json.Timestamp
       if: ctx.json?.Timestamp != null && ctx.json.Timestamp != ''
