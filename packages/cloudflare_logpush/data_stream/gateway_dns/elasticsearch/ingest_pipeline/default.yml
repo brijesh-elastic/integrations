@@ -474,6 +474,58 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.timezone_inferred_method
       ignore_missing: true
 # Create related fields
+  - rename:
+      field: json.InitialResolvedIPs
+      target_field: cloudflare_logpush.gateway_dns.initial_resolved_ips
+      ignore_missing: true
+  - convert:
+      field: json.InternalDNSDurationMs
+      target_field: cloudflare_logpush.gateway_dns.internal_dns.duration_ms
+      type: long
+      ignore_missing: true
+  - rename:
+      field: json.InternalDNSFallbackStrategy
+      target_field: cloudflare_logpush.gateway_dns.internal_dns.fallback_strategy
+      ignore_missing: true
+  - convert:
+      field: json.InternalDNSRCode
+      target_field: cloudflare_logpush.gateway_dns.internal_dns.rcode
+      type: long
+      ignore_missing: true
+  - rename:
+      field: json.InternalDNSViewID
+      target_field: cloudflare_logpush.gateway_dns.internal_dns.view_id
+      ignore_missing: true
+  - rename:
+      field: json.InternalDNSZoneID
+      target_field: cloudflare_logpush.gateway_dns.internal_dns.zone_id
+      ignore_missing: true
+  - convert:
+      field: json.QueryApplicationIDs
+      target_field: cloudflare_logpush.gateway_dns.question.application.ids
+      type: long
+      ignore_missing: true
+  - rename:
+      field: json.QueryApplicationNames
+      target_field: cloudflare_logpush.gateway_dns.question.application.names
+      ignore_missing: true
+  - rename:
+      field: json.RedirectTargetURI
+      target_field: cloudflare_logpush.gateway_dns.redirect_target_uri
+      ignore_missing: true
+  - rename:
+      field: json.RegistrationID
+      target_field: cloudflare_logpush.gateway_dns.registration_id
+      ignore_missing: true
+  - convert:
+      field: json.RequestContextCategoryIDs
+      target_field: cloudflare_logpush.gateway_dns.request_context_category.ids
+      type: long
+      ignore_missing: true
+  - rename:
+      field: json.RequestContextCategoryNames
+      target_field: cloudflare_logpush.gateway_dns.request_context_category.names
+      ignore_missing: true
   - append:
       field: related.ip
       value: '{{{source.ip}}}'

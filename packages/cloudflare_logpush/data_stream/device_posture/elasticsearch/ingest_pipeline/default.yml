@@ -166,6 +166,10 @@ processors:
       target_field: cloudflare_logpush.device_posture.eval.received
       ignore_missing: true
   - rename:
+      field: json.RegistrationID
+      target_field: cloudflare_logpush.device_posture.registration_id
+      ignore_missing: true
+  - rename:
       field: json.UserUID
       target_field: cloudflare_logpush.device_posture.user.id
       ignore_missing: true

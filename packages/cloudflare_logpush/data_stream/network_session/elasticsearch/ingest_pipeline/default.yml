@@ -364,6 +364,24 @@ processors:
       target_field: cloudflare_logpush.network_session.tls.server.version
       ignore_missing: true
 # Create related fields
+  - convert:
+      field: json.InitialOriginIP
+      target_field: cloudflare_logpush.network_session.initial_origin_ip
+      type: ip
+      ignore_missing: true
+      if: ctx.json?.InitialOriginIP != ''
+  - rename:
+      field: json.RegistrationID
+      target_field: cloudflare_logpush.network_session.registration_id
+      ignore_missing: true
+  - rename:
+      field: json.ResolvedFQDN
+      target_field: cloudflare_logpush.network_session.resolved_fqdn
+      ignore_missing: true
+  - rename:
+      field: json.SNI
+      target_field: cloudflare_logpush.network_session.sni
+      ignore_missing: true
   - append:
       field: related.ip
       value: "{{{source.ip}}}"

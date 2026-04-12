@@ -134,6 +134,16 @@ processors:
       target_field: cloudflare_logpush.workers_trace.script.version
       ignore_missing: true
       tag: rename_script_version
+  - convert:
+      field: json.CPUTimeMs
+      target_field: cloudflare_logpush.workers_trace.cpu_time_ms
+      type: long
+      ignore_missing: true
+  - convert:
+      field: json.WallTimeMs
+      target_field: cloudflare_logpush.workers_trace.wall_time_ms
+      type: long
+      ignore_missing: true
 
   - script:
       description: Convert Workers Trace Events keys to snake case recursively.
