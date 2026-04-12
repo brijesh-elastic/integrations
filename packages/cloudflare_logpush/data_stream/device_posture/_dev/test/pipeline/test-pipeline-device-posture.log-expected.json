@@ -43,8 +43,17 @@
                     "version": "2023.3.258"
                 }
             },
+            "device": {
+                "id": "083a8354-d56c-11ed-9771-111111111",
+                "manufacturer": "Google Compute Engine",
+                "model": {
+                    "name": "Google Compute Engine"
+                },
+                "serial_number": "GoogleCloud-ABCD1234567890",
+                "type": "linux"
+            },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -135,8 +144,17 @@
                     "version": "2023.3.258"
                 }
             },
+            "device": {
+                "id": "083a8354-d56c-11ed-9771-111111111",
+                "manufacturer": "Google Compute Engine",
+                "model": {
+                    "name": "Google Compute Engine"
+                },
+                "serial_number": "GoogleCloud-ABCD1234567890",
+                "type": "linux"
+            },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -227,8 +245,17 @@
                     "version": "2023.3.258"
                 }
             },
+            "device": {
+                "id": "083a8354-d56c-11ed-9771-111111111",
+                "manufacturer": "Google Compute Engine",
+                "model": {
+                    "name": "Google Compute Engine"
+                },
+                "serial_number": "GoogleCloud-ABCD1234567890",
+                "type": "linux"
+            },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [

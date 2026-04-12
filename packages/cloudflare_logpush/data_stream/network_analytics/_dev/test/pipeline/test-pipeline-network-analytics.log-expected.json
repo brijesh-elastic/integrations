@@ -169,7 +169,7 @@
                 "port": 5678
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -191,6 +191,9 @@
                 "hash": [
                     "gbuun"
                 ],
+                "hosts": [
+                    "SJC"
+                ],
                 "ip": [
                     "67.43.156.0",
                     "175.16.199.0"
@@ -209,7 +212,17 @@
             "tags": [
                 "preserve_original_event",
                 "preserve_duplicate_custom_fields"
-            ]
+            ],
+            "threat": {
+                "group": {
+                    "id": "xyz987"
+                },
+                "indicator": {
+                    "id": [
+                        "abc777"
+                    ]
+                }
+            }
         },
         {
             "@timestamp": "2021-07-27T00:01:07.000Z",
@@ -380,7 +393,7 @@
                 "port": 5678
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -402,6 +415,9 @@
                 "hash": [
                     "gbuun"
                 ],
+                "hosts": [
+                    "SJC"
+                ],
                 "ip": [
                     "67.43.156.0",
                     "175.16.199.0"
@@ -420,7 +436,17 @@
             "tags": [
                 "preserve_original_event",
                 "preserve_duplicate_custom_fields"
-            ]
+            ],
+            "threat": {
+                "group": {
+                    "id": "xyz987"
+                },
+                "indicator": {
+                    "id": [
+                        "abc777"
+                    ]
+                }
+            }
         },
         {
             "@timestamp": "2021-07-27T00:01:07.000Z",
@@ -591,7 +617,7 @@
                 "port": 5678
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -613,6 +639,9 @@
                 "hash": [
                     "gbuun"
                 ],
+                "hosts": [
+                    "SJC"
+                ],
                 "ip": [
                     "67.43.156.0",
                     "175.16.199.0"
@@ -631,7 +660,17 @@
             "tags": [
                 "preserve_original_event",
                 "preserve_duplicate_custom_fields"
-            ]
+            ],
+            "threat": {
+                "group": {
+                    "id": "xyz987"
+                },
+                "indicator": {
+                    "id": [
+                        "abc777"
+                    ]
+                }
+            }
         },
         {
             "@timestamp": "2025-05-30T19:16:28.000Z",
@@ -781,7 +820,7 @@
                 "port": 27015
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -804,6 +843,9 @@
                     "tnke1fseyv8b",
                     "9ydqy025w0qn",
                     "u0yhd7hbvm5r"
+                ],
+                "hosts": [
+                    "fra16"
                 ],
                 "ip": [
                     "81.2.69.144",
@@ -979,7 +1021,7 @@
                 "port": 80
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -1002,6 +1044,9 @@
                     "wtw3egg49gts",
                     "9q8yyf3hhvek",
                     "9q9k93whbm56"
+                ],
+                "hosts": [
+                    "sjc06"
                 ],
                 "ip": [
                     "81.2.69.144",
