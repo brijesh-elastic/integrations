@@ -8,25 +8,30 @@ processors:
       field: message
       target_field: event.original
       ignore_missing: true
+      description: Renames the original `message` field to `event.original` to store a copy of the original message. The `event.original` field is not touched if the document already has one; it may happen when Logstash sends the document.
       if: ctx.event?.original == null
+  - remove:
+      field: message
+      ignore_missing: true
+      description: The `message` field is no longer required if the document has an `event.original` field.
+      if: ctx.event?.original != null
   - json:
       field: event.original
       target_field: json
   - set:
       field: event.category
-      value: [email,network]
+      value: [email, network]
   - set:
       field: event.kind
       value: event
   - set:
       field: event.type
       value: [info]
-## AWS S3 input does _id Based Deduplication and generates "_id" by default.
-## When "Data Deduplication" is not enabled, this field must be removed.
-## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
+  ## AWS S3 input does _id Based Deduplication and generates "_id" by default.
+  ## When "Data Deduplication" is not enabled, this field must be removed.
+  ## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
   - remove:
       field: _id
-      tag: remove_id_based_deduplication
       description: >
         When data deduplication is disabled, the _id field (used for _id Based Deduplication)
         must be removed.
@@ -35,10 +40,10 @@ processors:
   - convert:
       field: json.Timestamp
       type: long
-      ignore_missing: true
+      if: ctx.json?.Timestamp != null && ctx.json.Timestamp != ''
+      ignore_failure: true
   - script:
       lang: painless
-      tag: painless_Timestamp_to_milli
       if: ctx.json?.Timestamp != null && ctx.json.Timestamp instanceof Number
       source: |
         long t = (long)(ctx.json.Timestamp);
@@ -47,6 +52,10 @@ processors:
         } else if (t < (long)(1e10))  {
           ctx.json.Timestamp = t*(long)(1e3)
         }
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
       field: json.Timestamp
       if: ctx.json?.Timestamp != null && ctx.json.Timestamp != ''
@@ -56,12 +65,9 @@ processors:
         - yyyy-MM-dd'T'HH:mm:ssZ
       timezone: UTC
       on_failure:
-      - append:
-          field: error.message
-          value: >-
-            Processor '{{{ _ingest.on_failure_processor_type }}}'
-            {{{#_ingest.on_failure_processor_tag}}}with tag '{{{ _ingest.on_failure_processor_tag }}}'
-            {{{/_ingest.on_failure_processor_tag}}}failed with message '{{{ _ingest.on_failure_message }}}'
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: cloudflare_logpush.email_security_alerts.timestamp
       copy_from: '@timestamp'
@@ -82,6 +88,14 @@ processors:
       field: json.CC
       target_field: cloudflare_logpush.email_security_alerts.cc
       ignore_missing: true
+  - foreach:
+      field: cloudflare_logpush.email_security_alerts.cc
+      if: ctx.cloudflare_logpush?.email_security_alerts?.cc instanceof List
+      processor:
+        append:
+          field: email.cc.address
+              value: '{{{_ingest._value}}}'
+          allow_duplicates: false
   - rename:
       field: json.CCName
       target_field: cloudflare_logpush.email_security_alerts.cc_name
@@ -94,6 +108,11 @@ processors:
       field: json.From
       target_field: cloudflare_logpush.email_security_alerts.from
       ignore_missing: true
+  - append:
+      field: email.from.address
+      value: '{{{cloudflare_logpush.email_security_alerts.from}}}'
+      if: ctx.cloudflare_logpush?.email_security_alerts?.from != null
+      allow_duplicates: false
   - rename:
       field: json.FromName
       target_field: cloudflare_logpush.email_security_alerts.from_name
@@ -110,6 +129,10 @@ processors:
       field: json.MessageID
       target_field: cloudflare_logpush.email_security_alerts.message_id
       ignore_missing: true
+  - set:
+      field: email.message_id
+      copy_from: cloudflare_logpush.email_security_alerts.message_id
+      ignore_empty_value: true
   - rename:
       field: json.Origin
       target_field: cloudflare_logpush.email_security_alerts.origin
@@ -122,6 +145,11 @@ processors:
       field: json.ReplyTo
       target_field: cloudflare_logpush.email_security_alerts.reply_to
       ignore_missing: true
+  - append:
+      field: email.reply_to.address
+      value: '{{{cloudflare_logpush.email_security_alerts.reply_to}}}'
+      if: ctx.cloudflare_logpush?.email_security_alerts?.reply_to != null
+      allow_duplicates: false
   - rename:
       field: json.ReplyToName
       target_field: cloudflare_logpush.email_security_alerts.reply_to_name
@@ -130,6 +158,10 @@ processors:
       field: json.SMTPEnvelopeFrom
       target_field: cloudflare_logpush.email_security_alerts.smtp_envelope_from
       ignore_missing: true
+  - set:
+      field: email.sender.address
+      copy_from: cloudflare_logpush.email_security_alerts.smtp_envelope_from
+      ignore_empty_value: true
   - rename:
       field: json.SMTPEnvelopeTo
       target_field: cloudflare_logpush.email_security_alerts.smtp_envelope_to
@@ -137,16 +169,13 @@ processors:
   - convert:
       field: json.SMTPHeloServerIP
       target_field: cloudflare_logpush.email_security_alerts.smtp_helo_server_ip
-      tag: convert_smtp_helo_server_ip
+      if: ctx.json?.SMTPHeloServerIP != ''
       type: ip
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: >-
-              Processor '{{{ _ingest.on_failure_processor_type }}}'
-              {{{#_ingest.on_failure_processor_tag}}}with tag '{{{ _ingest.on_failure_processor_tag }}}'
-              {{{/_ingest.on_failure_processor_tag}}}failed with message '{{{ _ingest.on_failure_message }}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.SMTPHeloServerIPAsName
       target_field: cloudflare_logpush.email_security_alerts.smtp_helo_server_ip_as_name
@@ -167,6 +196,10 @@ processors:
       field: json.Subject
       target_field: cloudflare_logpush.email_security_alerts.subject
       ignore_missing: true
+  - set:
+      field: email.subject
+      copy_from: cloudflare_logpush.email_security_alerts.subject
+      ignore_empty_value: true
   - rename:
       field: json.ThreatCategories
       target_field: cloudflare_logpush.email_security_alerts.threat_categories
@@ -175,6 +208,14 @@ processors:
       field: json.To
       target_field: cloudflare_logpush.email_security_alerts.to
       ignore_missing: true
+  - foreach:
+      field: cloudflare_logpush.email_security_alerts.to
+      if: ctx.cloudflare_logpush?.email_security_alerts?.to instanceof List
+      processor:
+        append:
+          field: email.to.address
+              value: '{{{_ingest._value}}}'
+          allow_duplicates: false
   - rename:
       field: json.ToName
       target_field: cloudflare_logpush.email_security_alerts.to_name
@@ -186,17 +227,32 @@ processors:
   - append:
       field: related.user
       value: '{{{cloudflare_logpush.email_security_alerts.from}}}'
-      if: ctx.cloudflare_logpush?.email_security_alerts?.from != null && ctx.cloudflare_logpush.email_security_alerts.from != ''
+      if: ctx.cloudflare_logpush?.email_security_alerts?.from != null
       allow_duplicates: false
   - append:
       field: related.user
       value: '{{{cloudflare_logpush.email_security_alerts.from_name}}}'
-      if: ctx.cloudflare_logpush?.email_security_alerts?.from_name != null && ctx.cloudflare_logpush.email_security_alerts.from_name != ''
+      if: ctx.cloudflare_logpush?.email_security_alerts?.from_name != null
       allow_duplicates: false
   - append:
       field: related.user
       value: '{{{cloudflare_logpush.email_security_alerts.smtp_envelope_from}}}'
-      if: ctx.cloudflare_logpush?.email_security_alerts?.smtp_envelope_from != null && ctx.cloudflare_logpush.email_security_alerts.smtp_envelope_from != ''
+      if: ctx.cloudflare_logpush?.email_security_alerts?.smtp_envelope_from != null
+      allow_duplicates: false
+  - append:
+      field: related.user
+      value: '{{{cloudflare_logpush.email_security_alerts.original_sender}}}'
+      if: ctx.cloudflare_logpush?.email_security_alerts?.original_sender != null
+      allow_duplicates: false
+  - append:
+      field: related.user
+      value: '{{{cloudflare_logpush.email_security_alerts.reply_to}}}'
+      if: ctx.cloudflare_logpush?.email_security_alerts?.reply_to != null
+      allow_duplicates: false
+  - append:
+      field: related.user
+      value: '{{{cloudflare_logpush.email_security_alerts.reply_to_name}}}'
+      if: ctx.cloudflare_logpush?.email_security_alerts?.reply_to_name != null
       allow_duplicates: false
   - foreach:
       field: cloudflare_logpush.email_security_alerts.to
@@ -245,12 +301,12 @@ processors:
   - convert:
       field: server.address
       target_field: _tmp.server_ip
-      tag: convert_smtp_helo_server_name_ip
+      if: ctx.server?.address != ''
       type: ip
       ignore_missing: true
       on_failure:
         - set:
-            field: server.domain
+                  field: server.domain
             copy_from: server.address
             ignore_empty_value: true
   - set:
@@ -262,17 +318,13 @@ processors:
       if: ctx._tmp?.links instanceof List
       processor:
         uri_parts:
-          tag: uri_parts_links
-          field: _ingest._value
+              field: _ingest._value
           target_field: _ingest._value
           ignore_missing: true
           on_failure:
             - append:
                 field: error.message
-                value: >-
-                  Processor '{{{ _ingest.on_failure_processor_type }}}'
-                  {{{#_ingest.on_failure_processor_tag}}}with tag '{{{ _ingest.on_failure_processor_tag }}}'
-                  {{{/_ingest.on_failure_processor_tag}}}failed with message '{{{ _ingest.on_failure_message }}}'
+                value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - foreach:
       field: _tmp.links
       if: ctx._tmp?.links instanceof List
@@ -307,18 +359,23 @@ processors:
           }
         }
         ctx.related.hosts = domains;
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: server.ip
       copy_from: cloudflare_logpush.email_security_alerts.smtp_helo_server_ip
       ignore_empty_value: true
   - append:
       field: related.ip
-      value: '{{{server.ip}}}'
-      if: ctx.server?.ip != null
+      value: '{{{cloudflare_logpush.email_security_alerts.smtp_helo_server_ip}}}'
+      if: ctx.cloudflare_logpush?.email_security_alerts?.smtp_helo_server_ip != null
       allow_duplicates: false
   - geoip:
       field: server.ip
       target_field: server.geo
+      ignore_missing: true
   - geoip:
       database_file: GeoLite2-ASN.mmdb
       field: server.ip
@@ -340,9 +397,11 @@ processors:
       if: ctx.cloudflare_logpush?.email_security_alerts?.attachments instanceof List
       source: |-
         def files = [];
+        def emailAttachments = [];
         def hashes = new HashSet();
         for (def a: ctx.cloudflare_logpush.email_security_alerts.attachments) {
           def f = [:];
+          def efa = [:];
           if (a.Name != null) {
             f.name = a.Name;
           }
@@ -372,16 +431,27 @@ processors:
             f.hash = fh;
           }
           files.add(f);
+          efa.put('file', f);
+          emailAttachments.add(efa);
           for (def h: fh.entrySet()) {
             hashes.add(h.getValue());
           }
         }
         ctx.file = files;
+        if (emailAttachments.size() != 0) {
+          if (ctx.email == null) {
+            ctx.email = [:];
+          }
+          ctx.email.attachments = emailAttachments;
+        }
         ctx.related = ctx.related ?: [:];
         ctx.related.hash = hashes;
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
 
   - remove:
-      tag: remove_json_conf_tmp
       field:
         - json
         - _tmp
@@ -391,30 +461,44 @@ processors:
       field:
         - cloudflare_logpush.email_security_alerts.timestamp
         - cloudflare_logpush.email_security_alerts.smtp_helo_server_ip
+        - cloudflare_logpush.email_security_alerts.from
+        - cloudflare_logpush.email_security_alerts.to
+        - cloudflare_logpush.email_security_alerts.cc
+        - cloudflare_logpush.email_security_alerts.subject
+        - cloudflare_logpush.email_security_alerts.message_id
+        - cloudflare_logpush.email_security_alerts.reply_to
+        - cloudflare_logpush.email_security_alerts.smtp_envelope_from
       if: ctx.tags == null || !ctx.tags.contains('preserve_duplicate_custom_fields')
       ignore_failure: true
       ignore_missing: true
   - script:
-        description: Drops null/empty values recursively.
-        lang: painless
-        source: |
-          boolean dropEmptyFields(Object object) {
-            if (object == null || object == "") {
-              return true;
-            } else if (object instanceof Map) {
-              ((Map) object).values().removeIf(value -> dropEmptyFields(value));
-              return (((Map) object).size() == 0);
-            } else if (object instanceof List) {
-              ((List) object).removeIf(value -> dropEmptyFields(value));
-              return (((List) object).length == 0);
+      lang: painless
+      description: This script processor iterates over the whole document to remove fields with null values.
+      source: |-
+        void handleMap(Map map) {
+          map.values().removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
             }
-            return false;
-          }
-          dropEmptyFields(ctx);
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
+        }
+        void handleList(List list) {
+          list.removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
+        }
+        handleMap(ctx);
   - set:
       field: event.kind
       value: pipeline_error
-      tag: set_pipeline_error_into_event_kind
       if: ctx.error?.message != null
   - append:
       field: tags
@@ -424,10 +508,7 @@ processors:
 on_failure:
   - append:
       field: error.message
-      value: >-
-        Processor '{{{ _ingest.on_failure_processor_type }}}'
-        {{{#_ingest.on_failure_processor_tag}}}with tag '{{{ _ingest.on_failure_processor_tag }}}'
-        {{{/_ingest.on_failure_processor_tag}}}failed with message '{{{ _ingest.on_failure_message }}}'
+      value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.kind
       value: pipeline_error

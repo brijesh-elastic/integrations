@@ -8,7 +8,13 @@ processors:
       field: message
       target_field: event.original
       ignore_missing: true
+      description: Renames the original `message` field to `event.original` to store a copy of the original message. The `event.original` field is not touched if the document already has one; it may happen when Logstash sends the document.
       if: ctx.event?.original == null
+  - remove:
+      field: message
+      ignore_missing: true
+      description: The `message` field is no longer required if the document has an `event.original` field.
+      if: ctx.event?.original != null
   - json:
       field: event.original
       target_field: json
@@ -21,12 +27,11 @@ processors:
   - set:
       field: event.kind
       value: event
-## AWS S3 input does _id Based Deduplication and generates "_id" by default.
-## When "Data Deduplication" is not enabled, this field must be removed.
-## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
+  ## AWS S3 input does _id Based Deduplication and generates "_id" by default.
+  ## When "Data Deduplication" is not enabled, this field must be removed.
+  ## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
   - remove:
       field: _id
-      tag: remove_id_based_deduplication
       description: >
         When data deduplication is disabled, the _id field (used for _id Based Deduplication)
         must be removed.
@@ -35,10 +40,10 @@ processors:
   - convert:
       field: json.DetectedTimestamp
       type: long
-      ignore_missing: true
+      if: ctx.json?.DetectedTimestamp != null && ctx.json.DetectedTimestamp != ''
+      ignore_failure: true
   - script:
       lang: painless
-      tag: painless_detected_timestamp_to_milli
       if: ctx.json?.DetectedTimestamp != null && ctx.json.DetectedTimestamp instanceof Number
       source: |
         long t = (long)(ctx.json.DetectedTimestamp);
@@ -47,6 +52,10 @@ processors:
         } else if (t < (long)(1e10))  {
           ctx.json.DetectedTimestamp = t*(long)(1e3)
         }
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
       field: json.DetectedTimestamp
       if: ctx.json?.DetectedTimestamp != null && ctx.json.DetectedTimestamp != ''
@@ -56,12 +65,13 @@ processors:
         - yyyy-MM-dd'T'HH:mm:ssZ
       timezone: UTC
       on_failure:
-      - append:
-          field: error.message
-          value: "{{{_ingest.on_failure_message}}}"
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: cloudflare_logpush.casb.timestamp
       copy_from: "@timestamp"
+      ignore_empty_value: true
   - rename:
       field: json.AssetDisplayName
       target_field: cloudflare_logpush.casb.asset.name
@@ -94,7 +104,7 @@ processors:
       field: json.FindingTypeSeverity
       target_field: cloudflare_logpush.casb.finding.type.severity
       ignore_missing: true
-# Set event.severity based on the incoming severity value ("low", "medium", "high", "critical")
+  # Set event.severity based on the incoming severity value ("low", "medium", "high", "critical")
   - set:
       field: event.severity
       value: 1
@@ -131,9 +141,8 @@ processors:
       field: json.IntegrationPolicyVendor
       target_field: cloudflare_logpush.casb.integration.policy_vendor
       ignore_missing: true
-# Clean event
+  # Clean event
   - remove:
-      tag: remove_json_conf
       field:
         - json
         - _conf
@@ -145,30 +154,45 @@ processors:
         - cloudflare_logpush.casb.finding.id
         - cloudflare_logpush.casb.finding.type.severity
       if: ctx.tags == null || !(ctx.tags.contains('preserve_duplicate_custom_fields'))
-      ignore_failure: true
       ignore_missing: true
   - script:
-      description: Drops null/empty values recursively.
       lang: painless
-      source: |
-        boolean dropEmptyFields(Object object) {
-          if (object == null || object == "") {
-            return true;
-          } else if (object instanceof Map) {
-            ((Map) object).values().removeIf(value -> dropEmptyFields(value));
-            return (((Map) object).size() == 0);
-          } else if (object instanceof List) {
-            ((List) object).removeIf(value -> dropEmptyFields(value));
-            return (((List) object).length == 0);
-          }
-          return false;
+      description: This script processor iterates over the whole document to remove fields with null values.
+      source: |-
+        void handleMap(Map map) {
+          map.values().removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
         }
-        dropEmptyFields(ctx);
+        void handleList(List list) {
+          list.removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
+        }
+        handleMap(ctx);
+  - set:
+      field: event.kind
+      value: pipeline_error
+      if: ctx.error?.message != null
+  - append:
+      field: tags
+      value: preserve_original_event
+      allow_duplicates: false
+      if: ctx.error?.message != null
 on_failure:
   - append:
       field: error.message
-      value: |-
-        Processor "{{{ _ingest.on_failure_processor_type }}}" in pipeline "{{{ _ingest.on_failure_pipeline }}}" failed with message "{{{ _ingest.on_failure_message }}}"
+      value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.kind
       value: pipeline_error

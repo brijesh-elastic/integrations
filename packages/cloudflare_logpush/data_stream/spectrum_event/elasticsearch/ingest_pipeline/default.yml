@@ -8,7 +8,13 @@ processors:
       field: message
       target_field: event.original
       ignore_missing: true
+      description: Renames the original `message` field to `event.original` to store a copy of the original message. The `event.original` field is not touched if the document already has one; it may happen when Logstash sends the document.
       if: ctx.event?.original == null
+  - remove:
+      field: message
+      ignore_missing: true
+      description: The `message` field is no longer required if the document has an `event.original` field.
+      if: ctx.event?.original != null
   - json:
       field: event.original
       target_field: json
@@ -21,12 +27,11 @@ processors:
   - set:
       field: event.type
       value: [info]
-## AWS S3 input does _id Based Deduplication and generates "_id" by default.
-## When "Data Deduplication" is not enabled, this field must be removed.
-## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
+  ## AWS S3 input does _id Based Deduplication and generates "_id" by default.
+  ## When "Data Deduplication" is not enabled, this field must be removed.
+  ## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
   - remove:
       field: _id
-      tag: remove_id_based_deduplication
       description: >
         When data deduplication is disabled, the _id field (used for _id Based Deduplication)
         must be removed.
@@ -35,26 +40,50 @@ processors:
   - convert:
       field: json.Timestamp
       type: long
-      ignore_missing: true
-  - convert:
-      field: json.DisconnectTimestamp
-      type: long
-      ignore_missing: true
+      if: ctx.json?.Timestamp != null && ctx.json.Timestamp != ''
+      ignore_failure: true
   - convert:
       field: json.ConnectTimestamp
       type: long
-      ignore_missing: true
+      if: ctx.json?.ConnectTimestamp != null && ctx.json.ConnectTimestamp != ''
+      ignore_failure: true
+  - convert:
+      field: json.DisconnectTimestamp
+      type: long
+      if: ctx.json?.DisconnectTimestamp != null && ctx.json.DisconnectTimestamp != ''
+      ignore_failure: true
   - script:
       lang: painless
-      tag: painless_timestamp_to_milli
-      if: ctx.json?.Timestamp != null && ctx.json.Timestamp instanceof Number
       source: |
-        long t = (long)(ctx.json.Timestamp);
-        if (t > (long)(1e18)) {
-          ctx.json.Timestamp = t/(long)(1e6)
-        } else if (t < (long)(1e10))  {
-          ctx.json.Timestamp = t*(long)(1e3)
+        def convertToMillis(long timestamp) {
+          if (timestamp > (long)(1e18)) {
+            return timestamp/(long)(1e6)
+          } else if (timestamp < (long)(1e10))  {
+            return timestamp*(long)(1e3)
+          }
+          return timestamp
         }
+        if (ctx.json?.Timestamp != null && ctx.json.Timestamp instanceof Number) {
+          ctx.json.Timestamp = convertToMillis(ctx.json.Timestamp);
+        }
+        if (ctx.json?.ConnectTimestamp != null && ctx.json.ConnectTimestamp instanceof Number) {
+          if (ctx.json.ConnectTimestamp == 0) {
+            ctx.json.ConnectTimestamp = null;
+          } else {
+            ctx.json.ConnectTimestamp = convertToMillis(ctx.json.ConnectTimestamp);
+          }
+        }
+        if (ctx.json?.DisconnectTimestamp != null && ctx.json.DisconnectTimestamp instanceof Number) {
+          if (ctx.json.DisconnectTimestamp == 0) {
+            ctx.json.DisconnectTimestamp = null;
+          } else {
+            ctx.json.DisconnectTimestamp = convertToMillis(ctx.json.DisconnectTimestamp);
+          }
+        }
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
       field: json.Timestamp
       if: ctx.json?.Timestamp != null && ctx.json.Timestamp != ''
@@ -64,43 +93,16 @@ processors:
         - yyyy-MM-dd'T'HH:mm:ssZ
       timezone: UTC
       on_failure:
-      - append:
-          field: error.message
-          value: "{{{_ingest.on_failure_message}}}"
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: cloudflare_logpush.spectrum_event.timestamp
       copy_from: '@timestamp'
       ignore_empty_value: true
-  - script:
-      lang: painless
-      tag: painless_connect_timestamp_to_milli
-      if: ctx.json?.ConnectTimestamp != null
-      source: |
-        if (ctx.json.ConnectTimestamp == "0" || 
-            ctx.json.ConnectTimestamp == 0 ||
-            ctx.json.ConnectTimestamp == "") {
-          ctx.json.ConnectTimestamp = null;
-          return;
-        }
-        try {
-          long t;
-          if (ctx.json.ConnectTimestamp instanceof String) {
-            t = Long.parseLong(ctx.json.ConnectTimestamp);
-          } else if (ctx.json.ConnectTimestamp instanceof Number) {
-            t = (long)(ctx.json.ConnectTimestamp);
-          } else {
-            return;
-          }
-          if (t > (long)(1e18)) {
-            ctx.json.ConnectTimestamp = t/(long)(1e6)
-          } else if (t < (long)(1e10))  {
-            ctx.json.ConnectTimestamp = t*(long)(1e3)
-          }
-        }
-        catch (Exception e) {}
   - date:
       field: json.ConnectTimestamp
-      if: ctx.json?.ConnectTimestamp != null
+      if: ctx.json?.ConnectTimestamp != null && ctx.json.ConnectTimestamp != ''
       formats:
         - ISO8601
         - uuuu-MM-dd'T'HH:mm:ssX
@@ -112,42 +114,15 @@ processors:
       target_field: cloudflare_logpush.spectrum_event.connect.time
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.start
       copy_from: cloudflare_logpush.spectrum_event.connect.time
       ignore_empty_value: true
-  - script:
-      lang: painless
-      tag: painless_disconnect_timestamp_to_milli
-      if: ctx.json?.DisconnectTimestamp != null
-      source: |
-        if (ctx.json?.DisconnectTimestamp == "0" || 
-            ctx.json?.DisconnectTimestamp == 0 || 
-            ctx.json?.DisconnectTimestamp == "") {
-          ctx.json.DisconnectTimestamp = null;
-          return;
-        }
-        try {
-          long t;
-          if (ctx.json.DisconnectTimestamp instanceof String) {
-            t = Long.parseLong(ctx.json.DisconnectTimestamp);
-          } else if (ctx.json.DisconnectTimestamp instanceof Number) {
-            t = (long)(ctx.json.DisconnectTimestamp);
-          } else {
-            return;
-          }
-          if (t > (long)(1e18)) {
-            ctx.json.DisconnectTimestamp = t/(long)(1e6)
-          } else if (t < (long)(1e10))  {
-            ctx.json.DisconnectTimestamp = t*(long)(1e3)
-          }
-        }
-        catch (Exception e) {}
   - date:
       field: json.DisconnectTimestamp
-      if: ctx.json?.DisconnectTimestamp != null
+      if: ctx.json?.DisconnectTimestamp != null && ctx.json.DisconnectTimestamp != ''
       formats:
         - ISO8601
         - uuuu-MM-dd'T'HH:mm:ssX
@@ -159,12 +134,20 @@ processors:
       target_field: cloudflare_logpush.spectrum_event.disconnect.time
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.end
       copy_from: cloudflare_logpush.spectrum_event.disconnect.time
       ignore_empty_value: true
+  - script:
+      lang: painless
+      description: Calculates event.duration from event.start and event.end
+      if: ctx.event?.start != null && ctx.event?.end != null && ctx.event?.duration == null
+      source: >-
+        ZonedDateTime start = ZonedDateTime.parse(ctx.event.start);
+        ZonedDateTime end = ZonedDateTime.parse(ctx.event.end);
+        ctx.event.duration = ChronoUnit.NANOS.between(start, end);
   - rename:
       field: json.Event
       target_field: cloudflare_logpush.spectrum_event.action
@@ -179,13 +162,12 @@ processors:
   - convert:
       field: json.OriginBytes
       target_field: cloudflare_logpush.spectrum_event.origin.bytes
-      if: ctx.json?.OriginBytes != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: destination.bytes
       copy_from: cloudflare_logpush.spectrum_event.origin.bytes
@@ -193,13 +175,13 @@ processors:
   - convert:
       field: json.OriginIP
       target_field: cloudflare_logpush.spectrum_event.origin.ip
-      if: ctx.json?.OriginIP != ''
       type: ip
       ignore_missing: true
+      if: ctx.json?.OriginIP != ''
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: destination.ip
       copy_from: cloudflare_logpush.spectrum_event.origin.ip
@@ -207,13 +189,12 @@ processors:
   - convert:
       field: json.OriginPort
       target_field: cloudflare_logpush.spectrum_event.origin.port
-      if: ctx.json?.OriginPort != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: destination.port
       copy_from: cloudflare_logpush.spectrum_event.origin.port
@@ -229,13 +210,12 @@ processors:
   - convert:
       field: json.Status
       target_field: cloudflare_logpush.spectrum_event.status
-      if: ctx.json?.Status != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: http.response.status_code
       copy_from: cloudflare_logpush.spectrum_event.status
@@ -243,13 +223,12 @@ processors:
   - convert:
       field: json.ClientAsn
       target_field: cloudflare_logpush.spectrum_event.client.asn
-      if: ctx.json?.ClientAsn != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: source.as.number
       copy_from: cloudflare_logpush.spectrum_event.client.asn
@@ -257,13 +236,12 @@ processors:
   - convert:
       field: json.ClientBytes
       target_field: cloudflare_logpush.spectrum_event.client.bytes
-      if: ctx.json?.ClientBytes != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: source.bytes
       copy_from: cloudflare_logpush.spectrum_event.client.bytes
@@ -279,13 +257,13 @@ processors:
   - convert:
       field: json.ClientIP
       target_field: cloudflare_logpush.spectrum_event.client.ip
-      if: ctx.json?.ClientIP != ''
       type: ip
       ignore_missing: true
+      if: ctx.json?.ClientIP != ''
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: source.ip
       copy_from: cloudflare_logpush.spectrum_event.client.ip
@@ -293,13 +271,12 @@ processors:
   - convert:
       field: json.ClientPort
       target_field: cloudflare_logpush.spectrum_event.client.port
-      if: ctx.json?.ClientPort != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: source.port
       copy_from: cloudflare_logpush.spectrum_event.client.port
@@ -322,17 +299,20 @@ processors:
   - convert:
       field: json.ClientTcpRtt
       target_field: cloudflare_logpush.spectrum_event.client.tcp_rtt
-      if: ctx.json?.ClientTcpRtt != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.ClientTlsCipher
       target_field: cloudflare_logpush.spectrum_event.client.tls.cipher
       ignore_missing: true
+  - set:
+      field: tls.cipher
+      copy_from: cloudflare_logpush.spectrum_event.client.tls.cipher
+      ignore_empty_value: true
   - rename:
       field: json.ClientTlsClientHelloServerName
       target_field: cloudflare_logpush.spectrum_event.client.tls.client_hello_server_name
@@ -342,7 +322,7 @@ processors:
       target_field: cloudflare_logpush.spectrum_event.client.tls.protocol
       ignore_missing: true
   - dissect:
-      if: ctx.cloudflare_logpush?.spectrum_event?.client?.tls?.protocol != 'none' && ctx.cloudflare_logpush?.spectrum_event?.client?.tls?.protocol != 'unknown'
+      if: ctx.cloudflare_logpush?.spectrum_event?.client?.tls?.protocol != null && ctx.cloudflare_logpush.spectrum_event.client.tls.protocol != 'none' && ctx.cloudflare_logpush.spectrum_event.client.tls.protocol != 'unknown'
       field: cloudflare_logpush.spectrum_event.client.tls.protocol
       pattern: '%{tls.version_protocol}v%{tls.version}'
       ignore_missing: true
@@ -363,6 +343,10 @@ processors:
       target_field: cloudflare_logpush.spectrum_event.ip_firewall
       type: boolean
       ignore_missing: true
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.OriginProto
       target_field: cloudflare_logpush.spectrum_event.origin.protocol
@@ -370,13 +354,12 @@ processors:
   - convert:
       field: json.OriginTcpRtt
       target_field: cloudflare_logpush.spectrum_event.origin.tcp_rtt
-      if: ctx.json?.OriginTcpRtt != ''
       type: long
       ignore_missing: true
       on_failure:
         - append:
-            field: error.message
-            value: '{{{_ingest.on_failure_message}}}'
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.OriginTlsCipher
       target_field: cloudflare_logpush.spectrum_event.origin.tls.cipher
@@ -396,40 +379,30 @@ processors:
   - rename:
       field: json.OriginTlsStatus
       target_field: cloudflare_logpush.spectrum_event.origin.tls.status
-      ignore_failure: true
+      ignore_missing: true
   - rename:
       field: json.ProxyProtocol
       target_field: cloudflare_logpush.spectrum_event.proxy.protocol
       ignore_missing: true
   - append:
       field: related.ip
-      value: '{{{source.ip}}}'
-      if: ctx.source?.ip != null
-      allow_duplicates: false
-      ignore_failure: true
-  - append:
-      field: related.ip
       value: '{{{cloudflare_logpush.spectrum_event.client.ip}}}'
       if: ctx.cloudflare_logpush?.spectrum_event?.client?.ip != null
       allow_duplicates: false
-      ignore_failure: true
-  - append:
-      field: related.ip
-      value: '{{{destination.ip}}}'
-      if: ctx.destination?.ip != null
-      allow_duplicates: false
-      ignore_failure: true
   - append:
       field: related.ip
       value: '{{{cloudflare_logpush.spectrum_event.origin.ip}}}'
       if: ctx.cloudflare_logpush?.spectrum_event?.origin?.ip != null
       allow_duplicates: false
-      ignore_failure: true
+  - append:
+      field: related.hash
+      value: '{{{cloudflare_logpush.spectrum_event.origin.tls.fingerprint}}}'
+      if: ctx.cloudflare_logpush?.spectrum_event?.origin?.tls?.fingerprint != null
+      allow_duplicates: false
   - community_id:
       target_field: network.community_id
       ignore_failure: true
   - remove:
-      tag: remove_json_conf
       field:
         - json
         - _conf
@@ -448,31 +421,47 @@ processors:
         - cloudflare_logpush.spectrum_event.client.country
         - cloudflare_logpush.spectrum_event.client.ip
         - cloudflare_logpush.spectrum_event.client.port
+        - cloudflare_logpush.spectrum_event.client.tls.cipher
       if: ctx.tags == null || !(ctx.tags.contains('preserve_duplicate_custom_fields'))
-      ignore_failure: true
       ignore_missing: true
   - script:
-        description: Drops null/empty values recursively.
-        lang: painless
-        source: |
-          boolean dropEmptyFields(Object object) {
-            if (object == null || object == "") {
-              return true;
-            } else if (object instanceof Map) {
-              ((Map) object).values().removeIf(value -> dropEmptyFields(value));
-              return (((Map) object).size() == 0);
-            } else if (object instanceof List) {
-              ((List) object).removeIf(value -> dropEmptyFields(value));
-              return (((List) object).length == 0);
+      lang: painless
+      description: This script processor iterates over the whole document to remove fields with null values.
+      source: |-
+        void handleMap(Map map) {
+          map.values().removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
             }
-            return false;
-          }
-          dropEmptyFields(ctx);
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
+        }
+        void handleList(List list) {
+          list.removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
+        }
+        handleMap(ctx);
+  - set:
+      field: event.kind
+      value: pipeline_error
+      if: ctx.error?.message != null
+  - append:
+      field: tags
+      value: preserve_original_event
+      allow_duplicates: false
+      if: ctx.error?.message != null
 on_failure:
   - append:
       field: error.message
-      value: |-
-        Processor "{{{ _ingest.on_failure_processor_type }}}" in pipeline "{{{ _ingest.on_failure_pipeline }}}" failed with message "{{{ _ingest.on_failure_message }}}"
+      value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.kind
       value: pipeline_error

@@ -4,35 +4,34 @@ processors:
   - set:
       field: ecs.version
       value: '9.3.0'
-      tag: set_ecs_version
   - rename:
       field: message
       target_field: event.original
       ignore_missing: true
-      tag: rename_event_original
+      description: Renames the original `message` field to `event.original` to store a copy of the original message. The `event.original` field is not touched if the document already has one; it may happen when Logstash sends the document.
       if: ctx.event?.original == null
+  - remove:
+      field: message
+      ignore_missing: true
+      description: The `message` field is no longer required if the document has an `event.original` field.
+      if: ctx.event?.original != null
   - json:
       field: event.original
       target_field: json
-      tag: json_event_original
   - set:
       field: event.category
       value: [web]
-      tag: set_event_category
   - set:
       field: event.type
       value: [info]
-      tag: set_event_type
   - set:
       field: event.kind
       value: event
-      tag: set_event_kind
-## AWS S3 input does _id Based Deduplication and generates "_id" by default.
-## When "Data Deduplication" is not enabled, this field must be removed.
-## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
+  ## AWS S3 input does _id Based Deduplication and generates "_id" by default.
+  ## When "Data Deduplication" is not enabled, this field must be removed.
+  ## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
   - remove:
       field: _id
-      tag: remove_id_based_deduplication
       description: >
         When data deduplication is disabled, the _id field (used for _id Based Deduplication)
         must be removed.
@@ -47,107 +46,99 @@ processors:
         - ISO8601
         - yyyy-MM-dd'T'HH:mm:ssZ
       timezone: UTC
-      tag: date_event_timestamp
       on_failure:
-      - append:
-          field: error.message
-          value: |-
-            Processor "{{{ _ingest.on_failure_processor_type }}}" with tag "{{{ _ingest.on_failure_processor_tag }}}" in pipeline "{{{ _ingest.on_failure_pipeline }}}" failed with message "{{{ _ingest.on_failure_message }}}"
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: cloudflare_logpush.workers_trace.timestamp
       copy_from: "@timestamp"
-      tag: set_timestamp
+      ignore_empty_value: true
 
   # ECS fields
   - rename:
       field: json.EventType
       target_field: cloudflare_logpush.workers_trace.type
       ignore_missing: true
-      tag: rename_event_type
   - set:
       field: event.action
       copy_from: cloudflare_logpush.workers_trace.type
       ignore_empty_value: true
-      tag: set_event_action
 
   # Set event.outcome
   - rename:
       field: json.Outcome
       target_field: cloudflare_logpush.workers_trace.outcome
       ignore_missing: true
-      tag: rename_outcome
   - set:
       field: event.outcome
       value: success
       if: ctx.cloudflare_logpush?.workers_trace?.outcome == 'ok'
-      tag: set_event_outcome_success
   - set:
       field: event.outcome
       value: failure
       if: ctx.cloudflare_logpush?.workers_trace?.outcome == 'exception'
-      tag: set_event_outcome_failure
   - append:
       field: event.type
       value: error
       allow_duplicates: false
       if: ctx.event?.outcome == 'failure'
-      tag: append_event_type_error
 
   # Custom fields
   - rename:
       field: json.DispatchNamespace
       target_field: cloudflare_logpush.workers_trace.dispatch_namespace
       ignore_missing: true
-      tag: rename_dispatch_namespace
   - rename:
       field: json.Entrypoint
       target_field: cloudflare_logpush.workers_trace.entrypoint
       ignore_missing: true
-      tag: rename_entrypoint
   - rename:
       field: json.Event
       target_field: cloudflare_logpush.workers_trace.event
       ignore_missing: true
-      tag: rename_event
   - rename:
       field: json.Exceptions
       target_field: cloudflare_logpush.workers_trace.exceptions
       ignore_missing: true
-      tag: rename_exceptions
   - rename:
       field: json.Logs
       target_field: cloudflare_logpush.workers_trace.logs
       ignore_missing: true
-      tag: rename_logs
   - rename:
       field: json.ScriptName
       target_field: cloudflare_logpush.workers_trace.script.name
       ignore_missing: true
-      tag: rename_script_name
   - rename:
       field: json.ScriptTags
       target_field: cloudflare_logpush.workers_trace.script.tags
       ignore_missing: true
-      tag: rename_script_tags
   - rename:
       field: json.ScriptVersion
       target_field: cloudflare_logpush.workers_trace.script.version
       ignore_missing: true
-      tag: rename_script_version
   - convert:
       field: json.CPUTimeMs
       target_field: cloudflare_logpush.workers_trace.cpu_time_ms
       type: long
       ignore_missing: true
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
       field: json.WallTimeMs
       target_field: cloudflare_logpush.workers_trace.wall_time_ms
       type: long
       ignore_missing: true
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
 
   - script:
       description: Convert Workers Trace Events keys to snake case recursively.
-      tag: script_convert_snake_case
+      if: ctx.cloudflare_logpush?.workers_trace != null
       lang: painless
       source: |-
         Map keysToSnakeCase(Map m) {
@@ -177,31 +168,30 @@ processors:
         }
 
         ctx.cloudflare_logpush['workers_trace'] = keysToSnakeCase(ctx.cloudflare_logpush.workers_trace);
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
 
   - set:
       field: event.id
       copy_from: cloudflare_logpush.workers_trace.event.ray_id
       ignore_empty_value: true
-      tag: set_event_id
   - set:
       field: http.request.method
       copy_from: cloudflare_logpush.workers_trace.event.request.method
       ignore_empty_value: true
-      tag: set_http_request_method
   - set:
       field: http.response.status_code
       copy_from: cloudflare_logpush.workers_trace.event.response.status
       ignore_empty_value: true
-      tag: set_http_response_status
   - uri_parts:
       field: cloudflare_logpush.workers_trace.event.request.url
       target_field: url
       if: ctx.cloudflare_logpush?.workers_trace?.event?.request?.url != null
-      tag: uri_parts_http_url
 
-  # Clean event
+  # Clean event
   - remove:
-      tag: remove_json_conf
       field:
         - json
         - _conf
@@ -216,32 +206,45 @@ processors:
         - cloudflare_logpush.workers_trace.timestamp
         - cloudflare_logpush.workers_trace.type
       if: ctx.tags == null || !(ctx.tags.contains('preserve_duplicate_custom_fields'))
-      ignore_failure: true
       ignore_missing: true
-      tag: remove_duplicated_custom_fields
   - script:
-      description: Drops null/empty values recursively.
-      tag: script_drop_empty_fields
       lang: painless
+      description: This script processor iterates over the whole document to remove fields with null values.
       source: |-
-        boolean dropEmptyFields(Object object) {
-          if (object == null || object == "") {
-            return true;
-          } else if (object instanceof Map) {
-            ((Map) object).values().removeIf(value -> dropEmptyFields(value));
-            return (((Map) object).size() == 0);
-          } else if (object instanceof List) {
-            ((List) object).removeIf(value -> dropEmptyFields(value));
-            return (((List) object).length == 0);
-          }
-          return false;
+        void handleMap(Map map) {
+          map.values().removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
         }
-        dropEmptyFields(ctx);
+        void handleList(List list) {
+          list.removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
+        }
+        handleMap(ctx);
+  - set:
+      field: event.kind
+      value: pipeline_error
+      if: ctx.error?.message != null
+  - append:
+      field: tags
+      value: preserve_original_event
+      allow_duplicates: false
+      if: ctx.error?.message != null
 on_failure:
   - append:
       field: error.message
-      value: |-
-        Processor "{{{ _ingest.on_failure_processor_type }}}" with tag "{{{ _ingest.on_failure_processor_tag }}}" in pipeline "{{{ _ingest.on_failure_pipeline }}}" failed with message "{{{ _ingest.on_failure_message }}}"
+      value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.kind
       value: pipeline_error
