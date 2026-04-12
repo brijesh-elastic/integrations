@@ -33,6 +33,10 @@ processors:
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
 # ECS fields
+  - convert:
+      field: json.Datetime
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_datetime_to_milli
@@ -67,10 +71,12 @@ processors:
       field: event.action
       copy_from: cloudflare_logpush.gateway_network.action
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.DestinationIP
       target_field: cloudflare_logpush.gateway_network.destination.ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.DestinationIP != ''
   - set:
       field: destination.ip
       copy_from: cloudflare_logpush.gateway_network.destination.ip
@@ -95,10 +101,12 @@ processors:
       field: destination.as.organization_name
       target_field: destination.as.organization.name
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.DestinationPort
       target_field: cloudflare_logpush.gateway_network.destination.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.DestinationPort != ''
   - set:
       field: destination.port
       copy_from: cloudflare_logpush.gateway_network.destination.port
@@ -139,10 +147,12 @@ processors:
       field: event.id
       copy_from: cloudflare_logpush.gateway_network.session_id
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.SourceIP
       target_field: cloudflare_logpush.gateway_network.source.ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.SourceIP != ''
   - set:
       field: source.ip
       copy_from: cloudflare_logpush.gateway_network.source.ip
@@ -167,10 +177,12 @@ processors:
       field: source.as.organization_name
       target_field: source.as.organization.name
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.SourcePort
       target_field: cloudflare_logpush.gateway_network.source.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.SourcePort != ''
   - set:
       field: source.port
       copy_from: cloudflare_logpush.gateway_network.source.port
@@ -239,14 +251,18 @@ processors:
       field: json.DetectedProtocol
       target_field: cloudflare_logpush.gateway_network.detected_protocol
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.OverrideIP
       target_field: cloudflare_logpush.gateway_network.override.ip
+      type: ip
       ignore_missing: true
-  - rename:
+      if: ctx.json?.OverrideIP != ''
+  - convert:
       field: json.OverridePort
       target_field: cloudflare_logpush.gateway_network.override.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.OverridePort != ''
   - rename:
       field: json.PolicyID
       target_field: cloudflare_logpush.gateway_network.policy.id
@@ -259,10 +275,12 @@ processors:
       field: json.ProxyEndpoint
       target_field: cloudflare_logpush.gateway_network.proxy_endpoint
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.SourceInternalIP
       target_field: cloudflare_logpush.gateway_network.source.internal_ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.SourceInternalIP != ''
   - rename:
       field: json.SourceIPContinentCode
       target_field: cloudflare_logpush.gateway_network.source_ip.continent_code

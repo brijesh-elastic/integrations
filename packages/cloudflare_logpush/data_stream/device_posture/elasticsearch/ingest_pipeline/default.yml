@@ -32,6 +32,10 @@ processors:
         must be removed.
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
+  - convert:
+      field: json.Timestamp
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_timestamp_to_milli
@@ -134,9 +138,10 @@ processors:
       field: rule.category
       copy_from: cloudflare_logpush.device_posture.rule.category
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.PostureEvaluatedResult
       target_field: cloudflare_logpush.device_posture.eval.result
+      type: boolean
       ignore_missing: true
 # Set event.outcome from cloudflare_logpush.device_posture.eval.result
   - set:

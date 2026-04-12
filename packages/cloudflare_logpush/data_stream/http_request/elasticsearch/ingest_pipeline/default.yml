@@ -32,6 +32,18 @@ processors:
         must be removed.
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
+  - convert:
+      field: json.EdgeStartTimestamp
+      type: long
+      ignore_missing: true
+  - convert:
+      field: json.Datetime
+      type: long
+      ignore_missing: true
+  - convert:
+      field: json.EdgeEndTimestamp
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_edge_start_timestamp_to_milli
@@ -225,10 +237,11 @@ processors:
       field: source.ip
       copy_from: cloudflare_logpush.http_request.client.ip
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.BotDetectionIDs
       target_field: cloudflare_logpush.http_request.bot.detection_ids
-      tag: rename_bot_detections_ids
+      type: long
+      ignore_missing: true
       ignore_missing: true
   - rename:
       field: json.BotDetectionTags
@@ -290,9 +303,10 @@ processors:
         - append:
             field: error.message
             value: '{{{_ingest.on_failure_message}}}'
-  - rename:
+  - convert:
       field: json.CacheTieredFill
       target_field: cloudflare_logpush.http_request.cache.tiered_fill
+      type: boolean
       ignore_missing: true
   - rename:
       field: json.ClientCity
@@ -500,9 +514,10 @@ processors:
       field: json.Cookies
       target_field: cloudflare_logpush.http_request.cookies
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.EdgeCFConnectingO2O
       target_field: cloudflare_logpush.http_request.edge.cf_connecting_o2o
+      type: boolean
       ignore_missing: true
   - rename:
       field: json.EdgeColoCode
@@ -872,9 +887,10 @@ processors:
       field: json.WorkerStatus
       target_field: cloudflare_logpush.http_request.worker.status
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.WorkerSubrequest
       target_field: cloudflare_logpush.http_request.worker.subrequest.value
+      type: boolean
       ignore_missing: true
   - convert:
       field: json.WorkerSubrequestCount

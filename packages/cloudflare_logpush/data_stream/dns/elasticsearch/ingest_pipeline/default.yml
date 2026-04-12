@@ -32,6 +32,10 @@ processors:
         must be removed.
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
+  - convert:
+      field: json.Timestamp
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_timestamp_to_milli
@@ -224,9 +228,10 @@ processors:
         - append:
             field: error.message
             value: '{{{_ingest.on_failure_message}}}'
-  - rename:
+  - convert:
       field: json.ResponseCached
       target_field: cloudflare_logpush.dns.response.cached
+      type: boolean
       ignore_missing: true
   - convert:
       field: json.ResponseCode

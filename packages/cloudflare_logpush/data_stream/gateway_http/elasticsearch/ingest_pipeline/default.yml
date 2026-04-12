@@ -48,6 +48,10 @@ processors:
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
 # ECS fields
+  - convert:
+      field: json.Datetime
+      type: long
+      ignore_missing: true
   - script:
       lang: painless
       tag: painless_datetime_to_milli
@@ -98,10 +102,12 @@ processors:
       field: host.name
       copy_from: cloudflare_logpush.gateway_http.host.name
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.DestinationIP
       target_field: cloudflare_logpush.gateway_http.destination.ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.DestinationIP != ''
   - set:
       field: destination.ip
       copy_from: cloudflare_logpush.gateway_http.destination.ip
@@ -127,10 +133,12 @@ processors:
       field: destination.as.organization_name
       target_field: destination.as.organization.name
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.DestinationPort
       target_field: cloudflare_logpush.gateway_http.destination.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.DestinationPort != ''
   - set:
       field: destination.port
       copy_from: cloudflare_logpush.gateway_http.destination.port
@@ -143,10 +151,12 @@ processors:
       field: http.request.method
       copy_from: cloudflare_logpush.gateway_http.request.method
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.HTTPStatusCode
       target_field: cloudflare_logpush.gateway_http.response.status_code
+      type: long
       ignore_missing: true
+      if: ctx.json?.HTTPStatusCode != ''
   - set:
       field: http.response.status_code
       copy_from: cloudflare_logpush.gateway_http.response.status_code
@@ -167,10 +177,12 @@ processors:
       field: http.request.referrer
       copy_from: cloudflare_logpush.gateway_http.request.referrer
       ignore_empty_value: true
-  - rename:
+  - convert:
       field: json.SourceIP
       target_field: cloudflare_logpush.gateway_http.source.ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.SourceIP != ''
   - set:
       field: source.ip
       copy_from: cloudflare_logpush.gateway_http.source.ip
@@ -196,10 +208,12 @@ processors:
       field: source.as.organization_name
       target_field: source.as.organization.name
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.SourcePort
       target_field: cloudflare_logpush.gateway_http.source.port
+      type: long
       ignore_missing: true
+      if: ctx.json?.SourcePort != ''
   - set:
       field: source.port
       copy_from: cloudflare_logpush.gateway_http.source.port
@@ -262,10 +276,12 @@ processors:
       field: json.BlockedFileReason
       target_field: cloudflare_logpush.gateway_http.blocked_file.reason
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.BlockedFileSize
       target_field: cloudflare_logpush.gateway_http.blocked_file.size
+      type: long
       ignore_missing: true
+      if: ctx.json?.BlockedFileSize != ''
   - rename:
       field: json.BlockedFileType
       target_field: cloudflare_logpush.gateway_http.blocked_file.type
@@ -310,9 +326,10 @@ processors:
       field: json.HTTPHost
       target_field: cloudflare_logpush.gateway_http.request.host
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.IsIsolated
       target_field: cloudflare_logpush.gateway_http.isolated
+      type: boolean
       ignore_missing: true
   - rename:
       field: json.PolicyID
@@ -347,10 +364,12 @@ processors:
       field: json.SessionID
       target_field: cloudflare_logpush.gateway_http.session_id
       ignore_missing: true
-  - rename:
+  - convert:
       field: json.SourceInternalIP
       target_field: cloudflare_logpush.gateway_http.source.internal_ip
+      type: ip
       ignore_missing: true
+      if: ctx.json?.SourceInternalIP != ''
   - rename:
       field: json.SourceIPContinentCode
       target_field: cloudflare_logpush.gateway_http.source_ip.continent_code
