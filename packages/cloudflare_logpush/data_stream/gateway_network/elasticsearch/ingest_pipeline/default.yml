@@ -8,7 +8,13 @@ processors:
       field: message
       target_field: event.original
       ignore_missing: true
+      description: Renames the original `message` field to `event.original` to store a copy of the original message. The `event.original` field is not touched if the document already has one; it may happen when Logstash sends the document.
       if: ctx.event?.original == null
+  - remove:
+      field: message
+      ignore_missing: true
+      description: The `message` field is no longer required if the document has an `event.original` field.
+      if: ctx.event?.original != null
   - json:
       field: event.original
       target_field: json
@@ -21,25 +27,24 @@ processors:
   - set:
       field: event.kind
       value: event
-## AWS S3 input does _id Based Deduplication and generates "_id" by default.
-## When "Data Deduplication" is not enabled, this field must be removed.
-## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
+  ## AWS S3 input does _id Based Deduplication and generates "_id" by default.
+  ## When "Data Deduplication" is not enabled, this field must be removed.
+  ## https://www.elastic.co/docs/reference/beats/filebeat/filebeat-input-aws-s3#_document_id_generation
   - remove:
       field: _id
-      tag: remove_id_based_deduplication
       description: >
         When data deduplication is disabled, the _id field (used for _id Based Deduplication)
         must be removed.
       if: ctx._conf?.enable_deduplication == false && ctx.input?.type == 'aws-s3'
       ignore_missing: true
-# ECS fields
+  # ECS fields
   - convert:
       field: json.Datetime
       type: long
-      ignore_missing: true
+      if: ctx.json?.Datetime != null && ctx.json.Datetime != ''
+      ignore_failure: true
   - script:
       lang: painless
-      tag: painless_datetime_to_milli
       if: ctx.json?.Datetime != null && ctx.json.Datetime instanceof Number
       source: |
         long t = (long)(ctx.json.Datetime);
@@ -48,6 +53,10 @@ processors:
         } else if (t < (long)(1e10))  {
           ctx.json.Datetime = t*(long)(1e3)
         }
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - date:
       field: json.Datetime
       if: ctx.json?.Datetime != null && ctx.json.Datetime != ''
@@ -57,12 +66,13 @@ processors:
         - yyyy-MM-dd'T'HH:mm:ssZ
       timezone: UTC
       on_failure:
-      - append:
-          field: error.message
-          value: "{{{_ingest.on_failure_message}}}"
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: cloudflare_logpush.gateway_network.timestamp
       copy_from: "@timestamp"
+      ignore_empty_value: true
   - rename:
       field: json.Action
       target_field: cloudflare_logpush.gateway_network.action
@@ -74,17 +84,22 @@ processors:
   - convert:
       field: json.DestinationIP
       target_field: cloudflare_logpush.gateway_network.destination.ip
+      if: ctx.json?.DestinationIP != ''
       type: ip
       ignore_missing: true
-      if: ctx.json?.DestinationIP != ''
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: destination.ip
       copy_from: cloudflare_logpush.gateway_network.destination.ip
       ignore_empty_value: true
-# Geo enrichment (destination IP)
+  # Geo enrichment (destination IP)
   - geoip:
       field: destination.ip
       target_field: destination.geo
+      ignore_missing: true
   - geoip:
       database_file: GeoLite2-ASN.mmdb
       field: destination.ip
@@ -106,7 +121,10 @@ processors:
       target_field: cloudflare_logpush.gateway_network.destination.port
       type: long
       ignore_missing: true
-      if: ctx.json?.DestinationPort != ''
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: destination.port
       copy_from: cloudflare_logpush.gateway_network.destination.port
@@ -117,6 +135,10 @@ processors:
       ignore_missing: true
   - set:
       field: host.id
+      copy_from: cloudflare_logpush.gateway_network.host.id
+      ignore_empty_value: true
+  - set:
+      field: device.id
       copy_from: cloudflare_logpush.gateway_network.host.id
       ignore_empty_value: true
   - rename:
@@ -150,17 +172,22 @@ processors:
   - convert:
       field: json.SourceIP
       target_field: cloudflare_logpush.gateway_network.source.ip
+      if: ctx.json?.SourceIP != ''
       type: ip
       ignore_missing: true
-      if: ctx.json?.SourceIP != ''
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: source.ip
       copy_from: cloudflare_logpush.gateway_network.source.ip
       ignore_empty_value: true
-# Geo enrichment (source IP)
+  # Geo enrichment (source IP)
   - geoip:
       field: source.ip
       target_field: source.geo
+      ignore_missing: true
   - geoip:
       database_file: GeoLite2-ASN.mmdb
       field: source.ip
@@ -182,7 +209,10 @@ processors:
       target_field: cloudflare_logpush.gateway_network.source.port
       type: long
       ignore_missing: true
-      if: ctx.json?.SourcePort != ''
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: source.port
       copy_from: cloudflare_logpush.gateway_network.source.port
@@ -216,7 +246,7 @@ processors:
       field: user.email
       copy_from: cloudflare_logpush.gateway_network.user.email
       ignore_empty_value: true
-# Custom fields
+  # Custom fields
   - rename:
       field: json.AccountID
       target_field: cloudflare_logpush.gateway_network.account_id
@@ -254,15 +284,22 @@ processors:
   - convert:
       field: json.OverrideIP
       target_field: cloudflare_logpush.gateway_network.override.ip
+      if: ctx.json?.OverrideIP != ''
       type: ip
       ignore_missing: true
-      if: ctx.json?.OverrideIP != ''
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
       field: json.OverridePort
       target_field: cloudflare_logpush.gateway_network.override.port
       type: long
       ignore_missing: true
-      if: ctx.json?.OverridePort != ''
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.PolicyID
       target_field: cloudflare_logpush.gateway_network.policy.id
@@ -278,9 +315,13 @@ processors:
   - convert:
       field: json.SourceInternalIP
       target_field: cloudflare_logpush.gateway_network.source.internal_ip
+      if: ctx.json?.SourceInternalIP != ''
       type: ip
       ignore_missing: true
-      if: ctx.json?.SourceInternalIP != ''
+      on_failure:
+        - append:
+                  field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       field: json.SourceIPContinentCode
       target_field: cloudflare_logpush.gateway_network.source_ip.continent_code
@@ -297,58 +338,52 @@ processors:
       field: json.VirtualNetworkName
       target_field: cloudflare_logpush.gateway_network.virtual_network.name
       ignore_missing: true
-# Create related fields
   - rename:
       field: json.RegistrationID
       target_field: cloudflare_logpush.gateway_network.registration_id
       ignore_missing: true
+  # Create related fields
   - append:
-      field: related.ip
-      value: "{{{source.ip}}}"
-      if: ctx.source?.ip != null
+      field: related.hosts
+      value: '{{{cloudflare_logpush.gateway_network.host.id}}}'
+      if: ctx.cloudflare_logpush?.gateway_network?.host?.id != null
+      allow_duplicates: false
+  - append:
+      field: related.hosts
+      value: '{{{cloudflare_logpush.gateway_network.host.name}}}'
+      if: ctx.cloudflare_logpush?.gateway_network?.host?.name != null
+      allow_duplicates: false
+  - append:
+      field: related.user
+      value: '{{{cloudflare_logpush.gateway_network.user.email}}}'
+      if: ctx.cloudflare_logpush?.gateway_network?.user?.email != null
+      allow_duplicates: false
+  - append:
+      field: related.user
+      value: '{{{cloudflare_logpush.gateway_network.user.id}}}'
+      if: ctx.cloudflare_logpush?.gateway_network?.user?.id != null
       allow_duplicates: false
   - append:
       field: related.ip
-      value: "{{{destination.ip}}}"
-      if: ctx.destination?.ip != null
+      value: '{{{cloudflare_logpush.gateway_network.destination.ip}}}'
+      if: ctx.cloudflare_logpush?.gateway_network?.destination?.ip != null
       allow_duplicates: false
   - append:
       field: related.ip
-      value: "{{{cloudflare_logpush.gateway_network.override.ip}}}"
+      value: '{{{cloudflare_logpush.gateway_network.override.ip}}}'
       if: ctx.cloudflare_logpush?.gateway_network?.override?.ip != null
       allow_duplicates: false
   - append:
       field: related.ip
-      value: "{{{cloudflare_logpush.gateway_network.source.internal_ip}}}"
-      if: ctx.cloudflare_logpush?.gateway_network?.source?.internal_ip != null && ctx.cloudflare_logpush.gateway_network.source.internal_ip != ''
+      value: '{{{cloudflare_logpush.gateway_network.source.ip}}}'
+      if: ctx.cloudflare_logpush?.gateway_network?.source?.ip != null
       allow_duplicates: false
   - append:
-      field: related.hosts
-      value: "{{{destination.domain}}}"
-      if: ctx.destination?.domain != null
-      allow_duplicates: false
-  - append:
-      field: related.hosts
-      value: "{{{host.id}}}"
-      if: ctx.host?.id != null
-      allow_duplicates: false
-  - append:
-      field: related.hosts
-      value: "{{{host.name}}}"
-      if: ctx.host?.name != null
-      allow_duplicates: false
-  - append:
-      field: related.user
-      value: "{{{user.id}}}"
-      if: ctx.user?.id != null
-      allow_duplicates: false
-  - append:
-      field: related.user
-      value: "{{{user.email}}}"
-      if: ctx.user?.email != null
+      field: related.ip
+      value: '{{{cloudflare_logpush.gateway_network.source.internal_ip}}}'
+      if: ctx.cloudflare_logpush?.gateway_network?.source?.internal_ip != null
       allow_duplicates: false
   - remove:
-      tag: remove_json_conf
       field:
         - json
         - _conf
@@ -369,30 +404,45 @@ processors:
         - cloudflare_logpush.gateway_network.user.id
         - cloudflare_logpush.gateway_network.user.email
       if: ctx.tags == null || !(ctx.tags.contains('preserve_duplicate_custom_fields'))
-      ignore_failure: true
       ignore_missing: true
   - script:
-      description: Drops null/empty values recursively.
       lang: painless
-      source: |
-        boolean dropEmptyFields(Object object) {
-          if (object == null || object == "") {
-            return true;
-          } else if (object instanceof Map) {
-            ((Map) object).values().removeIf(value -> dropEmptyFields(value));
-            return (((Map) object).size() == 0);
-          } else if (object instanceof List) {
-            ((List) object).removeIf(value -> dropEmptyFields(value));
-            return (((List) object).length == 0);
-          }
-          return false;
+      description: This script processor iterates over the whole document to remove fields with null values.
+      source: |-
+        void handleMap(Map map) {
+          map.values().removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
         }
-        dropEmptyFields(ctx);
+        void handleList(List list) {
+          list.removeIf(v -> {
+            if (v instanceof Map) {
+              handleMap(v);
+            } else if (v instanceof List) {
+              handleList(v);
+            }
+            return v == null || v == '' || (v instanceof Map && v.size() == 0) || (v instanceof List && v.size() == 0)
+          });
+        }
+        handleMap(ctx);
+  - set:
+      field: event.kind
+      value: pipeline_error
+      if: ctx.error?.message != null
+  - append:
+      field: tags
+      value: preserve_original_event
+      allow_duplicates: false
+      if: ctx.error?.message != null
 on_failure:
   - append:
       field: error.message
-      value: |-
-        Processor "{{{ _ingest.on_failure_processor_type }}}" in pipeline "{{{ _ingest.on_failure_pipeline }}}" failed with message "{{{ _ingest.on_failure_message }}}"
+      value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
       field: event.kind
       value: pipeline_error
