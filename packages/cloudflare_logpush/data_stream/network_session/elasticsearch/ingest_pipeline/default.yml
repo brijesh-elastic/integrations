@@ -36,24 +36,14 @@ processors:
   - script:
       lang: painless
       tag: painless_session_start_time_to_milli
-      if: ctx.json?.SessionStartTime != null
+      if: ctx.json?.SessionStartTime != null && ctx.json.SessionStartTime instanceof Number
       source: |
-        try {
-          long t;
-          if (ctx.json.SessionStartTime instanceof String) {
-            t = Long.parseLong(ctx.json.SessionStartTime);
-          } else if (ctx.json.SessionStartTime instanceof Number) {
-            t = (long)(ctx.json.SessionStartTime);
-          } else {
-            return;
-          }
-          if (t > (long)(1e18)) {
-            ctx.json.SessionStartTime = t/(long)(1e6)
-          } else if (t < (long)(1e10))  {
-            ctx.json.SessionStartTime = t*(long)(1e3)
-          }
+        long t = (long)(ctx.json.SessionStartTime);
+        if (t > (long)(1e18)) {
+          ctx.json.SessionStartTime = t/(long)(1e6)
+        } else if (t < (long)(1e10))  {
+          ctx.json.SessionStartTime = t*(long)(1e3)
         }
-        catch (Exception e) {}
   - date:
       field: json.SessionStartTime
       if: ctx.json?.SessionStartTime != null && ctx.json.SessionStartTime != ''

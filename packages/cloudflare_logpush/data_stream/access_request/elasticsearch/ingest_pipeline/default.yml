@@ -36,24 +36,14 @@ processors:
   - script:
       lang: painless
       tag: painless_created_at_to_milli
-      if: ctx.json?.CreatedAt != null
+      if: ctx.json?.CreatedAt != null && ctx.json.CreatedAt instanceof Number
       source: |
-        try {
-          long t;
-          if (ctx.json.CreatedAt instanceof String) {
-            t = Long.parseLong(ctx.json.CreatedAt);
-          } else if (ctx.json.CreatedAt instanceof Number) {
-            t = (long)(ctx.json.CreatedAt);
-          } else {
-            return;
-          }
-          if (t > (long)(1e18)) {
-            ctx.json.CreatedAt = t/(long)(1e6)
-          } else if (t < (long)(1e10))  {
-            ctx.json.CreatedAt = t*(long)(1e3)
-          }
+        long t = (long)(ctx.json.CreatedAt);
+        if (t > (long)(1e18)) {
+          ctx.json.CreatedAt = t/(long)(1e6)
+        } else if (t < (long)(1e10))  {
+          ctx.json.CreatedAt = t*(long)(1e3)
         }
-        catch (Exception e) {}
   - date:
       field: json.CreatedAt
       if: ctx.json?.CreatedAt != null && ctx.json.CreatedAt != ''

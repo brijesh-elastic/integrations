@@ -35,24 +35,14 @@ processors:
   - script:
       lang: painless
       tag: painless_edge_start_timestamp_to_milli
-      if: ctx.json?.EdgeStartTimestamp != null
+      if: ctx.json?.EdgeStartTimestamp != null && ctx.json.EdgeStartTimestamp instanceof Number
       source: |
-        try {
-          long t;
-          if (ctx.json.EdgeStartTimestamp instanceof String) {
-            t = Long.parseLong(ctx.json.EdgeStartTimestamp);
-          } else if (ctx.json.EdgeStartTimestamp instanceof Number) {
-            t = (long)(ctx.json.EdgeStartTimestamp);
-          } else {
-            return;
-          }
-          if (t > (long)(1e18)) {
-            ctx.json.EdgeStartTimestamp = t/(long)(1e6)
-          } else if (t < (long)(1e10))  {
-            ctx.json.EdgeStartTimestamp = t*(long)(1e3)
-          }
+        long t = (long)(ctx.json.EdgeStartTimestamp);
+        if (t > (long)(1e18)) {
+          ctx.json.EdgeStartTimestamp = t/(long)(1e6)
+        } else if (t < (long)(1e10))  {
+          ctx.json.EdgeStartTimestamp = t*(long)(1e3)
         }
-        catch (Exception e) {}
   - date:
       field: json.EdgeStartTimestamp
       if: ctx.json?.EdgeStartTimestamp != null && ctx.json.EdgeStartTimestamp != ''
