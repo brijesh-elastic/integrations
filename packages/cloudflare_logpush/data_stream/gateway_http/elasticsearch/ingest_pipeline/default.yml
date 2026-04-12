@@ -393,6 +393,22 @@ processors:
       target_field: cloudflare_logpush.gateway_http.virtual_network.name
       ignore_missing: true
 # Create related fields
+  - rename:
+      field: json.AppControlInfo
+      target_field: cloudflare_logpush.gateway_http.app_control_info
+      ignore_missing: true
+  - rename:
+      field: json.ApplicationStatuses
+      target_field: cloudflare_logpush.gateway_http.application.statuses
+      ignore_missing: true
+  - rename:
+      field: json.RedirectTargetURI
+      target_field: cloudflare_logpush.gateway_http.redirect_target_uri
+      ignore_missing: true
+  - rename:
+      field: json.RegistrationID
+      target_field: cloudflare_logpush.gateway_http.registration_id
+      ignore_missing: true
   - append:
       field: related.ip
       value: "{{{source.ip}}}"

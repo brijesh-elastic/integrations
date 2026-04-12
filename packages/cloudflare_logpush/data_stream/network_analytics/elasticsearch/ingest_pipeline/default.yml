@@ -1016,6 +1016,19 @@ processors:
       field: json.Verdict
       target_field: cloudflare_logpush.network_analytics.verdict
       ignore_missing: true
+  - rename:
+      field: json.DNSQueryName
+      target_field: cloudflare_logpush.network_analytics.dns.query.name
+      ignore_missing: true
+  - rename:
+      field: json.DNSQueryType
+      target_field: cloudflare_logpush.network_analytics.dns.query.type
+      ignore_missing: true
+  - convert:
+      field: json.PFPCustomTag
+      target_field: cloudflare_logpush.network_analytics.pfp_custom_tag
+      type: long
+      ignore_missing: true
   - append:
       field: related.hash
       value: '{{{cloudflare_logpush.network_analytics.source.geo_hash}}}'

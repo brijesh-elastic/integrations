@@ -288,6 +288,10 @@ processors:
       target_field: cloudflare_logpush.gateway_network.virtual_network.name
       ignore_missing: true
 # Create related fields
+  - rename:
+      field: json.RegistrationID
+      target_field: cloudflare_logpush.gateway_network.registration_id
+      ignore_missing: true
   - append:
       field: related.ip
       value: "{{{source.ip}}}"

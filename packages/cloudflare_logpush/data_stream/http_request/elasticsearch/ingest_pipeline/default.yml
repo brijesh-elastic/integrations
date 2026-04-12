@@ -923,6 +923,51 @@ processors:
       field: json.ZoneName
       target_field: cloudflare_logpush.http_request.zone.name
       ignore_missing: true
+  - rename:
+      field: json.FraudAttack
+      target_field: cloudflare_logpush.http_request.fraud.attack
+      ignore_missing: true
+  - convert:
+      field: json.FraudDetectionIDs
+      target_field: cloudflare_logpush.http_request.fraud.detection_ids
+      type: long
+      ignore_missing: true
+  - rename:
+      field: json.FraudDetectionTags
+      target_field: cloudflare_logpush.http_request.fraud.detection_tags
+      ignore_missing: true
+  - rename:
+      field: json.FraudEmailRisk
+      target_field: cloudflare_logpush.http_request.fraud.email_risk
+      ignore_missing: true
+  - rename:
+      field: json.FraudUserID
+      target_field: cloudflare_logpush.http_request.fraud.user_id
+      ignore_missing: true
+  - rename:
+      field: json.JSDetectionPassed
+      target_field: cloudflare_logpush.http_request.js_detection_passed
+      ignore_missing: true
+  - rename:
+      field: json.PayPerCrawlStatus
+      target_field: cloudflare_logpush.http_request.pay_per_crawl_status
+      ignore_missing: true
+  - rename:
+      field: json.VerifiedBotCategory
+      target_field: cloudflare_logpush.http_request.verified_bot_category
+      ignore_missing: true
+  - rename:
+      field: json.WebAssetsLabelsManaged
+      target_field: cloudflare_logpush.http_request.web_assets.labels_managed
+      ignore_missing: true
+  - rename:
+      field: json.WebAssetsOperationID
+      target_field: cloudflare_logpush.http_request.web_assets.operation_id
+      ignore_missing: true
+  - rename:
+      field: json.WorkerScriptName
+      target_field: cloudflare_logpush.http_request.worker.script_name
+      ignore_missing: true
   - append:
       field: related.hash
       value: '{{{cloudflare_logpush.http_request.ja3_hash}}}'

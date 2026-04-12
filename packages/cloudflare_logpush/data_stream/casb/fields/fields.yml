@@ -1,6 +1,5 @@
 - name: cloudflare_logpush.casb
   type: group
-  description: Integration for parsing Cloudflare CASB Findings logs.
   fields:
     - name: timestamp
       type: date

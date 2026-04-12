@@ -1,6 +1,5 @@
 - name: cloudflare_logpush.dns_firewall
   type: group
-  description: Integration for parsing Cloudflare Logpush DNS Firewall logs.
   fields:
     - name: cluster_id
       type: keyword

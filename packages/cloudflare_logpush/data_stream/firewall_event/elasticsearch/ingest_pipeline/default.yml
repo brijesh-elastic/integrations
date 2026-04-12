@@ -317,6 +317,10 @@ processors:
       field: json.ZoneName
       target_field: cloudflare_logpush.firewall_event.zone.name
       ignore_missing: true
+  - rename:
+      field: json.FraudUserID
+      target_field: cloudflare_logpush.firewall_event.fraud.user_id
+      ignore_missing: true
   - append:
       field: related.ip
       value: '{{{source.ip}}}'
