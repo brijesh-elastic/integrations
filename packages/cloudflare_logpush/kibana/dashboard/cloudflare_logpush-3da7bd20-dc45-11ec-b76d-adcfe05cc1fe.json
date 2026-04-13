@@ -1251,7 +1251,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T16:16:19.161Z",
+    "created_at": "2026-04-13T17:23:00.013Z",
     "id": "cloudflare_logpush-3da7bd20-dc45-11ec-b76d-adcfe05cc1fe",
     "references": [
         {
@@ -1343,11 +1343,6 @@
             "id": "logs-*",
             "name": "108877cb-bc4f-4870-90d4-732d4755014f:indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
             "type": "index-pattern"
-        },
-        {
-            "id": "cloudflare_logpush-security-solution-default",
-            "name": "tag-ref-security-solution-default",
-            "type": "tag"
         },
         {
             "id": "cloudflare_logpush-940b5bb0-015e-11ee-a051-4174215e3eb2",
@@ -1456,6 +1451,5 @@
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0",
-    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
+    "typeMigrationVersion": "10.2.0"
 }
