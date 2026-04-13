@@ -10,35 +10,17 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                "0c1ebcea-044a-47af-a694-b42d65cefcc2": {
                     "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "agent.name",
-                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
-                        "title": "Agent name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "663d0468-2111-4dcc-a092-03b9f214f162": {
-                    "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "user.email",
-                        "id": "663d0468-2111-4dcc-a092-03b9f214f162",
-                        "title": "User Email"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "68f3bde1-84f4-4e1a-b123-95614f15828b": {
-                    "explicitInput": {
-                        "enhancements": {},
+                        "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.gateway_dns.policy.name",
-                        "id": "68f3bde1-84f4-4e1a-b123-95614f15828b",
+                        "id": "0c1ebcea-044a-47af-a694-b42d65cefcc2",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
                         "title": "Policy Name"
                     },
                     "grow": true,
@@ -46,35 +28,17 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "8365b589-ff9e-4598-a03d-e04878b52053": {
+                "39e4d870-f6ac-4d2d-b93d-4727bf919d35": {
                     "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "source.geo.country_name",
-                        "id": "8365b589-ff9e-4598-a03d-e04878b52053",
-                        "title": "Source Country"
-                    },
-                    "grow": true,
-                    "order": 4,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "9faf8011-c168-4775-9111-c96845e1a7cc": {
-                    "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "cloudflare_logpush.gateway_dns.policy.id",
-                        "id": "9faf8011-c168-4775-9111-c96845e1a7cc",
-                        "title": "Policy ID"
-                    },
-                    "grow": true,
-                    "order": 6,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "b295f101-a23c-4a1d-9806-f7aa8f32992e": {
-                    "explicitInput": {
-                        "enhancements": {},
+                        "dataViewId": "logs-*",
                         "fieldName": "user.id",
-                        "id": "b295f101-a23c-4a1d-9806-f7aa8f32992e",
+                        "id": "39e4d870-f6ac-4d2d-b93d-4727bf919d35",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
                         "title": "User ID"
                     },
                     "grow": true,
@@ -82,11 +46,35 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "bb46d1fc-6e5c-4922-98ea-ee08e1c709e4": {
+                "872fd332-79c9-4ee8-84ba-b1182126349e": {
                     "explicitInput": {
-                        "enhancements": {},
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "872fd332-79c9-4ee8-84ba-b1182126349e",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "8a7dc2a7-4caf-41cc-9664-e108ba822515": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
                         "fieldName": "dns.question.name",
-                        "id": "bb46d1fc-6e5c-4922-98ea-ee08e1c709e4",
+                        "id": "8a7dc2a7-4caf-41cc-9664-e108ba822515",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
                         "title": "DNS Query Name"
                     },
                     "grow": true,
@@ -94,15 +82,75 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "bb54f1a9-55ae-4b05-8a10-236a5a785ece": {
+                "8e27545c-0ff5-450e-be59-4fb4688f4f2b": {
                     "explicitInput": {
-                        "enhancements": {},
+                        "dataViewId": "logs-*",
                         "fieldName": "source.ip",
-                        "id": "bb54f1a9-55ae-4b05-8a10-236a5a785ece",
+                        "id": "8e27545c-0ff5-450e-be59-4fb4688f4f2b",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
                         "title": "Source IP"
                     },
                     "grow": true,
                     "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "9d663400-b007-4e55-8617-b4ca8b3a78bc": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.gateway_dns.policy.id",
+                        "id": "9d663400-b007-4e55-8617-b4ca8b3a78bc",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Policy ID"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ab93e0d8-5794-4545-b80a-3bee5514b536": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.email",
+                        "id": "ab93e0d8-5794-4545-b80a-3bee5514b536",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "User Email"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "e1707d3a-63d7-4d9d-af38-8423bfed8eea": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.geo.country_name",
+                        "id": "e1707d3a-63d7-4d9d-af38-8423bfed8eea",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source Country"
+                    },
+                    "grow": true,
+                    "order": 4,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -129,43 +177,270 @@
         "panelsJSON": [
             {
                 "embeddableConfig": {
-                    "enhancements": {},
-                    "hidePanelTitles": false,
-                    "savedVis": {
-                        "data": {
-                            "aggs": [],
-                            "searchSource": {
-                                "filter": [],
-                                "query": {
-                                    "language": "kuery",
-                                    "query": ""
-                                }
+                    "attributes": {
+                        "layout": "vertical",
+                        "links": [
+                            {
+                                "destinationRefName": "link_1b5f791b-89fb-4674-88f2-4a08278b4ba8_dashboard",
+                                "id": "1b5f791b-89fb-4674-88f2-4a08278b4ba8",
+                                "label": "Access Requests",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 0,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6e272966-1045-4ddb-968f-2d50965ba03a_dashboard",
+                                "id": "6e272966-1045-4ddb-968f-2d50965ba03a",
+                                "label": "Audit",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 1,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_cf40f875-0623-4c84-8d8f-b888abf6644f_dashboard",
+                                "id": "cf40f875-0623-4c84-8d8f-b888abf6644f",
+                                "label": "CASB findings",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 2,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_8607758b-5203-411f-b7e4-7f1003c3669c_dashboard",
+                                "id": "8607758b-5203-411f-b7e4-7f1003c3669c",
+                                "label": "Device Posture",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 3,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6fd37be0-b5f9-45e3-8d89-ab493082fc05_dashboard",
+                                "id": "6fd37be0-b5f9-45e3-8d89-ab493082fc05",
+                                "label": "DLP Forensic Copies",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 4,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_5a7c67ad-8365-43fa-b669-f1e63e57761d_dashboard",
+                                "id": "5a7c67ad-8365-43fa-b669-f1e63e57761d",
+                                "label": "DNS",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 5,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
+                                "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
+                                "label": "DNS Firewall",
+                                "order": 6,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_34c14db0-1a16-480e-80fa-448085a92d85_dashboard",
+                                "id": "34c14db0-1a16-480e-80fa-448085a92d85",
+                                "label": "Email Security Alerts",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 7,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_d7f7a072-35a6-4bab-b260-eeb3df75e620_dashboard",
+                                "id": "d7f7a072-35a6-4bab-b260-eeb3df75e620",
+                                "label": "Firewall Event",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 8,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_e54529ec-e650-4f21-8bb9-f29f6c66bf2e_dashboard",
+                                "id": "e54529ec-e650-4f21-8bb9-f29f6c66bf2e",
+                                "label": "Gateway DNS",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 9,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05_dashboard",
+                                "id": "ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05",
+                                "label": "Gateway HTTP",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 10,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_281abe35-de5c-4f26-8807-e2aa1a23487e_dashboard",
+                                "id": "281abe35-de5c-4f26-8807-e2aa1a23487e",
+                                "label": "Gateway Network",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 11,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_46002839-d847-4720-a89e-1a5d6e761950_dashboard",
+                                "id": "46002839-d847-4720-a89e-1a5d6e761950",
+                                "label": "HTTP Request",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 12,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_0fd67195-e167-4ee4-b138-319e085d52e1_dashboard",
+                                "id": "0fd67195-e167-4ee4-b138-319e085d52e1",
+                                "label": "Magic IDS Detections",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 13,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_74a197af-6a1b-4b37-9d31-828279cb0c01_dashboard",
+                                "id": "74a197af-6a1b-4b37-9d31-828279cb0c01",
+                                "label": "NEL Report",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 14,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_d03aa48c-ba8f-49be-9653-3d1a91772d10_dashboard",
+                                "id": "d03aa48c-ba8f-49be-9653-3d1a91772d10",
+                                "label": "Network Analytics",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 15,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_14e066ed-64db-40c3-8bf8-18adc1e71edc_dashboard",
+                                "id": "14e066ed-64db-40c3-8bf8-18adc1e71edc",
+                                "label": "Network Session Logs",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 16,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_f428fda9-a03c-4864-a44b-0301bb589040_dashboard",
+                                "id": "f428fda9-a03c-4864-a44b-0301bb589040",
+                                "label": "Page Shield Events",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 17,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6b4d2839-6ff3-4ac8-9490-f6cc323a2311_dashboard",
+                                "id": "6b4d2839-6ff3-4ac8-9490-f6cc323a2311",
+                                "label": "Sinkhole HTTP",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 18,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_4c2dff69-1d9b-441b-b438-ec1f04f640f0_dashboard",
+                                "id": "4c2dff69-1d9b-441b-b438-ec1f04f640f0",
+                                "label": "Spectrum Event",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 19,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
+                                "id": "9ffa1b28-b073-4bff-ad56-ed414d0caaf9",
+                                "label": "Workers Trace Events",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 20,
+                                "type": "dashboardLink"
                             }
-                        },
-                        "description": "",
-                        "id": "",
-                        "params": {
-                            "fontSize": 12,
-                            "markdown": "**Navigation**\n\n**Cloudflare Logpush**\n\n[Zero Trust overview](/app/dashboards#/view/cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2)  \n[Access Requests](/app/dashboards#/view/cloudflare_logpush-940b5bb0-015e-11ee-a051-4174215e3eb2)  \n[Audit](/app/dashboards#/view/cloudflare_logpush-5b1248c0-044a-11ee-8373-5fabaa30ca64)  \n[CASB Findings](/app/dashboards#/view/cloudflare_logpush-6f14e840-0450-11ee-8373-5fabaa30ca64)  \n[Device Posture](/app/dashboards#/view/cloudflare_logpush-78731300-047b-11ee-8373-5fabaa30ca64)  \n**[Gateway DNS](/app/dashboards#/view/cloudflare_logpush-5de148d0-04ae-11ee-8373-5fabaa30ca64)**  \n[Gateway HTTP](/app/dashboards#/view/cloudflare_logpush-0f1c8080-04b2-11ee-8373-5fabaa30ca64)  \n[Gateway Network](/app/dashboards#/view/cloudflare_logpush-8ae621f0-04ba-11ee-8373-5fabaa30ca64)  \n[Network Session Logs](/app/dashboards#/view/cloudflare_logpush-11e340a0-04bd-11ee-8373-5fabaa30ca64)\n\n**Overview**\n\nThis dashboard provides information about the Gateway DNS events collected by the Cloudflare Logpush integration.\n\n[**Integration Page**](/app/integrations/detail/cloudflare_logpush/overview)",
-                            "openLinksInNewTab": false
-                        },
-                        "title": "",
-                        "type": "markdown",
-                        "uiState": {}
+                        ]
                     },
-                    "type": "visualization"
+                    "enhancements": {}
                 },
                 "gridData": {
-                    "h": 26,
-                    "i": "1d4f74c6-35f0-42db-8592-362faed90dbe",
+                    "h": 29,
+                    "i": "c50f47c3-c7b4-475a-8286-c55e180dd1d1",
                     "w": 8,
                     "x": 0,
                     "y": 0
                 },
-                "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
-                "title": "Table of contents",
-                "type": "visualization",
-                "version": "8.9.0"
+                "panelIndex": "c50f47c3-c7b4-475a-8286-c55e180dd1d1",
+                "title": "Navigation",
+                "type": "links"
             },
             {
                 "embeddableConfig": {
@@ -319,8 +594,7 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 13,
@@ -331,8 +605,7 @@
                 },
                 "panelIndex": "e55df9ac-f378-44ac-8ec9-5dae1269e587",
                 "title": "Most Popular Policies",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -468,8 +741,7 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 13,
@@ -480,8 +752,7 @@
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                 "title": "DNS Resolver Decision",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -609,11 +880,10 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 13,
+                    "h": 16,
                     "i": "f11abba6-018e-4e78-a4d8-69161fe533d4",
                     "w": 20,
                     "x": 8,
@@ -621,8 +891,7 @@
                 },
                 "panelIndex": "f11abba6-018e-4e78-a4d8-69161fe533d4",
                 "title": "Top Domain Categories",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -751,11 +1020,10 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 13,
+                    "h": 16,
                     "i": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                     "w": 20,
                     "x": 28,
@@ -763,8 +1031,179 @@
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                 "title": "Top DNS Query Names",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "9573e17f-5ce9-40f5-9bb2-60d88003fa9e",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "abba7002-5788-4a05-a010-367b1a38559e": {
+                                            "columnOrder": [
+                                                "0af2dbd2-9b23-452d-96b9-1f162db9560d",
+                                                "8e73d85c-f174-45c3-8383-15b5b72e917c"
+                                            ],
+                                            "columns": {
+                                                "0af2dbd2-9b23-452d-96b9-1f162db9560d": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "DNS Question Name",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "8e73d85c-f174-45c3-8383-15b5b72e917c",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "dns.question.name"
+                                                },
+                                                "8e73d85c-f174-45c3-8383-15b5b72e917c": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "index": "9573e17f-5ce9-40f5-9bb2-60d88003fa9e",
+                                        "negate": false,
+                                        "params": [
+                                            {
+                                                "meta": {
+                                                    "alias": null,
+                                                    "disabled": false,
+                                                    "field": "data_stream.dataset",
+                                                    "index": "logs-*",
+                                                    "key": "data_stream.dataset",
+                                                    "negate": false,
+                                                    "params": {
+                                                        "query": "cloudflare_logpush.gateway_dns"
+                                                    },
+                                                    "type": "phrase"
+                                                },
+                                                "query": {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.gateway_dns"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "meta": {
+                                                    "alias": null,
+                                                    "disabled": false,
+                                                    "field": "event.outcome",
+                                                    "index": "logs-*",
+                                                    "key": "event.outcome",
+                                                    "negate": false,
+                                                    "params": {
+                                                        "query": "failure"
+                                                    },
+                                                    "type": "phrase"
+                                                },
+                                                "query": {
+                                                    "match_phrase": {
+                                                        "event.outcome": "failure"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "relation": "AND",
+                                        "type": "combined"
+                                    },
+                                    "query": {}
+                                }
+                            ],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "columns": [
+                                    {
+                                        "columnId": "0af2dbd2-9b23-452d-96b9-1f162db9560d",
+                                        "isTransposed": false
+                                    },
+                                    {
+                                        "columnId": "8e73d85c-f174-45c3-8383-15b5b72e917c",
+                                        "isTransposed": false
+                                    }
+                                ],
+                                "layerId": "abba7002-5788-4a05-a010-367b1a38559e",
+                                "layerType": "data",
+                                "paging": {
+                                    "enabled": true,
+                                    "size": 10
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsDatatable"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 16,
+                    "i": "9c7980fb-40dc-47f7-bf8d-7b294f4450d9",
+                    "w": 20,
+                    "x": 28,
+                    "y": 29
+                },
+                "panelIndex": "9c7980fb-40dc-47f7-bf8d-7b294f4450d9",
+                "title": "Top DNS Query Names (Failures)",
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -984,20 +1423,18 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 16,
                     "i": "c5be3c62-8ef4-487d-aa4f-a91c5c2de2d3",
                     "w": 28,
                     "x": 0,
-                    "y": 26
+                    "y": 29
                 },
                 "panelIndex": "c5be3c62-8ef4-487d-aa4f-a91c5c2de2d3",
                 "title": "DNS Requests Over Time (Success vs Failure)",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -1010,7 +1447,7 @@
                             },
                             {
                                 "id": "logs-*",
-                                "name": "9573e17f-5ce9-40f5-9bb2-60d88003fa9e",
+                                "name": "f5919423-5cab-46aa-abb6-1a25820a75be",
                                 "type": "index-pattern"
                             }
                         ],
@@ -1021,15 +1458,15 @@
                                     "layers": {
                                         "abba7002-5788-4a05-a010-367b1a38559e": {
                                             "columnOrder": [
-                                                "0af2dbd2-9b23-452d-96b9-1f162db9560d",
-                                                "8e73d85c-f174-45c3-8383-15b5b72e917c"
+                                                "46190c41-8190-412b-a50c-25049150866e",
+                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
                                             ],
                                             "columns": {
-                                                "0af2dbd2-9b23-452d-96b9-1f162db9560d": {
+                                                "46190c41-8190-412b-a50c-25049150866e": {
                                                     "customLabel": true,
                                                     "dataType": "string",
                                                     "isBucketed": true,
-                                                    "label": "DNS Question Name",
+                                                    "label": "Country",
                                                     "operationType": "terms",
                                                     "params": {
                                                         "exclude": [],
@@ -1038,7 +1475,7 @@
                                                         "includeIsRegex": false,
                                                         "missingBucket": false,
                                                         "orderBy": {
-                                                            "columnId": "8e73d85c-f174-45c3-8383-15b5b72e917c",
+                                                            "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9",
                                                             "type": "column"
                                                         },
                                                         "orderDirection": "desc",
@@ -1046,12 +1483,13 @@
                                                         "parentFormat": {
                                                             "id": "terms"
                                                         },
+                                                        "secondaryFields": [],
                                                         "size": 10
                                                     },
                                                     "scale": "ordinal",
-                                                    "sourceField": "dns.question.name"
+                                                    "sourceField": "source.geo.country_name"
                                                 },
-                                                "8e73d85c-f174-45c3-8383-15b5b72e917c": {
+                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9": {
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
@@ -1081,52 +1519,20 @@
                                     "meta": {
                                         "alias": null,
                                         "disabled": false,
-                                        "index": "9573e17f-5ce9-40f5-9bb2-60d88003fa9e",
+                                        "field": "data_stream.dataset",
+                                        "index": "f5919423-5cab-46aa-abb6-1a25820a75be",
+                                        "key": "data_stream.dataset",
                                         "negate": false,
-                                        "params": [
-                                            {
-                                                "meta": {
-                                                    "alias": null,
-                                                    "disabled": false,
-                                                    "field": "data_stream.dataset",
-                                                    "index": "logs-*",
-                                                    "key": "data_stream.dataset",
-                                                    "negate": false,
-                                                    "params": {
-                                                        "query": "cloudflare_logpush.gateway_dns"
-                                                    },
-                                                    "type": "phrase"
-                                                },
-                                                "query": {
-                                                    "match_phrase": {
-                                                        "data_stream.dataset": "cloudflare_logpush.gateway_dns"
-                                                    }
-                                                }
-                                            },
-                                            {
-                                                "meta": {
-                                                    "alias": null,
-                                                    "disabled": false,
-                                                    "field": "event.outcome",
-                                                    "index": "logs-*",
-                                                    "key": "event.outcome",
-                                                    "negate": false,
-                                                    "params": {
-                                                        "query": "failure"
-                                                    },
-                                                    "type": "phrase"
-                                                },
-                                                "query": {
-                                                    "match_phrase": {
-                                                        "event.outcome": "failure"
-                                                    }
-                                                }
-                                            }
-                                        ],
-                                        "relation": "AND",
-                                        "type": "combined"
+                                        "params": {
+                                            "query": "cloudflare_logpush.gateway_dns"
+                                        },
+                                        "type": "phrase"
                                     },
-                                    "query": {}
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.gateway_dns"
+                                        }
+                                    }
                                 }
                             ],
                             "internalReferences": [],
@@ -1137,12 +1543,10 @@
                             "visualization": {
                                 "columns": [
                                     {
-                                        "columnId": "0af2dbd2-9b23-452d-96b9-1f162db9560d",
-                                        "isTransposed": false
+                                        "columnId": "46190c41-8190-412b-a50c-25049150866e"
                                     },
                                     {
-                                        "columnId": "8e73d85c-f174-45c3-8383-15b5b72e917c",
-                                        "isTransposed": false
+                                        "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
                                     }
                                 ],
                                 "layerId": "abba7002-5788-4a05-a010-367b1a38559e",
@@ -1158,20 +1562,18 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 16,
-                    "i": "9c7980fb-40dc-47f7-bf8d-7b294f4450d9",
-                    "w": 20,
-                    "x": 28,
-                    "y": 26
+                    "h": 24,
+                    "i": "d9952030-6e1e-405c-b626-7f7573225080",
+                    "w": 10,
+                    "x": 38,
+                    "y": 45
                 },
-                "panelIndex": "9c7980fb-40dc-47f7-bf8d-7b294f4450d9",
-                "title": "Top DNS Query Names (Failures)",
-                "type": "lens",
-                "version": "8.9.0"
+                "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
+                "title": "Top DNS Requests by Country",
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -1397,13 +1799,17 @@
                             "openTOCDetails": []
                         }
                     },
-                    "enhancements": {},
+                    "enhancements": {
+                        "dynamicActions": {
+                            "events": []
+                        }
+                    },
                     "hiddenLayers": [],
                     "hidePanelTitles": false,
                     "isLayerTOCOpen": true,
                     "mapBuffer": {
                         "maxLat": 85.05113,
-                        "maxLon": 180,
+                        "maxLon": 270,
                         "minLat": -66.51326,
                         "minLon": -180
                     },
@@ -1412,169 +1818,26 @@
                         "lon": 20.06436,
                         "zoom": 1.78
                     },
-                    "openTOCDetails": [],
-                    "type": "map"
+                    "openTOCDetails": []
                 },
                 "gridData": {
                     "h": 24,
                     "i": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                     "w": 38,
                     "x": 0,
-                    "y": 42
+                    "y": 45
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                 "title": "Top Traffic Countries",
-                "type": "map",
-                "version": "8.9.0"
-            },
-            {
-                "embeddableConfig": {
-                    "attributes": {
-                        "references": [
-                            {
-                                "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
-                                "type": "index-pattern"
-                            },
-                            {
-                                "id": "logs-*",
-                                "name": "f5919423-5cab-46aa-abb6-1a25820a75be",
-                                "type": "index-pattern"
-                            }
-                        ],
-                        "state": {
-                            "adHocDataViews": {},
-                            "datasourceStates": {
-                                "formBased": {
-                                    "layers": {
-                                        "abba7002-5788-4a05-a010-367b1a38559e": {
-                                            "columnOrder": [
-                                                "46190c41-8190-412b-a50c-25049150866e",
-                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
-                                            ],
-                                            "columns": {
-                                                "46190c41-8190-412b-a50c-25049150866e": {
-                                                    "customLabel": true,
-                                                    "dataType": "string",
-                                                    "isBucketed": true,
-                                                    "label": "Country",
-                                                    "operationType": "terms",
-                                                    "params": {
-                                                        "exclude": [],
-                                                        "excludeIsRegex": false,
-                                                        "include": [],
-                                                        "includeIsRegex": false,
-                                                        "missingBucket": false,
-                                                        "orderBy": {
-                                                            "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9",
-                                                            "type": "column"
-                                                        },
-                                                        "orderDirection": "desc",
-                                                        "otherBucket": true,
-                                                        "parentFormat": {
-                                                            "id": "terms"
-                                                        },
-                                                        "secondaryFields": [],
-                                                        "size": 10
-                                                    },
-                                                    "scale": "ordinal",
-                                                    "sourceField": "source.geo.country_name"
-                                                },
-                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9": {
-                                                    "customLabel": true,
-                                                    "dataType": "number",
-                                                    "isBucketed": false,
-                                                    "label": "Count",
-                                                    "operationType": "count",
-                                                    "params": {
-                                                        "emptyAsNull": true
-                                                    },
-                                                    "scale": "ratio",
-                                                    "sourceField": "___records___"
-                                                }
-                                            },
-                                            "incompleteColumns": {},
-                                            "sampling": 1
-                                        }
-                                    }
-                                },
-                                "textBased": {
-                                    "layers": {}
-                                }
-                            },
-                            "filters": [
-                                {
-                                    "$state": {
-                                        "store": "appState"
-                                    },
-                                    "meta": {
-                                        "alias": null,
-                                        "disabled": false,
-                                        "field": "data_stream.dataset",
-                                        "index": "f5919423-5cab-46aa-abb6-1a25820a75be",
-                                        "key": "data_stream.dataset",
-                                        "negate": false,
-                                        "params": {
-                                            "query": "cloudflare_logpush.gateway_dns"
-                                        },
-                                        "type": "phrase"
-                                    },
-                                    "query": {
-                                        "match_phrase": {
-                                            "data_stream.dataset": "cloudflare_logpush.gateway_dns"
-                                        }
-                                    }
-                                }
-                            ],
-                            "internalReferences": [],
-                            "query": {
-                                "language": "kuery",
-                                "query": ""
-                            },
-                            "visualization": {
-                                "columns": [
-                                    {
-                                        "columnId": "46190c41-8190-412b-a50c-25049150866e"
-                                    },
-                                    {
-                                        "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
-                                    }
-                                ],
-                                "layerId": "abba7002-5788-4a05-a010-367b1a38559e",
-                                "layerType": "data",
-                                "paging": {
-                                    "enabled": true,
-                                    "size": 10
-                                }
-                            }
-                        },
-                        "title": "",
-                        "type": "lens",
-                        "visualizationType": "lnsDatatable"
-                    },
-                    "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
-                },
-                "gridData": {
-                    "h": 24,
-                    "i": "d9952030-6e1e-405c-b626-7f7573225080",
-                    "w": 10,
-                    "x": 38,
-                    "y": 42
-                },
-                "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
-                "title": "Top DNS Requests by Country",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "map"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] Gateway DNS",
-        "version": 1
+        "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T15:07:59.229Z",
+    "created_at": "2026-04-13T16:16:09.057Z",
     "id": "cloudflare_logpush-5de148d0-04ae-11ee-8373-5fabaa30ca64",
     "references": [
         {
@@ -1629,11 +1892,6 @@
         },
         {
             "id": "logs-*",
-            "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "d9952030-6e1e-405c-b626-7f7573225080:indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
             "type": "index-pattern"
         },
@@ -1643,51 +1901,162 @@
             "type": "index-pattern"
         },
         {
-            "id": "logs-*",
-            "name": "controlGroup_1493457d-79d9-47e6-ba81-8741d24ecff6:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_b295f101-a23c-4a1d-9806-f7aa8f32992e:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_663d0468-2111-4dcc-a092-03b9f214f162:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_8365b589-ff9e-4598-a03d-e04878b52053:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_bb54f1a9-55ae-4b05-8a10-236a5a785ece:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_bb46d1fc-6e5c-4922-98ea-ee08e1c709e4:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_68f3bde1-84f4-4e1a-b123-95614f15828b:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_9faf8011-c168-4775-9111-c96845e1a7cc:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
             "id": "cloudflare_logpush-security-solution-default",
             "name": "tag-ref-security-solution-default",
             "type": "tag"
+        },
+        {
+            "id": "cloudflare_logpush-940b5bb0-015e-11ee-a051-4174215e3eb2",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_1b5f791b-89fb-4674-88f2-4a08278b4ba8_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-5b1248c0-044a-11ee-8373-5fabaa30ca64",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_6e272966-1045-4ddb-968f-2d50965ba03a_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-6f14e840-0450-11ee-8373-5fabaa30ca64",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_cf40f875-0623-4c84-8d8f-b888abf6644f_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-78731300-047b-11ee-8373-5fabaa30ca64",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_8607758b-5203-411f-b7e4-7f1003c3669c_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-83119f8c-86de-428a-9a78-00db2dc11a22",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_6fd37be0-b5f9-45e3-8d89-ab493082fc05_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-87f6ad60-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_5a7c67ad-8365-43fa-b669-f1e63e57761d_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-9c472060-58c6-11ee-99a4-d186f5240e2e",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-1f54bc4d-b95d-4f25-94e6-3525ed3d02c0",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_34c14db0-1a16-480e-80fa-448085a92d85_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-a32a0690-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_d7f7a072-35a6-4bab-b260-eeb3df75e620_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-5de148d0-04ae-11ee-8373-5fabaa30ca64",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_e54529ec-e650-4f21-8bb9-f29f6c66bf2e_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-0f1c8080-04b2-11ee-8373-5fabaa30ca64",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-8ae621f0-04ba-11ee-8373-5fabaa30ca64",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_281abe35-de5c-4f26-8807-e2aa1a23487e_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-bb426420-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_46002839-d847-4720-a89e-1a5d6e761950_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-09ef2620-58a5-11ee-99a4-d186f5240e2e",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_0fd67195-e167-4ee4-b138-319e085d52e1_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-cc375d30-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_74a197af-6a1b-4b37-9d31-828279cb0c01_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-3da7bd20-dc45-11ec-b76d-adcfe05cc1fe",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_d03aa48c-ba8f-49be-9653-3d1a91772d10_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-11e340a0-04bd-11ee-8373-5fabaa30ca64",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_14e066ed-64db-40c3-8bf8-18adc1e71edc_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-67bc9d49-5015-4e1f-9b50-cfce462ae4ca",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_f428fda9-a03c-4864-a44b-0301bb589040_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-fe4ebba0-58bd-11ee-99a4-d186f5240e2e",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_6b4d2839-6ff3-4ac8-9490-f6cc323a2311_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-da55ddb0-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_4c2dff69-1d9b-441b-b438-ec1f04f640f0_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "logs-*",
+            "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_c841b784-45e4-4256-802d-d51a8705d632:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_cac46626-08ce-452a-9acf-5d09be6c754b:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_0ebc1040-1d64-4268-9442-16fbb23fd56f:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_772e4165-ee44-4ee6-888a-ff912f6effa8:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_540c412d-3293-4c6b-9738-94a240cb5851:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_88975f59-a3a8-46e2-b6f7-b177a2ceaff5:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_9d9b70ee-6358-426a-98ea-4b0719537dbd:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_822e245b-4c1a-4393-af83-f6f2e49c32aa:optionsListDataView",
+            "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

@@ -10,83 +10,35 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                "11c90151-1b79-4bf7-b0cf-83e072b71e48": {
                     "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "agent.name",
-                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
-                        "title": "Agent name"
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.gateway_http.account_id",
+                        "id": "11c90151-1b79-4bf7-b0cf-83e072b71e48",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Account ID"
                     },
                     "grow": true,
-                    "order": 0,
+                    "order": 3,
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "663d0468-2111-4dcc-a092-03b9f214f162": {
+                "2343c336-357c-4142-97d0-197eedc7278a": {
                     "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "user.email",
-                        "id": "663d0468-2111-4dcc-a092-03b9f214f162",
-                        "title": "User Email"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "7b612c7c-ded2-44fa-9886-b724b63c9ac3": {
-                    "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "cloudflare_logpush.gateway_http.policy.id",
-                        "id": "7b612c7c-ded2-44fa-9886-b724b63c9ac3",
-                        "title": "Policy ID"
-                    },
-                    "grow": true,
-                    "order": 6,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "8365b589-ff9e-4598-a03d-e04878b52053": {
-                    "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "source.geo.country_name",
-                        "id": "8365b589-ff9e-4598-a03d-e04878b52053",
-                        "title": "Source Country"
-                    },
-                    "grow": true,
-                    "order": 4,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "b295f101-a23c-4a1d-9806-f7aa8f32992e": {
-                    "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "user.id",
-                        "id": "b295f101-a23c-4a1d-9806-f7aa8f32992e",
-                        "title": "User ID"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "bb54f1a9-55ae-4b05-8a10-236a5a785ece": {
-                    "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "source.ip",
-                        "id": "bb54f1a9-55ae-4b05-8a10-236a5a785ece",
-                        "title": "Source IP"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "c02021bd-8f49-454b-8375-645f719fa8c5": {
-                    "explicitInput": {
-                        "enhancements": {},
+                        "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.gateway_http.policy.name",
-                        "id": "c02021bd-8f49-454b-8375-645f719fa8c5",
+                        "id": "2343c336-357c-4142-97d0-197eedc7278a",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
                         "title": "Policy Name"
                     },
                     "grow": true,
@@ -94,15 +46,111 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "f82b774e-d4bf-4158-a7ba-291db87af52a": {
+                "58ea7ceb-7773-4abd-9713-2f59db30e1ff": {
                     "explicitInput": {
-                        "enhancements": {},
-                        "fieldName": "cloudflare_logpush.gateway_http.account_id",
-                        "id": "f82b774e-d4bf-4158-a7ba-291db87af52a",
-                        "title": "Account ID"
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "58ea7ceb-7773-4abd-9713-2f59db30e1ff",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent name"
                     },
                     "grow": true,
-                    "order": 3,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "70239a76-e34b-41fb-9488-4c671adcd9a3": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.email",
+                        "id": "70239a76-e34b-41fb-9488-4c671adcd9a3",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "User Email"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "95d8d240-c212-4309-96c9-81fa621d8122": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.id",
+                        "id": "95d8d240-c212-4309-96c9-81fa621d8122",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "User ID"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b042b65a-98e3-4f56-8c78-8ab4c54ab37b": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.geo.country_name",
+                        "id": "b042b65a-98e3-4f56-8c78-8ab4c54ab37b",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source Country"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "d3439af2-4467-4a22-af7d-050b563aa15d": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.gateway_http.policy.id",
+                        "id": "d3439af2-4467-4a22-af7d-050b563aa15d",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Policy ID"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "f4fca984-4db0-4fc1-9843-dfed26b2eb04": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.ip",
+                        "id": "f4fca984-4db0-4fc1-9843-dfed26b2eb04",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 5,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -129,43 +177,270 @@
         "panelsJSON": [
             {
                 "embeddableConfig": {
-                    "enhancements": {},
-                    "hidePanelTitles": false,
-                    "savedVis": {
-                        "data": {
-                            "aggs": [],
-                            "searchSource": {
-                                "filter": [],
-                                "query": {
-                                    "language": "kuery",
-                                    "query": ""
-                                }
+                    "attributes": {
+                        "layout": "vertical",
+                        "links": [
+                            {
+                                "destinationRefName": "link_1b5f791b-89fb-4674-88f2-4a08278b4ba8_dashboard",
+                                "id": "1b5f791b-89fb-4674-88f2-4a08278b4ba8",
+                                "label": "Access Requests",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 0,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6e272966-1045-4ddb-968f-2d50965ba03a_dashboard",
+                                "id": "6e272966-1045-4ddb-968f-2d50965ba03a",
+                                "label": "Audit",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 1,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_cf40f875-0623-4c84-8d8f-b888abf6644f_dashboard",
+                                "id": "cf40f875-0623-4c84-8d8f-b888abf6644f",
+                                "label": "CASB findings",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 2,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_8607758b-5203-411f-b7e4-7f1003c3669c_dashboard",
+                                "id": "8607758b-5203-411f-b7e4-7f1003c3669c",
+                                "label": "Device Posture",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 3,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6fd37be0-b5f9-45e3-8d89-ab493082fc05_dashboard",
+                                "id": "6fd37be0-b5f9-45e3-8d89-ab493082fc05",
+                                "label": "DLP Forensic Copies",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 4,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_5a7c67ad-8365-43fa-b669-f1e63e57761d_dashboard",
+                                "id": "5a7c67ad-8365-43fa-b669-f1e63e57761d",
+                                "label": "DNS",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 5,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
+                                "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
+                                "label": "DNS Firewall",
+                                "order": 6,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_34c14db0-1a16-480e-80fa-448085a92d85_dashboard",
+                                "id": "34c14db0-1a16-480e-80fa-448085a92d85",
+                                "label": "Email Security Alerts",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 7,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_d7f7a072-35a6-4bab-b260-eeb3df75e620_dashboard",
+                                "id": "d7f7a072-35a6-4bab-b260-eeb3df75e620",
+                                "label": "Firewall Event",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 8,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_e54529ec-e650-4f21-8bb9-f29f6c66bf2e_dashboard",
+                                "id": "e54529ec-e650-4f21-8bb9-f29f6c66bf2e",
+                                "label": "Gateway DNS",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 9,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05_dashboard",
+                                "id": "ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05",
+                                "label": "Gateway HTTP",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 10,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_281abe35-de5c-4f26-8807-e2aa1a23487e_dashboard",
+                                "id": "281abe35-de5c-4f26-8807-e2aa1a23487e",
+                                "label": "Gateway Network",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 11,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_46002839-d847-4720-a89e-1a5d6e761950_dashboard",
+                                "id": "46002839-d847-4720-a89e-1a5d6e761950",
+                                "label": "HTTP Request",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 12,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_0fd67195-e167-4ee4-b138-319e085d52e1_dashboard",
+                                "id": "0fd67195-e167-4ee4-b138-319e085d52e1",
+                                "label": "Magic IDS Detections",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 13,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_74a197af-6a1b-4b37-9d31-828279cb0c01_dashboard",
+                                "id": "74a197af-6a1b-4b37-9d31-828279cb0c01",
+                                "label": "NEL Report",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 14,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_d03aa48c-ba8f-49be-9653-3d1a91772d10_dashboard",
+                                "id": "d03aa48c-ba8f-49be-9653-3d1a91772d10",
+                                "label": "Network Analytics",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 15,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_14e066ed-64db-40c3-8bf8-18adc1e71edc_dashboard",
+                                "id": "14e066ed-64db-40c3-8bf8-18adc1e71edc",
+                                "label": "Network Session Logs",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 16,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_f428fda9-a03c-4864-a44b-0301bb589040_dashboard",
+                                "id": "f428fda9-a03c-4864-a44b-0301bb589040",
+                                "label": "Page Shield Events",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 17,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6b4d2839-6ff3-4ac8-9490-f6cc323a2311_dashboard",
+                                "id": "6b4d2839-6ff3-4ac8-9490-f6cc323a2311",
+                                "label": "Sinkhole HTTP",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 18,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_4c2dff69-1d9b-441b-b438-ec1f04f640f0_dashboard",
+                                "id": "4c2dff69-1d9b-441b-b438-ec1f04f640f0",
+                                "label": "Spectrum Event",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 19,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
+                                "id": "9ffa1b28-b073-4bff-ad56-ed414d0caaf9",
+                                "label": "Workers Trace Events",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 20,
+                                "type": "dashboardLink"
                             }
-                        },
-                        "description": "",
-                        "id": "",
-                        "params": {
-                            "fontSize": 12,
-                            "markdown": "**Navigation**\n\n**Cloudflare Logpush**\n\n[Zero Trust overview](/app/dashboards#/view/cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2)  \n[Access Requests](/app/dashboards#/view/cloudflare_logpush-940b5bb0-015e-11ee-a051-4174215e3eb2)  \n[Audit](/app/dashboards#/view/cloudflare_logpush-5b1248c0-044a-11ee-8373-5fabaa30ca64)  \n[CASB Findings](/app/dashboards#/view/cloudflare_logpush-6f14e840-0450-11ee-8373-5fabaa30ca64)  \n[Device Posture](/app/dashboards#/view/cloudflare_logpush-78731300-047b-11ee-8373-5fabaa30ca64)  \n[Gateway DNS](/app/dashboards#/view/cloudflare_logpush-5de148d0-04ae-11ee-8373-5fabaa30ca64)  \n**[Gateway HTTP](/app/dashboards#/view/cloudflare_logpush-0f1c8080-04b2-11ee-8373-5fabaa30ca64)**  \n[Gateway Network](/app/dashboards#/view/cloudflare_logpush-8ae621f0-04ba-11ee-8373-5fabaa30ca64)  \n[Network Session Logs](/app/dashboards#/view/cloudflare_logpush-11e340a0-04bd-11ee-8373-5fabaa30ca64)\n\n**Overview**\n\nThis dashboard provides information about the Gateway HTTP events collected by the Cloudflare Logpush integration.\n\n[**Integration Page**](/app/integrations/detail/cloudflare_logpush/overview)",
-                            "openLinksInNewTab": false
-                        },
-                        "title": "",
-                        "type": "markdown",
-                        "uiState": {}
+                        ]
                     },
-                    "type": "visualization"
+                    "enhancements": {}
                 },
                 "gridData": {
-                    "h": 42,
-                    "i": "1d4f74c6-35f0-42db-8592-362faed90dbe",
+                    "h": 29,
+                    "i": "f5674f65-1f42-4c27-80e1-4b3d51e86b93",
                     "w": 8,
                     "x": 0,
                     "y": 0
                 },
-                "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
-                "title": "Table of contents",
-                "type": "visualization",
-                "version": "8.9.0"
+                "panelIndex": "f5674f65-1f42-4c27-80e1-4b3d51e86b93",
+                "title": "Navigation",
+                "type": "links"
             },
             {
                 "embeddableConfig": {
@@ -301,8 +576,7 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 14,
@@ -313,8 +587,7 @@
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                 "title": "Action Over HTTP Request",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -534,8 +807,7 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 14,
@@ -546,8 +818,7 @@
                 },
                 "panelIndex": "d845296b-8cc9-4ebc-ad24-d4097eedeb25",
                 "title": "HTTP Requests vs. Allowed vs Denied",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -677,11 +948,10 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                     "w": 20,
                     "x": 8,
@@ -689,8 +959,7 @@
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                 "title": "Top HTTP Request URLs",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -818,11 +1087,10 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "f11abba6-018e-4e78-a4d8-69161fe533d4",
                     "w": 20,
                     "x": 28,
@@ -830,8 +1098,7 @@
                 },
                 "panelIndex": "f11abba6-018e-4e78-a4d8-69161fe533d4",
                 "title": "Top User Agents in HTTP Requests",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -959,20 +1226,18 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 14,
                     "i": "6eae2481-3961-4a03-9273-4898b69807aa",
-                    "w": 20,
-                    "x": 8,
-                    "y": 28
+                    "w": 24,
+                    "x": 0,
+                    "y": 29
                 },
                 "panelIndex": "6eae2481-3961-4a03-9273-4898b69807aa",
                 "title": "Top Account ID in HTTP Requests",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -1123,20 +1388,18 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 14,
                     "i": "e4b3e2e5-347d-44cc-a02b-38152de0b2ec",
-                    "w": 20,
-                    "x": 28,
-                    "y": 28
+                    "w": 24,
+                    "x": 24,
+                    "y": 29
                 },
                 "panelIndex": "e4b3e2e5-347d-44cc-a02b-38152de0b2ec",
                 "title": "Top HTTP Methods",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             },
             {
                 "embeddableConfig": {
@@ -1287,8 +1550,8 @@
                         "mapStateJSON": {
                             "adHocDataViews": [],
                             "center": {
-                                "lat": 22.01171,
-                                "lon": 20.06436
+                                "lat": 16.40767,
+                                "lon": 0
                             },
                             "filters": [
                                 {
@@ -1303,13 +1566,13 @@
                                         "key": "data_stream.dataset",
                                         "negate": false,
                                         "params": {
-                                            "query": "cloudflare_logpush.gateway_http"
+                                            "query": "cloudflare_logpush.gateway_dns"
                                         },
                                         "type": "phrase"
                                     },
                                     "query": {
                                         "match_phrase": {
-                                            "data_stream.dataset": "cloudflare_logpush.gateway_http"
+                                            "data_stream.dataset": "cloudflare_logpush.gateway_dns"
                                         }
                                     }
                                 }
@@ -1362,13 +1625,17 @@
                             "openTOCDetails": []
                         }
                     },
-                    "enhancements": {},
+                    "enhancements": {
+                        "dynamicActions": {
+                            "events": []
+                        }
+                    },
                     "hiddenLayers": [],
                     "hidePanelTitles": false,
                     "isLayerTOCOpen": true,
                     "mapBuffer": {
                         "maxLat": 85.05113,
-                        "maxLon": 180,
+                        "maxLon": 270,
                         "minLat": -66.51326,
                         "minLon": -180
                     },
@@ -1377,20 +1644,18 @@
                         "lon": 20.06436,
                         "zoom": 1.78
                     },
-                    "openTOCDetails": [],
-                    "type": "map"
+                    "openTOCDetails": []
                 },
                 "gridData": {
                     "h": 25,
                     "i": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                     "w": 36,
                     "x": 0,
-                    "y": 42
+                    "y": 43
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                 "title": "Top Traffic Countries",
-                "type": "map",
-                "version": "8.9.0"
+                "type": "map"
             },
             {
                 "embeddableConfig": {
@@ -1518,28 +1783,26 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false,
-                    "type": "lens"
+                    "hidePanelTitles": false
                 },
                 "gridData": {
                     "h": 25,
                     "i": "d9952030-6e1e-405c-b626-7f7573225080",
                     "w": 12,
                     "x": 36,
-                    "y": 42
+                    "y": 43
                 },
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
                 "title": "Top HTTP Requests by Country",
-                "type": "lens",
-                "version": "8.9.0"
+                "type": "lens"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] Gateway HTTP",
-        "version": 1
+        "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T15:07:59.229Z",
+    "created_at": "2026-04-13T16:16:16.114Z",
     "id": "cloudflare_logpush-0f1c8080-04b2-11ee-8373-5fabaa30ca64",
     "references": [
         {
@@ -1594,11 +1857,6 @@
         },
         {
             "id": "logs-*",
-            "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "d9952030-6e1e-405c-b626-7f7573225080:indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
             "type": "index-pattern"
         },
@@ -1608,51 +1866,162 @@
             "type": "index-pattern"
         },
         {
-            "id": "logs-*",
-            "name": "controlGroup_1493457d-79d9-47e6-ba81-8741d24ecff6:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_b295f101-a23c-4a1d-9806-f7aa8f32992e:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_663d0468-2111-4dcc-a092-03b9f214f162:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_8365b589-ff9e-4598-a03d-e04878b52053:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_bb54f1a9-55ae-4b05-8a10-236a5a785ece:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_7b612c7c-ded2-44fa-9886-b724b63c9ac3:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_c02021bd-8f49-454b-8375-645f719fa8c5:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "controlGroup_f82b774e-d4bf-4158-a7ba-291db87af52a:optionsListDataView",
-            "type": "index-pattern"
-        },
-        {
             "id": "cloudflare_logpush-security-solution-default",
             "name": "tag-ref-security-solution-default",
             "type": "tag"
+        },
+        {
+            "id": "cloudflare_logpush-940b5bb0-015e-11ee-a051-4174215e3eb2",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_1b5f791b-89fb-4674-88f2-4a08278b4ba8_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-5b1248c0-044a-11ee-8373-5fabaa30ca64",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_6e272966-1045-4ddb-968f-2d50965ba03a_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-6f14e840-0450-11ee-8373-5fabaa30ca64",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_cf40f875-0623-4c84-8d8f-b888abf6644f_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-78731300-047b-11ee-8373-5fabaa30ca64",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_8607758b-5203-411f-b7e4-7f1003c3669c_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-83119f8c-86de-428a-9a78-00db2dc11a22",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_6fd37be0-b5f9-45e3-8d89-ab493082fc05_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-87f6ad60-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_5a7c67ad-8365-43fa-b669-f1e63e57761d_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-9c472060-58c6-11ee-99a4-d186f5240e2e",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-1f54bc4d-b95d-4f25-94e6-3525ed3d02c0",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_34c14db0-1a16-480e-80fa-448085a92d85_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-a32a0690-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_d7f7a072-35a6-4bab-b260-eeb3df75e620_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-5de148d0-04ae-11ee-8373-5fabaa30ca64",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_e54529ec-e650-4f21-8bb9-f29f6c66bf2e_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-0f1c8080-04b2-11ee-8373-5fabaa30ca64",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-8ae621f0-04ba-11ee-8373-5fabaa30ca64",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_281abe35-de5c-4f26-8807-e2aa1a23487e_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-bb426420-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_46002839-d847-4720-a89e-1a5d6e761950_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-09ef2620-58a5-11ee-99a4-d186f5240e2e",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_0fd67195-e167-4ee4-b138-319e085d52e1_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-cc375d30-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_74a197af-6a1b-4b37-9d31-828279cb0c01_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-3da7bd20-dc45-11ec-b76d-adcfe05cc1fe",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_d03aa48c-ba8f-49be-9653-3d1a91772d10_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-11e340a0-04bd-11ee-8373-5fabaa30ca64",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_14e066ed-64db-40c3-8bf8-18adc1e71edc_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-67bc9d49-5015-4e1f-9b50-cfce462ae4ca",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_f428fda9-a03c-4864-a44b-0301bb589040_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-fe4ebba0-58bd-11ee-99a4-d186f5240e2e",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_6b4d2839-6ff3-4ac8-9490-f6cc323a2311_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-da55ddb0-dc44-11ec-b76d-adcfe05cc1fe",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_4c2dff69-1d9b-441b-b438-ec1f04f640f0_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
+            "name": "f5674f65-1f42-4c27-80e1-4b3d51e86b93:link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
+            "type": "dashboard"
+        },
+        {
+            "id": "logs-*",
+            "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_8dfeec45-ceb4-437e-945f-7b0e4837bfea:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_e4b2ccb9-fea9-44bf-84b4-2a4ce14afb1d:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_39e662fd-8da7-4f37-abd5-f3e2288aac9b:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_95e05148-35f9-44fb-b095-7c9244723391:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_c5b8997d-bcf1-440a-bd57-86b27d4e561f:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_9177d834-ac68-4f65-9146-973f38d7cc9b:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_6d2a4ff5-94dc-49f1-801e-214fbcb45608:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_9a4b55e2-dae3-42e6-951a-e2e399b85f34:optionsListDataView",
+            "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }
