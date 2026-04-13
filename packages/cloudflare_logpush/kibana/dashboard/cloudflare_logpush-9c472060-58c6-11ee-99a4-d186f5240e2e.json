@@ -10,65 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "2208ad28-9109-420e-8372-2becb8a2fc9a": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.dns_firewall.upstream.ip",
-                        "id": "2208ad28-9109-420e-8372-2becb8a2fc9a",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Upstream IP"
-                    },
-                    "grow": true,
-                    "order": 3,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "30d2f002-397a-4974-a152-777189fe9b68": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "source.geo.country_name",
-                        "id": "30d2f002-397a-4974-a152-777189fe9b68",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Source Country"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "44418891-2e55-4ebc-99ce-d49e3e4955ac": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "dns.response_code",
-                        "id": "44418891-2e55-4ebc-99ce-d49e3e4955ac",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "DNS Response Code"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "49d677ef-39b1-4d34-a594-d7e1b40356ab": {
+                "2217cfed-72fb-421a-94f8-475109bc013b": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "dns.question.name",
-                        "id": "49d677ef-39b1-4d34-a594-d7e1b40356ab",
+                        "id": "2217cfed-72fb-421a-94f8-475109bc013b",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -82,29 +28,65 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "576d5518-de97-4de7-ba68-56783a1c787e": {
+                "478b3cba-07a2-40a8-a8be-494a64e79112": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.dns_firewall.edns.subnet",
-                        "id": "576d5518-de97-4de7-ba68-56783a1c787e",
+                        "fieldName": "cloudflare_logpush.dns_firewall.cluster_id",
+                        "id": "478b3cba-07a2-40a8-a8be-494a64e79112",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "EDNS Subnet"
+                        "title": "Cluster ID"
                     },
                     "grow": true,
-                    "order": 7,
+                    "order": 6,
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "64131758-68f9-42d3-a58c-509b6f34d64f": {
+                "4e4dcdcd-8628-4c11-95fc-4f016912cd95": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.geo.country_name",
+                        "id": "4e4dcdcd-8628-4c11-95fc-4f016912cd95",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source Country"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "6a4abae8-2efa-40c9-98af-12aebd25400c": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "dns.response_code",
+                        "id": "6a4abae8-2efa-40c9-98af-12aebd25400c",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "DNS Response Code"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "762ff5a2-7515-44db-a95d-e283c06f14d3": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "agent.name",
-                        "id": "64131758-68f9-42d3-a58c-509b6f34d64f",
+                        "id": "762ff5a2-7515-44db-a95d-e283c06f14d3",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -118,11 +100,29 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "7b1c54e4-acf7-42d6-bb8d-49a76d993192": {
+                "7ebb07ba-2727-4f51-bf0f-5e9ff0daff83": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.dns_firewall.upstream.ip",
+                        "id": "7ebb07ba-2727-4f51-bf0f-5e9ff0daff83",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Upstream IP"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "8619ce73-fc6b-4767-a223-56034a05b043": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.ip",
-                        "id": "7b1c54e4-acf7-42d6-bb8d-49a76d993192",
+                        "id": "8619ce73-fc6b-4767-a223-56034a05b043",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -136,21 +136,21 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "de482207-2248-4b04-9311-784be9a7a149": {
+                "e6745880-85e5-4aa0-85d2-50817be46af3": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.dns_firewall.cluster_id",
-                        "id": "de482207-2248-4b04-9311-784be9a7a149",
+                        "fieldName": "cloudflare_logpush.dns_firewall.edns.subnet",
+                        "id": "e6745880-85e5-4aa0-85d2-50817be46af3",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Cluster ID"
+                        "title": "EDNS Subnet"
                     },
                     "grow": true,
-                    "order": 6,
+                    "order": 7,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -426,13 +426,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_965f7f56-e43a-4e84-9bfa-6afae00204c6_dashboard",
+                                "id": "965f7f56-e43a-4e84-9bfa-6afae00204c6",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "1254e1da-7798-4aeb-99fb-715ecc4cd13c",
                     "w": 8,
                     "x": 0,
@@ -957,7 +969,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 15,
+                    "h": 16,
                     "i": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                     "w": 20,
                     "x": 8,
@@ -1098,7 +1110,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 15,
+                    "h": 16,
                     "i": "e4b3e2e5-347d-44cc-a02b-38152de0b2ec",
                     "w": 20,
                     "x": 28,
@@ -1241,7 +1253,7 @@
                     "i": "6eae2481-3961-4a03-9273-4898b69807aa",
                     "w": 24,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "6eae2481-3961-4a03-9273-4898b69807aa",
                 "title": "Top Cluster IDs",
@@ -1380,7 +1392,7 @@
                     "i": "d9952030-6e1e-405c-b626-7f7573225080",
                     "w": 24,
                     "x": 24,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
                 "title": "Top DNS Request Source by Country",
@@ -1636,7 +1648,7 @@
                     "i": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                     "w": 48,
                     "x": 0,
-                    "y": 43
+                    "y": 44
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                 "title": "Top Traffic Countries",
@@ -1648,7 +1660,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:22:56.964Z",
+    "created_at": "2026-04-13T17:56:38.490Z",
     "id": "cloudflare_logpush-9c472060-58c6-11ee-99a4-d186f5240e2e",
     "references": [
         {
@@ -1797,51 +1809,57 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "1254e1da-7798-4aeb-99fb-715ecc4cd13c:link_965f7f56-e43a-4e84-9bfa-6afae00204c6_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
             "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_004fb605-768e-4276-a85b-a8b7e0cb07f4:optionsListDataView",
+            "name": "controlGroup_64131758-68f9-42d3-a58c-509b6f34d64f:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_cbae07db-c3c7-40de-bd10-36c1d863290c:optionsListDataView",
+            "name": "controlGroup_30d2f002-397a-4974-a152-777189fe9b68:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_3bb1a147-9bff-4f1f-aa07-836c5932f42f:optionsListDataView",
+            "name": "controlGroup_7b1c54e4-acf7-42d6-bb8d-49a76d993192:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_105d374e-542b-4679-b45b-44bbc801889d:optionsListDataView",
+            "name": "controlGroup_2208ad28-9109-420e-8372-2becb8a2fc9a:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_0a1d6e61-a98c-4716-b622-67a24fcf91e9:optionsListDataView",
+            "name": "controlGroup_49d677ef-39b1-4d34-a594-d7e1b40356ab:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_58ab4802-5ea3-4995-96b6-002a72ab8d73:optionsListDataView",
+            "name": "controlGroup_44418891-2e55-4ebc-99ce-d49e3e4955ac:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_f553e7b0-d370-48db-aa91-206f07d123e4:optionsListDataView",
+            "name": "controlGroup_de482207-2248-4b04-9311-784be9a7a149:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_7d8ce1c9-c45b-439a-886f-915aa5cc78b2:optionsListDataView",
+            "name": "controlGroup_576d5518-de97-4de7-ba68-56783a1c787e:optionsListDataView",
             "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

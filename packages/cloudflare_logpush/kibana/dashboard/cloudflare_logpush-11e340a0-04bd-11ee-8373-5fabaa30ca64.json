@@ -10,65 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "451d417e-cfe4-4bf2-b996-e097d18accf9": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "source.ip",
-                        "id": "451d417e-cfe4-4bf2-b996-e097d18accf9",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Source IP"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "55f0bc2f-9f10-4e9f-9dcd-27bc0ac1de12": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.id",
-                        "id": "55f0bc2f-9f10-4e9f-9dcd-27bc0ac1de12",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Session ID"
-                    },
-                    "grow": true,
-                    "order": 6,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "6ad84044-abb5-4fa4-aade-be81ad9cc72e": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.gateway_http.account_id",
-                        "id": "6ad84044-abb5-4fa4-aade-be81ad9cc72e",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Account ID"
-                    },
-                    "grow": true,
-                    "order": 3,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "8f9851a2-3f6c-459b-a99a-00539e93ccd8": {
+                "017f20c6-ea37-43ad-900c-b0f830e20557": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.geo.country_name",
-                        "id": "8f9851a2-3f6c-459b-a99a-00539e93ccd8",
+                        "id": "017f20c6-ea37-43ad-900c-b0f830e20557",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -82,11 +28,47 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "b76bef17-3d49-4aa0-8455-b0595c98c957": {
+                "08be743e-ff27-4787-941d-1e4dc23b61e2": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.email",
+                        "id": "08be743e-ff27-4787-941d-1e4dc23b61e2",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "User Email"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "1285fafa-d066-41ee-8923-3311e98d8520": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.ip",
+                        "id": "1285fafa-d066-41ee-8923-3311e98d8520",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "5ae05903-b386-4edb-86a0-e11e39d62bff": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "agent.name",
-                        "id": "b76bef17-3d49-4aa0-8455-b0595c98c957",
+                        "id": "5ae05903-b386-4edb-86a0-e11e39d62bff",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -100,11 +82,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "e47de3dd-0c09-48d9-9356-1a6b0c85c37b": {
+                "65a6c5b8-8986-4d30-925b-986602a9d46c": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "user.id",
-                        "id": "e47de3dd-0c09-48d9-9356-1a6b0c85c37b",
+                        "id": "65a6c5b8-8986-4d30-925b-986602a9d46c",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -118,21 +100,39 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "ec5922da-0ff7-4bda-8445-8ad8db06f820": {
+                "a5c4efc7-3bef-41d6-bf4b-3500c9ca9845": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "user.email",
-                        "id": "ec5922da-0ff7-4bda-8445-8ad8db06f820",
+                        "fieldName": "event.id",
+                        "id": "a5c4efc7-3bef-41d6-bf4b-3500c9ca9845",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "User Email"
+                        "title": "Session ID"
                     },
                     "grow": true,
-                    "order": 2,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ffb0485a-fdf8-4a8d-be56-f76a4277a3ae": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.gateway_http.account_id",
+                        "id": "ffb0485a-fdf8-4a8d-be56-f76a4277a3ae",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Account ID"
+                    },
+                    "grow": true,
+                    "order": 3,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -157,6 +157,285 @@
             "useMargins": true
         },
         "panelsJSON": [
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "layout": "vertical",
+                        "links": [
+                            {
+                                "destinationRefName": "link_1b5f791b-89fb-4674-88f2-4a08278b4ba8_dashboard",
+                                "id": "1b5f791b-89fb-4674-88f2-4a08278b4ba8",
+                                "label": "Access Requests",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 0,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6e272966-1045-4ddb-968f-2d50965ba03a_dashboard",
+                                "id": "6e272966-1045-4ddb-968f-2d50965ba03a",
+                                "label": "Audit",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 1,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_cf40f875-0623-4c84-8d8f-b888abf6644f_dashboard",
+                                "id": "cf40f875-0623-4c84-8d8f-b888abf6644f",
+                                "label": "CASB findings",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 2,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_8607758b-5203-411f-b7e4-7f1003c3669c_dashboard",
+                                "id": "8607758b-5203-411f-b7e4-7f1003c3669c",
+                                "label": "Device Posture",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 3,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6fd37be0-b5f9-45e3-8d89-ab493082fc05_dashboard",
+                                "id": "6fd37be0-b5f9-45e3-8d89-ab493082fc05",
+                                "label": "DLP Forensic Copies",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 4,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_5a7c67ad-8365-43fa-b669-f1e63e57761d_dashboard",
+                                "id": "5a7c67ad-8365-43fa-b669-f1e63e57761d",
+                                "label": "DNS",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 5,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
+                                "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
+                                "label": "DNS Firewall",
+                                "order": 6,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_34c14db0-1a16-480e-80fa-448085a92d85_dashboard",
+                                "id": "34c14db0-1a16-480e-80fa-448085a92d85",
+                                "label": "Email Security Alerts",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 7,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_d7f7a072-35a6-4bab-b260-eeb3df75e620_dashboard",
+                                "id": "d7f7a072-35a6-4bab-b260-eeb3df75e620",
+                                "label": "Firewall Event",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 8,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_e54529ec-e650-4f21-8bb9-f29f6c66bf2e_dashboard",
+                                "id": "e54529ec-e650-4f21-8bb9-f29f6c66bf2e",
+                                "label": "Gateway DNS",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 9,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05_dashboard",
+                                "id": "ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05",
+                                "label": "Gateway HTTP",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 10,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_281abe35-de5c-4f26-8807-e2aa1a23487e_dashboard",
+                                "id": "281abe35-de5c-4f26-8807-e2aa1a23487e",
+                                "label": "Gateway Network",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 11,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_46002839-d847-4720-a89e-1a5d6e761950_dashboard",
+                                "id": "46002839-d847-4720-a89e-1a5d6e761950",
+                                "label": "HTTP Request",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 12,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_0fd67195-e167-4ee4-b138-319e085d52e1_dashboard",
+                                "id": "0fd67195-e167-4ee4-b138-319e085d52e1",
+                                "label": "Magic IDS Detections",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 13,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_74a197af-6a1b-4b37-9d31-828279cb0c01_dashboard",
+                                "id": "74a197af-6a1b-4b37-9d31-828279cb0c01",
+                                "label": "NEL Report",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 14,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_d03aa48c-ba8f-49be-9653-3d1a91772d10_dashboard",
+                                "id": "d03aa48c-ba8f-49be-9653-3d1a91772d10",
+                                "label": "Network Analytics",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 15,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_14e066ed-64db-40c3-8bf8-18adc1e71edc_dashboard",
+                                "id": "14e066ed-64db-40c3-8bf8-18adc1e71edc",
+                                "label": "Network Session Logs",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 16,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_f428fda9-a03c-4864-a44b-0301bb589040_dashboard",
+                                "id": "f428fda9-a03c-4864-a44b-0301bb589040",
+                                "label": "Page Shield Events",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 17,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_6b4d2839-6ff3-4ac8-9490-f6cc323a2311_dashboard",
+                                "id": "6b4d2839-6ff3-4ac8-9490-f6cc323a2311",
+                                "label": "Sinkhole HTTP",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 18,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_4c2dff69-1d9b-441b-b438-ec1f04f640f0_dashboard",
+                                "id": "4c2dff69-1d9b-441b-b438-ec1f04f640f0",
+                                "label": "Spectrum Event",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 19,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
+                                "id": "9ffa1b28-b073-4bff-ad56-ed414d0caaf9",
+                                "label": "Workers Trace Events",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 20,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_01a047ef-5934-49df-9eff-a04b5a102199_dashboard",
+                                "id": "01a047ef-5934-49df-9eff-a04b5a102199",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
+                            }
+                        ]
+                    },
+                    "enhancements": {}
+                },
+                "gridData": {
+                    "h": 30,
+                    "i": "e5e309da-efc6-4217-935b-411149c626df",
+                    "w": 8,
+                    "x": 0,
+                    "y": 0
+                },
+                "panelIndex": "e5e309da-efc6-4217-935b-411149c626df",
+                "title": "Navigation",
+                "type": "links"
+            },
             {
                 "embeddableConfig": {
                     "attributes": {
@@ -2179,273 +2458,6 @@
                 "panelIndex": "90c9a68b-2eac-40cb-8f8c-bf419d804276",
                 "title": "Rule Evaluation Time (Milliseconds)",
                 "type": "lens"
-            },
-            {
-                "embeddableConfig": {
-                    "attributes": {
-                        "layout": "vertical",
-                        "links": [
-                            {
-                                "destinationRefName": "link_1b5f791b-89fb-4674-88f2-4a08278b4ba8_dashboard",
-                                "id": "1b5f791b-89fb-4674-88f2-4a08278b4ba8",
-                                "label": "Access Requests",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 0,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_6e272966-1045-4ddb-968f-2d50965ba03a_dashboard",
-                                "id": "6e272966-1045-4ddb-968f-2d50965ba03a",
-                                "label": "Audit",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 1,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_cf40f875-0623-4c84-8d8f-b888abf6644f_dashboard",
-                                "id": "cf40f875-0623-4c84-8d8f-b888abf6644f",
-                                "label": "CASB findings",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 2,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_8607758b-5203-411f-b7e4-7f1003c3669c_dashboard",
-                                "id": "8607758b-5203-411f-b7e4-7f1003c3669c",
-                                "label": "Device Posture",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 3,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_6fd37be0-b5f9-45e3-8d89-ab493082fc05_dashboard",
-                                "id": "6fd37be0-b5f9-45e3-8d89-ab493082fc05",
-                                "label": "DLP Forensic Copies",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 4,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_5a7c67ad-8365-43fa-b669-f1e63e57761d_dashboard",
-                                "id": "5a7c67ad-8365-43fa-b669-f1e63e57761d",
-                                "label": "DNS",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 5,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
-                                "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
-                                "label": "DNS Firewall",
-                                "order": 6,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_34c14db0-1a16-480e-80fa-448085a92d85_dashboard",
-                                "id": "34c14db0-1a16-480e-80fa-448085a92d85",
-                                "label": "Email Security Alerts",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 7,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_d7f7a072-35a6-4bab-b260-eeb3df75e620_dashboard",
-                                "id": "d7f7a072-35a6-4bab-b260-eeb3df75e620",
-                                "label": "Firewall Event",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 8,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_e54529ec-e650-4f21-8bb9-f29f6c66bf2e_dashboard",
-                                "id": "e54529ec-e650-4f21-8bb9-f29f6c66bf2e",
-                                "label": "Gateway DNS",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 9,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05_dashboard",
-                                "id": "ca4dd5a4-d56f-4cd3-864b-c0b31bde7a05",
-                                "label": "Gateway HTTP",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 10,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_281abe35-de5c-4f26-8807-e2aa1a23487e_dashboard",
-                                "id": "281abe35-de5c-4f26-8807-e2aa1a23487e",
-                                "label": "Gateway Network",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 11,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_46002839-d847-4720-a89e-1a5d6e761950_dashboard",
-                                "id": "46002839-d847-4720-a89e-1a5d6e761950",
-                                "label": "HTTP Request",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 12,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_0fd67195-e167-4ee4-b138-319e085d52e1_dashboard",
-                                "id": "0fd67195-e167-4ee4-b138-319e085d52e1",
-                                "label": "Magic IDS Detections",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 13,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_74a197af-6a1b-4b37-9d31-828279cb0c01_dashboard",
-                                "id": "74a197af-6a1b-4b37-9d31-828279cb0c01",
-                                "label": "NEL Report",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 14,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_d03aa48c-ba8f-49be-9653-3d1a91772d10_dashboard",
-                                "id": "d03aa48c-ba8f-49be-9653-3d1a91772d10",
-                                "label": "Network Analytics",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 15,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_14e066ed-64db-40c3-8bf8-18adc1e71edc_dashboard",
-                                "id": "14e066ed-64db-40c3-8bf8-18adc1e71edc",
-                                "label": "Network Session Logs",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 16,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_f428fda9-a03c-4864-a44b-0301bb589040_dashboard",
-                                "id": "f428fda9-a03c-4864-a44b-0301bb589040",
-                                "label": "Page Shield Events",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 17,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_6b4d2839-6ff3-4ac8-9490-f6cc323a2311_dashboard",
-                                "id": "6b4d2839-6ff3-4ac8-9490-f6cc323a2311",
-                                "label": "Sinkhole HTTP",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 18,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_4c2dff69-1d9b-441b-b438-ec1f04f640f0_dashboard",
-                                "id": "4c2dff69-1d9b-441b-b438-ec1f04f640f0",
-                                "label": "Spectrum Event",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 19,
-                                "type": "dashboardLink"
-                            },
-                            {
-                                "destinationRefName": "link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
-                                "id": "9ffa1b28-b073-4bff-ad56-ed414d0caaf9",
-                                "label": "Workers Trace Events",
-                                "options": {
-                                    "openInNewTab": false,
-                                    "useCurrentDateRange": false,
-                                    "useCurrentFilters": false
-                                },
-                                "order": 20,
-                                "type": "dashboardLink"
-                            }
-                        ]
-                    },
-                    "enhancements": {}
-                },
-                "gridData": {
-                    "h": 29,
-                    "i": "e5e309da-efc6-4217-935b-411149c626df",
-                    "w": 8,
-                    "x": 0,
-                    "y": 0
-                },
-                "panelIndex": "e5e309da-efc6-4217-935b-411149c626df",
-                "title": "Navigation",
-                "type": "links"
             }
         ],
         "timeRestore": false,
@@ -2453,7 +2465,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:10.148Z",
+    "created_at": "2026-04-13T17:56:27.391Z",
     "id": "cloudflare_logpush-11e340a0-04bd-11ee-8373-5fabaa30ca64",
     "references": [
         {
@@ -2544,11 +2556,6 @@
         {
             "id": "logs-*",
             "name": "90c9a68b-2eac-40cb-8f8c-bf419d804276:b16ec32a-1603-4195-a990-667e8c893d23",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
             "type": "index-pattern"
         },
         {
@@ -2657,41 +2664,52 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "e5e309da-efc6-4217-935b-411149c626df:link_01a047ef-5934-49df-9eff-a04b5a102199_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
-            "name": "controlGroup_1493457d-79d9-47e6-ba81-8741d24ecff6:optionsListDataView",
+            "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b295f101-a23c-4a1d-9806-f7aa8f32992e:optionsListDataView",
+            "name": "controlGroup_b76bef17-3d49-4aa0-8455-b0595c98c957:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_663d0468-2111-4dcc-a092-03b9f214f162:optionsListDataView",
+            "name": "controlGroup_e47de3dd-0c09-48d9-9356-1a6b0c85c37b:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_f82b774e-d4bf-4158-a7ba-291db87af52a:optionsListDataView",
+            "name": "controlGroup_ec5922da-0ff7-4bda-8445-8ad8db06f820:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_8365b589-ff9e-4598-a03d-e04878b52053:optionsListDataView",
+            "name": "controlGroup_6ad84044-abb5-4fa4-aade-be81ad9cc72e:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_bb54f1a9-55ae-4b05-8a10-236a5a785ece:optionsListDataView",
+            "name": "controlGroup_8f9851a2-3f6c-459b-a99a-00539e93ccd8:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_bfbd03ec-0181-48e4-b6a9-07adbcbb4ae5:optionsListDataView",
+            "name": "controlGroup_451d417e-cfe4-4bf2-b996-e097d18accf9:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_55f0bc2f-9f10-4e9f-9dcd-27bc0ac1de12:optionsListDataView",
             "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

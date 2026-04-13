@@ -281,13 +281,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_bcbad981-03c6-4387-adae-8d9b4450d5d5_dashboard",
+                                "id": "bcbad981-03c6-4387-adae-8d9b4450d5d5",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "a15d8bf2-9827-4f66-9352-fc2725601708",
                     "w": 8,
                     "x": 0,
@@ -710,7 +722,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "36ba08a4-1ebd-46bd-a95d-6855c7992a68",
                     "w": 20,
                     "x": 8,
@@ -813,7 +825,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "42860ae9-0100-4c5b-aad4-e9b9ebd8eb1d",
                     "w": 20,
                     "x": 28,
@@ -931,7 +943,7 @@
                     "i": "94b34910-bec2-4d2d-8cab-03339cee8eee",
                     "w": 24,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "94b34910-bec2-4d2d-8cab-03339cee8eee",
                 "title": "Distribution of HTTP Request by Client MTLS Auth Status",
@@ -1034,7 +1046,7 @@
                     "i": "ff959b8e-d7b9-4c5e-8d3b-e0381f0d1e35",
                     "w": 24,
                     "x": 24,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "ff959b8e-d7b9-4c5e-8d3b-e0381f0d1e35",
                 "title": "Distribution of HTTP Request by Source Country",
@@ -1050,7 +1062,7 @@
                     "i": "dbb10aab-b109-41f3-8e37-dfc4d3a2c4cd",
                     "w": 48,
                     "x": 0,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "dbb10aab-b109-41f3-8e37-dfc4d3a2c4cd",
                 "panelRefName": "panel_dbb10aab-b109-41f3-8e37-dfc4d3a2c4cd",
@@ -1063,7 +1075,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:09.137Z",
+    "created_at": "2026-04-13T17:56:25.383Z",
     "id": "cloudflare_logpush-bb426420-dc44-11ec-b76d-adcfe05cc1fe",
     "references": [
         {
@@ -1245,8 +1257,14 @@
             "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
             "name": "a15d8bf2-9827-4f66-9352-fc2725601708:link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
             "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "a15d8bf2-9827-4f66-9352-fc2725601708:link_bcbad981-03c6-4387-adae-8d9b4450d5d5_dashboard",
+            "type": "dashboard"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

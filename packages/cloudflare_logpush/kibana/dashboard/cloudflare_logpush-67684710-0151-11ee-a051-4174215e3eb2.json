@@ -10,29 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "17e6174d-8bc5-44f2-bc2d-ec4f979b75e7": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "17e6174d-8bc5-44f2-bc2d-ec4f979b75e7",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "353a95bf-69f2-4074-8ee7-56c9cca5da2f": {
+                "020abf7e-d13b-4093-97e0-3698e2d2c670": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.ip",
-                        "id": "353a95bf-69f2-4074-8ee7-56c9cca5da2f",
+                        "id": "020abf7e-d13b-4093-97e0-3698e2d2c670",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -46,47 +28,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "64509ff2-47c2-4493-ba34-e78b6070e972": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "client.geo.country_name",
-                        "id": "64509ff2-47c2-4493-ba34-e78b6070e972",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Client Country"
-                    },
-                    "grow": true,
-                    "order": 6,
-                    "type": "optionsListControl",
-                    "width": "small"
-                },
-                "82afd16d-7ed2-4714-aa3b-1c7359069836": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "destination.ip",
-                        "id": "82afd16d-7ed2-4714-aa3b-1c7359069836",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Destination IP"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "849eb59f-c011-46a3-b4bb-104b69b3959c": {
+                "1a8e9e54-e761-4267-ad98-639bffbec719": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "event.action",
-                        "id": "849eb59f-c011-46a3-b4bb-104b69b3959c",
+                        "id": "1a8e9e54-e761-4267-ad98-639bffbec719",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -100,11 +46,47 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "92ec2e6b-87c3-470d-8a0c-243bf6c6e488": {
+                "3dfff076-13c8-475f-a035-3aa01e2e60b4": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "destination.ip",
+                        "id": "3dfff076-13c8-475f-a035-3aa01e2e60b4",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Destination IP"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "8e8ee96e-182c-4ede-b43f-31700ab52875": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "client.geo.country_name",
+                        "id": "8e8ee96e-182c-4ede-b43f-31700ab52875",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Client Country"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "small"
+                },
+                "bdd07a72-3b33-4c9b-a3dc-360a6c8b32f3": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.geo.country_name",
-                        "id": "92ec2e6b-87c3-470d-8a0c-243bf6c6e488",
+                        "id": "bdd07a72-3b33-4c9b-a3dc-360a6c8b32f3",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -118,11 +100,11 @@
                     "type": "optionsListControl",
                     "width": "small"
                 },
-                "b0389d69-06f4-4973-b06d-d5f477d14428": {
+                "ca51bf12-205a-40d5-a530-223491f7702b": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "host.name",
-                        "id": "b0389d69-06f4-4973-b06d-d5f477d14428",
+                        "id": "ca51bf12-205a-40d5-a530-223491f7702b",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -136,11 +118,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "d4b74602-b7a2-49cd-a34b-0ad90e001dda": {
+                "e5ebba10-38b2-4649-9c35-a2d4af76674a": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "client.ip",
-                        "id": "d4b74602-b7a2-49cd-a34b-0ad90e001dda",
+                        "id": "e5ebba10-38b2-4649-9c35-a2d4af76674a",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -151,6 +133,24 @@
                     },
                     "grow": true,
                     "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "f5098574-d77e-49e7-bf2e-431b2a113b84": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "f5098574-d77e-49e7-bf2e-431b2a113b84",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -426,13 +426,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_29538a7d-f4b4-4651-a88b-0bc3493c3f88_dashboard",
+                                "id": "29538a7d-f4b4-4651-a88b-0bc3493c3f88",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "9a79f3b8-e611-4625-9b1c-30fbfab097f1",
                     "w": 8,
                     "x": 0,
@@ -1036,7 +1048,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "7941c734-ddfe-4483-bebc-d22f763dff7d",
                     "w": 20,
                     "x": 8,
@@ -1235,7 +1247,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "f76c26eb-8ca7-48a5-b530-1077700d3f51",
                     "w": 20,
                     "x": 28,
@@ -1696,7 +1708,7 @@
                     "i": "d76b8fae-ca21-4136-b34a-1825fae3c292",
                     "w": 48,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "d76b8fae-ca21-4136-b34a-1825fae3c292",
                 "title": "Top Traffic Countries",
@@ -1708,7 +1720,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:22:49.088Z",
+    "created_at": "2026-04-13T17:56:33.551Z",
     "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
     "references": [
         {
@@ -1857,6 +1869,11 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "9a79f3b8-e611-4625-9b1c-30fbfab097f1:link_29538a7d-f4b4-4651-a88b-0bc3493c3f88_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
             "name": "d76b8fae-ca21-4136-b34a-1825fae3c292:layer_1_source_index_pattern",
             "type": "index-pattern"
@@ -1868,42 +1885,42 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_1493457d-79d9-47e6-ba81-8741d24ecff6:optionsListDataView",
+            "name": "controlGroup_17e6174d-8bc5-44f2-bc2d-ec4f979b75e7:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_1c0fa33b-95c0-46eb-b765-9388ef0db378:optionsListDataView",
+            "name": "controlGroup_353a95bf-69f2-4074-8ee7-56c9cca5da2f:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_ece2ad6d-3a49-466e-9012-4fdd2a9e2b64:optionsListDataView",
+            "name": "controlGroup_82afd16d-7ed2-4714-aa3b-1c7359069836:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b76daf50-00a7-4595-8147-31d1305fac30:optionsListDataView",
+            "name": "controlGroup_d4b74602-b7a2-49cd-a34b-0ad90e001dda:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_1ac0c1b1-56da-45c2-a5b9-571b362e42dd:optionsListDataView",
+            "name": "controlGroup_849eb59f-c011-46a3-b4bb-104b69b3959c:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_38205a9e-7617-49b7-a833-382c9909d2b6:optionsListDataView",
+            "name": "controlGroup_92ec2e6b-87c3-470d-8a0c-243bf6c6e488:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_284861d4-c636-4589-a477-abe82e25d3ef:optionsListDataView",
+            "name": "controlGroup_64509ff2-47c2-4493-ba34-e78b6070e972:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_70c6521f-648e-4e70-8fd7-516e0fe48a6b:optionsListDataView",
+            "name": "controlGroup_b0389d69-06f4-4973-b06d-d5f477d14428:optionsListDataView",
             "type": "index-pattern"
         }
     ],

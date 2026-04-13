@@ -281,13 +281,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_31f5d80f-cf06-4849-834c-67e2731acad5_dashboard",
+                                "id": "31f5d80f-cf06-4849-834c-67e2731acad5",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "e5907454-a078-435c-bbe9-b40963b074e2",
                     "w": 8,
                     "x": 0,
@@ -607,7 +619,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "f75dad7c-b8cc-472f-94e4-6b130f0c72a7",
                     "w": 20,
                     "x": 8,
@@ -615,6 +627,109 @@
                 },
                 "panelIndex": "f75dad7c-b8cc-472f-94e4-6b130f0c72a7",
                 "title": "Distribution of Firewall Event by Source Country",
+                "type": "lens"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-current-indexpattern",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-dc2bac47-d6ac-4216-8e62-356cb0dc1399",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "dc2bac47-d6ac-4216-8e62-356cb0dc1399": {
+                                            "columnOrder": [
+                                                "1a75cf43-6319-402f-8c32-7d0433f5ba7f",
+                                                "7ae5d06e-c830-47b1-a134-b3aff58f3a53"
+                                            ],
+                                            "columns": {
+                                                "1a75cf43-6319-402f-8c32-7d0433f5ba7f": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Client Request Protocol",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "7ae5d06e-c830-47b1-a134-b3aff58f3a53",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "size": 5
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "cloudflare_logpush.firewall_event.client.request.protocol"
+                                                },
+                                                "7ae5d06e-c830-47b1-a134-b3aff58f3a53": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Record",
+                                                    "operationType": "count",
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {}
+                                        }
+                                    }
+                                }
+                            },
+                            "filters": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": "data_stream.dataset : cloudflare_logpush.firewall_event"
+                            },
+                            "visualization": {
+                                "layers": [
+                                    {
+                                        "categoryDisplay": "default",
+                                        "layerId": "dc2bac47-d6ac-4216-8e62-356cb0dc1399",
+                                        "layerType": "data",
+                                        "legendDisplay": "default",
+                                        "legendSize": "auto",
+                                        "metrics": [
+                                            "7ae5d06e-c830-47b1-a134-b3aff58f3a53"
+                                        ],
+                                        "nestedLegend": false,
+                                        "numberDisplay": "percent",
+                                        "primaryGroups": [
+                                            "1a75cf43-6319-402f-8c32-7d0433f5ba7f"
+                                        ]
+                                    }
+                                ],
+                                "shape": "pie"
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsPie"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "30ebc076-8273-4106-b4a8-66c8bdec8934",
+                    "w": 20,
+                    "x": 28,
+                    "y": 15
+                },
+                "panelIndex": "30ebc076-8273-4106-b4a8-66c8bdec8934",
+                "title": "Distribution of Firewall Event Class by Client Request Protocol",
                 "type": "lens"
             },
             {
@@ -714,113 +829,10 @@
                     "i": "7d00d9d8-021f-4432-9e92-aa2ffc4eabd0",
                     "w": 24,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "7d00d9d8-021f-4432-9e92-aa2ffc4eabd0",
                 "title": "Distribution of Firewall Event Class by Client Request Method",
-                "type": "lens"
-            },
-            {
-                "embeddableConfig": {
-                    "attributes": {
-                        "references": [
-                            {
-                                "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
-                                "type": "index-pattern"
-                            },
-                            {
-                                "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-dc2bac47-d6ac-4216-8e62-356cb0dc1399",
-                                "type": "index-pattern"
-                            }
-                        ],
-                        "state": {
-                            "datasourceStates": {
-                                "formBased": {
-                                    "layers": {
-                                        "dc2bac47-d6ac-4216-8e62-356cb0dc1399": {
-                                            "columnOrder": [
-                                                "1a75cf43-6319-402f-8c32-7d0433f5ba7f",
-                                                "7ae5d06e-c830-47b1-a134-b3aff58f3a53"
-                                            ],
-                                            "columns": {
-                                                "1a75cf43-6319-402f-8c32-7d0433f5ba7f": {
-                                                    "customLabel": true,
-                                                    "dataType": "string",
-                                                    "isBucketed": true,
-                                                    "label": "Client Request Protocol",
-                                                    "operationType": "terms",
-                                                    "params": {
-                                                        "missingBucket": false,
-                                                        "orderBy": {
-                                                            "columnId": "7ae5d06e-c830-47b1-a134-b3aff58f3a53",
-                                                            "type": "column"
-                                                        },
-                                                        "orderDirection": "desc",
-                                                        "otherBucket": true,
-                                                        "size": 5
-                                                    },
-                                                    "scale": "ordinal",
-                                                    "sourceField": "cloudflare_logpush.firewall_event.client.request.protocol"
-                                                },
-                                                "7ae5d06e-c830-47b1-a134-b3aff58f3a53": {
-                                                    "customLabel": true,
-                                                    "dataType": "number",
-                                                    "isBucketed": false,
-                                                    "label": "Record",
-                                                    "operationType": "count",
-                                                    "scale": "ratio",
-                                                    "sourceField": "___records___"
-                                                }
-                                            },
-                                            "incompleteColumns": {}
-                                        }
-                                    }
-                                }
-                            },
-                            "filters": [],
-                            "query": {
-                                "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.firewall_event"
-                            },
-                            "visualization": {
-                                "layers": [
-                                    {
-                                        "categoryDisplay": "default",
-                                        "layerId": "dc2bac47-d6ac-4216-8e62-356cb0dc1399",
-                                        "layerType": "data",
-                                        "legendDisplay": "default",
-                                        "legendSize": "auto",
-                                        "metrics": [
-                                            "7ae5d06e-c830-47b1-a134-b3aff58f3a53"
-                                        ],
-                                        "nestedLegend": false,
-                                        "numberDisplay": "percent",
-                                        "primaryGroups": [
-                                            "1a75cf43-6319-402f-8c32-7d0433f5ba7f"
-                                        ]
-                                    }
-                                ],
-                                "shape": "pie"
-                            }
-                        },
-                        "title": "",
-                        "type": "lens",
-                        "visualizationType": "lnsPie"
-                    },
-                    "enhancements": {},
-                    "hidePanelTitles": false
-                },
-                "gridData": {
-                    "h": 14,
-                    "i": "30ebc076-8273-4106-b4a8-66c8bdec8934",
-                    "w": 20,
-                    "x": 28,
-                    "y": 15
-                },
-                "panelIndex": "30ebc076-8273-4106-b4a8-66c8bdec8934",
-                "title": "Distribution of Firewall Event Class by Client Request Protocol",
                 "type": "lens"
             },
             {
@@ -917,7 +929,7 @@
                     "i": "9385681c-22a8-46aa-8353-af82880e6a05",
                     "w": 24,
                     "x": 24,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "9385681c-22a8-46aa-8353-af82880e6a05",
                 "title": "Top 10 Source IP",
@@ -1041,7 +1053,7 @@
                     "i": "ce0376c7-0c9c-4657-9569-bda33374e67b",
                     "w": 24,
                     "x": 0,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "ce0376c7-0c9c-4657-9569-bda33374e67b",
                 "title": "Top 10 Source ASN and ASN Description",
@@ -1165,7 +1177,7 @@
                     "i": "93ac4ff5-13c5-40d3-a7e9-14faca9ea9db",
                     "w": 24,
                     "x": 24,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "93ac4ff5-13c5-40d3-a7e9-14faca9ea9db",
                 "title": "Top 10 Client Referer Host and Client Request Host",
@@ -1177,7 +1189,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:04.062Z",
+    "created_at": "2026-04-13T17:56:35.471Z",
     "id": "cloudflare_logpush-a32a0690-dc44-11ec-b76d-adcfe05cc1fe",
     "references": [
         {
@@ -1212,22 +1224,22 @@
         },
         {
             "id": "logs-*",
-            "name": "7d00d9d8-021f-4432-9e92-aa2ffc4eabd0:indexpattern-datasource-current-indexpattern",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "7d00d9d8-021f-4432-9e92-aa2ffc4eabd0:indexpattern-datasource-layer-dc2bac47-d6ac-4216-8e62-356cb0dc1399",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "30ebc076-8273-4106-b4a8-66c8bdec8934:indexpattern-datasource-current-indexpattern",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
             "name": "30ebc076-8273-4106-b4a8-66c8bdec8934:indexpattern-datasource-layer-dc2bac47-d6ac-4216-8e62-356cb0dc1399",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "7d00d9d8-021f-4432-9e92-aa2ffc4eabd0:indexpattern-datasource-current-indexpattern",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "7d00d9d8-021f-4432-9e92-aa2ffc4eabd0:indexpattern-datasource-layer-dc2bac47-d6ac-4216-8e62-356cb0dc1399",
             "type": "index-pattern"
         },
         {
@@ -1364,8 +1376,14 @@
             "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
             "name": "e5907454-a078-435c-bbe9-b40963b074e2:link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
             "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "e5907454-a078-435c-bbe9-b40963b074e2:link_31f5d80f-cf06-4849-834c-67e2731acad5_dashboard",
+            "type": "dashboard"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

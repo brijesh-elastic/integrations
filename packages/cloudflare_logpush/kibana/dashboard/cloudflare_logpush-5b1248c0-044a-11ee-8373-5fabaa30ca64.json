@@ -10,11 +10,29 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "23edabb1-7a8c-46bf-a012-c73f066439a4": {
+                "1a181c7e-5a74-4b8f-ac27-2afbc9dbfe21": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "event.outcome",
+                        "id": "1a181c7e-5a74-4b8f-ac27-2afbc9dbfe21",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Audit result"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "4096cd3c-a788-442d-9feb-fe2fa48a4fa6": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "agent.name",
-                        "id": "23edabb1-7a8c-46bf-a012-c73f066439a4",
+                        "id": "4096cd3c-a788-442d-9feb-fe2fa48a4fa6",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -28,11 +46,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "92d7bb2c-b157-43c2-96f2-18d3a7004151": {
+                "4d3ef677-9de3-4285-b6ad-87212bd5f867": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.ip",
-                        "id": "92d7bb2c-b157-43c2-96f2-18d3a7004151",
+                        "id": "4d3ef677-9de3-4285-b6ad-87212bd5f867",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -46,47 +64,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "a585a277-68bf-4144-9e4b-0ae0d1745928": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.action",
-                        "id": "a585a277-68bf-4144-9e4b-0ae0d1745928",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Action"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "b1ab55d6-73c2-43a4-a19e-23c0a2e1f606": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "user.id",
-                        "id": "b1ab55d6-73c2-43a4-a19e-23c0a2e1f606",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Actor ID"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "f62aa191-6f60-4c5b-aed5-a9c500bb616f": {
+                "925597cd-2778-4f01-b5da-190ea86d7e1d": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "event.id",
-                        "id": "f62aa191-6f60-4c5b-aed5-a9c500bb616f",
+                        "id": "925597cd-2778-4f01-b5da-190ea86d7e1d",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -100,21 +82,39 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "fb4e7d5e-e5f5-4991-a811-264c5e8650e1": {
+                "9cc43dcf-6163-4571-964b-7c4d6eb06cf3": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "event.outcome",
-                        "id": "fb4e7d5e-e5f5-4991-a811-264c5e8650e1",
+                        "fieldName": "user.id",
+                        "id": "9cc43dcf-6163-4571-964b-7c4d6eb06cf3",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Audit result"
+                        "title": "Actor ID"
                     },
                     "grow": true,
-                    "order": 1,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b7d118ce-4696-4c69-bb77-0560c2861a3e": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "event.action",
+                        "id": "b7d118ce-4696-4c69-bb77-0560c2861a3e",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Action"
+                    },
+                    "grow": true,
+                    "order": 5,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -390,13 +390,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_7e378b82-5acd-4923-adec-9b98986b42b4_dashboard",
+                                "id": "7e378b82-5acd-4923-adec-9b98986b42b4",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "5788d8c2-e572-4108-8a07-82c516d56452",
                     "w": 8,
                     "x": 0,
@@ -543,7 +555,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 12,
+                    "h": 13,
                     "i": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                     "w": 20,
                     "x": 8,
@@ -683,7 +695,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 12,
+                    "h": 13,
                     "i": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                     "w": 20,
                     "x": 28,
@@ -691,6 +703,145 @@
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                 "title": "Distribution of Audit by resource action",
+                "type": "lens"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "46733cda-5820-4ed7-83ed-a167ae68a565",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "abba7002-5788-4a05-a010-367b1a38559e": {
+                                            "columnOrder": [
+                                                "f8617dc2-bc13-4891-b51b-6b084282485d",
+                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
+                                            ],
+                                            "columns": {
+                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "f8617dc2-bc13-4891-b51b-6b084282485d": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Actor email",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "user.email"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "46733cda-5820-4ed7-83ed-a167ae68a565",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.audit"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.audit"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "columns": [
+                                    {
+                                        "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
+                                    },
+                                    {
+                                        "columnId": "f8617dc2-bc13-4891-b51b-6b084282485d",
+                                        "isTransposed": false
+                                    }
+                                ],
+                                "layerId": "abba7002-5788-4a05-a010-367b1a38559e",
+                                "layerType": "data",
+                                "paging": {
+                                    "enabled": true,
+                                    "size": 10
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsDatatable"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 17,
+                    "i": "ef42409b-48f1-46d3-9c36-219137e54dba",
+                    "w": 12,
+                    "x": 36,
+                    "y": 13
+                },
+                "panelIndex": "ef42409b-48f1-46d3-9c36-219137e54dba",
+                "title": "Top Actor email",
                 "type": "lens"
             },
             {
@@ -866,149 +1017,10 @@
                     "i": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4",
                     "w": 28,
                     "x": 8,
-                    "y": 12
+                    "y": 13
                 },
                 "panelIndex": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4",
                 "title": "Audit Events Over Time ",
-                "type": "lens"
-            },
-            {
-                "embeddableConfig": {
-                    "attributes": {
-                        "references": [
-                            {
-                                "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
-                                "type": "index-pattern"
-                            },
-                            {
-                                "id": "logs-*",
-                                "name": "46733cda-5820-4ed7-83ed-a167ae68a565",
-                                "type": "index-pattern"
-                            }
-                        ],
-                        "state": {
-                            "adHocDataViews": {},
-                            "datasourceStates": {
-                                "formBased": {
-                                    "layers": {
-                                        "abba7002-5788-4a05-a010-367b1a38559e": {
-                                            "columnOrder": [
-                                                "f8617dc2-bc13-4891-b51b-6b084282485d",
-                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
-                                            ],
-                                            "columns": {
-                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9": {
-                                                    "customLabel": true,
-                                                    "dataType": "number",
-                                                    "isBucketed": false,
-                                                    "label": "Count",
-                                                    "operationType": "count",
-                                                    "params": {
-                                                        "emptyAsNull": true
-                                                    },
-                                                    "scale": "ratio",
-                                                    "sourceField": "___records___"
-                                                },
-                                                "f8617dc2-bc13-4891-b51b-6b084282485d": {
-                                                    "customLabel": true,
-                                                    "dataType": "string",
-                                                    "isBucketed": true,
-                                                    "label": "Actor email",
-                                                    "operationType": "terms",
-                                                    "params": {
-                                                        "exclude": [],
-                                                        "excludeIsRegex": false,
-                                                        "include": [],
-                                                        "includeIsRegex": false,
-                                                        "missingBucket": false,
-                                                        "orderBy": {
-                                                            "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9",
-                                                            "type": "column"
-                                                        },
-                                                        "orderDirection": "desc",
-                                                        "otherBucket": true,
-                                                        "parentFormat": {
-                                                            "id": "terms"
-                                                        },
-                                                        "size": 10
-                                                    },
-                                                    "scale": "ordinal",
-                                                    "sourceField": "user.email"
-                                                }
-                                            },
-                                            "incompleteColumns": {},
-                                            "sampling": 1
-                                        }
-                                    }
-                                },
-                                "textBased": {
-                                    "layers": {}
-                                }
-                            },
-                            "filters": [
-                                {
-                                    "$state": {
-                                        "store": "appState"
-                                    },
-                                    "meta": {
-                                        "alias": null,
-                                        "disabled": false,
-                                        "field": "data_stream.dataset",
-                                        "index": "46733cda-5820-4ed7-83ed-a167ae68a565",
-                                        "key": "data_stream.dataset",
-                                        "negate": false,
-                                        "params": {
-                                            "query": "cloudflare_logpush.audit"
-                                        },
-                                        "type": "phrase"
-                                    },
-                                    "query": {
-                                        "match_phrase": {
-                                            "data_stream.dataset": "cloudflare_logpush.audit"
-                                        }
-                                    }
-                                }
-                            ],
-                            "internalReferences": [],
-                            "query": {
-                                "language": "kuery",
-                                "query": ""
-                            },
-                            "visualization": {
-                                "columns": [
-                                    {
-                                        "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
-                                    },
-                                    {
-                                        "columnId": "f8617dc2-bc13-4891-b51b-6b084282485d",
-                                        "isTransposed": false
-                                    }
-                                ],
-                                "layerId": "abba7002-5788-4a05-a010-367b1a38559e",
-                                "layerType": "data",
-                                "paging": {
-                                    "enabled": true,
-                                    "size": 10
-                                }
-                            }
-                        },
-                        "title": "",
-                        "type": "lens",
-                        "visualizationType": "lnsDatatable"
-                    },
-                    "enhancements": {},
-                    "hidePanelTitles": false
-                },
-                "gridData": {
-                    "h": 17,
-                    "i": "ef42409b-48f1-46d3-9c36-219137e54dba",
-                    "w": 12,
-                    "x": 36,
-                    "y": 12
-                },
-                "panelIndex": "ef42409b-48f1-46d3-9c36-219137e54dba",
-                "title": "Top Actor email",
                 "type": "lens"
             },
             {
@@ -1022,7 +1034,7 @@
                     "i": "cb23aa72-e15b-49be-a158-7d204f80be0d",
                     "w": 48,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "cb23aa72-e15b-49be-a158-7d204f80be0d",
                 "panelRefName": "panel_cb23aa72-e15b-49be-a158-7d204f80be0d",
@@ -1035,7 +1047,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:03.052Z",
+    "created_at": "2026-04-13T17:56:22.139Z",
     "id": "cloudflare_logpush-5b1248c0-044a-11ee-8373-5fabaa30ca64",
     "references": [
         {
@@ -1060,22 +1072,22 @@
         },
         {
             "id": "logs-*",
-            "name": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4:indexpattern-datasource-layer-7c63feda-8bc4-4a78-be78-e575ab63d42e",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4:5ac9d369-897a-4d53-8a93-a2f22a5dd62f",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "ef42409b-48f1-46d3-9c36-219137e54dba:indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
             "name": "ef42409b-48f1-46d3-9c36-219137e54dba:46733cda-5820-4ed7-83ed-a167ae68a565",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4:indexpattern-datasource-layer-7c63feda-8bc4-4a78-be78-e575ab63d42e",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4:5ac9d369-897a-4d53-8a93-a2f22a5dd62f",
             "type": "index-pattern"
         },
         {
@@ -1189,36 +1201,42 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "5788d8c2-e572-4108-8a07-82c516d56452:link_7e378b82-5acd-4923-adec-9b98986b42b4_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
-            "name": "controlGroup_b39ab1c9-9d73-449e-b5e4-503b0645ac9e:optionsListDataView",
+            "name": "controlGroup_23edabb1-7a8c-46bf-a012-c73f066439a4:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b376e217-342e-4230-8e34-09047c9fa115:optionsListDataView",
+            "name": "controlGroup_fb4e7d5e-e5f5-4991-a811-264c5e8650e1:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_01aec957-fae6-4734-b7d0-ed7ad15687cd:optionsListDataView",
+            "name": "controlGroup_b1ab55d6-73c2-43a4-a19e-23c0a2e1f606:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_28a60077-9a32-4226-a297-92e6729e572e:optionsListDataView",
+            "name": "controlGroup_92d7bb2c-b157-43c2-96f2-18d3a7004151:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_6c45af10-abc1-454c-8cee-497d90bf1946:optionsListDataView",
+            "name": "controlGroup_f62aa191-6f60-4c5b-aed5-a9c500bb616f:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_55d4e8bb-06c7-4128-ba54-948e5edb13b6:optionsListDataView",
+            "name": "controlGroup_a585a277-68bf-4144-9e4b-0ae0d1745928:optionsListDataView",
             "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

@@ -10,29 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "10cf8c42-6bac-43fc-ae88-454816795f70": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "10cf8c42-6bac-43fc-ae88-454816795f70",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "119e6da4-8e73-4253-89b9-be796020f334": {
+                "446c85e7-f1ec-4b0a-9c75-c8d51055551d": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.casb.integration.id",
-                        "id": "119e6da4-8e73-4253-89b9-be796020f334",
+                        "id": "446c85e7-f1ec-4b0a-9c75-c8d51055551d",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -46,29 +28,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "66119e41-b1ff-4698-a897-66f7084a1973": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.casb.integration.name",
-                        "id": "66119e41-b1ff-4698-a897-66f7084a1973",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Integration name"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "d8fe6c43-7c29-4bfc-a590-5dea391721b8": {
+                "4d5f9aaa-cc59-4a21-8b19-f19db7f5f3aa": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.casb.finding.id",
-                        "id": "d8fe6c43-7c29-4bfc-a590-5dea391721b8",
+                        "id": "4d5f9aaa-cc59-4a21-8b19-f19db7f5f3aa",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -79,6 +43,42 @@
                     },
                     "grow": true,
                     "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "85b023f5-bd16-4345-a8a3-727020ec74cc": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "85b023f5-bd16-4345-a8a3-727020ec74cc",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "92996755-4440-4a7c-873d-e4ba21c0c40b": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.casb.integration.name",
+                        "id": "92996755-4440-4a7c-873d-e4ba21c0c40b",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Integration name"
+                    },
+                    "grow": true,
+                    "order": 2,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -354,13 +354,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_85bc26fe-39d4-472c-aa2f-82e514443b83_dashboard",
+                                "id": "85bc26fe-39d4-472c-aa2f-82e514443b83",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "329950de-d128-4361-87fe-f2e38ffc8aca",
                     "w": 8,
                     "x": 0,
@@ -468,7 +480,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 8,
+                    "h": 9,
                     "i": "8ac4ad94-a423-4185-b9b5-8672f592676c",
                     "w": 9,
                     "x": 8,
@@ -634,7 +646,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 8,
+                    "h": 9,
                     "i": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                     "w": 14,
                     "x": 17,
@@ -1057,7 +1069,7 @@
                     "i": "77c52b2d-8d20-4307-a530-2a785b783564",
                     "w": 23,
                     "x": 8,
-                    "y": 8
+                    "y": 9
                 },
                 "panelIndex": "77c52b2d-8d20-4307-a530-2a785b783564",
                 "title": "CASB Findings Over Time (Classified by Severity)",
@@ -1194,7 +1206,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 15,
+                    "h": 16,
                     "i": "646e888e-cda9-4e49-b794-1195eae3250d",
                     "w": 17,
                     "x": 31,
@@ -1215,7 +1227,7 @@
                     "i": "192742d8-97b9-442e-9a0a-945ed9dc828f",
                     "w": 48,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "192742d8-97b9-442e-9a0a-945ed9dc828f",
                 "panelRefName": "panel_192742d8-97b9-442e-9a0a-945ed9dc828f",
@@ -1228,7 +1240,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:22:49.894Z",
+    "created_at": "2026-04-13T17:56:22.335Z",
     "id": "cloudflare_logpush-6f14e840-0450-11ee-8373-5fabaa30ca64",
     "references": [
         {
@@ -1382,26 +1394,32 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "329950de-d128-4361-87fe-f2e38ffc8aca:link_85bc26fe-39d4-472c-aa2f-82e514443b83_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
-            "name": "controlGroup_693b62b4-83d4-40f1-9ba1-d674f6828ff3:optionsListDataView",
+            "name": "controlGroup_10cf8c42-6bac-43fc-ae88-454816795f70:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_97b5c854-d625-4f72-920a-62d03a9984c2:optionsListDataView",
+            "name": "controlGroup_119e6da4-8e73-4253-89b9-be796020f334:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_73d1790a-fd51-4f34-9826-4088978593ee:optionsListDataView",
+            "name": "controlGroup_66119e41-b1ff-4698-a897-66f7084a1973:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_e45ab69f-c9e4-4b9f-95f9-39d2b02960b3:optionsListDataView",
+            "name": "controlGroup_d8fe6c43-7c29-4bfc-a590-5dea391721b8:optionsListDataView",
             "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

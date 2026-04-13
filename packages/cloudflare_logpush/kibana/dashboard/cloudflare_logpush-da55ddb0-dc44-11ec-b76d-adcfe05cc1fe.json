@@ -281,13 +281,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_b1b12632-2a45-484e-8a3a-ae638faf091d_dashboard",
+                                "id": "b1b12632-2a45-484e-8a3a-ae638faf091d",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "4f664ed8-91e7-49a9-817b-0dd132b11dd9",
                     "w": 8,
                     "x": 0,
@@ -614,7 +626,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "81514310-7291-4f6a-bfc9-e7c64b042c83",
                     "w": 20,
                     "x": 8,
@@ -735,7 +747,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "db83321b-3729-48c6-a417-f09cb192c6d2",
                     "w": 20,
                     "x": 28,
@@ -851,7 +863,7 @@
                     "i": "73c0274d-7f24-4763-aac0-eef36b1a6904",
                     "w": 24,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "73c0274d-7f24-4763-aac0-eef36b1a6904",
                 "title": "Distribution of Spectrum Event by Origin TLS Protocol",
@@ -963,7 +975,7 @@
                     "i": "0229b8d8-fe10-4ed5-938c-135fa3332836",
                     "w": 24,
                     "x": 24,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "0229b8d8-fe10-4ed5-938c-135fa3332836",
                 "title": "Distribution of Spectrum Event by Client TLS Status",
@@ -1075,7 +1087,7 @@
                     "i": "e769bb45-9bb6-4902-aadd-9622b8ef0197",
                     "w": 24,
                     "x": 0,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "e769bb45-9bb6-4902-aadd-9622b8ef0197",
                 "title": "Distribution of Spectrum Event by Origin TLS Status",
@@ -1091,7 +1103,7 @@
                     "i": "5a5b611e-8fa5-4b4d-ae6c-5b971bbcd71f",
                     "w": 24,
                     "x": 24,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "5a5b611e-8fa5-4b4d-ae6c-5b971bbcd71f",
                 "panelRefName": "panel_5a5b611e-8fa5-4b4d-ae6c-5b971bbcd71f",
@@ -1104,7 +1116,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:06.095Z",
+    "created_at": "2026-04-13T17:56:36.474Z",
     "id": "cloudflare_logpush-da55ddb0-dc44-11ec-b76d-adcfe05cc1fe",
     "references": [
         {
@@ -1286,8 +1298,14 @@
             "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
             "name": "4f664ed8-91e7-49a9-817b-0dd132b11dd9:link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
             "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "4f664ed8-91e7-49a9-817b-0dd132b11dd9:link_b1b12632-2a45-484e-8a3a-ae638faf091d_dashboard",
+            "type": "dashboard"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

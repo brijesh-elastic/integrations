@@ -281,13 +281,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_46f53ba9-c698-4ad6-8e77-e5a78e1a8953_dashboard",
+                                "id": "46f53ba9-c698-4ad6-8e77-e5a78e1a8953",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "58faa0bd-8098-4ead-a4ff-05cddd55c88a",
                     "w": 8,
                     "x": 0,
@@ -303,7 +315,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:11.159Z",
+    "created_at": "2026-04-13T17:56:28.393Z",
     "id": "cloudflare_logpush-67bc9d49-5015-4e1f-9b50-cfce462ae4ca",
     "references": [
         {
@@ -410,8 +422,14 @@
             "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
             "name": "58faa0bd-8098-4ead-a4ff-05cddd55c88a:link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
             "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "58faa0bd-8098-4ead-a4ff-05cddd55c88a:link_46f53ba9-c698-4ad6-8e77-e5a78e1a8953_dashboard",
+            "type": "dashboard"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

@@ -281,13 +281,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_f3eaf979-4efe-46ae-88a4-e3a900780bd7_dashboard",
+                                "id": "f3eaf979-4efe-46ae-88a4-e3a900780bd7",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "99d37459-fa7f-47ec-9322-d75ebf0e407c",
                     "w": 8,
                     "x": 0,
@@ -596,7 +608,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "a3ed8dcc-80c7-4b0b-b5ae-d367ca5399f2",
                     "w": 20,
                     "x": 8,
@@ -699,7 +711,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "f8d6e38e-14f7-41d2-be81-0831c73cb443",
                     "w": 20,
                     "x": 28,
@@ -806,7 +818,7 @@
                     "i": "185e465f-bd48-48e2-a8be-59854a7c3021",
                     "w": 24,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "185e465f-bd48-48e2-a8be-59854a7c3021",
                 "title": "Distribution of Network Analytics Logs by Outcome",
@@ -909,7 +921,7 @@
                     "i": "6a86f194-8e17-4b6c-8100-3fe42fbb85b0",
                     "w": 24,
                     "x": 24,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "6a86f194-8e17-4b6c-8100-3fe42fbb85b0",
                 "title": "Distribution of Network Analytics Logs by Protocol State",
@@ -1012,7 +1024,7 @@
                     "i": "fefc98e2-ac0a-4929-92a1-3a8dcc396a8c",
                     "w": 24,
                     "x": 0,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "fefc98e2-ac0a-4929-92a1-3a8dcc396a8c",
                 "title": "Distribution of Network Analytics by Destination Country",
@@ -1115,7 +1127,7 @@
                     "i": "1b347819-7723-4250-9dfc-647d474d1044",
                     "w": 24,
                     "x": 24,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "1b347819-7723-4250-9dfc-647d474d1044",
                 "title": "Distribution of Network Analytics by Source Country",
@@ -1239,7 +1251,7 @@
                     "i": "108877cb-bc4f-4870-90d4-732d4755014f",
                     "w": 48,
                     "x": 0,
-                    "y": 59
+                    "y": 60
                 },
                 "panelIndex": "108877cb-bc4f-4870-90d4-732d4755014f",
                 "title": "Top 10 Source IP and Destination IP",
@@ -1251,7 +1263,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:00.013Z",
+    "created_at": "2026-04-13T17:56:40.528Z",
     "id": "cloudflare_logpush-3da7bd20-dc45-11ec-b76d-adcfe05cc1fe",
     "references": [
         {
@@ -1448,8 +1460,14 @@
             "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
             "name": "99d37459-fa7f-47ec-9322-d75ebf0e407c:link_9ffa1b28-b073-4bff-ad56-ed414d0caaf9_dashboard",
             "type": "dashboard"
+        },
+        {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "99d37459-fa7f-47ec-9322-d75ebf0e407c:link_f3eaf979-4efe-46ae-88a4-e3a900780bd7_dashboard",
+            "type": "dashboard"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

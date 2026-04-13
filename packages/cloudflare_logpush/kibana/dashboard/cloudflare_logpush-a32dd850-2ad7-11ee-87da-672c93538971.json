@@ -10,96 +10,29 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "5b687a7c-d550-4173-9ab3-f51219dbc492": {
+                "2605b5d0-5385-4f89-88f0-6b96a6b50648": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "http.response.status_code",
-                        "id": "5b687a7c-d550-4173-9ab3-f51219dbc492",
-                        "step": 1,
-                        "title": "HTTP Response Code"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "rangeSliderControl",
-                    "width": "medium"
-                },
-                "5e2b13ca-6fe1-45bd-b8b6-4cd487c4b07d": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.action",
-                        "id": "5e2b13ca-6fe1-45bd-b8b6-4cd487c4b07d",
+                        "fieldName": "agent.name",
+                        "id": "2605b5d0-5385-4f89-88f0-6b96a6b50648",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Action"
+                        "title": "Agent Name"
                     },
                     "grow": true,
-                    "order": 3,
+                    "order": 0,
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "7b1e6fea-2c42-431e-a109-e4ee56839a4b": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.workers_trace.script.tags",
-                        "id": "7b1e6fea-2c42-431e-a109-e4ee56839a4b",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Script Tags"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "b7c4eb6f-ebd4-4ca7-ba17-8102c9a42ddd": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "url.domain",
-                        "id": "b7c4eb6f-ebd4-4ca7-ba17-8102c9a42ddd",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "URL Domain"
-                    },
-                    "grow": true,
-                    "order": 7,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "b9311657-fdc7-4f75-b2ca-c16535c36561": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.workers_trace.dispatch_namespace",
-                        "id": "b9311657-fdc7-4f75-b2ca-c16535c36561",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Dispatch Namespace"
-                    },
-                    "grow": true,
-                    "order": 6,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "e096813a-5fc9-4395-a3dd-cd2cbd43b50c": {
+                "76addf70-4851-47bf-88b3-99aa441139c2": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "http.request.method",
-                        "id": "e096813a-5fc9-4395-a3dd-cd2cbd43b50c",
+                        "id": "76addf70-4851-47bf-88b3-99aa441139c2",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -113,11 +46,60 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "e6b3088d-48c9-46c3-a5dd-7addd251f71e": {
+                "8723a79f-f13e-4a06-ad6a-acaadf081e98": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.workers_trace.dispatch_namespace",
+                        "id": "8723a79f-f13e-4a06-ad6a-acaadf081e98",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Dispatch Namespace"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "99babf10-c3ff-4b97-adcc-e125e22404b1": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "http.response.status_code",
+                        "id": "99babf10-c3ff-4b97-adcc-e125e22404b1",
+                        "step": 1,
+                        "title": "HTTP Response Code"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "rangeSliderControl",
+                    "width": "medium"
+                },
+                "9f259f9e-2e63-457e-9b5c-4c3e8029be92": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.workers_trace.script.tags",
+                        "id": "9f259f9e-2e63-457e-9b5c-4c3e8029be92",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Script Tags"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "a4c34897-6df5-420e-92af-fcdc3668ffba": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.workers_trace.script.name",
-                        "id": "e6b3088d-48c9-46c3-a5dd-7addd251f71e",
+                        "id": "a4c34897-6df5-420e-92af-fcdc3668ffba",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -131,21 +113,39 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "f979bd2a-6da6-4c4f-bc64-0a9d3e778b9f": {
+                "abdb03da-45f9-4415-94fb-faa7efdd3c03": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "f979bd2a-6da6-4c4f-bc64-0a9d3e778b9f",
+                        "fieldName": "event.action",
+                        "id": "abdb03da-45f9-4415-94fb-faa7efdd3c03",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Agent Name"
+                        "title": "Action"
                     },
                     "grow": true,
-                    "order": 0,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b556df4e-3620-4f1d-8ae9-e389fb6cbf61": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "url.domain",
+                        "id": "b556df4e-3620-4f1d-8ae9-e389fb6cbf61",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "URL Domain"
+                    },
+                    "grow": true,
+                    "order": 7,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -421,13 +421,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_f64f575d-dc9b-48ad-b545-09937644ee7b_dashboard",
+                                "id": "f64f575d-dc9b-48ad-b545-09937644ee7b",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "f01d802b-fa77-44f7-9237-85924ee1007f",
                     "w": 8,
                     "x": 0,
@@ -942,7 +954,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "6b325841-d762-487d-8dca-cb4ebebb627d",
                     "w": 20,
                     "x": 8,
@@ -1106,7 +1118,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 14,
+                    "h": 15,
                     "i": "8bf7449a-9767-4d83-af74-bda870702574",
                     "w": 20,
                     "x": 28,
@@ -1250,7 +1262,7 @@
                     "i": "2048f6ff-25c6-4123-a609-3b931f6e817c",
                     "w": 24,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "2048f6ff-25c6-4123-a609-3b931f6e817c",
                 "title": "Top URL Domains",
@@ -1391,7 +1403,7 @@
                     "i": "aa1ad025-cb18-45f0-8c07-1dc21e517b08",
                     "w": 24,
                     "x": 24,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "aa1ad025-cb18-45f0-8c07-1dc21e517b08",
                 "title": "Top Script Names",
@@ -1408,7 +1420,7 @@
                     "i": "ca1508a9-c6ce-42aa-a144-9bd1648aa2fc",
                     "w": 48,
                     "x": 0,
-                    "y": 44
+                    "y": 45
                 },
                 "panelIndex": "ca1508a9-c6ce-42aa-a144-9bd1648aa2fc",
                 "panelRefName": "panel_ca1508a9-c6ce-42aa-a144-9bd1648aa2fc",
@@ -1421,7 +1433,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:01.046Z",
+    "created_at": "2026-04-13T17:56:34.464Z",
     "id": "cloudflare_logpush-a32dd850-2ad7-11ee-87da-672c93538971",
     "references": [
         {
@@ -1585,46 +1597,52 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "f01d802b-fa77-44f7-9237-85924ee1007f:link_f64f575d-dc9b-48ad-b545-09937644ee7b_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
-            "name": "controlGroup_ad801e07-23f4-4740-8822-69fb17f5b1a2:optionsListDataView",
+            "name": "controlGroup_f979bd2a-6da6-4c4f-bc64-0a9d3e778b9f:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_8bbf6ad1-37ae-44c3-a39c-9a8ea9433308:optionsListDataView",
+            "name": "controlGroup_e096813a-5fc9-4395-a3dd-cd2cbd43b50c:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b92df946-457d-4873-9279-1132e3462323:rangeSliderDataView",
+            "name": "controlGroup_5b687a7c-d550-4173-9ab3-f51219dbc492:rangeSliderDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_fdc3f099-79ba-4e97-b3f1-7224e11bc14b:optionsListDataView",
+            "name": "controlGroup_5e2b13ca-6fe1-45bd-b8b6-4cd487c4b07d:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_c071ba44-45ef-487b-bddd-40e74d3d0298:optionsListDataView",
+            "name": "controlGroup_e6b3088d-48c9-46c3-a5dd-7addd251f71e:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_c480ba9a-02e0-4b58-b390-a89a6c580722:optionsListDataView",
+            "name": "controlGroup_7b1e6fea-2c42-431e-a109-e4ee56839a4b:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_42493894-084c-4ddc-bb32-9a3b45326510:optionsListDataView",
+            "name": "controlGroup_b9311657-fdc7-4f75-b2ca-c16535c36561:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_93e6eb58-597a-410a-9a72-fc8f9caa0824:optionsListDataView",
+            "name": "controlGroup_b7c4eb6f-ebd4-4ca7-ba17-8102c9a42ddd:optionsListDataView",
             "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

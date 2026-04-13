@@ -10,101 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "0c1ebcea-044a-47af-a694-b42d65cefcc2": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.gateway_dns.policy.name",
-                        "id": "0c1ebcea-044a-47af-a694-b42d65cefcc2",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Policy Name"
-                    },
-                    "grow": true,
-                    "order": 7,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "39e4d870-f6ac-4d2d-b93d-4727bf919d35": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "user.id",
-                        "id": "39e4d870-f6ac-4d2d-b93d-4727bf919d35",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "User ID"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "872fd332-79c9-4ee8-84ba-b1182126349e": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "872fd332-79c9-4ee8-84ba-b1182126349e",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "8a7dc2a7-4caf-41cc-9664-e108ba822515": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "dns.question.name",
-                        "id": "8a7dc2a7-4caf-41cc-9664-e108ba822515",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "DNS Query Name"
-                    },
-                    "grow": true,
-                    "order": 3,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "8e27545c-0ff5-450e-be59-4fb4688f4f2b": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "source.ip",
-                        "id": "8e27545c-0ff5-450e-be59-4fb4688f4f2b",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Source IP"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "9d663400-b007-4e55-8617-b4ca8b3a78bc": {
+                "286f0ae0-248f-4cf6-8248-969dd952f286": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.gateway_dns.policy.id",
-                        "id": "9d663400-b007-4e55-8617-b4ca8b3a78bc",
+                        "id": "286f0ae0-248f-4cf6-8248-969dd952f286",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -118,11 +28,47 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "ab93e0d8-5794-4545-b80a-3bee5514b536": {
+                "48ea2153-229d-4e6d-9ddf-cff4659148cd": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "48ea2153-229d-4e6d-9ddf-cff4659148cd",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "4afeadf6-0445-4720-bfcc-d3e7987750a0": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.ip",
+                        "id": "4afeadf6-0445-4720-bfcc-d3e7987750a0",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "65159057-91b3-43fe-b389-3049a5e7bc8b": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "user.email",
-                        "id": "ab93e0d8-5794-4545-b80a-3bee5514b536",
+                        "id": "65159057-91b3-43fe-b389-3049a5e7bc8b",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -136,11 +82,47 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "e1707d3a-63d7-4d9d-af38-8423bfed8eea": {
+                "830da9e4-3f1d-452d-a87e-64fc8fc8d2e9": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.gateway_dns.policy.name",
+                        "id": "830da9e4-3f1d-452d-a87e-64fc8fc8d2e9",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Policy Name"
+                    },
+                    "grow": true,
+                    "order": 7,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "8ed17f49-53a4-43f5-89cd-cc3fdfab4101": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.id",
+                        "id": "8ed17f49-53a4-43f5-89cd-cc3fdfab4101",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "User ID"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "a12a207a-d530-428d-984f-962c76ef417d": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.geo.country_name",
-                        "id": "e1707d3a-63d7-4d9d-af38-8423bfed8eea",
+                        "id": "a12a207a-d530-428d-984f-962c76ef417d",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -151,6 +133,24 @@
                     },
                     "grow": true,
                     "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "a8435af4-21b7-4540-835c-7af12b41ce5a": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "dns.question.name",
+                        "id": "a8435af4-21b7-4540-835c-7af12b41ce5a",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "DNS Query Name"
+                    },
+                    "grow": true,
+                    "order": 3,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -426,13 +426,25 @@
                                 },
                                 "order": 20,
                                 "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_12d1f259-a600-47fc-bf5c-761e754e8fda_dashboard",
+                                "id": "12d1f259-a600-47fc-bf5c-761e754e8fda",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
+                                "type": "dashboardLink"
                             }
                         ]
                     },
                     "enhancements": {}
                 },
                 "gridData": {
-                    "h": 29,
+                    "h": 30,
                     "i": "c50f47c3-c7b4-475a-8286-c55e180dd1d1",
                     "w": 8,
                     "x": 0,
@@ -597,7 +609,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 13,
+                    "h": 14,
                     "i": "e55df9ac-f378-44ac-8ec9-5dae1269e587",
                     "w": 20,
                     "x": 8,
@@ -744,7 +756,7 @@
                     "hidePanelTitles": false
                 },
                 "gridData": {
-                    "h": 13,
+                    "h": 14,
                     "i": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                     "w": 20,
                     "x": 28,
@@ -752,145 +764,6 @@
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                 "title": "DNS Resolver Decision",
-                "type": "lens"
-            },
-            {
-                "embeddableConfig": {
-                    "attributes": {
-                        "references": [
-                            {
-                                "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
-                                "type": "index-pattern"
-                            },
-                            {
-                                "id": "logs-*",
-                                "name": "1be598f5-115b-40e6-90b9-87c5dd26e80b",
-                                "type": "index-pattern"
-                            }
-                        ],
-                        "state": {
-                            "adHocDataViews": {},
-                            "datasourceStates": {
-                                "formBased": {
-                                    "layers": {
-                                        "abba7002-5788-4a05-a010-367b1a38559e": {
-                                            "columnOrder": [
-                                                "46190c41-8190-412b-a50c-25049150866e",
-                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
-                                            ],
-                                            "columns": {
-                                                "46190c41-8190-412b-a50c-25049150866e": {
-                                                    "customLabel": true,
-                                                    "dataType": "string",
-                                                    "isBucketed": true,
-                                                    "label": "Query Domain Category",
-                                                    "operationType": "terms",
-                                                    "params": {
-                                                        "exclude": [],
-                                                        "excludeIsRegex": false,
-                                                        "include": [],
-                                                        "includeIsRegex": false,
-                                                        "missingBucket": false,
-                                                        "orderBy": {
-                                                            "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9",
-                                                            "type": "column"
-                                                        },
-                                                        "orderDirection": "desc",
-                                                        "otherBucket": true,
-                                                        "parentFormat": {
-                                                            "id": "terms"
-                                                        },
-                                                        "secondaryFields": [],
-                                                        "size": 10
-                                                    },
-                                                    "scale": "ordinal",
-                                                    "sourceField": "cloudflare_logpush.gateway_dns.question.category.names"
-                                                },
-                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9": {
-                                                    "customLabel": true,
-                                                    "dataType": "number",
-                                                    "isBucketed": false,
-                                                    "label": "Count",
-                                                    "operationType": "count",
-                                                    "params": {
-                                                        "emptyAsNull": true
-                                                    },
-                                                    "scale": "ratio",
-                                                    "sourceField": "___records___"
-                                                }
-                                            },
-                                            "incompleteColumns": {},
-                                            "sampling": 1
-                                        }
-                                    }
-                                },
-                                "textBased": {
-                                    "layers": {}
-                                }
-                            },
-                            "filters": [
-                                {
-                                    "$state": {
-                                        "store": "appState"
-                                    },
-                                    "meta": {
-                                        "alias": null,
-                                        "disabled": false,
-                                        "field": "data_stream.dataset",
-                                        "index": "1be598f5-115b-40e6-90b9-87c5dd26e80b",
-                                        "key": "data_stream.dataset",
-                                        "negate": false,
-                                        "params": {
-                                            "query": "cloudflare_logpush.gateway_dns"
-                                        },
-                                        "type": "phrase"
-                                    },
-                                    "query": {
-                                        "match_phrase": {
-                                            "data_stream.dataset": "cloudflare_logpush.gateway_dns"
-                                        }
-                                    }
-                                }
-                            ],
-                            "internalReferences": [],
-                            "query": {
-                                "language": "kuery",
-                                "query": ""
-                            },
-                            "visualization": {
-                                "columns": [
-                                    {
-                                        "columnId": "46190c41-8190-412b-a50c-25049150866e"
-                                    },
-                                    {
-                                        "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
-                                    }
-                                ],
-                                "layerId": "abba7002-5788-4a05-a010-367b1a38559e",
-                                "layerType": "data",
-                                "paging": {
-                                    "enabled": true,
-                                    "size": 10
-                                }
-                            }
-                        },
-                        "title": "",
-                        "type": "lens",
-                        "visualizationType": "lnsDatatable"
-                    },
-                    "enhancements": {},
-                    "hidePanelTitles": false
-                },
-                "gridData": {
-                    "h": 16,
-                    "i": "f11abba6-018e-4e78-a4d8-69161fe533d4",
-                    "w": 20,
-                    "x": 8,
-                    "y": 13
-                },
-                "panelIndex": "f11abba6-018e-4e78-a4d8-69161fe533d4",
-                "title": "Top Domain Categories",
                 "type": "lens"
             },
             {
@@ -1027,10 +900,149 @@
                     "i": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                     "w": 20,
                     "x": 28,
-                    "y": 13
+                    "y": 14
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                 "title": "Top DNS Query Names",
+                "type": "lens"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
+                                "name": "1be598f5-115b-40e6-90b9-87c5dd26e80b",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "abba7002-5788-4a05-a010-367b1a38559e": {
+                                            "columnOrder": [
+                                                "46190c41-8190-412b-a50c-25049150866e",
+                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
+                                            ],
+                                            "columns": {
+                                                "46190c41-8190-412b-a50c-25049150866e": {
+                                                    "customLabel": true,
+                                                    "dataType": "string",
+                                                    "isBucketed": true,
+                                                    "label": "Query Domain Category",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "secondaryFields": [],
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "cloudflare_logpush.gateway_dns.question.category.names"
+                                                },
+                                                "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "1be598f5-115b-40e6-90b9-87c5dd26e80b",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.gateway_dns"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.gateway_dns"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "columns": [
+                                    {
+                                        "columnId": "46190c41-8190-412b-a50c-25049150866e"
+                                    },
+                                    {
+                                        "columnId": "9dc9f22f-662a-4546-bfd5-2d9e6a0129a9"
+                                    }
+                                ],
+                                "layerId": "abba7002-5788-4a05-a010-367b1a38559e",
+                                "layerType": "data",
+                                "paging": {
+                                    "enabled": true,
+                                    "size": 10
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsDatatable"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 16,
+                    "i": "f11abba6-018e-4e78-a4d8-69161fe533d4",
+                    "w": 20,
+                    "x": 8,
+                    "y": 14
+                },
+                "panelIndex": "f11abba6-018e-4e78-a4d8-69161fe533d4",
+                "title": "Top Domain Categories",
                 "type": "lens"
             },
             {
@@ -1199,7 +1211,7 @@
                     "i": "9c7980fb-40dc-47f7-bf8d-7b294f4450d9",
                     "w": 20,
                     "x": 28,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "9c7980fb-40dc-47f7-bf8d-7b294f4450d9",
                 "title": "Top DNS Query Names (Failures)",
@@ -1430,7 +1442,7 @@
                     "i": "c5be3c62-8ef4-487d-aa4f-a91c5c2de2d3",
                     "w": 28,
                     "x": 0,
-                    "y": 29
+                    "y": 30
                 },
                 "panelIndex": "c5be3c62-8ef4-487d-aa4f-a91c5c2de2d3",
                 "title": "DNS Requests Over Time (Success vs Failure)",
@@ -1569,7 +1581,7 @@
                     "i": "d9952030-6e1e-405c-b626-7f7573225080",
                     "w": 10,
                     "x": 38,
-                    "y": 45
+                    "y": 46
                 },
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
                 "title": "Top DNS Requests by Country",
@@ -1825,7 +1837,7 @@
                     "i": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                     "w": 38,
                     "x": 0,
-                    "y": 45
+                    "y": 46
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                 "title": "Top Traffic Countries",
@@ -1837,7 +1849,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:23:05.079Z",
+    "created_at": "2026-04-13T17:56:32.445Z",
     "id": "cloudflare_logpush-5de148d0-04ae-11ee-8373-5fabaa30ca64",
     "references": [
         {
@@ -1862,22 +1874,22 @@
         },
         {
             "id": "logs-*",
-            "name": "f11abba6-018e-4e78-a4d8-69161fe533d4:indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "f11abba6-018e-4e78-a4d8-69161fe533d4:1be598f5-115b-40e6-90b9-87c5dd26e80b",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "51b83123-5053-4a8c-92e0-45ba57cc6db4:indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
             "name": "51b83123-5053-4a8c-92e0-45ba57cc6db4:70137720-fd44-4886-882b-442abe337831",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "f11abba6-018e-4e78-a4d8-69161fe533d4:indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "f11abba6-018e-4e78-a4d8-69161fe533d4:1be598f5-115b-40e6-90b9-87c5dd26e80b",
             "type": "index-pattern"
         },
         {
@@ -2006,51 +2018,57 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "c50f47c3-c7b4-475a-8286-c55e180dd1d1:link_12d1f259-a600-47fc-bf5c-761e754e8fda_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
             "name": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1:layer_1_source_index_pattern",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_c841b784-45e4-4256-802d-d51a8705d632:optionsListDataView",
+            "name": "controlGroup_872fd332-79c9-4ee8-84ba-b1182126349e:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_cac46626-08ce-452a-9acf-5d09be6c754b:optionsListDataView",
+            "name": "controlGroup_39e4d870-f6ac-4d2d-b93d-4727bf919d35:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_0ebc1040-1d64-4268-9442-16fbb23fd56f:optionsListDataView",
+            "name": "controlGroup_ab93e0d8-5794-4545-b80a-3bee5514b536:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_772e4165-ee44-4ee6-888a-ff912f6effa8:optionsListDataView",
+            "name": "controlGroup_8a7dc2a7-4caf-41cc-9664-e108ba822515:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_540c412d-3293-4c6b-9738-94a240cb5851:optionsListDataView",
+            "name": "controlGroup_e1707d3a-63d7-4d9d-af38-8423bfed8eea:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_88975f59-a3a8-46e2-b6f7-b177a2ceaff5:optionsListDataView",
+            "name": "controlGroup_8e27545c-0ff5-450e-be59-4fb4688f4f2b:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_9d9b70ee-6358-426a-98ea-4b0719537dbd:optionsListDataView",
+            "name": "controlGroup_9d663400-b007-4e55-8617-b4ca8b3a78bc:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_822e245b-4c1a-4393-af83-f6f2e49c32aa:optionsListDataView",
+            "name": "controlGroup_0c1ebcea-044a-47af-a694-b42d65cefcc2:optionsListDataView",
             "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }

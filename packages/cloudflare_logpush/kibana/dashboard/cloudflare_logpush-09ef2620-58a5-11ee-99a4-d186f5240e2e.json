@@ -10,11 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "0767323e-cef6-4ca5-bdb5-5d972f50ce7d": {
+                "158bd8b3-15b0-4fd4-8ae3-dc19d971aa8c": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "network.transport",
-                        "id": "0767323e-cef6-4ca5-bdb5-5d972f50ce7d",
+                        "id": "158bd8b3-15b0-4fd4-8ae3-dc19d971aa8c",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -28,47 +28,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "15cf120f-434c-4ad7-8f6d-3cf5fb3d5bd1": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.action",
-                        "id": "15cf120f-434c-4ad7-8f6d-3cf5fb3d5bd1",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Action"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "5fbbce4d-b5ff-4c5e-8624-3175987adc5d": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "5fbbce4d-b5ff-4c5e-8624-3175987adc5d",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent Name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "63e74fbc-bf7a-46f2-9097-bb5fef65abad": {
+                "19a0cd66-d474-4a35-96d9-002a53dd863c": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.magic_ids.signature.message",
-                        "id": "63e74fbc-bf7a-46f2-9097-bb5fef65abad",
+                        "id": "19a0cd66-d474-4a35-96d9-002a53dd863c",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -82,29 +46,47 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "6b1a3b39-1d81-43b9-86a6-b0d6963519ab": {
+                "8a138088-2353-473a-9bd0-b14926bb94ee": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "destination.ip",
-                        "id": "6b1a3b39-1d81-43b9-86a6-b0d6963519ab",
+                        "fieldName": "event.action",
+                        "id": "8a138088-2353-473a-9bd0-b14926bb94ee",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Destination IP"
+                        "title": "Action"
                     },
                     "grow": true,
-                    "order": 3,
+                    "order": 1,
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "dd64f373-6571-43c6-9976-b162fa9d15c1": {
+                "9b952b55-f23f-4558-a5ff-6c0fc3f908aa": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "9b952b55-f23f-4558-a5ff-6c0fc3f908aa",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent Name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b73c4048-82ef-43fb-bc3a-84c0490604e6": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.ip",
-                        "id": "dd64f373-6571-43c6-9976-b162fa9d15c1",
+                        "id": "b73c4048-82ef-43fb-bc3a-84c0490604e6",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -115,6 +97,24 @@
                     },
                     "grow": true,
                     "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ec510938-50f8-40bf-8fea-841b068db804": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "destination.ip",
+                        "id": "ec510938-50f8-40bf-8fea-841b068db804",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Destination IP"
+                    },
+                    "grow": true,
+                    "order": 3,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -389,6 +389,18 @@
                                     "useCurrentFilters": false
                                 },
                                 "order": 20,
+                                "type": "dashboardLink"
+                            },
+                            {
+                                "destinationRefName": "link_01f5075a-01e6-440e-bbeb-88a0be60440f_dashboard",
+                                "id": "01f5075a-01e6-440e-bbeb-88a0be60440f",
+                                "label": "Zero Trust overview",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
+                                "order": 21,
                                 "type": "dashboardLink"
                             }
                         ]
@@ -1074,6 +1086,147 @@
                             },
                             {
                                 "id": "logs-*",
+                                "name": "24c4d5e2-b50e-4f28-ad11-cb5b874be755",
+                                "type": "index-pattern"
+                            }
+                        ],
+                        "state": {
+                            "adHocDataViews": {},
+                            "datasourceStates": {
+                                "formBased": {
+                                    "layers": {
+                                        "49a5faac-3cae-448d-98ca-a61e4c17d63b": {
+                                            "columnOrder": [
+                                                "e74456ed-d03c-46b9-80b8-5a90b1fb62bb",
+                                                "c50bafa5-0f9a-4072-ad18-26a749624977"
+                                            ],
+                                            "columns": {
+                                                "c50bafa5-0f9a-4072-ad18-26a749624977": {
+                                                    "customLabel": true,
+                                                    "dataType": "number",
+                                                    "isBucketed": false,
+                                                    "label": "Count",
+                                                    "operationType": "count",
+                                                    "params": {
+                                                        "emptyAsNull": true
+                                                    },
+                                                    "scale": "ratio",
+                                                    "sourceField": "___records___"
+                                                },
+                                                "e74456ed-d03c-46b9-80b8-5a90b1fb62bb": {
+                                                    "customLabel": true,
+                                                    "dataType": "ip",
+                                                    "isBucketed": true,
+                                                    "label": "Destination IP",
+                                                    "operationType": "terms",
+                                                    "params": {
+                                                        "exclude": [],
+                                                        "excludeIsRegex": false,
+                                                        "include": [],
+                                                        "includeIsRegex": false,
+                                                        "missingBucket": false,
+                                                        "orderBy": {
+                                                            "columnId": "c50bafa5-0f9a-4072-ad18-26a749624977",
+                                                            "type": "column"
+                                                        },
+                                                        "orderDirection": "desc",
+                                                        "otherBucket": true,
+                                                        "parentFormat": {
+                                                            "id": "terms"
+                                                        },
+                                                        "secondaryFields": [],
+                                                        "size": 10
+                                                    },
+                                                    "scale": "ordinal",
+                                                    "sourceField": "destination.ip"
+                                                }
+                                            },
+                                            "incompleteColumns": {},
+                                            "sampling": 1
+                                        }
+                                    }
+                                },
+                                "textBased": {
+                                    "layers": {}
+                                }
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "24c4d5e2-b50e-4f28-ad11-cb5b874be755",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.magic_ids"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.magic_ids"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
+                            "query": {
+                                "language": "kuery",
+                                "query": ""
+                            },
+                            "visualization": {
+                                "columns": [
+                                    {
+                                        "columnId": "e74456ed-d03c-46b9-80b8-5a90b1fb62bb",
+                                        "isTransposed": false
+                                    },
+                                    {
+                                        "columnId": "c50bafa5-0f9a-4072-ad18-26a749624977",
+                                        "isTransposed": false
+                                    }
+                                ],
+                                "layerId": "49a5faac-3cae-448d-98ca-a61e4c17d63b",
+                                "layerType": "data",
+                                "paging": {
+                                    "enabled": true,
+                                    "size": 10
+                                }
+                            }
+                        },
+                        "title": "",
+                        "type": "lens",
+                        "visualizationType": "lnsDatatable"
+                    },
+                    "enhancements": {},
+                    "hidePanelTitles": false
+                },
+                "gridData": {
+                    "h": 15,
+                    "i": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2",
+                    "w": 24,
+                    "x": 24,
+                    "y": 30
+                },
+                "panelIndex": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2",
+                "title": "Top Destination IPs",
+                "type": "lens"
+            },
+            {
+                "embeddableConfig": {
+                    "attributes": {
+                        "references": [
+                            {
+                                "id": "logs-*",
+                                "name": "indexpattern-datasource-layer-49a5faac-3cae-448d-98ca-a61e4c17d63b",
+                                "type": "index-pattern"
+                            },
+                            {
+                                "id": "logs-*",
                                 "name": "04cae080-2721-4f43-8249-376b4cbf0ef6",
                                 "type": "index-pattern"
                             }
@@ -1242,147 +1395,6 @@
             },
             {
                 "embeddableConfig": {
-                    "attributes": {
-                        "references": [
-                            {
-                                "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-49a5faac-3cae-448d-98ca-a61e4c17d63b",
-                                "type": "index-pattern"
-                            },
-                            {
-                                "id": "logs-*",
-                                "name": "24c4d5e2-b50e-4f28-ad11-cb5b874be755",
-                                "type": "index-pattern"
-                            }
-                        ],
-                        "state": {
-                            "adHocDataViews": {},
-                            "datasourceStates": {
-                                "formBased": {
-                                    "layers": {
-                                        "49a5faac-3cae-448d-98ca-a61e4c17d63b": {
-                                            "columnOrder": [
-                                                "e74456ed-d03c-46b9-80b8-5a90b1fb62bb",
-                                                "c50bafa5-0f9a-4072-ad18-26a749624977"
-                                            ],
-                                            "columns": {
-                                                "c50bafa5-0f9a-4072-ad18-26a749624977": {
-                                                    "customLabel": true,
-                                                    "dataType": "number",
-                                                    "isBucketed": false,
-                                                    "label": "Count",
-                                                    "operationType": "count",
-                                                    "params": {
-                                                        "emptyAsNull": true
-                                                    },
-                                                    "scale": "ratio",
-                                                    "sourceField": "___records___"
-                                                },
-                                                "e74456ed-d03c-46b9-80b8-5a90b1fb62bb": {
-                                                    "customLabel": true,
-                                                    "dataType": "ip",
-                                                    "isBucketed": true,
-                                                    "label": "Destination IP",
-                                                    "operationType": "terms",
-                                                    "params": {
-                                                        "exclude": [],
-                                                        "excludeIsRegex": false,
-                                                        "include": [],
-                                                        "includeIsRegex": false,
-                                                        "missingBucket": false,
-                                                        "orderBy": {
-                                                            "columnId": "c50bafa5-0f9a-4072-ad18-26a749624977",
-                                                            "type": "column"
-                                                        },
-                                                        "orderDirection": "desc",
-                                                        "otherBucket": true,
-                                                        "parentFormat": {
-                                                            "id": "terms"
-                                                        },
-                                                        "secondaryFields": [],
-                                                        "size": 10
-                                                    },
-                                                    "scale": "ordinal",
-                                                    "sourceField": "destination.ip"
-                                                }
-                                            },
-                                            "incompleteColumns": {},
-                                            "sampling": 1
-                                        }
-                                    }
-                                },
-                                "textBased": {
-                                    "layers": {}
-                                }
-                            },
-                            "filters": [
-                                {
-                                    "$state": {
-                                        "store": "appState"
-                                    },
-                                    "meta": {
-                                        "alias": null,
-                                        "disabled": false,
-                                        "field": "data_stream.dataset",
-                                        "index": "24c4d5e2-b50e-4f28-ad11-cb5b874be755",
-                                        "key": "data_stream.dataset",
-                                        "negate": false,
-                                        "params": {
-                                            "query": "cloudflare_logpush.magic_ids"
-                                        },
-                                        "type": "phrase"
-                                    },
-                                    "query": {
-                                        "match_phrase": {
-                                            "data_stream.dataset": "cloudflare_logpush.magic_ids"
-                                        }
-                                    }
-                                }
-                            ],
-                            "internalReferences": [],
-                            "query": {
-                                "language": "kuery",
-                                "query": ""
-                            },
-                            "visualization": {
-                                "columns": [
-                                    {
-                                        "columnId": "e74456ed-d03c-46b9-80b8-5a90b1fb62bb",
-                                        "isTransposed": false
-                                    },
-                                    {
-                                        "columnId": "c50bafa5-0f9a-4072-ad18-26a749624977",
-                                        "isTransposed": false
-                                    }
-                                ],
-                                "layerId": "49a5faac-3cae-448d-98ca-a61e4c17d63b",
-                                "layerType": "data",
-                                "paging": {
-                                    "enabled": true,
-                                    "size": 10
-                                }
-                            }
-                        },
-                        "title": "",
-                        "type": "lens",
-                        "visualizationType": "lnsDatatable"
-                    },
-                    "enhancements": {},
-                    "hidePanelTitles": false
-                },
-                "gridData": {
-                    "h": 15,
-                    "i": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2",
-                    "w": 24,
-                    "x": 24,
-                    "y": 30
-                },
-                "panelIndex": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2",
-                "title": "Top Destination IPs",
-                "type": "lens"
-            },
-            {
-                "embeddableConfig": {
                     "description": "",
                     "enhancements": {},
                     "hidePanelTitles": false
@@ -1405,7 +1417,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:22:53.924Z",
+    "created_at": "2026-04-13T17:56:42.536Z",
     "id": "cloudflare_logpush-09ef2620-58a5-11ee-99a4-d186f5240e2e",
     "references": [
         {
@@ -1440,22 +1452,22 @@
         },
         {
             "id": "logs-*",
-            "name": "2048f6ff-25c6-4123-a609-3b931f6e817c:indexpattern-datasource-layer-49a5faac-3cae-448d-98ca-a61e4c17d63b",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
-            "name": "2048f6ff-25c6-4123-a609-3b931f6e817c:04cae080-2721-4f43-8249-376b4cbf0ef6",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2:indexpattern-datasource-layer-49a5faac-3cae-448d-98ca-a61e4c17d63b",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
             "name": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2:24c4d5e2-b50e-4f28-ad11-cb5b874be755",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "2048f6ff-25c6-4123-a609-3b931f6e817c:indexpattern-datasource-layer-49a5faac-3cae-448d-98ca-a61e4c17d63b",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "2048f6ff-25c6-4123-a609-3b931f6e817c:04cae080-2721-4f43-8249-376b4cbf0ef6",
             "type": "index-pattern"
         },
         {
@@ -1569,36 +1581,42 @@
             "type": "dashboard"
         },
         {
+            "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
+            "name": "2ac4ff72-deb4-42b2-bbd1-59a1b0bbf91c:link_01f5075a-01e6-440e-bbeb-88a0be60440f_dashboard",
+            "type": "dashboard"
+        },
+        {
             "id": "logs-*",
-            "name": "controlGroup_a5de4f12-fd90-45c0-ad11-16d6cb836d34:optionsListDataView",
+            "name": "controlGroup_5fbbce4d-b5ff-4c5e-8624-3175987adc5d:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_e8f03b94-a3b7-485e-823d-a731e6599651:optionsListDataView",
+            "name": "controlGroup_15cf120f-434c-4ad7-8f6d-3cf5fb3d5bd1:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_0bc6a46b-a8cf-4032-9cff-8e45efb0ccd0:optionsListDataView",
+            "name": "controlGroup_dd64f373-6571-43c6-9976-b162fa9d15c1:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_dd58df46-2f30-4d52-a84c-0b849bedc2a4:optionsListDataView",
+            "name": "controlGroup_6b1a3b39-1d81-43b9-86a6-b0d6963519ab:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_7faf0cbb-c5b0-400c-aa2a-3c41067cf946:optionsListDataView",
+            "name": "controlGroup_0767323e-cef6-4ca5-bdb5-5d972f50ce7d:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_27b23371-521f-4727-92e3-7664d7769ac7:optionsListDataView",
+            "name": "controlGroup_63e74fbc-bf7a-46f2-9097-bb5fef65abad:optionsListDataView",
             "type": "index-pattern"
         }
     ],
     "type": "dashboard",
-    "typeMigrationVersion": "10.2.0"
+    "typeMigrationVersion": "10.2.0",
+    "updated_by": "u_mGBROF_q5bmFCATbLXAcCwKa0k8JvONAwSruelyKA5E_0"
 }
