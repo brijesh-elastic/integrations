@@ -10,11 +10,29 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "446c85e7-f1ec-4b0a-9c75-c8d51055551d": {
+                "12c99f76-1b70-45aa-9807-8969ae4ad0cb": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.casb.integration.name",
+                        "id": "12c99f76-1b70-45aa-9807-8969ae4ad0cb",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Integration name"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "57d4edb7-e8ff-4155-9a0d-d7231867c52c": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.casb.integration.id",
-                        "id": "446c85e7-f1ec-4b0a-9c75-c8d51055551d",
+                        "id": "57d4edb7-e8ff-4155-9a0d-d7231867c52c",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -28,29 +46,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "4d5f9aaa-cc59-4a21-8b19-f19db7f5f3aa": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.casb.finding.id",
-                        "id": "4d5f9aaa-cc59-4a21-8b19-f19db7f5f3aa",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Instance ID"
-                    },
-                    "grow": true,
-                    "order": 3,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "85b023f5-bd16-4345-a8a3-727020ec74cc": {
+                "6c425806-c5ac-4285-9ec8-494392ad4c40": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "agent.name",
-                        "id": "85b023f5-bd16-4345-a8a3-727020ec74cc",
+                        "id": "6c425806-c5ac-4285-9ec8-494392ad4c40",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -64,21 +64,21 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "92996755-4440-4a7c-873d-e4ba21c0c40b": {
+                "bd41ea5f-6b8f-4429-8a85-69b476a54d98": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.casb.integration.name",
-                        "id": "92996755-4440-4a7c-873d-e4ba21c0c40b",
+                        "fieldName": "cloudflare_logpush.casb.finding.id",
+                        "id": "bd41ea5f-6b8f-4429-8a85-69b476a54d98",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Integration name"
+                        "title": "Instance ID"
                     },
                     "grow": true,
-                    "order": 2,
+                    "order": 3,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -88,7 +88,30 @@
         "description": "Access Request events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
-                "filter": [],
+                "filter": [
+                    {
+                        "$state": {
+                            "store": "appState"
+                        },
+                        "meta": {
+                            "alias": null,
+                            "disabled": false,
+                            "field": "data_stream.dataset",
+                            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                            "key": "data_stream.dataset",
+                            "negate": false,
+                            "params": {
+                                "query": "cloudflare_logpush.casb"
+                            },
+                            "type": "phrase"
+                        },
+                        "query": {
+                            "match_phrase": {
+                                "data_stream.dataset": "cloudflare_logpush.casb"
+                            }
+                        }
+                    }
+                ],
                 "query": {
                     "language": "kuery",
                     "query": ""
@@ -184,6 +207,11 @@
                                 "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
                                 "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
                                 "label": "DNS Firewall",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
                                 "order": 6,
                                 "type": "dashboardLink"
                             },
@@ -1245,6 +1273,11 @@
     "references": [
         {
             "id": "logs-*",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
             "name": "8ac4ad94-a423-4185-b9b5-8672f592676c:indexpattern-datasource-layer-f2b38971-09af-4fa1-9235-28cf9e018d66",
             "type": "index-pattern"
         },
@@ -1400,22 +1433,22 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_10cf8c42-6bac-43fc-ae88-454816795f70:optionsListDataView",
+            "name": "controlGroup_199080bb-1e60-4217-bafc-02c377d1d8ca:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_119e6da4-8e73-4253-89b9-be796020f334:optionsListDataView",
+            "name": "controlGroup_139e9e91-7c54-4d83-9875-5228527b0b48:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_66119e41-b1ff-4698-a897-66f7084a1973:optionsListDataView",
+            "name": "controlGroup_419eeac0-073c-4d98-bd3c-cc511df9ee80:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_d8fe6c43-7c29-4bfc-a590-5dea391721b8:optionsListDataView",
+            "name": "controlGroup_a6f373e8-1369-4056-b274-4b3dad437273:optionsListDataView",
             "type": "index-pattern"
         }
     ],

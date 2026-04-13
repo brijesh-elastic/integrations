@@ -10,83 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "1a181c7e-5a74-4b8f-ac27-2afbc9dbfe21": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.outcome",
-                        "id": "1a181c7e-5a74-4b8f-ac27-2afbc9dbfe21",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Audit result"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "4096cd3c-a788-442d-9feb-fe2fa48a4fa6": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "4096cd3c-a788-442d-9feb-fe2fa48a4fa6",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "4d3ef677-9de3-4285-b6ad-87212bd5f867": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "source.ip",
-                        "id": "4d3ef677-9de3-4285-b6ad-87212bd5f867",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Actor IP"
-                    },
-                    "grow": true,
-                    "order": 3,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "925597cd-2778-4f01-b5da-190ea86d7e1d": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.id",
-                        "id": "925597cd-2778-4f01-b5da-190ea86d7e1d",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Audit ID"
-                    },
-                    "grow": true,
-                    "order": 4,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "9cc43dcf-6163-4571-964b-7c4d6eb06cf3": {
+                "7a9ca2ff-4f0c-403c-bd5e-b0e346c5ffac": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "user.id",
-                        "id": "9cc43dcf-6163-4571-964b-7c4d6eb06cf3",
+                        "id": "7a9ca2ff-4f0c-403c-bd5e-b0e346c5ffac",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -100,11 +28,83 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "b7d118ce-4696-4c69-bb77-0560c2861a3e": {
+                "97a57292-699e-4b0c-8993-3cde57bfe0ba": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "event.outcome",
+                        "id": "97a57292-699e-4b0c-8993-3cde57bfe0ba",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Audit result"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "c62c90ba-6ca9-4616-9d55-bc8488bd5bee": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "event.id",
+                        "id": "c62c90ba-6ca9-4616-9d55-bc8488bd5bee",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Audit ID"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "c9c3f53d-d2df-4928-b51f-f439297bf5ba": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "c9c3f53d-d2df-4928-b51f-f439297bf5ba",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "f244f5c5-9ee7-4886-be16-85948f86507f": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.ip",
+                        "id": "f244f5c5-9ee7-4886-be16-85948f86507f",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Actor IP"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "f71a6240-2145-45a9-b5ae-75dddee828b1": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "event.action",
-                        "id": "b7d118ce-4696-4c69-bb77-0560c2861a3e",
+                        "id": "f71a6240-2145-45a9-b5ae-75dddee828b1",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -124,7 +124,30 @@
         "description": "Audit events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
-                "filter": [],
+                "filter": [
+                    {
+                        "$state": {
+                            "store": "appState"
+                        },
+                        "meta": {
+                            "alias": null,
+                            "disabled": false,
+                            "field": "data_stream.dataset",
+                            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                            "key": "data_stream.dataset",
+                            "negate": false,
+                            "params": {
+                                "query": "cloudflare_logpush.audit"
+                            },
+                            "type": "phrase"
+                        },
+                        "query": {
+                            "match_phrase": {
+                                "data_stream.dataset": "cloudflare_logpush.audit"
+                            }
+                        }
+                    }
+                ],
                 "query": {
                     "language": "kuery",
                     "query": ""
@@ -220,6 +243,11 @@
                                 "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
                                 "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
                                 "label": "DNS Firewall",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
                                 "order": 6,
                                 "type": "dashboardLink"
                             },
@@ -1052,6 +1080,11 @@
     "references": [
         {
             "id": "logs-*",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
             "name": "17459f03-e774-4ca8-b17c-cbe1c2196437:indexpattern-datasource-layer-e2ba06d4-96c6-48b6-8699-12d5e8ae89f9",
             "type": "index-pattern"
         },
@@ -1207,32 +1240,32 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_23edabb1-7a8c-46bf-a012-c73f066439a4:optionsListDataView",
+            "name": "controlGroup_54dc41fb-5323-4e09-b63d-9255ba5f952a:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_fb4e7d5e-e5f5-4991-a811-264c5e8650e1:optionsListDataView",
+            "name": "controlGroup_7d879119-3bf9-4f8a-87bf-abcfae398680:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b1ab55d6-73c2-43a4-a19e-23c0a2e1f606:optionsListDataView",
+            "name": "controlGroup_8b8d8008-b9f8-454b-b570-2625cb5a1449:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_92d7bb2c-b157-43c2-96f2-18d3a7004151:optionsListDataView",
+            "name": "controlGroup_abdc879f-049e-4e97-96d1-221c6d1762d5:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_f62aa191-6f60-4c5b-aed5-a9c500bb616f:optionsListDataView",
+            "name": "controlGroup_026ef82a-ac9f-4e2a-8155-6fd69f5d6dcb:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_a585a277-68bf-4144-9e4b-0ae0d1745928:optionsListDataView",
+            "name": "controlGroup_d071c125-f59a-4548-a97c-73a56abb6f87:optionsListDataView",
             "type": "index-pattern"
         }
     ],

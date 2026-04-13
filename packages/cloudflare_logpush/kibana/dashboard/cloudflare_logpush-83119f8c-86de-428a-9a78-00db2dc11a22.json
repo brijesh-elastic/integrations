@@ -15,7 +15,30 @@
         "description": "Overview of Cloudflare Logpush DLP Forensic Copies logs.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
-                "filter": [],
+                "filter": [
+                    {
+                        "$state": {
+                            "store": "appState"
+                        },
+                        "meta": {
+                            "alias": null,
+                            "disabled": false,
+                            "field": "data_stream.dataset",
+                            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                            "key": "data_stream.dataset",
+                            "negate": false,
+                            "params": {
+                                "query": "cloudflare_logpush.dlp_forensic_copies"
+                            },
+                            "type": "phrase"
+                        },
+                        "query": {
+                            "match_phrase": {
+                                "data_stream.dataset": "cloudflare_logpush.dlp_forensic_copies"
+                            }
+                        }
+                    }
+                ],
                 "query": {
                     "language": "kuery",
                     "query": ""
@@ -111,6 +134,11 @@
                                 "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
                                 "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
                                 "label": "DNS Firewall",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
                                 "order": 6,
                                 "type": "dashboardLink"
                             },
@@ -318,6 +346,11 @@
     "created_at": "2026-04-13T17:56:31.422Z",
     "id": "cloudflare_logpush-83119f8c-86de-428a-9a78-00db2dc11a22",
     "references": [
+        {
+            "id": "logs-*",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern"
+        },
         {
             "id": "cloudflare_logpush-940b5bb0-015e-11ee-a051-4174215e3eb2",
             "name": "8b0b0a0d-2711-4e73-842b-ffaf93d88d70:link_1b5f791b-89fb-4674-88f2-4a08278b4ba8_dashboard",

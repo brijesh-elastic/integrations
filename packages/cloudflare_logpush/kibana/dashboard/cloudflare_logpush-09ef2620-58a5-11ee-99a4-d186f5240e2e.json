@@ -10,29 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "158bd8b3-15b0-4fd4-8ae3-dc19d971aa8c": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "network.transport",
-                        "id": "158bd8b3-15b0-4fd4-8ae3-dc19d971aa8c",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Transport Protocol"
-                    },
-                    "grow": true,
-                    "order": 4,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "19a0cd66-d474-4a35-96d9-002a53dd863c": {
+                "054a0d51-c716-49d4-86a4-8bbf559ed311": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.magic_ids.signature.message",
-                        "id": "19a0cd66-d474-4a35-96d9-002a53dd863c",
+                        "id": "054a0d51-c716-49d4-86a4-8bbf559ed311",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -46,29 +28,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "8a138088-2353-473a-9bd0-b14926bb94ee": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.action",
-                        "id": "8a138088-2353-473a-9bd0-b14926bb94ee",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Action"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "9b952b55-f23f-4558-a5ff-6c0fc3f908aa": {
+                "20e46387-8f83-42e8-a106-e3e1d1edb080": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "agent.name",
-                        "id": "9b952b55-f23f-4558-a5ff-6c0fc3f908aa",
+                        "id": "20e46387-8f83-42e8-a106-e3e1d1edb080",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -82,11 +46,29 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "b73c4048-82ef-43fb-bc3a-84c0490604e6": {
+                "30b48dd4-d442-4ac8-867f-5ea049c6adf8": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "network.transport",
+                        "id": "30b48dd4-d442-4ac8-867f-5ea049c6adf8",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Transport Protocol"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "33c210cd-9293-47cc-b9c1-11a2fde9da25": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.ip",
-                        "id": "b73c4048-82ef-43fb-bc3a-84c0490604e6",
+                        "id": "33c210cd-9293-47cc-b9c1-11a2fde9da25",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -100,11 +82,29 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "ec510938-50f8-40bf-8fea-841b068db804": {
+                "a6b4f7a7-73f5-4c30-92d0-bd2e7ff8031a": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "event.action",
+                        "id": "a6b4f7a7-73f5-4c30-92d0-bd2e7ff8031a",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Action"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "d8180c0d-c297-4ca8-a970-07ccf92ad4c3": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "destination.ip",
-                        "id": "ec510938-50f8-40bf-8fea-841b068db804",
+                        "id": "d8180c0d-c297-4ca8-a970-07ccf92ad4c3",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -124,7 +124,30 @@
         "description": "Magic IDS logs collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
-                "filter": [],
+                "filter": [
+                    {
+                        "$state": {
+                            "store": "appState"
+                        },
+                        "meta": {
+                            "alias": null,
+                            "disabled": false,
+                            "field": "data_stream.dataset",
+                            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                            "key": "data_stream.dataset",
+                            "negate": false,
+                            "params": {
+                                "query": "cloudflare_logpush.magic_ids"
+                            },
+                            "type": "phrase"
+                        },
+                        "query": {
+                            "match_phrase": {
+                                "data_stream.dataset": "cloudflare_logpush.magic_ids"
+                            }
+                        }
+                    }
+                ],
                 "query": {
                     "language": "kuery",
                     "query": ""
@@ -220,6 +243,11 @@
                                 "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
                                 "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
                                 "label": "DNS Firewall",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
                                 "order": 6,
                                 "type": "dashboardLink"
                             },
@@ -1422,6 +1450,11 @@
     "references": [
         {
             "id": "logs-*",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
             "name": "e2fd2885-4175-46e1-9120-f4c3582e8d38:indexpattern-datasource-layer-0a1d14a1-6c2d-448f-aeab-c74516b341ac",
             "type": "index-pattern"
         },
@@ -1587,32 +1620,32 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_5fbbce4d-b5ff-4c5e-8624-3175987adc5d:optionsListDataView",
+            "name": "controlGroup_9b952b55-f23f-4558-a5ff-6c0fc3f908aa:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_15cf120f-434c-4ad7-8f6d-3cf5fb3d5bd1:optionsListDataView",
+            "name": "controlGroup_8a138088-2353-473a-9bd0-b14926bb94ee:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_dd64f373-6571-43c6-9976-b162fa9d15c1:optionsListDataView",
+            "name": "controlGroup_b73c4048-82ef-43fb-bc3a-84c0490604e6:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_6b1a3b39-1d81-43b9-86a6-b0d6963519ab:optionsListDataView",
+            "name": "controlGroup_ec510938-50f8-40bf-8fea-841b068db804:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_0767323e-cef6-4ca5-bdb5-5d972f50ce7d:optionsListDataView",
+            "name": "controlGroup_158bd8b3-15b0-4fd4-8ae3-dc19d971aa8c:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_63e74fbc-bf7a-46f2-9097-bb5fef65abad:optionsListDataView",
+            "name": "controlGroup_19a0cd66-d474-4a35-96d9-002a53dd863c:optionsListDataView",
             "type": "index-pattern"
         }
     ],

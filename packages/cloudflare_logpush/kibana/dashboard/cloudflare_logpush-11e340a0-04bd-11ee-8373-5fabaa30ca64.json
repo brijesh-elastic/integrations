@@ -10,11 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "017f20c6-ea37-43ad-900c-b0f830e20557": {
+                "16b51b01-2985-4b32-94ec-6a3081e7ab75": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.geo.country_name",
-                        "id": "017f20c6-ea37-43ad-900c-b0f830e20557",
+                        "id": "16b51b01-2985-4b32-94ec-6a3081e7ab75",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -28,83 +28,11 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "08be743e-ff27-4787-941d-1e4dc23b61e2": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "user.email",
-                        "id": "08be743e-ff27-4787-941d-1e4dc23b61e2",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "User Email"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "1285fafa-d066-41ee-8923-3311e98d8520": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "source.ip",
-                        "id": "1285fafa-d066-41ee-8923-3311e98d8520",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Source IP"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "5ae05903-b386-4edb-86a0-e11e39d62bff": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "5ae05903-b386-4edb-86a0-e11e39d62bff",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "65a6c5b8-8986-4d30-925b-986602a9d46c": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "user.id",
-                        "id": "65a6c5b8-8986-4d30-925b-986602a9d46c",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "User ID"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "a5c4efc7-3bef-41d6-bf4b-3500c9ca9845": {
+                "398dfcb1-f46a-4cba-96e2-0c095507595c": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "event.id",
-                        "id": "a5c4efc7-3bef-41d6-bf4b-3500c9ca9845",
+                        "id": "398dfcb1-f46a-4cba-96e2-0c095507595c",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -118,11 +46,83 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "ffb0485a-fdf8-4a8d-be56-f76a4277a3ae": {
+                "3d4a6387-f175-4f29-b6da-2baef68c0e30": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "3d4a6387-f175-4f29-b6da-2baef68c0e30",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "40b2be14-b8dd-4cad-b3a2-c5bca3cf6d48": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.id",
+                        "id": "40b2be14-b8dd-4cad-b3a2-c5bca3cf6d48",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "User ID"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "4addee3c-23ba-42a2-84e3-0d5f960237fb": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.ip",
+                        "id": "4addee3c-23ba-42a2-84e3-0d5f960237fb",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "7d451326-1616-4efd-89f7-bc5856b29253": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.email",
+                        "id": "7d451326-1616-4efd-89f7-bc5856b29253",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "User Email"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "e126598c-f047-4895-9707-c4ff1ad43f8e": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.gateway_http.account_id",
-                        "id": "ffb0485a-fdf8-4a8d-be56-f76a4277a3ae",
+                        "id": "e126598c-f047-4895-9707-c4ff1ad43f8e",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -142,7 +142,30 @@
         "description": "Zero Trust Network Session Logs collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
-                "filter": [],
+                "filter": [
+                    {
+                        "$state": {
+                            "store": "appState"
+                        },
+                        "meta": {
+                            "alias": null,
+                            "disabled": false,
+                            "field": "data_stream.dataset",
+                            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                            "key": "data_stream.dataset",
+                            "negate": false,
+                            "params": {
+                                "query": "cloudflare_logpush.network_session"
+                            },
+                            "type": "phrase"
+                        },
+                        "query": {
+                            "match_phrase": {
+                                "data_stream.dataset": "cloudflare_logpush.network_session"
+                            }
+                        }
+                    }
+                ],
                 "query": {
                     "language": "kuery",
                     "query": ""
@@ -238,6 +261,11 @@
                                 "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
                                 "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
                                 "label": "DNS Firewall",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
                                 "order": 6,
                                 "type": "dashboardLink"
                             },
@@ -2470,6 +2498,11 @@
     "references": [
         {
             "id": "logs-*",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
             "name": "f522c181-4307-4bc3-8131-57ffcb2506b7:indexpattern-datasource-layer-52277252-31c8-4de3-96dd-e10661e6cda9",
             "type": "index-pattern"
         },
@@ -2675,37 +2708,37 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b76bef17-3d49-4aa0-8455-b0595c98c957:optionsListDataView",
+            "name": "controlGroup_5ae05903-b386-4edb-86a0-e11e39d62bff:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_e47de3dd-0c09-48d9-9356-1a6b0c85c37b:optionsListDataView",
+            "name": "controlGroup_65a6c5b8-8986-4d30-925b-986602a9d46c:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_ec5922da-0ff7-4bda-8445-8ad8db06f820:optionsListDataView",
+            "name": "controlGroup_08be743e-ff27-4787-941d-1e4dc23b61e2:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_6ad84044-abb5-4fa4-aade-be81ad9cc72e:optionsListDataView",
+            "name": "controlGroup_ffb0485a-fdf8-4a8d-be56-f76a4277a3ae:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_8f9851a2-3f6c-459b-a99a-00539e93ccd8:optionsListDataView",
+            "name": "controlGroup_017f20c6-ea37-43ad-900c-b0f830e20557:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_451d417e-cfe4-4bf2-b996-e097d18accf9:optionsListDataView",
+            "name": "controlGroup_1285fafa-d066-41ee-8923-3311e98d8520:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_55f0bc2f-9f10-4e9f-9dcd-27bc0ac1de12:optionsListDataView",
+            "name": "controlGroup_a5c4efc7-3bef-41d6-bf4b-3500c9ca9845:optionsListDataView",
             "type": "index-pattern"
         }
     ],

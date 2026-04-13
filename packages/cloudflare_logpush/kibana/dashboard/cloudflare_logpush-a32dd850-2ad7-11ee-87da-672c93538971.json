@@ -10,96 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "2605b5d0-5385-4f89-88f0-6b96a6b50648": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "2605b5d0-5385-4f89-88f0-6b96a6b50648",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent Name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "76addf70-4851-47bf-88b3-99aa441139c2": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "http.request.method",
-                        "id": "76addf70-4851-47bf-88b3-99aa441139c2",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "HTTP Request Method"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "8723a79f-f13e-4a06-ad6a-acaadf081e98": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.workers_trace.dispatch_namespace",
-                        "id": "8723a79f-f13e-4a06-ad6a-acaadf081e98",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Dispatch Namespace"
-                    },
-                    "grow": true,
-                    "order": 6,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "99babf10-c3ff-4b97-adcc-e125e22404b1": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "http.response.status_code",
-                        "id": "99babf10-c3ff-4b97-adcc-e125e22404b1",
-                        "step": 1,
-                        "title": "HTTP Response Code"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "rangeSliderControl",
-                    "width": "medium"
-                },
-                "9f259f9e-2e63-457e-9b5c-4c3e8029be92": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.workers_trace.script.tags",
-                        "id": "9f259f9e-2e63-457e-9b5c-4c3e8029be92",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Script Tags"
-                    },
-                    "grow": true,
-                    "order": 5,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "a4c34897-6df5-420e-92af-fcdc3668ffba": {
+                "02c6fd70-ec0f-43a3-b848-bb52220ec638": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.workers_trace.script.name",
-                        "id": "a4c34897-6df5-420e-92af-fcdc3668ffba",
+                        "id": "02c6fd70-ec0f-43a3-b848-bb52220ec638",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -113,11 +28,101 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "abdb03da-45f9-4415-94fb-faa7efdd3c03": {
+                "07e9c7f1-ba51-4efc-897f-883c0af5c5e1": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "url.domain",
+                        "id": "07e9c7f1-ba51-4efc-897f-883c0af5c5e1",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "URL Domain"
+                    },
+                    "grow": true,
+                    "order": 7,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "6a5a413e-b2da-4568-8128-81c1180aec9f": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "http.request.method",
+                        "id": "6a5a413e-b2da-4568-8128-81c1180aec9f",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "HTTP Request Method"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "82f6bdea-04e8-4f36-af1d-8a724b5edaab": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.workers_trace.dispatch_namespace",
+                        "id": "82f6bdea-04e8-4f36-af1d-8a724b5edaab",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Dispatch Namespace"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ac196ecf-67bc-4071-8b1e-adc57259c7d1": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.workers_trace.script.tags",
+                        "id": "ac196ecf-67bc-4071-8b1e-adc57259c7d1",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Script Tags"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "aec9c8a4-a8a5-4b9a-b1b8-376e109f3714": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "agent.name",
+                        "id": "aec9c8a4-a8a5-4b9a-b1b8-376e109f3714",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Agent Name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "f2f51e52-e525-40b1-8c57-4c676e551758": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "event.action",
-                        "id": "abdb03da-45f9-4415-94fb-faa7efdd3c03",
+                        "id": "f2f51e52-e525-40b1-8c57-4c676e551758",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -131,22 +136,17 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "b556df4e-3620-4f1d-8ae9-e389fb6cbf61": {
+                "ff8b267e-444e-4eac-ac41-c0ffab4f2592": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "url.domain",
-                        "id": "b556df4e-3620-4f1d-8ae9-e389fb6cbf61",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "URL Domain"
+                        "fieldName": "http.response.status_code",
+                        "id": "ff8b267e-444e-4eac-ac41-c0ffab4f2592",
+                        "step": 1,
+                        "title": "HTTP Response Code"
                     },
                     "grow": true,
-                    "order": 7,
-                    "type": "optionsListControl",
+                    "order": 2,
+                    "type": "rangeSliderControl",
                     "width": "medium"
                 }
             },
@@ -155,7 +155,30 @@
         "description": "Workers Trace Events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
-                "filter": [],
+                "filter": [
+                    {
+                        "$state": {
+                            "store": "appState"
+                        },
+                        "meta": {
+                            "alias": null,
+                            "disabled": false,
+                            "field": "data_stream.dataset",
+                            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                            "key": "data_stream.dataset",
+                            "negate": false,
+                            "params": {
+                                "query": "cloudflare_logpush.workers_trace"
+                            },
+                            "type": "phrase"
+                        },
+                        "query": {
+                            "match_phrase": {
+                                "data_stream.dataset": "cloudflare_logpush.workers_trace"
+                            }
+                        }
+                    }
+                ],
                 "query": {
                     "language": "kuery",
                     "query": ""
@@ -251,6 +274,11 @@
                                 "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
                                 "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
                                 "label": "DNS Firewall",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
                                 "order": 6,
                                 "type": "dashboardLink"
                             },
@@ -1438,6 +1466,11 @@
     "references": [
         {
             "id": "logs-*",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
             "name": "e2fd2885-4175-46e1-9120-f4c3582e8d38:indexpattern-datasource-layer-0a1d14a1-6c2d-448f-aeab-c74516b341ac",
             "type": "index-pattern"
         },
@@ -1603,42 +1636,42 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_f979bd2a-6da6-4c4f-bc64-0a9d3e778b9f:optionsListDataView",
+            "name": "controlGroup_2605b5d0-5385-4f89-88f0-6b96a6b50648:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_e096813a-5fc9-4395-a3dd-cd2cbd43b50c:optionsListDataView",
+            "name": "controlGroup_76addf70-4851-47bf-88b3-99aa441139c2:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_5b687a7c-d550-4173-9ab3-f51219dbc492:rangeSliderDataView",
+            "name": "controlGroup_99babf10-c3ff-4b97-adcc-e125e22404b1:rangeSliderDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_5e2b13ca-6fe1-45bd-b8b6-4cd487c4b07d:optionsListDataView",
+            "name": "controlGroup_abdb03da-45f9-4415-94fb-faa7efdd3c03:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_e6b3088d-48c9-46c3-a5dd-7addd251f71e:optionsListDataView",
+            "name": "controlGroup_a4c34897-6df5-420e-92af-fcdc3668ffba:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_7b1e6fea-2c42-431e-a109-e4ee56839a4b:optionsListDataView",
+            "name": "controlGroup_9f259f9e-2e63-457e-9b5c-4c3e8029be92:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b9311657-fdc7-4f75-b2ca-c16535c36561:optionsListDataView",
+            "name": "controlGroup_8723a79f-f13e-4a06-ad6a-acaadf081e98:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_b7c4eb6f-ebd4-4ca7-ba17-8102c9a42ddd:optionsListDataView",
+            "name": "controlGroup_b556df4e-3620-4f1d-8ae9-e389fb6cbf61:optionsListDataView",
             "type": "index-pattern"
         }
     ],

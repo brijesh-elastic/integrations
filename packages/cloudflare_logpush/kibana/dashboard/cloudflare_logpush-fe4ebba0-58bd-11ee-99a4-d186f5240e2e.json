@@ -10,65 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "04e1df7f-51fb-4633-be05-23e5c3fe888e": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "source.geo.country_name",
-                        "id": "04e1df7f-51fb-4633-be05-23e5c3fe888e",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Source Country"
-                    },
-                    "grow": true,
-                    "order": 3,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "86d3663b-754a-4952-afe0-8c2efc663375": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "host.name",
-                        "id": "86d3663b-754a-4952-afe0-8c2efc663375",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Hostname"
-                    },
-                    "grow": true,
-                    "order": 6,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "91064a55-b414-4e53-8bf1-48ee1cc0ff20": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "agent.name",
-                        "id": "91064a55-b414-4e53-8bf1-48ee1cc0ff20",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Agent name"
-                    },
-                    "grow": true,
-                    "order": 0,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "927290dc-543f-4499-bd29-36410f33647c": {
+                "163147c3-ba90-493c-9ad3-a9844bc7ecb4": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.ip",
-                        "id": "927290dc-543f-4499-bd29-36410f33647c",
+                        "id": "163147c3-ba90-493c-9ad3-a9844bc7ecb4",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -82,47 +28,47 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "9f8b2979-b7ed-4773-80bf-829a5d2d4335": {
+                "686c9eaa-2015-4a59-9dd2-2c888b428229": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "destination.ip",
-                        "id": "9f8b2979-b7ed-4773-80bf-829a5d2d4335",
+                        "fieldName": "cloudflare_logpush.sinkhole_http.account_id",
+                        "id": "686c9eaa-2015-4a59-9dd2-2c888b428229",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Destination IP"
+                        "title": "Account ID"
                     },
                     "grow": true,
-                    "order": 5,
+                    "order": 1,
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "da1a9f29-037c-4ff0-8d4e-6d2ae6973720": {
+                "854f1ce4-edf4-4ab8-84d4-89d79a6a8f3e": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "user.name",
-                        "id": "da1a9f29-037c-4ff0-8d4e-6d2ae6973720",
+                        "fieldName": "source.geo.country_name",
+                        "id": "854f1ce4-edf4-4ab8-84d4-89d79a6a8f3e",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Username"
+                        "title": "Source Country"
                     },
                     "grow": true,
-                    "order": 7,
+                    "order": 3,
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "ef150cc1-79bf-40d4-8f88-a29dc4c2df87": {
+                "90ab3e5a-f679-42ea-9913-0c95c5172572": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "cloudflare_logpush.sinkhole_http.sinkhole_id",
-                        "id": "ef150cc1-79bf-40d4-8f88-a29dc4c2df87",
+                        "id": "90ab3e5a-f679-42ea-9913-0c95c5172572",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -136,21 +82,75 @@
                     "type": "optionsListControl",
                     "width": "medium"
                 },
-                "fe96bb0d-08e5-41b2-aaed-df8564e6cdc1": {
+                "ce9fdd1b-8713-4832-b61a-c4e4db98ba51": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.sinkhole_http.account_id",
-                        "id": "fe96bb0d-08e5-41b2-aaed-df8564e6cdc1",
+                        "fieldName": "agent.name",
+                        "id": "ce9fdd1b-8713-4832-b61a-c4e4db98ba51",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
                             "by": "_count",
                             "direction": "desc"
                         },
-                        "title": "Account ID"
+                        "title": "Agent name"
                     },
                     "grow": true,
-                    "order": 1,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "d20e6d80-b328-4c07-8688-2c39fb03c6ee": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "user.name",
+                        "id": "d20e6d80-b328-4c07-8688-2c39fb03c6ee",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Username"
+                    },
+                    "grow": true,
+                    "order": 7,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "dcf33078-b00e-49c6-b5fd-04f808c50d83": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "destination.ip",
+                        "id": "dcf33078-b00e-49c6-b5fd-04f808c50d83",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Destination IP"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "de7c3647-6121-4058-ac40-d2cffd32f744": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "host.name",
+                        "id": "de7c3647-6121-4058-ac40-d2cffd32f744",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Hostname"
+                    },
+                    "grow": true,
+                    "order": 6,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -160,7 +160,30 @@
         "description": "Sinkhole HTTP logs collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
-                "filter": [],
+                "filter": [
+                    {
+                        "$state": {
+                            "store": "appState"
+                        },
+                        "meta": {
+                            "alias": null,
+                            "disabled": false,
+                            "field": "data_stream.dataset",
+                            "indexRefName": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                            "key": "data_stream.dataset",
+                            "negate": false,
+                            "params": {
+                                "query": "cloudflare_logpush.sinkhole_http"
+                            },
+                            "type": "phrase"
+                        },
+                        "query": {
+                            "match_phrase": {
+                                "data_stream.dataset": "cloudflare_logpush.sinkhole_http"
+                            }
+                        }
+                    }
+                ],
                 "query": {
                     "language": "kuery",
                     "query": ""
@@ -256,6 +279,11 @@
                                 "destinationRefName": "link_e24f8c20-a3a9-4a1d-9972-a36ddbc06779_dashboard",
                                 "id": "e24f8c20-a3a9-4a1d-9972-a36ddbc06779",
                                 "label": "DNS Firewall",
+                                "options": {
+                                    "openInNewTab": false,
+                                    "useCurrentDateRange": false,
+                                    "useCurrentFilters": false
+                                },
                                 "order": 6,
                                 "type": "dashboardLink"
                             },
@@ -1809,6 +1837,11 @@
     "references": [
         {
             "id": "logs-*",
+            "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
             "name": "51b83123-5053-4a8c-92e0-45ba57cc6db4:indexpattern-datasource-layer-abba7002-5788-4a05-a010-367b1a38559e",
             "type": "index-pattern"
         },
@@ -1974,42 +2007,42 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_8b270f01-5f38-4b51-b16a-64c6b586af40:optionsListDataView",
+            "name": "controlGroup_91064a55-b414-4e53-8bf1-48ee1cc0ff20:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_8be9442f-6d69-4908-b09e-33a996a78ffc:optionsListDataView",
+            "name": "controlGroup_fe96bb0d-08e5-41b2-aaed-df8564e6cdc1:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_c53c48c8-889e-4ce2-86ac-dab47eb72819:optionsListDataView",
+            "name": "controlGroup_ef150cc1-79bf-40d4-8f88-a29dc4c2df87:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_d03bbc8c-2033-4c21-aa25-338ad87f9cce:optionsListDataView",
+            "name": "controlGroup_04e1df7f-51fb-4633-be05-23e5c3fe888e:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_4832991b-d71d-4f5f-9072-11fd16eb5597:optionsListDataView",
+            "name": "controlGroup_927290dc-543f-4499-bd29-36410f33647c:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_759bdfb3-daee-487e-9ea4-b490036d934d:optionsListDataView",
+            "name": "controlGroup_9f8b2979-b7ed-4773-80bf-829a5d2d4335:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_8452da4b-d617-489b-8ca1-306483e1a3f4:optionsListDataView",
+            "name": "controlGroup_86d3663b-754a-4952-afe0-8c2efc663375:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_6c88c4f9-e897-4335-9850-33d0d0a63b13:optionsListDataView",
+            "name": "controlGroup_da1a9f29-037c-4ff0-8d4e-6d2ae6973720:optionsListDataView",
             "type": "index-pattern"
         }
     ],
