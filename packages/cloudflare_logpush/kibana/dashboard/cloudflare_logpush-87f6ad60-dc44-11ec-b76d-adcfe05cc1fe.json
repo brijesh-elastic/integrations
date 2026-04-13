@@ -115,7 +115,7 @@
                     "y": 0
                 },
                 "panelIndex": "8b2c5062-d0d3-42b5-9e76-426e3ac2d3fa",
-                "title": "Top 10 Query Name [Logs Cloudflare Logpush]",
+                "title": "Top 10 Query Name",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -217,7 +217,7 @@
                     "y": 0
                 },
                 "panelIndex": "d6ed2af3-5357-4d8c-a56d-317a6e941516",
-                "title": "Top 10 Source IP [Logs Cloudflare Logpush]",
+                "title": "Top 10 Source IP",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -319,7 +319,7 @@
                     "y": 15
                 },
                 "panelIndex": "959ef816-ed24-47cc-8e0d-b0cef0e700f9",
-                "title": "Top 10 EDNS Subnet [Logs Cloudflare Logpush]",
+                "title": "Top 10 EDNS Subnet",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -469,7 +469,7 @@
                     "y": 15
                 },
                 "panelIndex": "8ec3f64a-33a1-463d-95a1-7bc3058a17d7",
-                "title": "Top 10 Query Name, Query Type and Response Code [Logs Cloudflare Logpush]",
+                "title": "Top 10 Query Name, Query Type and Response Code",
                 "type": "lens",
                 "version": "8.9.0"
             }

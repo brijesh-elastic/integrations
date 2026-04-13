@@ -378,7 +378,7 @@
                     "y": 0
                 },
                 "panelIndex": "3491263f-85b9-4f4b-b2b6-74b275bac113",
-                "title": "[Cloudflare Logpush] Detections by Action",
+                "title": "Detections by Action",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -522,7 +522,7 @@
                     "y": 0
                 },
                 "panelIndex": "e2fd2885-4175-46e1-9120-f4c3582e8d38",
-                "title": "[Cloudflare Logpush] Action Ratio",
+                "title": "Action Ratio",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -666,7 +666,7 @@
                     "y": 15
                 },
                 "panelIndex": "6b325841-d762-487d-8dca-cb4ebebb627d",
-                "title": "[Cloudflare Logpush] Top Destination Ports",
+                "title": "Top Destination Ports",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -845,7 +845,7 @@
                     "y": 30
                 },
                 "panelIndex": "2048f6ff-25c6-4123-a609-3b931f6e817c",
-                "title": "[Cloudflare Logpush] Top Signatures Detected",
+                "title": "Top Signatures Detected",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -988,7 +988,7 @@
                     "y": 15
                 },
                 "panelIndex": "aa1ad025-cb18-45f0-8c07-1dc21e517b08",
-                "title": "[Cloudflare Logpush] Top Source IPs",
+                "title": "Top Source IPs",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1006,7 +1006,7 @@
                 },
                 "panelIndex": "283d9a15-08cd-425c-9f22-41b23e163ea3",
                 "panelRefName": "panel_283d9a15-08cd-425c-9f22-41b23e163ea3",
-                "title": "[Cloudflare Logpush] Latest Magic IDS Detections",
+                "title": "[Logs Cloudflare Logpush] Latest Magic IDS Detections",
                 "type": "search",
                 "version": "8.7.1"
             },
@@ -1149,7 +1149,7 @@
                     "y": 30
                 },
                 "panelIndex": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2",
-                "title": "[Cloudflare Logpush] Top Destination IPs",
+                "title": "Top Destination IPs",
                 "type": "lens",
                 "version": "8.9.0"
             }

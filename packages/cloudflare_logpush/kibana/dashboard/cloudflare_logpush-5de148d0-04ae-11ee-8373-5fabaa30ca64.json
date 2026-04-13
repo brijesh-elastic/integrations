@@ -330,7 +330,7 @@
                     "y": 0
                 },
                 "panelIndex": "e55df9ac-f378-44ac-8ec9-5dae1269e587",
-                "title": "[Cloudflare Logpush] Most Popular Policies",
+                "title": "Most Popular Policies",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -479,7 +479,7 @@
                     "y": 0
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
-                "title": "[Cloudflare Logpush] DNS Resolver Decision",
+                "title": "DNS Resolver Decision",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -620,7 +620,7 @@
                     "y": 13
                 },
                 "panelIndex": "f11abba6-018e-4e78-a4d8-69161fe533d4",
-                "title": "[Cloudflare Logpush] Top Domain Categories",
+                "title": "Top Domain Categories",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -762,7 +762,7 @@
                     "y": 13
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
-                "title": "[Cloudflare Logpush] Top DNS Query Names",
+                "title": "Top DNS Query Names",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -995,7 +995,7 @@
                     "y": 26
                 },
                 "panelIndex": "c5be3c62-8ef4-487d-aa4f-a91c5c2de2d3",
-                "title": "[Cloudflare Logpush] DNS Requests Over Time (Success vs Failure)",
+                "title": "DNS Requests Over Time (Success vs Failure)",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1169,7 +1169,7 @@
                     "y": 26
                 },
                 "panelIndex": "9c7980fb-40dc-47f7-bf8d-7b294f4450d9",
-                "title": "[Cloudflare Logpush] Top DNS Query Names (Failures)",
+                "title": "Top DNS Query Names (Failures)",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1201,7 +1201,7 @@
                                 "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
                                 "includeInFitToBounds": true,
                                 "joins": [],
-                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "label": "Source IP country map",
                                 "maxZoom": 24,
                                 "minZoom": 0,
                                 "sourceDescriptor": {
@@ -1423,7 +1423,7 @@
                     "y": 42
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
-                "title": "[Cloudflare Logpush] Top Traffic Countries",
+                "title": "Top Traffic Countries",
                 "type": "map",
                 "version": "8.9.0"
             },
@@ -1564,7 +1564,7 @@
                     "y": 42
                 },
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
-                "title": "[Cloudflare Logpush] Top DNS Requests by Country",
+                "title": "Top DNS Requests by Country",
                 "type": "lens",
                 "version": "8.9.0"
             }

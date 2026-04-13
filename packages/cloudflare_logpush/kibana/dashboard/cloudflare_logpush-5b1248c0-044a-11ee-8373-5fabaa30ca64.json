@@ -288,7 +288,7 @@
                     "y": 0
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
-                "title": "[Cloudflare Logpush] Distribution of Audit by resource type",
+                "title": "Distribution of Audit by resource type",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -430,7 +430,7 @@
                     "y": 0
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
-                "title": "[Cloudflare Logpush] Distribution of Audit by resource action",
+                "title": "Distribution of Audit by resource action",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -611,7 +611,7 @@
                     "y": 12
                 },
                 "panelIndex": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4",
-                "title": "[Cloudflare Logpush] Audit Events Over Time ",
+                "title": "Audit Events Over Time ",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -752,7 +752,7 @@
                     "y": 12
                 },
                 "panelIndex": "ef42409b-48f1-46d3-9c36-219137e54dba",
-                "title": "[Cloudflare Logpush] Top Actor email",
+                "title": "Top Actor email",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -770,7 +770,7 @@
                 },
                 "panelIndex": "cb23aa72-e15b-49be-a158-7d204f80be0d",
                 "panelRefName": "panel_cb23aa72-e15b-49be-a158-7d204f80be0d",
-                "title": "Latest Audit Events",
+                "title": "[Logs Cloudflare Logpush] Latest Audit Events",
                 "type": "search",
                 "version": "8.7.1"
             }

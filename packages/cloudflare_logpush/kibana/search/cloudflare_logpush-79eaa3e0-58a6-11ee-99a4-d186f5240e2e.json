@@ -51,7 +51,7 @@
             ]
         ],
         "timeRestore": false,
-        "title": "Magic IDS Search",
+        "title": "[Logs Cloudflare Logpush] Magic IDS",
         "usesAdHocDataView": false
     },
     "coreMigrationVersion": "8.8.0",

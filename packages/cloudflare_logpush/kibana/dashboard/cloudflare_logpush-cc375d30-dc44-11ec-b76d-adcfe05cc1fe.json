@@ -140,7 +140,7 @@
                     "y": 0
                 },
                 "panelIndex": "d6d36d84-cb11-4993-a30a-d82118413eda",
-                "title": "Top 10 Source ASN and ASN Description [Logs Cloudflare Logpush]",
+                "title": "Top 10 Source ASN and ASN Description",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -245,7 +245,7 @@
                     "y": 0
                 },
                 "panelIndex": "e28f00db-dc65-4c0c-84ce-dbf64b568c70",
-                "title": "Distribution of NEL Report by Error Type [Logs Cloudflare Logpush]",
+                "title": "Distribution of NEL Report by Error Type",
                 "type": "lens",
                 "version": "8.9.0"
             }

@@ -398,7 +398,7 @@
                     "y": 0
                 },
                 "panelIndex": "3491263f-85b9-4f4b-b2b6-74b275bac113",
-                "title": "[Cloudflare Logpush] Workers Trace Events by Outcome",
+                "title": "Workers Trace Events by Outcome",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -542,7 +542,7 @@
                     "y": 0
                 },
                 "panelIndex": "e2fd2885-4175-46e1-9120-f4c3582e8d38",
-                "title": "[Cloudflare Logpush] Event Outcome Ratio",
+                "title": "Event Outcome Ratio",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -685,7 +685,7 @@
                     "y": 15
                 },
                 "panelIndex": "6b325841-d762-487d-8dca-cb4ebebb627d",
-                "title": "[Cloudflare Logpush] Top HTTP Response Code",
+                "title": "Top HTTP Response Code",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -851,7 +851,7 @@
                     "y": 15
                 },
                 "panelIndex": "8bf7449a-9767-4d83-af74-bda870702574",
-                "title": "[Cloudflare Logpush] Top HTTP Request Method",
+                "title": "Top HTTP Request Method",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -993,7 +993,7 @@
                     "y": 30
                 },
                 "panelIndex": "2048f6ff-25c6-4123-a609-3b931f6e817c",
-                "title": "[Cloudflare Logpush] Top URL Domains",
+                "title": "Top URL Domains",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1136,7 +1136,7 @@
                     "y": 30
                 },
                 "panelIndex": "aa1ad025-cb18-45f0-8c07-1dc21e517b08",
-                "title": "[Cloudflare Logpush] Top Script Names",
+                "title": "Top Script Names",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1154,7 +1154,7 @@
                 },
                 "panelIndex": "ca1508a9-c6ce-42aa-a144-9bd1648aa2fc",
                 "panelRefName": "panel_ca1508a9-c6ce-42aa-a144-9bd1648aa2fc",
-                "title": "[Cloudflare Logpush] Latest Workers Trace Events",
+                "title": "[Logs Cloudflare Logpush] Latest Workers Trace Events",
                 "type": "search",
                 "version": "8.7.1"
             }

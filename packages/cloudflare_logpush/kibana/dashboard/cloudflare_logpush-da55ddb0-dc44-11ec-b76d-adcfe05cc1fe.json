@@ -127,7 +127,7 @@
                     "y": 0
                 },
                 "panelIndex": "c537f5d4-d56c-4ebb-800d-258916a4f7e4",
-                "title": "Distribution of Spectrum Event by Event Action [Logs Cloudflare Logpush]",
+                "title": "Distribution of Spectrum Event by Event Action",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -232,7 +232,7 @@
                     "y": 0
                 },
                 "panelIndex": "1082e6a0-ecee-43e0-bb9a-c6d108bdd2a9",
-                "title": "Distribution of Spectrum Event by Source Country [Logs Cloudflare Logpush]",
+                "title": "Distribution of Spectrum Event by Source Country",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -346,7 +346,7 @@
                     "y": 15
                 },
                 "panelIndex": "81514310-7291-4f6a-bfc9-e7c64b042c83",
-                "title": "Distribution of Spectrum Event by Client Matched IP Firewall [Logs Cloudflare Logpush]",
+                "title": "Distribution of Spectrum Event by Client Matched IP Firewall",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -469,7 +469,7 @@
                     "y": 15
                 },
                 "panelIndex": "db83321b-3729-48c6-a417-f09cb192c6d2",
-                "title": "Top 10 Client TLS Protocol and TLS Version [Logs Cloudflare Logpush]",
+                "title": "Top 10 Client TLS Protocol and TLS Version",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -583,7 +583,7 @@
                     "y": 30
                 },
                 "panelIndex": "73c0274d-7f24-4763-aac0-eef36b1a6904",
-                "title": "Distribution of Spectrum Event by Origin TLS Protocol [Logs Cloudflare Logpush]",
+                "title": "Distribution of Spectrum Event by Origin TLS Protocol",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -697,7 +697,7 @@
                     "y": 30
                 },
                 "panelIndex": "0229b8d8-fe10-4ed5-938c-135fa3332836",
-                "title": "Distribution of Spectrum Event by Client TLS Status [Logs Cloudflare Logpush]",
+                "title": "Distribution of Spectrum Event by Client TLS Status",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -811,7 +811,7 @@
                     "y": 45
                 },
                 "panelIndex": "e769bb45-9bb6-4902-aadd-9622b8ef0197",
-                "title": "Distribution of Spectrum Event by Origin TLS Status [Logs Cloudflare Logpush]",
+                "title": "Distribution of Spectrum Event by Origin TLS Status",
                 "type": "lens",
                 "version": "8.9.0"
             },

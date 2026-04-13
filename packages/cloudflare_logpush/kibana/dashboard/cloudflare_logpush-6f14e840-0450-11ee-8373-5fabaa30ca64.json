@@ -225,7 +225,7 @@
                     "y": 0
                 },
                 "panelIndex": "8ac4ad94-a423-4185-b9b5-8672f592676c",
-                "title": "[Cloudflare Logpush] CASB findings",
+                "title": "CASB findings",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -393,7 +393,7 @@
                     "y": 0
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
-                "title": "[Cloudflare Logpush] CASB findings severity",
+                "title": "CASB findings severity",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -535,7 +535,7 @@
                     "y": 0
                 },
                 "panelIndex": "ef42409b-48f1-46d3-9c36-219137e54dba",
-                "title": "[Cloudflare Logpush] Top Assets",
+                "title": "Top Assets",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -816,7 +816,7 @@
                     "y": 8
                 },
                 "panelIndex": "77c52b2d-8d20-4307-a530-2a785b783564",
-                "title": "[Cloudflare Logpush] CASB Findings Over Time (Classified by Severity)",
+                "title": "CASB Findings Over Time (Classified by Severity)",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -959,7 +959,7 @@
                     "y": 12
                 },
                 "panelIndex": "646e888e-cda9-4e49-b794-1195eae3250d",
-                "title": "[Cloudflare Logpush] Top finding types",
+                "title": "Top finding types",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -977,7 +977,7 @@
                 },
                 "panelIndex": "192742d8-97b9-442e-9a0a-945ed9dc828f",
                 "panelRefName": "panel_192742d8-97b9-442e-9a0a-945ed9dc828f",
-                "title": "Latest CASB Findings",
+                "title": "[Logs Cloudflare Logpush] Latest CASB Findings",
                 "type": "search",
                 "version": "8.7.1"
             }

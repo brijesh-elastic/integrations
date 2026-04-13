@@ -370,7 +370,7 @@
                     "y": 0
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
-                "title": "[Cloudflare Logpush] Type of events",
+                "title": "Type of events",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -571,7 +571,7 @@
                     "y": 0
                 },
                 "panelIndex": "39844e37-8f9f-4cfc-b337-e6b5402ebb9a",
-                "title": "[Cloudflare Logpush] Success rate of actions",
+                "title": "Success rate of actions",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -774,7 +774,7 @@
                     "y": 16
                 },
                 "panelIndex": "7941c734-ddfe-4483-bebc-d22f763dff7d",
-                "title": "[Cloudflare Logpush] Top IP addresses",
+                "title": "Top IP addresses",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -975,7 +975,7 @@
                     "y": 16
                 },
                 "panelIndex": "f76c26eb-8ca7-48a5-b530-1077700d3f51",
-                "title": "[Cloudflare Logpush] Top host names",
+                "title": "Top host names",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1007,7 +1007,7 @@
                                 "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
                                 "includeInFitToBounds": true,
                                 "joins": [],
-                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "label": "Source IP country map",
                                 "maxZoom": 24,
                                 "minZoom": 0,
                                 "sourceDescriptor": {
@@ -1130,7 +1130,7 @@
                                 "id": "d6b9024d-2fba-4f76-bff0-7f1e40ab8003",
                                 "includeInFitToBounds": true,
                                 "joins": [],
-                                "label": "Client IPs country map [Cloudflare Logpush]",
+                                "label": "Client IPs country map",
                                 "maxZoom": 24,
                                 "minZoom": 0,
                                 "sourceDescriptor": {
@@ -1430,7 +1430,7 @@
                     "y": 32
                 },
                 "panelIndex": "d76b8fae-ca21-4136-b34a-1825fae3c292",
-                "title": "[Cloudflare Logpush] Top Traffic Countries",
+                "title": "Top Traffic Countries",
                 "type": "map",
                 "version": "8.9.0"
             }

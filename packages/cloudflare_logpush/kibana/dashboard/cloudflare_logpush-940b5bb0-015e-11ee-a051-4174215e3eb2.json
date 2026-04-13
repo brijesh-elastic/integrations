@@ -300,7 +300,7 @@
                     "y": 0
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
-                "title": "[Cloudflare Logpush] Access Request actions",
+                "title": "Access Request actions",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -441,7 +441,7 @@
                     "y": 0
                 },
                 "panelIndex": "ef42409b-48f1-46d3-9c36-219137e54dba",
-                "title": "[Cloudflare Logpush] Top User Emails",
+                "title": "Top User Emails",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -581,7 +581,7 @@
                     "y": 12
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
-                "title": "[Cloudflare Logpush] Top Client IP addresses",
+                "title": "Top Client IP addresses",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -722,7 +722,7 @@
                     "y": 12
                 },
                 "panelIndex": "8f367ca0-f241-401a-835d-be9d2a746323",
-                "title": "[Cloudflare Logpush] Top URL domains",
+                "title": "Top URL domains",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -955,7 +955,7 @@
                     "y": 24
                 },
                 "panelIndex": "ec60fc87-d65b-4094-9a08-d482afd6fcaf",
-                "title": "[Cloudflare Logpush] Total Requests vs. Allowed vs Denied",
+                "title": "Total Requests vs. Allowed vs Denied",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1128,7 +1128,7 @@
                     "y": 24
                 },
                 "panelIndex": "5420008f-addb-4526-b691-efbfbb870939",
-                "title": "[Cloudflare Logpush] Top Denied Users",
+                "title": "Top Denied Users",
                 "type": "lens",
                 "version": "8.9.0"
             }

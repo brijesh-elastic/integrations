@@ -46,7 +46,7 @@
         },
         "sort": [],
         "timeRestore": false,
-        "title": "Workers Trace Events search",
+        "title": "[Logs Cloudflare Logpush] Workers Trace Events",
         "usesAdHocDataView": false
     },
     "coreMigrationVersion": "8.8.0",

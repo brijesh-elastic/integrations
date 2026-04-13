@@ -50,7 +50,7 @@
             ]
         ],
         "timeRestore": false,
-        "title": "CASB search",
+        "title": "[Logs Cloudflare Logpush] CASB",
         "usesAdHocDataView": false
     },
     "coreMigrationVersion": "8.8.0",

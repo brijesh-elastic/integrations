@@ -118,7 +118,7 @@
                     "y": 0
                 },
                 "panelIndex": "bde8d836-7f82-4729-a870-8ef3aa0cb150",
-                "title": "Distribution of Firewall Event by Event Action [Logs Cloudflare Logpush]",
+                "title": "Distribution of Firewall Event by Event Action",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -234,7 +234,7 @@
                     "y": 0
                 },
                 "panelIndex": "fa792bf5-0a98-4b40-8468-70c00d630e62",
-                "title": "Distribution of Firewall Event by Client IP Class [Logs Cloudflare Logpush]",
+                "title": "Distribution of Firewall Event by Client IP Class",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -339,7 +339,7 @@
                     "y": 15
                 },
                 "panelIndex": "f75dad7c-b8cc-472f-94e4-6b130f0c72a7",
-                "title": "Distribution of Firewall Event by Source Country [Logs Cloudflare Logpush]",
+                "title": "Distribution of Firewall Event by Source Country",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -444,7 +444,7 @@
                     "y": 15
                 },
                 "panelIndex": "30ebc076-8273-4106-b4a8-66c8bdec8934",
-                "title": "Distribution of Firewall Event Class by Client Request Protocol [Logs Cloudflare Logpush]",
+                "title": "Distribution of Firewall Event Class by Client Request Protocol",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -549,7 +549,7 @@
                     "y": 30
                 },
                 "panelIndex": "7d00d9d8-021f-4432-9e92-aa2ffc4eabd0",
-                "title": "Distribution of Firewall Event Class by Client Request Method [Logs Cloudflare Logpush]",
+                "title": "Distribution of Firewall Event Class by Client Request Method",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -651,7 +651,7 @@
                     "y": 30
                 },
                 "panelIndex": "9385681c-22a8-46aa-8353-af82880e6a05",
-                "title": "Top 10 Source IP [Logs Cloudflare Logpush]",
+                "title": "Top 10 Source IP",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -777,7 +777,7 @@
                     "y": 45
                 },
                 "panelIndex": "ce0376c7-0c9c-4657-9569-bda33374e67b",
-                "title": "Top 10 Source ASN and ASN Description [Logs Cloudflare Logpush]",
+                "title": "Top 10 Source ASN and ASN Description",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -903,7 +903,7 @@
                     "y": 45
                 },
                 "panelIndex": "93ac4ff5-13c5-40d3-a7e9-14faca9ea9db",
-                "title": "Top 10 Client Referer Host and Client Request Host [Logs Cloudflare Logpush]",
+                "title": "Top 10 Client Referer Host and Client Request Host",
                 "type": "lens",
                 "version": "8.9.0"
             }

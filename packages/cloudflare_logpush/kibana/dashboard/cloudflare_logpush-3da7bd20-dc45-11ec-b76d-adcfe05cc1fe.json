@@ -118,7 +118,7 @@
                     "y": 0
                 },
                 "panelIndex": "76dd9910-33ca-4380-84f9-0714b5162925",
-                "title": "Distribution of Network Analytics Logs by Network Direction [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics Logs by Network Direction",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -223,7 +223,7 @@
                     "y": 0
                 },
                 "panelIndex": "db9bd60f-97ff-4128-ac14-f50aad75c349",
-                "title": "Distribution of Network Analytics Logs by Mitigation Reason [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics Logs by Mitigation Reason",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -328,7 +328,7 @@
                     "y": 15
                 },
                 "panelIndex": "a3ed8dcc-80c7-4b0b-b5ae-d367ca5399f2",
-                "title": "Distribution of Network Analytics Logs by Mitigation Scope [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics Logs by Mitigation Scope",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -433,7 +433,7 @@
                     "y": 15
                 },
                 "panelIndex": "f8d6e38e-14f7-41d2-be81-0831c73cb443",
-                "title": "Distribution of Network Analytics Logs by Mitigation System [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics Logs by Mitigation System",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -538,7 +538,7 @@
                     "y": 30
                 },
                 "panelIndex": "185e465f-bd48-48e2-a8be-59854a7c3021",
-                "title": "Distribution of Network Analytics Logs by Outcome [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics Logs by Outcome",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -643,7 +643,7 @@
                     "y": 30
                 },
                 "panelIndex": "6a86f194-8e17-4b6c-8100-3fe42fbb85b0",
-                "title": "Distribution of Network Analytics Logs by Protocol State [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics Logs by Protocol State",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -748,7 +748,7 @@
                     "y": 45
                 },
                 "panelIndex": "fefc98e2-ac0a-4929-92a1-3a8dcc396a8c",
-                "title": "Distribution of Network Analytics by Destination Country [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics by Destination Country",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -853,7 +853,7 @@
                     "y": 45
                 },
                 "panelIndex": "1b347819-7723-4250-9dfc-647d474d1044",
-                "title": "Distribution of Network Analytics by Source Country [Logs Cloudflare Logpush]",
+                "title": "Distribution of Network Analytics by Source Country",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -979,7 +979,7 @@
                     "y": 60
                 },
                 "panelIndex": "108877cb-bc4f-4870-90d4-732d4755014f",
-                "title": "Top 10 Source IP and Destination IP [Logs Cloudflare Logpush]",
+                "title": "Top 10 Source IP and Destination IP",
                 "type": "lens",
                 "version": "8.9.0"
             }

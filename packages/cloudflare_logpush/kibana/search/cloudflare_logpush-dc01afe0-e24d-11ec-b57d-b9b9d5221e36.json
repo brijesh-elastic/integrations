@@ -24,7 +24,7 @@
                 "desc"
             ]
         ],
-        "title": "Spectrum Event [Logs Cloudflare Logpush]"
+        "title": "[Logs Cloudflare Logpush] Spectrum Event"
     },
     "coreMigrationVersion": "8.8.0",
     "created_at": "2026-04-13T15:07:59.229Z",

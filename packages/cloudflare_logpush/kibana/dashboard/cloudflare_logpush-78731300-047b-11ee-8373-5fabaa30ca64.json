@@ -288,7 +288,7 @@
                     "y": 0
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
-                "title": "[Cloudflare Logpush] Evaluation results",
+                "title": "Evaluation results",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -437,7 +437,7 @@
                     "y": 0
                 },
                 "panelIndex": "147d9579-f735-4813-b360-696a4dff5e78",
-                "title": "[Cloudflare Logpush] Device OS",
+                "title": "Device OS",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -578,7 +578,7 @@
                     "y": 12
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
-                "title": "[Cloudflare Logpush] Top Device Types",
+                "title": "Top Device Types",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -811,7 +811,7 @@
                     "y": 12
                 },
                 "panelIndex": "6625e477-7963-4db0-be5d-4f900a9cc66e",
-                "title": "[Cloudflare Logpush] Total Results vs Success vs Failure",
+                "title": "Total Results vs Success vs Failure",
                 "type": "lens",
                 "version": "8.9.0"
             }

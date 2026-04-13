@@ -51,7 +51,7 @@
             ]
         ],
         "timeRestore": false,
-        "title": "Audit search",
+        "title": "[Logs Cloudflare Logpush] Audit",
         "usesAdHocDataView": false
     },
     "coreMigrationVersion": "8.8.0",

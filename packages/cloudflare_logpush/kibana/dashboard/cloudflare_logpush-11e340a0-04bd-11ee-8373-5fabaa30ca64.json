@@ -255,7 +255,7 @@
                     "y": 0
                 },
                 "panelIndex": "f522c181-4307-4bc3-8131-57ffcb2506b7",
-                "title": "[Cloudflare Logpush] Total Sessions",
+                "title": "Total Sessions",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -400,7 +400,7 @@
                     "y": 0
                 },
                 "panelIndex": "3014e4ef-4e9b-47a6-8317-06dfa65d6ce6",
-                "title": "[Cloudflare Logpush] Total sent bytes",
+                "title": "Total sent bytes",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -546,7 +546,7 @@
                     "y": 0
                 },
                 "panelIndex": "4fdb96ed-77ad-476b-9805-7065d1cab2fc",
-                "title": "[Cloudflare Logpush] Total received bytes",
+                "title": "Total received bytes",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -683,7 +683,7 @@
                     "y": 6
                 },
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
-                "title": "[Cloudflare Logpush] Top Network Sessions by Country",
+                "title": "Top Network Sessions by Country",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -864,7 +864,7 @@
                     "y": 6
                 },
                 "panelIndex": "e10351c5-c387-4142-a302-d9454c532ae1",
-                "title": "[Cloudflare Logpush] Network Sessions Over Time ",
+                "title": "Network Sessions Over Time ",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -896,7 +896,7 @@
                                 "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
                                 "includeInFitToBounds": true,
                                 "joins": [],
-                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "label": "Source IP country map",
                                 "maxZoom": 24,
                                 "minZoom": 0,
                                 "sourceDescriptor": {
@@ -1118,7 +1118,7 @@
                     "y": 20
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
-                "title": "[Cloudflare Logpush] Top Traffic Countries",
+                "title": "Top Traffic Countries",
                 "type": "map",
                 "version": "8.9.0"
             },
@@ -1386,7 +1386,7 @@
                     "y": 46
                 },
                 "panelIndex": "fd1ec8e7-e0a0-4503-a3bd-8a74a8c21c1b",
-                "title": "[Cloudflare Logpush] Client TCP Handshake Duration (Milliseconds)",
+                "title": "Client TCP Handshake Duration (Milliseconds)",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1654,7 +1654,7 @@
                     "y": 46
                 },
                 "panelIndex": "780c64f9-7ea1-47f9-b241-2e0c42de3209",
-                "title": "[Cloudflare Logpush] Client TLS Handshake Duration (Milliseconds)",
+                "title": "Client TLS Handshake Duration (Milliseconds)",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1922,7 +1922,7 @@
                     "y": 61
                 },
                 "panelIndex": "8c356466-a7ca-4148-aeea-8b00fde57b17",
-                "title": "[Cloudflare Logpush] Origin TLS Handshake Duration (Milliseconds)",
+                "title": "Origin TLS Handshake Duration (Milliseconds)",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -2190,7 +2190,7 @@
                     "y": 61
                 },
                 "panelIndex": "90c9a68b-2eac-40cb-8f8c-bf419d804276",
-                "title": "[Cloudflare Logpush] Rule Evaluation Time (Milliseconds)",
+                "title": "Rule Evaluation Time (Milliseconds)",
                 "type": "lens",
                 "version": "8.9.0"
             }

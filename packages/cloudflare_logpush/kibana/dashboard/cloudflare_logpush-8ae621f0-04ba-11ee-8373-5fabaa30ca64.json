@@ -348,7 +348,7 @@
                     "y": 0
                 },
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
-                "title": "[Cloudflare Logpush] Action Over Network Events",
+                "title": "Action Over Network Events",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -492,7 +492,7 @@
                     "y": 0
                 },
                 "panelIndex": "43d3cc2e-5dde-46ce-b611-c10419d0e5d7",
-                "title": "[Cloudflare Logpush] Transport Protocol",
+                "title": "Transport Protocol",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -633,7 +633,7 @@
                     "y": 0
                 },
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
-                "title": "[Cloudflare Logpush] Top Network Sessions by Country",
+                "title": "Top Network Sessions by Country",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -776,7 +776,7 @@
                     "y": 13
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
-                "title": "[Cloudflare Logpush] Top Server Name Indications (SNI)",
+                "title": "Top Server Name Indications (SNI)",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -957,7 +957,7 @@
                     "y": 13
                 },
                 "panelIndex": "e10351c5-c387-4142-a302-d9454c532ae1",
-                "title": "[Cloudflare Logpush] Network Sessions Over Time ",
+                "title": "Network Sessions Over Time ",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1100,7 +1100,7 @@
                     "y": 27
                 },
                 "panelIndex": "af742261-92c0-4723-9ea6-2f67df63eee9",
-                "title": "[Cloudflare Logpush] Top Policy Names",
+                "title": "Top Policy Names",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1243,7 +1243,7 @@
                     "y": 27
                 },
                 "panelIndex": "a85baca3-4810-4191-8f30-40698ad5cc81",
-                "title": "[Cloudflare Logpush] Top User Emails",
+                "title": "Top User Emails",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1275,7 +1275,7 @@
                                 "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
                                 "includeInFitToBounds": true,
                                 "joins": [],
-                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "label": "Source IP country map",
                                 "maxZoom": 24,
                                 "minZoom": 0,
                                 "sourceDescriptor": {
@@ -1497,7 +1497,7 @@
                     "y": 41
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
-                "title": "[Cloudflare Logpush] Top Traffic Countries",
+                "title": "Top Traffic Countries",
                 "type": "map",
                 "version": "8.9.0"
             }

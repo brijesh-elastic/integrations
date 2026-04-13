@@ -118,7 +118,7 @@
                     "y": 0
                 },
                 "panelIndex": "6046f18e-7779-4ea6-b387-213bc81b36f0",
-                "title": "Distribution of HTTP Request by Edge Rate Limit Action [Logs Cloudflare Logpush]",
+                "title": "Distribution of HTTP Request by Edge Rate Limit Action",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -223,7 +223,7 @@
                     "y": 0
                 },
                 "panelIndex": "ec4ead06-9bbf-4f27-9dca-03dd92a55089",
-                "title": "Distribution of HTTP Request by Client Request Method [Logs Cloudflare Logpush]",
+                "title": "Distribution of HTTP Request by Client Request Method",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -328,7 +328,7 @@
                     "y": 0
                 },
                 "panelIndex": "9c4f4004-d4b0-471f-9535-09c11555e5a1",
-                "title": "Distribution of HTTP Request by Client Device Type [Logs Cloudflare Logpush]",
+                "title": "Distribution of HTTP Request by Client Device Type",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -444,7 +444,7 @@
                     "y": 15
                 },
                 "panelIndex": "36ba08a4-1ebd-46bd-a95d-6855c7992a68",
-                "title": "Distribution of HTTP Request by Client IP Class [Logs Cloudflare Logpush]",
+                "title": "Distribution of HTTP Request by Client IP Class",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -549,7 +549,7 @@
                     "y": 15
                 },
                 "panelIndex": "42860ae9-0100-4c5b-aad4-e9b9ebd8eb1d",
-                "title": "Distribution of HTTP Request by WAF Profile [Logs Cloudflare Logpush]",
+                "title": "Distribution of HTTP Request by WAF Profile",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -665,7 +665,7 @@
                     "y": 30
                 },
                 "panelIndex": "94b34910-bec2-4d2d-8cab-03339cee8eee",
-                "title": "Distribution of HTTP Request by Client MTLS Auth Status [Logs Cloudflare Logpush]",
+                "title": "Distribution of HTTP Request by Client MTLS Auth Status",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -770,7 +770,7 @@
                     "y": 30
                 },
                 "panelIndex": "ff959b8e-d7b9-4c5e-8d3b-e0381f0d1e35",
-                "title": "Distribution of HTTP Request by Source Country [Logs Cloudflare Logpush]",
+                "title": "Distribution of HTTP Request by Source Country",
                 "type": "lens",
                 "version": "8.9.0"
             },

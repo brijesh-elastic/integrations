@@ -349,7 +349,7 @@
                     "y": 0
                 },
                 "panelIndex": "d845296b-8cc9-4ebc-ad24-d4097eedeb25",
-                "title": "[Cloudflare Logpush] DNS Firewall Logs over Time",
+                "title": "DNS Firewall Logs over Time",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -551,7 +551,7 @@
                     "y": 0
                 },
                 "panelIndex": "d978b50c-c675-4316-a978-a79a48ba7f98",
-                "title": "[Cloudflare Logpush] DNS Query Size over Time",
+                "title": "DNS Query Size over Time",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -694,7 +694,7 @@
                     "y": 14
                 },
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
-                "title": "[Cloudflare Logpush] Top DNS Query Names",
+                "title": "Top DNS Query Names",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -837,7 +837,7 @@
                     "y": 14
                 },
                 "panelIndex": "e4b3e2e5-347d-44cc-a02b-38152de0b2ec",
-                "title": "[Cloudflare Logpush] Top DNS Response Code",
+                "title": "Top DNS Response Code",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -978,7 +978,7 @@
                     "y": 28
                 },
                 "panelIndex": "6eae2481-3961-4a03-9273-4898b69807aa",
-                "title": "[Cloudflare Logpush] Top Cluster IDs",
+                "title": "Top Cluster IDs",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1119,7 +1119,7 @@
                     "y": 28
                 },
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
-                "title": "[Cloudflare Logpush] Top DNS Request Source by Country",
+                "title": "Top DNS Request Source by Country",
                 "type": "lens",
                 "version": "8.9.0"
             },
@@ -1151,7 +1151,7 @@
                                 "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
                                 "includeInFitToBounds": true,
                                 "joins": [],
-                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "label": "Source IP country map",
                                 "maxZoom": 24,
                                 "minZoom": 0,
                                 "sourceDescriptor": {
@@ -1373,7 +1373,7 @@
                     "y": 42
                 },
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
-                "title": "[Cloudflare Logpush] Top Traffic Countries",
+                "title": "Top Traffic Countries",
                 "type": "map",
                 "version": "8.9.0"
             }
