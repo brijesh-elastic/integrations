@@ -3,8 +3,63 @@
         "controlGroupInput": {
             "chainingSystem": "HIERARCHICAL",
             "controlStyle": "oneLine",
-            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
-            "panelsJSON": "{\"1493457d-79d9-47e6-ba81-8741d24ecff6\":{\"order\":0,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"agent.name\",\"title\":\"Agent name\",\"id\":\"1493457d-79d9-47e6-ba81-8741d24ecff6\",\"enhancements\":{}}},\"5e43e5c4-1e7d-4972-af00-d26bce6d85a8\":{\"type\":\"optionsListControl\",\"order\":1,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"5e43e5c4-1e7d-4972-af00-d26bce6d85a8\",\"fieldName\":\"cloudflare_logpush.casb.integration.id\",\"title\":\"Integration ID\",\"enhancements\":{}}},\"81c12d45-dfbd-4433-b393-f682ecd80906\":{\"type\":\"optionsListControl\",\"order\":2,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"81c12d45-dfbd-4433-b393-f682ecd80906\",\"fieldName\":\"cloudflare_logpush.casb.integration.name\",\"title\":\"Integration name\",\"enhancements\":{}}},\"743835b7-587f-4168-878d-f377ad06688d\":{\"type\":\"optionsListControl\",\"order\":3,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"743835b7-587f-4168-878d-f377ad06688d\",\"fieldName\":\"cloudflare_logpush.casb.finding.id\",\"title\":\"Instance ID\",\"enhancements\":{}}}}"
+            "ignoreParentSettingsJSON": {
+                "ignoreFilters": false,
+                "ignoreQuery": false,
+                "ignoreTimerange": false,
+                "ignoreValidations": false
+            },
+            "panelsJSON": {
+                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "agent.name",
+                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "5e43e5c4-1e7d-4972-af00-d26bce6d85a8": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.casb.integration.id",
+                        "id": "5e43e5c4-1e7d-4972-af00-d26bce6d85a8",
+                        "title": "Integration ID"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "743835b7-587f-4168-878d-f377ad06688d": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.casb.finding.id",
+                        "id": "743835b7-587f-4168-878d-f377ad06688d",
+                        "title": "Instance ID"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "81c12d45-dfbd-4433-b393-f682ecd80906": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.casb.integration.name",
+                        "id": "81c12d45-dfbd-4433-b393-f682ecd80906",
+                        "title": "Integration name"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
+            "showApplySelections": false
         },
         "description": "Access Request events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
@@ -49,7 +104,8 @@
                         "title": "",
                         "type": "markdown",
                         "uiState": {}
-                    }
+                    },
+                    "type": "visualization"
                 },
                 "gridData": {
                     "h": 24,
@@ -61,7 +117,7 @@
                 "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
                 "title": "Table of contents",
                 "type": "visualization",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -99,6 +155,7 @@
                                                         "format": {
                                                             "id": "number",
                                                             "params": {
+                                                                "compact": true,
                                                                 "decimals": 2
                                                             }
                                                         }
@@ -157,7 +214,8 @@
                         "visualizationType": "lnsMetric"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 8,
@@ -169,7 +227,7 @@
                 "panelIndex": "8ac4ad94-a423-4185-b9b5-8672f592676c",
                 "title": "[Cloudflare Logpush] CASB findings",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -324,7 +382,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 8,
@@ -336,7 +395,7 @@
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                 "title": "[Cloudflare Logpush] CASB findings severity",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -465,7 +524,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 12,
@@ -477,7 +537,7 @@
                 "panelIndex": "ef42409b-48f1-46d3-9c36-219137e54dba",
                 "title": "[Cloudflare Logpush] Top Assets",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -745,7 +805,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 16,
@@ -757,7 +818,7 @@
                 "panelIndex": "77c52b2d-8d20-4307-a530-2a785b783564",
                 "title": "[Cloudflare Logpush] CASB Findings Over Time (Classified by Severity)",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -887,7 +948,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 12,
@@ -899,7 +961,7 @@
                 "panelIndex": "646e888e-cda9-4e49-b794-1195eae3250d",
                 "title": "[Cloudflare Logpush] Top finding types",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -924,12 +986,9 @@
         "title": "[Logs Cloudflare Logpush] CASB findings",
         "version": 1
     },
-    "coreMigrationVersion": "8.7.1",
-    "created_at": "2023-06-20T10:01:07.707Z",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-6f14e840-0450-11ee-8373-5fabaa30ca64",
-    "migrationVersion": {
-        "dashboard": "8.7.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -995,7 +1054,13 @@
             "id": "logs-*",
             "name": "controlGroup_743835b7-587f-4168-878d-f377ad06688d:optionsListDataView",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

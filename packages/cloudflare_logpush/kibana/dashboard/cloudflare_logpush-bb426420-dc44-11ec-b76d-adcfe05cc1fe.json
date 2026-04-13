@@ -34,7 +34,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "00280489-72e4-4070-a226-57e14a57080f": {
                                             "columnOrder": [
@@ -68,7 +68,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 }
                                             },
                                             "incompleteColumns": {}
@@ -85,15 +85,18 @@
                                 "layers": [
                                     {
                                         "categoryDisplay": "default",
-                                        "groups": [
-                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
-                                        ],
                                         "layerId": "00280489-72e4-4070-a226-57e14a57080f",
                                         "layerType": "data",
                                         "legendDisplay": "default",
-                                        "metric": "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36",
+                                        "legendSize": "auto",
+                                        "metrics": [
+                                            "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36"
+                                        ],
                                         "nestedLegend": false,
-                                        "numberDisplay": "percent"
+                                        "numberDisplay": "percent",
+                                        "primaryGroups": [
+                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
+                                        ]
                                     }
                                 ],
                                 "shape": "pie"
@@ -104,7 +107,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -116,7 +120,7 @@
                 "panelIndex": "6046f18e-7779-4ea6-b387-213bc81b36f0",
                 "title": "Distribution of HTTP Request by Edge Rate Limit Action [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -135,7 +139,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "00280489-72e4-4070-a226-57e14a57080f": {
                                             "columnOrder": [
@@ -169,7 +173,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 }
                                             },
                                             "incompleteColumns": {}
@@ -186,15 +190,18 @@
                                 "layers": [
                                     {
                                         "categoryDisplay": "default",
-                                        "groups": [
-                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
-                                        ],
                                         "layerId": "00280489-72e4-4070-a226-57e14a57080f",
                                         "layerType": "data",
                                         "legendDisplay": "default",
-                                        "metric": "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36",
+                                        "legendSize": "auto",
+                                        "metrics": [
+                                            "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36"
+                                        ],
                                         "nestedLegend": false,
-                                        "numberDisplay": "percent"
+                                        "numberDisplay": "percent",
+                                        "primaryGroups": [
+                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
+                                        ]
                                     }
                                 ],
                                 "shape": "pie"
@@ -205,7 +212,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -217,7 +225,7 @@
                 "panelIndex": "ec4ead06-9bbf-4f27-9dca-03dd92a55089",
                 "title": "Distribution of HTTP Request by Client Request Method [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -236,7 +244,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "00280489-72e4-4070-a226-57e14a57080f": {
                                             "columnOrder": [
@@ -270,7 +278,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 }
                                             },
                                             "incompleteColumns": {}
@@ -287,15 +295,18 @@
                                 "layers": [
                                     {
                                         "categoryDisplay": "default",
-                                        "groups": [
-                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
-                                        ],
                                         "layerId": "00280489-72e4-4070-a226-57e14a57080f",
                                         "layerType": "data",
                                         "legendDisplay": "default",
-                                        "metric": "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36",
+                                        "legendSize": "auto",
+                                        "metrics": [
+                                            "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36"
+                                        ],
                                         "nestedLegend": false,
-                                        "numberDisplay": "percent"
+                                        "numberDisplay": "percent",
+                                        "primaryGroups": [
+                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
+                                        ]
                                     }
                                 ],
                                 "shape": "pie"
@@ -306,7 +317,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -318,7 +330,7 @@
                 "panelIndex": "9c4f4004-d4b0-471f-9535-09c11555e5a1",
                 "title": "Distribution of HTTP Request by Client Device Type [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -337,7 +349,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "a3b36fd5-7e6e-4298-9c99-da41f685b6ac": {
                                             "columnOrder": [
@@ -352,7 +364,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "fe115b65-6c58-4088-ae8d-e8edbc1cf18c": {
                                                     "customLabel": true,
@@ -400,6 +412,7 @@
                                 ],
                                 "legend": {
                                     "isVisible": true,
+                                    "legendSize": "auto",
                                     "position": "right",
                                     "shouldTruncate": false,
                                     "showSingleSeries": true
@@ -420,7 +433,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -432,7 +446,7 @@
                 "panelIndex": "36ba08a4-1ebd-46bd-a95d-6855c7992a68",
                 "title": "Distribution of HTTP Request by Client IP Class [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -451,7 +465,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "00280489-72e4-4070-a226-57e14a57080f": {
                                             "columnOrder": [
@@ -485,7 +499,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 }
                                             },
                                             "incompleteColumns": {}
@@ -502,15 +516,18 @@
                                 "layers": [
                                     {
                                         "categoryDisplay": "default",
-                                        "groups": [
-                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
-                                        ],
                                         "layerId": "00280489-72e4-4070-a226-57e14a57080f",
                                         "layerType": "data",
                                         "legendDisplay": "default",
-                                        "metric": "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36",
+                                        "legendSize": "auto",
+                                        "metrics": [
+                                            "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36"
+                                        ],
                                         "nestedLegend": false,
-                                        "numberDisplay": "percent"
+                                        "numberDisplay": "percent",
+                                        "primaryGroups": [
+                                            "30a50e8b-fb9f-48dc-82ca-bd6069537dcc"
+                                        ]
                                     }
                                 ],
                                 "shape": "pie"
@@ -521,7 +538,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -533,7 +551,7 @@
                 "panelIndex": "42860ae9-0100-4c5b-aad4-e9b9ebd8eb1d",
                 "title": "Distribution of HTTP Request by WAF Profile [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -552,7 +570,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "a3b36fd5-7e6e-4298-9c99-da41f685b6ac": {
                                             "columnOrder": [
@@ -567,7 +585,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "fe115b65-6c58-4088-ae8d-e8edbc1cf18c": {
                                                     "customLabel": true,
@@ -615,6 +633,7 @@
                                 ],
                                 "legend": {
                                     "isVisible": true,
+                                    "legendSize": "auto",
                                     "position": "right",
                                     "shouldTruncate": false,
                                     "showSingleSeries": true
@@ -635,7 +654,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -647,7 +667,7 @@
                 "panelIndex": "94b34910-bec2-4d2d-8cab-03339cee8eee",
                 "title": "Distribution of HTTP Request by Client MTLS Auth Status [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -666,7 +686,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "a3b36fd5-7e6e-4298-9c99-da41f685b6ac": {
                                             "columnOrder": [
@@ -681,7 +701,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "fe115b65-6c58-4088-ae8d-e8edbc1cf18c": {
                                                     "customLabel": true,
@@ -717,15 +737,18 @@
                                 "layers": [
                                     {
                                         "categoryDisplay": "default",
-                                        "groups": [
-                                            "fe115b65-6c58-4088-ae8d-e8edbc1cf18c"
-                                        ],
                                         "layerId": "a3b36fd5-7e6e-4298-9c99-da41f685b6ac",
                                         "layerType": "data",
                                         "legendDisplay": "show",
-                                        "metric": "21ca64f8-cd25-4535-afa2-a70bbaaa3295",
+                                        "legendSize": "auto",
+                                        "metrics": [
+                                            "21ca64f8-cd25-4535-afa2-a70bbaaa3295"
+                                        ],
                                         "nestedLegend": false,
-                                        "numberDisplay": "percent"
+                                        "numberDisplay": "percent",
+                                        "primaryGroups": [
+                                            "fe115b65-6c58-4088-ae8d-e8edbc1cf18c"
+                                        ]
                                     }
                                 ],
                                 "shape": "treemap"
@@ -736,7 +759,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -748,7 +772,7 @@
                 "panelIndex": "ff959b8e-d7b9-4c5e-8d3b-e0381f0d1e35",
                 "title": "Distribution of HTTP Request by Source Country [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -771,11 +795,9 @@
         "title": "[Logs Cloudflare Logpush] HTTP Request",
         "version": 1
     },
-    "coreMigrationVersion": "7.17.0",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-bb426420-dc44-11ec-b76d-adcfe05cc1fe",
-    "migrationVersion": {
-        "dashboard": "7.17.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -851,7 +873,13 @@
             "id": "cloudflare_logpush-a58b3a80-e257-11ec-b57d-b9b9d5221e36",
             "name": "dbb10aab-b109-41f3-8e37-dfc4d3a2c4cd:panel_dbb10aab-b109-41f3-8e37-dfc4d3a2c4cd",
             "type": "search"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

@@ -3,8 +3,112 @@
         "controlGroupInput": {
             "chainingSystem": "HIERARCHICAL",
             "controlStyle": "oneLine",
-            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
-            "panelsJSON": "{\"1c0fa33b-95c0-46eb-b765-9388ef0db378\":{\"order\":1,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"source.ip\",\"title\":\"Source IP\",\"id\":\"1c0fa33b-95c0-46eb-b765-9388ef0db378\",\"selectedOptions\":[],\"enhancements\":{}}},\"b76daf50-00a7-4595-8147-31d1305fac30\":{\"order\":3,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"client.ip\",\"title\":\"Client IP\",\"id\":\"b76daf50-00a7-4595-8147-31d1305fac30\",\"enhancements\":{}}},\"ece2ad6d-3a49-466e-9012-4fdd2a9e2b64\":{\"order\":2,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"destination.ip\",\"title\":\"Destination IP\",\"id\":\"ece2ad6d-3a49-466e-9012-4fdd2a9e2b64\",\"enhancements\":{}}},\"38205a9e-7617-49b7-a833-382c9909d2b6\":{\"order\":5,\"width\":\"small\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"source.geo.country_name\",\"title\":\"Source Country\",\"id\":\"38205a9e-7617-49b7-a833-382c9909d2b6\",\"enhancements\":{}}},\"284861d4-c636-4589-a477-abe82e25d3ef\":{\"order\":6,\"width\":\"small\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"client.geo.country_name\",\"title\":\"Client Country\",\"id\":\"284861d4-c636-4589-a477-abe82e25d3ef\",\"enhancements\":{}}},\"1ac0c1b1-56da-45c2-a5b9-571b362e42dd\":{\"order\":4,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"event.action\",\"title\":\"Action\",\"id\":\"1ac0c1b1-56da-45c2-a5b9-571b362e42dd\",\"enhancements\":{}}},\"1493457d-79d9-47e6-ba81-8741d24ecff6\":{\"order\":0,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"agent.name\",\"title\":\"Agent name\",\"id\":\"1493457d-79d9-47e6-ba81-8741d24ecff6\",\"enhancements\":{}}},\"70c6521f-648e-4e70-8fd7-516e0fe48a6b\":{\"order\":7,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"host.name\",\"title\":\"Hostname\",\"id\":\"70c6521f-648e-4e70-8fd7-516e0fe48a6b\",\"enhancements\":{}}}}"
+            "ignoreParentSettingsJSON": {
+                "ignoreFilters": false,
+                "ignoreQuery": false,
+                "ignoreTimerange": false,
+                "ignoreValidations": false
+            },
+            "panelsJSON": {
+                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "agent.name",
+                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "1ac0c1b1-56da-45c2-a5b9-571b362e42dd": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "event.action",
+                        "id": "1ac0c1b1-56da-45c2-a5b9-571b362e42dd",
+                        "title": "Action"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "1c0fa33b-95c0-46eb-b765-9388ef0db378": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.ip",
+                        "id": "1c0fa33b-95c0-46eb-b765-9388ef0db378",
+                        "selectedOptions": [],
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "284861d4-c636-4589-a477-abe82e25d3ef": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "client.geo.country_name",
+                        "id": "284861d4-c636-4589-a477-abe82e25d3ef",
+                        "title": "Client Country"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "small"
+                },
+                "38205a9e-7617-49b7-a833-382c9909d2b6": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.geo.country_name",
+                        "id": "38205a9e-7617-49b7-a833-382c9909d2b6",
+                        "title": "Source Country"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "small"
+                },
+                "70c6521f-648e-4e70-8fd7-516e0fe48a6b": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "host.name",
+                        "id": "70c6521f-648e-4e70-8fd7-516e0fe48a6b",
+                        "title": "Hostname"
+                    },
+                    "grow": true,
+                    "order": 7,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b76daf50-00a7-4595-8147-31d1305fac30": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "client.ip",
+                        "id": "b76daf50-00a7-4595-8147-31d1305fac30",
+                        "title": "Client IP"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ece2ad6d-3a49-466e-9012-4fdd2a9e2b64": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "destination.ip",
+                        "id": "ece2ad6d-3a49-466e-9012-4fdd2a9e2b64",
+                        "title": "Destination IP"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
+            "showApplySelections": false
         },
         "description": "Overview of Zero Trust events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
@@ -49,7 +153,8 @@
                         "title": "",
                         "type": "markdown",
                         "uiState": {}
-                    }
+                    },
+                    "type": "visualization"
                 },
                 "gridData": {
                     "h": 32,
@@ -61,7 +166,7 @@
                 "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
                 "title": "Table of contents",
                 "type": "visualization",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -254,7 +359,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 16,
@@ -266,7 +372,7 @@
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                 "title": "[Cloudflare Logpush] Type of events",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -454,7 +560,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 16,
@@ -466,7 +573,7 @@
                 "panelIndex": "39844e37-8f9f-4cfc-b337-e6b5402ebb9a",
                 "title": "[Cloudflare Logpush] Success rate of actions",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -656,7 +763,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 16,
@@ -668,7 +776,7 @@
                 "panelIndex": "7941c734-ddfe-4483-bebc-d22f763dff7d",
                 "title": "[Cloudflare Logpush] Top IP addresses",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -856,7 +964,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 16,
@@ -868,16 +977,432 @@
                 "panelIndex": "f76c26eb-8ca7-48a5-b530-1077700d3f51",
                 "title": "[Cloudflare Logpush] Top host names",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
                     "attributes": {
                         "description": "",
-                        "layerListJSON": "[{\"sourceDescriptor\":{\"type\":\"EMS_TMS\",\"isAutoSelect\":true,\"lightModeDefault\":\"road_map_desaturated\"},\"id\":\"84e94c8e-19d9-4dfe-8e37-c43c004c3f05\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":1,\"visible\":true,\"style\":{\"type\":\"TILE\"},\"includeInFitToBounds\":true,\"type\":\"EMS_VECTOR_TILE\"},{\"alpha\":0.75,\"id\":\"5f05840e-eb7e-45bd-9319-e6746cc4fa49\",\"includeInFitToBounds\":true,\"joins\":[],\"label\":\"Source IP country map [Cloudflare Logpush]\",\"maxZoom\":24,\"minZoom\":0,\"sourceDescriptor\":{\"applyForceRefresh\":true,\"applyGlobalQuery\":true,\"applyGlobalTime\":true,\"geoField\":\"source.geo.location\",\"id\":\"0f8532d1-8c6a-4c1d-900e-8d6eb49112df\",\"metrics\":[{\"type\":\"count\"}],\"requestType\":\"point\",\"resolution\":\"MOST_FINE\",\"type\":\"ES_GEO_GRID\",\"indexPatternRefName\":\"layer_1_source_index_pattern\"},\"style\":{\"isTimeAware\":true,\"properties\":{\"fillColor\":{\"options\":{\"color\":\"Yellow to Red\",\"colorCategory\":\"palette_0\",\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":false,\"sigma\":3},\"type\":\"ORDINAL\"},\"type\":\"DYNAMIC\"},\"icon\":{\"options\":{\"value\":\"marker\"},\"type\":\"STATIC\"},\"iconOrientation\":{\"options\":{\"orientation\":0},\"type\":\"STATIC\"},\"iconSize\":{\"options\":{\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":false,\"sigma\":3},\"maxSize\":18,\"minSize\":7},\"type\":\"DYNAMIC\"},\"labelBorderColor\":{\"options\":{\"color\":\"#FFFFFF\"},\"type\":\"STATIC\"},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}},\"labelColor\":{\"options\":{\"color\":\"#000000\"},\"type\":\"STATIC\"},\"labelSize\":{\"options\":{\"size\":14},\"type\":\"STATIC\"},\"labelText\":{\"options\":{\"value\":\"\"},\"type\":\"STATIC\"},\"lineColor\":{\"options\":{\"color\":\"#3d3d3d\"},\"type\":\"STATIC\"},\"lineWidth\":{\"options\":{\"size\":1},\"type\":\"STATIC\"},\"symbolizeAs\":{\"options\":{\"value\":\"circle\"}}},\"type\":\"VECTOR\"},\"type\":\"GEOJSON_VECTOR\",\"visible\":true},{\"sourceDescriptor\":{\"geoField\":\"client.geo.location\",\"requestType\":\"point\",\"resolution\":\"MOST_FINE\",\"id\":\"86a37aad-67e8-4d0f-ba0f-acc9065bc182\",\"type\":\"ES_GEO_GRID\",\"applyGlobalQuery\":true,\"applyGlobalTime\":true,\"applyForceRefresh\":true,\"metrics\":[{\"type\":\"count\"}],\"indexPatternRefName\":\"layer_2_source_index_pattern\"},\"style\":{\"type\":\"VECTOR\",\"properties\":{\"icon\":{\"type\":\"STATIC\",\"options\":{\"value\":\"marker\"}},\"fillColor\":{\"type\":\"DYNAMIC\",\"options\":{\"color\":\"Yellow to Red\",\"colorCategory\":\"palette_0\",\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":true,\"sigma\":3},\"type\":\"ORDINAL\",\"useCustomColorRamp\":false}},\"lineColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFF\"}},\"lineWidth\":{\"type\":\"STATIC\",\"options\":{\"size\":1}},\"iconSize\":{\"type\":\"DYNAMIC\",\"options\":{\"minSize\":7,\"maxSize\":18,\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":true,\"sigma\":3}}},\"iconOrientation\":{\"type\":\"STATIC\",\"options\":{\"orientation\":0}},\"labelText\":{\"type\":\"DYNAMIC\",\"options\":{\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"}}},\"labelColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#3D3D3D\"}},\"labelSize\":{\"type\":\"STATIC\",\"options\":{\"size\":14}},\"labelZoomRange\":{\"options\":{\"useLayerZoomRange\":true,\"minZoom\":0,\"maxZoom\":24}},\"labelBorderColor\":{\"type\":\"STATIC\",\"options\":{\"color\":\"#FFFFFF\"}},\"symbolizeAs\":{\"options\":{\"value\":\"circle\"}},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}},\"labelPosition\":{\"options\":{\"position\":\"CENTER\"}}},\"isTimeAware\":true},\"id\":\"d6b9024d-2fba-4f76-bff0-7f1e40ab8003\",\"label\":\"Client IPs country map [Cloudflare Logpush]\",\"minZoom\":0,\"maxZoom\":24,\"alpha\":0.75,\"visible\":true,\"includeInFitToBounds\":true,\"type\":\"GEOJSON_VECTOR\",\"joins\":[],\"disableTooltips\":false}]",
-                        "mapStateJSON": "{\"adHocDataViews\":[],\"zoom\":1.78,\"center\":{\"lon\":0,\"lat\":16.40767},\"timeFilters\":{\"from\":\"now-1y/d\",\"to\":\"now\"},\"refreshConfig\":{\"isPaused\":true,\"interval\":0},\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filters\":[{\"meta\":{\"disabled\":false,\"negate\":false,\"alias\":\"Zero Trust dataset\",\"index\":\"logs-*\",\"key\":\"data_stream.dataset\",\"field\":\"data_stream.dataset\",\"params\":[\"cloudflare_logpush.access_request\",\"cloudflare_logpush.audit\",\"cloudflare_logpush.casb\",\"cloudflare_logpush.device_posture\",\"cloudflare_logpush.gateway_dns\",\"cloudflare_logpush.gateway_http\",\"cloudflare_logpush.gateway_network\",\"cloudflare_logpush.network_session\"],\"value\":[\"cloudflare_logpush.access_request\",\"cloudflare_logpush.audit\",\"cloudflare_logpush.casb\",\"cloudflare_logpush.device_posture\",\"cloudflare_logpush.gateway_dns\",\"cloudflare_logpush.gateway_http\",\"cloudflare_logpush.gateway_network\",\"cloudflare_logpush.network_session\"],\"type\":\"phrases\"},\"query\":{\"bool\":{\"minimum_should_match\":1,\"should\":[{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.access_request\"}},{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.audit\"}},{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.casb\"}},{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.device_posture\"}},{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.gateway_dns\"}},{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.gateway_http\"}},{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.gateway_network\"}},{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.network_session\"}}]}},\"$state\":{\"store\":\"appState\"}}],\"settings\":{\"autoFitToDataBounds\":false,\"backgroundColor\":\"#ffffff\",\"customIcons\":[],\"disableInteractive\":false,\"disableTooltipControl\":false,\"hideToolbarOverlay\":false,\"hideLayerControl\":false,\"hideViewControl\":false,\"initialLocation\":\"LAST_SAVED_LOCATION\",\"fixedLocation\":{\"lat\":0,\"lon\":0,\"zoom\":2},\"browserLocation\":{\"zoom\":2},\"keydownScrollZoom\":false,\"maxZoom\":24,\"minZoom\":0,\"showScaleControl\":false,\"showSpatialFilters\":true,\"showTimesliderToggleButton\":true,\"spatialFiltersAlpa\":0.3,\"spatialFiltersFillColor\":\"#DA8B45\",\"spatialFiltersLineColor\":\"#DA8B45\"}}",
+                        "layerListJSON": [
+                            {
+                                "alpha": 1,
+                                "id": "84e94c8e-19d9-4dfe-8e37-c43c004c3f05",
+                                "includeInFitToBounds": true,
+                                "label": null,
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "sourceDescriptor": {
+                                    "isAutoSelect": true,
+                                    "lightModeDefault": "road_map_desaturated",
+                                    "type": "EMS_TMS"
+                                },
+                                "style": {
+                                    "type": "TILE"
+                                },
+                                "type": "EMS_VECTOR_TILE",
+                                "visible": true
+                            },
+                            {
+                                "alpha": 0.75,
+                                "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
+                                "includeInFitToBounds": true,
+                                "joins": [],
+                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "sourceDescriptor": {
+                                    "applyForceRefresh": true,
+                                    "applyGlobalQuery": true,
+                                    "applyGlobalTime": true,
+                                    "geoField": "source.geo.location",
+                                    "id": "0f8532d1-8c6a-4c1d-900e-8d6eb49112df",
+                                    "indexPatternRefName": "layer_1_source_index_pattern",
+                                    "metrics": [
+                                        {
+                                            "type": "count"
+                                        }
+                                    ],
+                                    "requestType": "point",
+                                    "resolution": "MOST_FINE",
+                                    "type": "ES_GEO_GRID"
+                                },
+                                "style": {
+                                    "isTimeAware": true,
+                                    "properties": {
+                                        "fillColor": {
+                                            "options": {
+                                                "color": "Yellow to Red",
+                                                "colorCategory": "palette_0",
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": false,
+                                                    "sigma": 3
+                                                },
+                                                "type": "ORDINAL"
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "icon": {
+                                            "options": {
+                                                "value": "marker"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconOrientation": {
+                                            "options": {
+                                                "orientation": 0
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconSize": {
+                                            "options": {
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": false,
+                                                    "sigma": 3
+                                                },
+                                                "maxSize": 18,
+                                                "minSize": 7
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "labelBorderColor": {
+                                            "options": {
+                                                "color": "#FFFFFF"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelBorderSize": {
+                                            "options": {
+                                                "size": "SMALL"
+                                            }
+                                        },
+                                        "labelColor": {
+                                            "options": {
+                                                "color": "#000000"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelSize": {
+                                            "options": {
+                                                "size": 14
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelText": {
+                                            "options": {
+                                                "value": ""
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "lineColor": {
+                                            "options": {
+                                                "color": "#3d3d3d"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "lineWidth": {
+                                            "options": {
+                                                "size": 1
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "symbolizeAs": {
+                                            "options": {
+                                                "value": "circle"
+                                            }
+                                        }
+                                    },
+                                    "type": "VECTOR"
+                                },
+                                "type": "GEOJSON_VECTOR",
+                                "visible": true
+                            },
+                            {
+                                "alpha": 0.75,
+                                "disableTooltips": false,
+                                "id": "d6b9024d-2fba-4f76-bff0-7f1e40ab8003",
+                                "includeInFitToBounds": true,
+                                "joins": [],
+                                "label": "Client IPs country map [Cloudflare Logpush]",
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "sourceDescriptor": {
+                                    "applyForceRefresh": true,
+                                    "applyGlobalQuery": true,
+                                    "applyGlobalTime": true,
+                                    "geoField": "client.geo.location",
+                                    "id": "86a37aad-67e8-4d0f-ba0f-acc9065bc182",
+                                    "indexPatternRefName": "layer_2_source_index_pattern",
+                                    "metrics": [
+                                        {
+                                            "type": "count"
+                                        }
+                                    ],
+                                    "requestType": "point",
+                                    "resolution": "MOST_FINE",
+                                    "type": "ES_GEO_GRID"
+                                },
+                                "style": {
+                                    "isTimeAware": true,
+                                    "properties": {
+                                        "fillColor": {
+                                            "options": {
+                                                "color": "Yellow to Red",
+                                                "colorCategory": "palette_0",
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": true,
+                                                    "sigma": 3
+                                                },
+                                                "type": "ORDINAL",
+                                                "useCustomColorRamp": false
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "icon": {
+                                            "options": {
+                                                "value": "marker"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconOrientation": {
+                                            "options": {
+                                                "orientation": 0
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconSize": {
+                                            "options": {
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": true,
+                                                    "sigma": 3
+                                                },
+                                                "maxSize": 18,
+                                                "minSize": 7
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "labelBorderColor": {
+                                            "options": {
+                                                "color": "#FFFFFF"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelBorderSize": {
+                                            "options": {
+                                                "size": "SMALL"
+                                            }
+                                        },
+                                        "labelColor": {
+                                            "options": {
+                                                "color": "#3D3D3D"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelPosition": {
+                                            "options": {
+                                                "position": "CENTER"
+                                            }
+                                        },
+                                        "labelSize": {
+                                            "options": {
+                                                "size": 14
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelText": {
+                                            "options": {
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                }
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "labelZoomRange": {
+                                            "options": {
+                                                "maxZoom": 24,
+                                                "minZoom": 0,
+                                                "useLayerZoomRange": true
+                                            }
+                                        },
+                                        "lineColor": {
+                                            "options": {
+                                                "color": "#FFF"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "lineWidth": {
+                                            "options": {
+                                                "size": 1
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "symbolizeAs": {
+                                            "options": {
+                                                "value": "circle"
+                                            }
+                                        }
+                                    },
+                                    "type": "VECTOR"
+                                },
+                                "type": "GEOJSON_VECTOR",
+                                "visible": true
+                            }
+                        ],
+                        "mapStateJSON": {
+                            "adHocDataViews": [],
+                            "center": {
+                                "lat": 16.40767,
+                                "lon": 0
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": "Zero Trust dataset",
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "logs-*",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": [
+                                            "cloudflare_logpush.access_request",
+                                            "cloudflare_logpush.audit",
+                                            "cloudflare_logpush.casb",
+                                            "cloudflare_logpush.device_posture",
+                                            "cloudflare_logpush.gateway_dns",
+                                            "cloudflare_logpush.gateway_http",
+                                            "cloudflare_logpush.gateway_network",
+                                            "cloudflare_logpush.network_session"
+                                        ],
+                                        "type": "phrases",
+                                        "value": [
+                                            "cloudflare_logpush.access_request",
+                                            "cloudflare_logpush.audit",
+                                            "cloudflare_logpush.casb",
+                                            "cloudflare_logpush.device_posture",
+                                            "cloudflare_logpush.gateway_dns",
+                                            "cloudflare_logpush.gateway_http",
+                                            "cloudflare_logpush.gateway_network",
+                                            "cloudflare_logpush.network_session"
+                                        ]
+                                    },
+                                    "query": {
+                                        "bool": {
+                                            "minimum_should_match": 1,
+                                            "should": [
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.access_request"
+                                                    }
+                                                },
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.audit"
+                                                    }
+                                                },
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.casb"
+                                                    }
+                                                },
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.device_posture"
+                                                    }
+                                                },
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.gateway_dns"
+                                                    }
+                                                },
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.gateway_http"
+                                                    }
+                                                },
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.gateway_network"
+                                                    }
+                                                },
+                                                {
+                                                    "match_phrase": {
+                                                        "data_stream.dataset": "cloudflare_logpush.network_session"
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "lucene",
+                                "query": ""
+                            },
+                            "refreshConfig": {
+                                "interval": 0,
+                                "isPaused": true
+                            },
+                            "settings": {
+                                "autoFitToDataBounds": false,
+                                "backgroundColor": "#ffffff",
+                                "browserLocation": {
+                                    "zoom": 2
+                                },
+                                "customIcons": [],
+                                "disableInteractive": false,
+                                "disableTooltipControl": false,
+                                "fixedLocation": {
+                                    "lat": 0,
+                                    "lon": 0,
+                                    "zoom": 2
+                                },
+                                "hideLayerControl": false,
+                                "hideToolbarOverlay": false,
+                                "hideViewControl": false,
+                                "initialLocation": "LAST_SAVED_LOCATION",
+                                "keydownScrollZoom": false,
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "showScaleControl": false,
+                                "showSpatialFilters": true,
+                                "showTimesliderToggleButton": true,
+                                "spatialFiltersAlpa": 0.3,
+                                "spatialFiltersFillColor": "#DA8B45",
+                                "spatialFiltersLineColor": "#DA8B45"
+                            },
+                            "timeFilters": {
+                                "from": "now-1y/d",
+                                "to": "now"
+                            },
+                            "zoom": 1.78
+                        },
                         "title": "Top Traffic Countries Map [Cloudflare]",
-                        "uiStateJSON": "{\"isLayerTOCOpen\":false,\"openTOCDetails\":[\"d6b9024d-2fba-4f76-bff0-7f1e40ab8003\",\"5f05840e-eb7e-45bd-9319-e6746cc4fa49\"]}"
+                        "uiStateJSON": {
+                            "isLayerTOCOpen": false,
+                            "openTOCDetails": [
+                                "d6b9024d-2fba-4f76-bff0-7f1e40ab8003",
+                                "5f05840e-eb7e-45bd-9319-e6746cc4fa49"
+                            ]
+                        }
                     },
                     "enhancements": {},
                     "hiddenLayers": [],
@@ -894,7 +1419,8 @@
                         "lon": 0,
                         "zoom": 1.78
                     },
-                    "openTOCDetails": []
+                    "openTOCDetails": [],
+                    "type": "map"
                 },
                 "gridData": {
                     "h": 29,
@@ -906,19 +1432,16 @@
                 "panelIndex": "d76b8fae-ca21-4136-b34a-1825fae3c292",
                 "title": "[Cloudflare Logpush] Top Traffic Countries",
                 "type": "map",
-                "version": "8.7.1"
+                "version": "8.9.0"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] Zero Trust overview",
         "version": 1
     },
-    "coreMigrationVersion": "8.7.1",
-    "created_at": "2023-06-20T09:59:55.409Z",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
-    "migrationVersion": {
-        "dashboard": "8.7.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -1009,7 +1532,13 @@
             "id": "logs-*",
             "name": "controlGroup_70c6521f-648e-4e70-8fd7-516e0fe48a6b:optionsListDataView",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

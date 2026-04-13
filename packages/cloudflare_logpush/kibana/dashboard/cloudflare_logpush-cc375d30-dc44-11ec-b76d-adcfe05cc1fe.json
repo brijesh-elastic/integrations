@@ -34,7 +34,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "369c4c11-370e-43b1-9ecf-0e3d9fb66f98": {
                                             "columnOrder": [
@@ -50,7 +50,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "7a4f98bf-868e-44d7-a3a8-7133e4ba4837": {
                                                     "customLabel": true,
@@ -119,7 +119,9 @@
                                     }
                                 ],
                                 "layerId": "369c4c11-370e-43b1-9ecf-0e3d9fb66f98",
-                                "layerType": "data"
+                                "layerType": "data",
+                                "rowHeight": "single",
+                                "rowHeightLines": 1
                             }
                         },
                         "title": "",
@@ -127,7 +129,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -139,7 +142,7 @@
                 "panelIndex": "d6d36d84-cb11-4993-a30a-d82118413eda",
                 "title": "Top 10 Source ASN and ASN Description [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -158,7 +161,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "f9bf86eb-26ae-4ddb-9181-98538c308622": {
                                             "columnOrder": [
@@ -192,7 +195,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 }
                                             },
                                             "incompleteColumns": {}
@@ -209,15 +212,18 @@
                                 "layers": [
                                     {
                                         "categoryDisplay": "default",
-                                        "groups": [
-                                            "72e4b51b-b59b-42ba-bfd8-bc61fe3fa8e0"
-                                        ],
                                         "layerId": "f9bf86eb-26ae-4ddb-9181-98538c308622",
                                         "layerType": "data",
                                         "legendDisplay": "default",
-                                        "metric": "9a90d872-9aed-4dbe-9004-a8b6e34449c1",
+                                        "legendSize": "auto",
+                                        "metrics": [
+                                            "9a90d872-9aed-4dbe-9004-a8b6e34449c1"
+                                        ],
                                         "nestedLegend": false,
-                                        "numberDisplay": "percent"
+                                        "numberDisplay": "percent",
+                                        "primaryGroups": [
+                                            "72e4b51b-b59b-42ba-bfd8-bc61fe3fa8e0"
+                                        ]
                                     }
                                 ],
                                 "shape": "pie"
@@ -228,7 +234,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -240,18 +247,16 @@
                 "panelIndex": "e28f00db-dc65-4c0c-84ce-dbf64b568c70",
                 "title": "Distribution of NEL Report by Error Type [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] NEL Report",
         "version": 1
     },
-    "coreMigrationVersion": "7.17.0",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-cc375d30-dc44-11ec-b76d-adcfe05cc1fe",
-    "migrationVersion": {
-        "dashboard": "7.17.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -272,7 +277,13 @@
             "id": "logs-*",
             "name": "e28f00db-dc65-4c0c-84ce-dbf64b568c70:indexpattern-datasource-layer-f9bf86eb-26ae-4ddb-9181-98538c308622",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

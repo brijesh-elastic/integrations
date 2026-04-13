@@ -34,7 +34,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "03e29e55-afcb-437c-bb00-1f567fd1318c": {
                                             "columnOrder": [
@@ -49,7 +49,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "74abfc31-4cf6-459a-8dfb-156f029eb966": {
                                                     "customLabel": true,
@@ -94,7 +94,9 @@
                                     }
                                 ],
                                 "layerId": "03e29e55-afcb-437c-bb00-1f567fd1318c",
-                                "layerType": "data"
+                                "layerType": "data",
+                                "rowHeight": "single",
+                                "rowHeightLines": 1
                             }
                         },
                         "title": "",
@@ -102,7 +104,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -114,7 +117,7 @@
                 "panelIndex": "8b2c5062-d0d3-42b5-9e76-426e3ac2d3fa",
                 "title": "Top 10 Query Name [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -133,7 +136,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "03e29e55-afcb-437c-bb00-1f567fd1318c": {
                                             "columnOrder": [
@@ -148,7 +151,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "74abfc31-4cf6-459a-8dfb-156f029eb966": {
                                                     "customLabel": true,
@@ -193,7 +196,9 @@
                                     }
                                 ],
                                 "layerId": "03e29e55-afcb-437c-bb00-1f567fd1318c",
-                                "layerType": "data"
+                                "layerType": "data",
+                                "rowHeight": "single",
+                                "rowHeightLines": 1
                             }
                         },
                         "title": "",
@@ -201,7 +206,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -213,7 +219,7 @@
                 "panelIndex": "d6ed2af3-5357-4d8c-a56d-317a6e941516",
                 "title": "Top 10 Source IP [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -232,7 +238,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "03e29e55-afcb-437c-bb00-1f567fd1318c": {
                                             "columnOrder": [
@@ -247,7 +253,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "74abfc31-4cf6-459a-8dfb-156f029eb966": {
                                                     "customLabel": true,
@@ -292,7 +298,9 @@
                                     }
                                 ],
                                 "layerId": "03e29e55-afcb-437c-bb00-1f567fd1318c",
-                                "layerType": "data"
+                                "layerType": "data",
+                                "rowHeight": "single",
+                                "rowHeightLines": 1
                             }
                         },
                         "title": "",
@@ -300,7 +308,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -312,7 +321,7 @@
                 "panelIndex": "959ef816-ed24-47cc-8e0d-b0cef0e700f9",
                 "title": "Top 10 EDNS Subnet [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -331,7 +340,7 @@
                         ],
                         "state": {
                             "datasourceStates": {
-                                "indexpattern": {
+                                "formBased": {
                                     "layers": {
                                         "03e29e55-afcb-437c-bb00-1f567fd1318c": {
                                             "columnOrder": [
@@ -386,7 +395,7 @@
                                                     "label": "Record",
                                                     "operationType": "count",
                                                     "scale": "ratio",
-                                                    "sourceField": "Records"
+                                                    "sourceField": "___records___"
                                                 },
                                                 "74abfc31-4cf6-459a-8dfb-156f029eb966": {
                                                     "customLabel": true,
@@ -439,7 +448,9 @@
                                     }
                                 ],
                                 "layerId": "03e29e55-afcb-437c-bb00-1f567fd1318c",
-                                "layerType": "data"
+                                "layerType": "data",
+                                "rowHeight": "single",
+                                "rowHeightLines": 1
                             }
                         },
                         "title": "",
@@ -447,7 +458,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -459,18 +471,16 @@
                 "panelIndex": "8ec3f64a-33a1-463d-95a1-7bc3058a17d7",
                 "title": "Top 10 Query Name, Query Type and Response Code [Logs Cloudflare Logpush]",
                 "type": "lens",
-                "version": "7.17.0"
+                "version": "8.9.0"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] DNS",
         "version": 1
     },
-    "coreMigrationVersion": "7.17.0",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-87f6ad60-dc44-11ec-b76d-adcfe05cc1fe",
-    "migrationVersion": {
-        "dashboard": "7.17.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -511,7 +521,13 @@
             "id": "logs-*",
             "name": "8ec3f64a-33a1-463d-95a1-7bc3058a17d7:indexpattern-datasource-layer-03e29e55-afcb-437c-bb00-1f567fd1318c",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

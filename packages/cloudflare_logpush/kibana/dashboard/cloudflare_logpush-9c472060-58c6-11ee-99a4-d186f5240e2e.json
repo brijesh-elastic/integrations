@@ -3,8 +3,111 @@
         "controlGroupInput": {
             "chainingSystem": "HIERARCHICAL",
             "controlStyle": "oneLine",
-            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
-            "panelsJSON": "{\"1493457d-79d9-47e6-ba81-8741d24ecff6\":{\"order\":0,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"agent.name\",\"title\":\"Agent name\",\"id\":\"1493457d-79d9-47e6-ba81-8741d24ecff6\",\"enhancements\":{}}},\"8365b589-ff9e-4598-a03d-e04878b52053\":{\"type\":\"optionsListControl\",\"order\":1,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"8365b589-ff9e-4598-a03d-e04878b52053\",\"fieldName\":\"source.geo.country_name\",\"title\":\"Source Country\",\"enhancements\":{}}},\"bb54f1a9-55ae-4b05-8a10-236a5a785ece\":{\"type\":\"optionsListControl\",\"order\":2,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"bb54f1a9-55ae-4b05-8a10-236a5a785ece\",\"fieldName\":\"source.ip\",\"title\":\"Source IP\",\"enhancements\":{}}},\"ed6ccccc-bd31-4361-8632-4bb0bcce2eda\":{\"type\":\"optionsListControl\",\"order\":6,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"ed6ccccc-bd31-4361-8632-4bb0bcce2eda\",\"fieldName\":\"cloudflare_logpush.dns_firewall.cluster_id\",\"title\":\"Cluster ID\",\"enhancements\":{}}},\"148de5a5-3f07-4ec5-bb33-1566db05c8db\":{\"type\":\"optionsListControl\",\"order\":4,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"148de5a5-3f07-4ec5-bb33-1566db05c8db\",\"fieldName\":\"dns.question.name\",\"title\":\"Question Name\",\"enhancements\":{}}},\"df50174f-1f3c-4212-8048-bb0f462e2ecf\":{\"type\":\"optionsListControl\",\"order\":7,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"df50174f-1f3c-4212-8048-bb0f462e2ecf\",\"fieldName\":\"cloudflare_logpush.dns_firewall.edns.subnet\",\"title\":\"EDNS Subnet\",\"enhancements\":{}}},\"b7909ab1-800a-4129-b28f-d5b82466d4ee\":{\"type\":\"optionsListControl\",\"order\":3,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"b7909ab1-800a-4129-b28f-d5b82466d4ee\",\"fieldName\":\"cloudflare_logpush.dns_firewall.upstream.ip\",\"title\":\"Upstream IP\",\"enhancements\":{}}},\"c7619009-c941-4e72-a31e-12ad22ebc34a\":{\"type\":\"optionsListControl\",\"order\":5,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"c7619009-c941-4e72-a31e-12ad22ebc34a\",\"fieldName\":\"dns.response_code\",\"title\":\"DNS Response Code\",\"enhancements\":{}}}}"
+            "ignoreParentSettingsJSON": {
+                "ignoreFilters": false,
+                "ignoreQuery": false,
+                "ignoreTimerange": false,
+                "ignoreValidations": false
+            },
+            "panelsJSON": {
+                "148de5a5-3f07-4ec5-bb33-1566db05c8db": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "dns.question.name",
+                        "id": "148de5a5-3f07-4ec5-bb33-1566db05c8db",
+                        "title": "Question Name"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "agent.name",
+                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "8365b589-ff9e-4598-a03d-e04878b52053": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.geo.country_name",
+                        "id": "8365b589-ff9e-4598-a03d-e04878b52053",
+                        "title": "Source Country"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b7909ab1-800a-4129-b28f-d5b82466d4ee": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.dns_firewall.upstream.ip",
+                        "id": "b7909ab1-800a-4129-b28f-d5b82466d4ee",
+                        "title": "Upstream IP"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "bb54f1a9-55ae-4b05-8a10-236a5a785ece": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.ip",
+                        "id": "bb54f1a9-55ae-4b05-8a10-236a5a785ece",
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "c7619009-c941-4e72-a31e-12ad22ebc34a": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "dns.response_code",
+                        "id": "c7619009-c941-4e72-a31e-12ad22ebc34a",
+                        "title": "DNS Response Code"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "df50174f-1f3c-4212-8048-bb0f462e2ecf": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.dns_firewall.edns.subnet",
+                        "id": "df50174f-1f3c-4212-8048-bb0f462e2ecf",
+                        "title": "EDNS Subnet"
+                    },
+                    "grow": true,
+                    "order": 7,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ed6ccccc-bd31-4361-8632-4bb0bcce2eda": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.dns_firewall.cluster_id",
+                        "id": "ed6ccccc-bd31-4361-8632-4bb0bcce2eda",
+                        "title": "Cluster ID"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
+            "showApplySelections": false
         },
         "description": "DNS Firewall logs collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
@@ -49,7 +152,8 @@
                         "title": "",
                         "type": "markdown",
                         "uiState": {}
-                    }
+                    },
+                    "type": "visualization"
                 },
                 "gridData": {
                     "h": 42,
@@ -61,7 +165,7 @@
                 "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
                 "title": "Table of contents",
                 "type": "visualization",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -234,7 +338,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -246,7 +351,7 @@
                 "panelIndex": "d845296b-8cc9-4ebc-ad24-d4097eedeb25",
                 "title": "[Cloudflare Logpush] DNS Firewall Logs over Time",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -435,7 +540,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -447,7 +553,7 @@
                 "panelIndex": "d978b50c-c675-4316-a978-a79a48ba7f98",
                 "title": "[Cloudflare Logpush] DNS Query Size over Time",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -577,7 +683,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -589,7 +696,7 @@
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                 "title": "[Cloudflare Logpush] Top DNS Query Names",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -719,7 +826,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -731,7 +839,7 @@
                 "panelIndex": "e4b3e2e5-347d-44cc-a02b-38152de0b2ec",
                 "title": "[Cloudflare Logpush] Top DNS Response Code",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -859,7 +967,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -871,7 +980,7 @@
                 "panelIndex": "6eae2481-3961-4a03-9273-4898b69807aa",
                 "title": "[Cloudflare Logpush] Top Cluster IDs",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -999,7 +1108,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -1011,16 +1121,231 @@
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
                 "title": "[Cloudflare Logpush] Top DNS Request Source by Country",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
                     "attributes": {
                         "description": "",
-                        "layerListJSON": "[{\"sourceDescriptor\":{\"type\":\"EMS_TMS\",\"isAutoSelect\":true,\"lightModeDefault\":\"road_map_desaturated\"},\"id\":\"84e94c8e-19d9-4dfe-8e37-c43c004c3f05\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":1,\"visible\":true,\"style\":{\"type\":\"TILE\"},\"includeInFitToBounds\":true,\"type\":\"EMS_VECTOR_TILE\"},{\"alpha\":0.75,\"id\":\"5f05840e-eb7e-45bd-9319-e6746cc4fa49\",\"includeInFitToBounds\":true,\"joins\":[],\"label\":\"Source IP country map [Cloudflare Logpush]\",\"maxZoom\":24,\"minZoom\":0,\"sourceDescriptor\":{\"applyForceRefresh\":true,\"applyGlobalQuery\":true,\"applyGlobalTime\":true,\"geoField\":\"source.geo.location\",\"id\":\"0f8532d1-8c6a-4c1d-900e-8d6eb49112df\",\"metrics\":[{\"type\":\"count\"}],\"requestType\":\"point\",\"resolution\":\"MOST_FINE\",\"type\":\"ES_GEO_GRID\",\"indexPatternRefName\":\"layer_1_source_index_pattern\"},\"style\":{\"isTimeAware\":true,\"properties\":{\"fillColor\":{\"options\":{\"color\":\"Yellow to Red\",\"colorCategory\":\"palette_0\",\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":false,\"sigma\":3},\"type\":\"ORDINAL\"},\"type\":\"DYNAMIC\"},\"icon\":{\"options\":{\"value\":\"marker\"},\"type\":\"STATIC\"},\"iconOrientation\":{\"options\":{\"orientation\":0},\"type\":\"STATIC\"},\"iconSize\":{\"options\":{\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":false,\"sigma\":3},\"maxSize\":18,\"minSize\":7},\"type\":\"DYNAMIC\"},\"labelBorderColor\":{\"options\":{\"color\":\"#FFFFFF\"},\"type\":\"STATIC\"},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}},\"labelColor\":{\"options\":{\"color\":\"#000000\"},\"type\":\"STATIC\"},\"labelSize\":{\"options\":{\"size\":14},\"type\":\"STATIC\"},\"labelText\":{\"options\":{\"value\":\"\"},\"type\":\"STATIC\"},\"lineColor\":{\"options\":{\"color\":\"#3d3d3d\"},\"type\":\"STATIC\"},\"lineWidth\":{\"options\":{\"size\":1},\"type\":\"STATIC\"},\"symbolizeAs\":{\"options\":{\"value\":\"circle\"}}},\"type\":\"VECTOR\"},\"type\":\"GEOJSON_VECTOR\",\"visible\":true}]",
-                        "mapStateJSON": "{\"adHocDataViews\":[],\"zoom\":1.78,\"center\":{\"lon\":-18.35614,\"lat\":21.76629},\"timeFilters\":{\"from\":\"2023-09-19T12:27:05.970Z\",\"to\":\"2023-09-19T12:53:40.409Z\"},\"refreshConfig\":{\"isPaused\":true,\"interval\":0},\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filters\":[{\"meta\":{\"disabled\":false,\"negate\":false,\"alias\":null,\"index\":\"logs-*\",\"key\":\"data_stream.dataset\",\"field\":\"data_stream.dataset\",\"params\":{\"query\":\"cloudflare_logpush.dns_firewall\"},\"type\":\"phrase\"},\"query\":{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.dns_firewall\"}},\"$state\":{\"store\":\"appState\"}}],\"settings\":{\"autoFitToDataBounds\":false,\"backgroundColor\":\"#ffffff\",\"customIcons\":[],\"disableInteractive\":false,\"disableTooltipControl\":false,\"hideToolbarOverlay\":false,\"hideLayerControl\":false,\"hideViewControl\":false,\"initialLocation\":\"LAST_SAVED_LOCATION\",\"fixedLocation\":{\"lat\":0,\"lon\":0,\"zoom\":2},\"browserLocation\":{\"zoom\":2},\"keydownScrollZoom\":false,\"maxZoom\":24,\"minZoom\":0,\"showScaleControl\":false,\"showSpatialFilters\":true,\"showTimesliderToggleButton\":true,\"spatialFiltersAlpa\":0.3,\"spatialFiltersFillColor\":\"#DA8B45\",\"spatialFiltersLineColor\":\"#DA8B45\"}}",
+                        "layerListJSON": [
+                            {
+                                "alpha": 1,
+                                "id": "84e94c8e-19d9-4dfe-8e37-c43c004c3f05",
+                                "includeInFitToBounds": true,
+                                "label": null,
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "sourceDescriptor": {
+                                    "isAutoSelect": true,
+                                    "lightModeDefault": "road_map_desaturated",
+                                    "type": "EMS_TMS"
+                                },
+                                "style": {
+                                    "type": "TILE"
+                                },
+                                "type": "EMS_VECTOR_TILE",
+                                "visible": true
+                            },
+                            {
+                                "alpha": 0.75,
+                                "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
+                                "includeInFitToBounds": true,
+                                "joins": [],
+                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "sourceDescriptor": {
+                                    "applyForceRefresh": true,
+                                    "applyGlobalQuery": true,
+                                    "applyGlobalTime": true,
+                                    "geoField": "source.geo.location",
+                                    "id": "0f8532d1-8c6a-4c1d-900e-8d6eb49112df",
+                                    "indexPatternRefName": "layer_1_source_index_pattern",
+                                    "metrics": [
+                                        {
+                                            "type": "count"
+                                        }
+                                    ],
+                                    "requestType": "point",
+                                    "resolution": "MOST_FINE",
+                                    "type": "ES_GEO_GRID"
+                                },
+                                "style": {
+                                    "isTimeAware": true,
+                                    "properties": {
+                                        "fillColor": {
+                                            "options": {
+                                                "color": "Yellow to Red",
+                                                "colorCategory": "palette_0",
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": false,
+                                                    "sigma": 3
+                                                },
+                                                "type": "ORDINAL"
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "icon": {
+                                            "options": {
+                                                "value": "marker"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconOrientation": {
+                                            "options": {
+                                                "orientation": 0
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconSize": {
+                                            "options": {
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": false,
+                                                    "sigma": 3
+                                                },
+                                                "maxSize": 18,
+                                                "minSize": 7
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "labelBorderColor": {
+                                            "options": {
+                                                "color": "#FFFFFF"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelBorderSize": {
+                                            "options": {
+                                                "size": "SMALL"
+                                            }
+                                        },
+                                        "labelColor": {
+                                            "options": {
+                                                "color": "#000000"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelSize": {
+                                            "options": {
+                                                "size": 14
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelText": {
+                                            "options": {
+                                                "value": ""
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "lineColor": {
+                                            "options": {
+                                                "color": "#3d3d3d"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "lineWidth": {
+                                            "options": {
+                                                "size": 1
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "symbolizeAs": {
+                                            "options": {
+                                                "value": "circle"
+                                            }
+                                        }
+                                    },
+                                    "type": "VECTOR"
+                                },
+                                "type": "GEOJSON_VECTOR",
+                                "visible": true
+                            }
+                        ],
+                        "mapStateJSON": {
+                            "adHocDataViews": [],
+                            "center": {
+                                "lat": 21.76629,
+                                "lon": -18.35614
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "logs-*",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.dns_firewall"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.dns_firewall"
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "lucene",
+                                "query": ""
+                            },
+                            "refreshConfig": {
+                                "interval": 0,
+                                "isPaused": true
+                            },
+                            "settings": {
+                                "autoFitToDataBounds": false,
+                                "backgroundColor": "#ffffff",
+                                "browserLocation": {
+                                    "zoom": 2
+                                },
+                                "customIcons": [],
+                                "disableInteractive": false,
+                                "disableTooltipControl": false,
+                                "fixedLocation": {
+                                    "lat": 0,
+                                    "lon": 0,
+                                    "zoom": 2
+                                },
+                                "hideLayerControl": false,
+                                "hideToolbarOverlay": false,
+                                "hideViewControl": false,
+                                "initialLocation": "LAST_SAVED_LOCATION",
+                                "keydownScrollZoom": false,
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "showScaleControl": false,
+                                "showSpatialFilters": true,
+                                "showTimesliderToggleButton": true,
+                                "spatialFiltersAlpa": 0.3,
+                                "spatialFiltersFillColor": "#DA8B45",
+                                "spatialFiltersLineColor": "#DA8B45"
+                            },
+                            "timeFilters": {
+                                "from": "2023-09-19T12:27:05.970Z",
+                                "to": "2023-09-19T12:53:40.409Z"
+                            },
+                            "zoom": 1.78
+                        },
                         "title": "Top Traffic Countries Map [Cloudflare]",
-                        "uiStateJSON": "{\"isLayerTOCOpen\":true,\"openTOCDetails\":[]}"
+                        "uiStateJSON": {
+                            "isLayerTOCOpen": true,
+                            "openTOCDetails": []
+                        }
                     },
                     "enhancements": {},
                     "hiddenLayers": [],
@@ -1037,7 +1362,8 @@
                         "lon": 18.29202,
                         "zoom": 1.78
                     },
-                    "openTOCDetails": []
+                    "openTOCDetails": [],
+                    "type": "map"
                 },
                 "gridData": {
                     "h": 25,
@@ -1049,19 +1375,16 @@
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                 "title": "[Cloudflare Logpush] Top Traffic Countries",
                 "type": "map",
-                "version": "8.7.1"
+                "version": "8.9.0"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] DNS Firewall",
         "version": 1
     },
-    "coreMigrationVersion": "8.7.1",
-    "created_at": "2023-09-22T08:02:55.589Z",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-9c472060-58c6-11ee-99a4-d186f5240e2e",
-    "migrationVersion": {
-        "dashboard": "8.7.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -1147,7 +1470,13 @@
             "id": "logs-*",
             "name": "controlGroup_c7619009-c941-4e72-a31e-12ad22ebc34a:optionsListDataView",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

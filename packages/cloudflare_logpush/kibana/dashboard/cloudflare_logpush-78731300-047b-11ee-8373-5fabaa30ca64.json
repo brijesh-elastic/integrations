@@ -3,8 +3,87 @@
         "controlGroupInput": {
             "chainingSystem": "HIERARCHICAL",
             "controlStyle": "oneLine",
-            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
-            "panelsJSON": "{\"1493457d-79d9-47e6-ba81-8741d24ecff6\":{\"order\":0,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"agent.name\",\"title\":\"Agent name\",\"id\":\"1493457d-79d9-47e6-ba81-8741d24ecff6\",\"enhancements\":{}}},\"1f28a3fe-f52e-418a-a94a-b0fe52100f4a\":{\"type\":\"optionsListControl\",\"order\":1,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"1f28a3fe-f52e-418a-a94a-b0fe52100f4a\",\"fieldName\":\"user.id\",\"title\":\"User UID\",\"enhancements\":{}}},\"476d6bec-c728-4c17-b96a-97ff6d045f87\":{\"type\":\"optionsListControl\",\"order\":2,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"476d6bec-c728-4c17-b96a-97ff6d045f87\",\"fieldName\":\"user.email\",\"title\":\"User Email\",\"enhancements\":{}}},\"52e33c9f-51f1-4e65-b679-58a35b74766a\":{\"type\":\"optionsListControl\",\"order\":4,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"52e33c9f-51f1-4e65-b679-58a35b74766a\",\"fieldName\":\"host.id\",\"title\":\"Host ID\",\"enhancements\":{}}},\"6380413a-a8e9-4c99-afa6-ac1657f0bf3c\":{\"type\":\"optionsListControl\",\"order\":5,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"6380413a-a8e9-4c99-afa6-ac1657f0bf3c\",\"fieldName\":\"host.os.family\",\"title\":\"Host OS\",\"enhancements\":{}}},\"e7d4aaef-d8e0-407b-9989-f9743cd6f4ae\":{\"type\":\"optionsListControl\",\"order\":3,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"e7d4aaef-d8e0-407b-9989-f9743cd6f4ae\",\"fieldName\":\"rule.id\",\"title\":\"Policy ID\",\"enhancements\":{}}}}"
+            "ignoreParentSettingsJSON": {
+                "ignoreFilters": false,
+                "ignoreQuery": false,
+                "ignoreTimerange": false,
+                "ignoreValidations": false
+            },
+            "panelsJSON": {
+                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "agent.name",
+                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "1f28a3fe-f52e-418a-a94a-b0fe52100f4a": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "user.id",
+                        "id": "1f28a3fe-f52e-418a-a94a-b0fe52100f4a",
+                        "title": "User UID"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "476d6bec-c728-4c17-b96a-97ff6d045f87": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "user.email",
+                        "id": "476d6bec-c728-4c17-b96a-97ff6d045f87",
+                        "title": "User Email"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "52e33c9f-51f1-4e65-b679-58a35b74766a": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "host.id",
+                        "id": "52e33c9f-51f1-4e65-b679-58a35b74766a",
+                        "title": "Host ID"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "6380413a-a8e9-4c99-afa6-ac1657f0bf3c": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "host.os.family",
+                        "id": "6380413a-a8e9-4c99-afa6-ac1657f0bf3c",
+                        "title": "Host OS"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "e7d4aaef-d8e0-407b-9989-f9743cd6f4ae": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "rule.id",
+                        "id": "e7d4aaef-d8e0-407b-9989-f9743cd6f4ae",
+                        "title": "Policy ID"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
+            "showApplySelections": false
         },
         "description": "Device Posture events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
@@ -49,7 +128,8 @@
                         "title": "",
                         "type": "markdown",
                         "uiState": {}
-                    }
+                    },
+                    "type": "visualization"
                 },
                 "gridData": {
                     "h": 29,
@@ -61,7 +141,7 @@
                 "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
                 "title": "Table of contents",
                 "type": "visualization",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -197,7 +277,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 12,
@@ -209,7 +290,7 @@
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                 "title": "[Cloudflare Logpush] Evaluation results",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -345,7 +426,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 12,
@@ -357,7 +439,7 @@
                 "panelIndex": "147d9579-f735-4813-b360-696a4dff5e78",
                 "title": "[Cloudflare Logpush] Device OS",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -485,7 +567,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 17,
@@ -497,7 +580,7 @@
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                 "title": "[Cloudflare Logpush] Top Device Types",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -717,7 +800,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 17,
@@ -729,19 +813,16 @@
                 "panelIndex": "6625e477-7963-4db0-be5d-4f900a9cc66e",
                 "title": "[Cloudflare Logpush] Total Results vs Success vs Failure",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] Device Posture",
         "version": 1
     },
-    "coreMigrationVersion": "8.7.1",
-    "created_at": "2023-06-20T10:01:21.223Z",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-78731300-047b-11ee-8373-5fabaa30ca64",
-    "migrationVersion": {
-        "dashboard": "8.7.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -802,7 +883,13 @@
             "id": "logs-*",
             "name": "controlGroup_e7d4aaef-d8e0-407b-9989-f9743cd6f4ae:optionsListDataView",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

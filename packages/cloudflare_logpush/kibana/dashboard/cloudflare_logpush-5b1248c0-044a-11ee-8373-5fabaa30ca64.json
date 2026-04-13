@@ -3,8 +3,87 @@
         "controlGroupInput": {
             "chainingSystem": "HIERARCHICAL",
             "controlStyle": "oneLine",
-            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
-            "panelsJSON": "{\"1493457d-79d9-47e6-ba81-8741d24ecff6\":{\"order\":0,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"agent.name\",\"title\":\"Agent name\",\"id\":\"1493457d-79d9-47e6-ba81-8741d24ecff6\",\"enhancements\":{}}},\"87f66a6f-de65-4318-9e93-316d7593bcef\":{\"type\":\"optionsListControl\",\"order\":2,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"87f66a6f-de65-4318-9e93-316d7593bcef\",\"fieldName\":\"user.id\",\"title\":\"Actor ID\",\"enhancements\":{}}},\"9932e1d8-133c-4c5f-a940-763b825877f5\":{\"type\":\"optionsListControl\",\"order\":3,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"9932e1d8-133c-4c5f-a940-763b825877f5\",\"fieldName\":\"source.ip\",\"title\":\"Actor IP\",\"enhancements\":{}}},\"69968e76-1a2d-46cc-85f8-16cc08091b4d\":{\"type\":\"optionsListControl\",\"order\":5,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"69968e76-1a2d-46cc-85f8-16cc08091b4d\",\"fieldName\":\"event.action\",\"title\":\"Action\",\"enhancements\":{}}},\"37615079-b253-41bd-93cf-77797a0f8f4d\":{\"type\":\"optionsListControl\",\"order\":4,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"37615079-b253-41bd-93cf-77797a0f8f4d\",\"fieldName\":\"event.id\",\"title\":\"Audit ID\",\"enhancements\":{}}},\"a227b08a-5c34-4e2b-bff9-685ea7d99ad8\":{\"type\":\"optionsListControl\",\"order\":1,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"a227b08a-5c34-4e2b-bff9-685ea7d99ad8\",\"fieldName\":\"event.outcome\",\"title\":\"Audit result\",\"enhancements\":{}}}}"
+            "ignoreParentSettingsJSON": {
+                "ignoreFilters": false,
+                "ignoreQuery": false,
+                "ignoreTimerange": false,
+                "ignoreValidations": false
+            },
+            "panelsJSON": {
+                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "agent.name",
+                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "37615079-b253-41bd-93cf-77797a0f8f4d": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "event.id",
+                        "id": "37615079-b253-41bd-93cf-77797a0f8f4d",
+                        "title": "Audit ID"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "69968e76-1a2d-46cc-85f8-16cc08091b4d": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "event.action",
+                        "id": "69968e76-1a2d-46cc-85f8-16cc08091b4d",
+                        "title": "Action"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "87f66a6f-de65-4318-9e93-316d7593bcef": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "user.id",
+                        "id": "87f66a6f-de65-4318-9e93-316d7593bcef",
+                        "title": "Actor ID"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "9932e1d8-133c-4c5f-a940-763b825877f5": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.ip",
+                        "id": "9932e1d8-133c-4c5f-a940-763b825877f5",
+                        "title": "Actor IP"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "a227b08a-5c34-4e2b-bff9-685ea7d99ad8": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "event.outcome",
+                        "id": "a227b08a-5c34-4e2b-bff9-685ea7d99ad8",
+                        "title": "Audit result"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
+            "showApplySelections": false
         },
         "description": "Audit events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
@@ -49,7 +128,8 @@
                         "title": "",
                         "type": "markdown",
                         "uiState": {}
-                    }
+                    },
+                    "type": "visualization"
                 },
                 "gridData": {
                     "h": 27,
@@ -61,7 +141,7 @@
                 "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
                 "title": "Table of contents",
                 "type": "visualization",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -197,7 +277,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 12,
@@ -209,7 +290,7 @@
                 "panelIndex": "17459f03-e774-4ca8-b17c-cbe1c2196437",
                 "title": "[Cloudflare Logpush] Distribution of Audit by resource type",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -338,7 +419,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 12,
@@ -350,7 +432,7 @@
                 "panelIndex": "51b83123-5053-4a8c-92e0-45ba57cc6db4",
                 "title": "[Cloudflare Logpush] Distribution of Audit by resource action",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -518,7 +600,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -530,7 +613,7 @@
                 "panelIndex": "8a2459e5-fd93-4efc-9d6e-39928b9ce5e4",
                 "title": "[Cloudflare Logpush] Audit Events Over Time ",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -658,7 +741,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -670,7 +754,7 @@
                 "panelIndex": "ef42409b-48f1-46d3-9c36-219137e54dba",
                 "title": "[Cloudflare Logpush] Top Actor email",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -695,12 +779,9 @@
         "title": "[Logs Cloudflare Logpush] Audit",
         "version": 1
     },
-    "coreMigrationVersion": "8.7.1",
-    "created_at": "2023-06-20T10:03:52.152Z",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-5b1248c0-044a-11ee-8373-5fabaa30ca64",
-    "migrationVersion": {
-        "dashboard": "8.7.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -776,7 +857,13 @@
             "id": "logs-*",
             "name": "controlGroup_a227b08a-5c34-4e2b-bff9-685ea7d99ad8:optionsListDataView",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

@@ -3,8 +3,99 @@
         "controlGroupInput": {
             "chainingSystem": "HIERARCHICAL",
             "controlStyle": "oneLine",
-            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
-            "panelsJSON": "{\"1493457d-79d9-47e6-ba81-8741d24ecff6\":{\"order\":0,\"width\":\"medium\",\"grow\":true,\"type\":\"optionsListControl\",\"explicitInput\":{\"fieldName\":\"agent.name\",\"title\":\"Agent name\",\"id\":\"1493457d-79d9-47e6-ba81-8741d24ecff6\",\"enhancements\":{}}},\"b295f101-a23c-4a1d-9806-f7aa8f32992e\":{\"type\":\"optionsListControl\",\"order\":1,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"b295f101-a23c-4a1d-9806-f7aa8f32992e\",\"fieldName\":\"user.id\",\"title\":\"User ID\",\"enhancements\":{}}},\"663d0468-2111-4dcc-a092-03b9f214f162\":{\"type\":\"optionsListControl\",\"order\":2,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"663d0468-2111-4dcc-a092-03b9f214f162\",\"fieldName\":\"user.email\",\"title\":\"User Email\",\"enhancements\":{}}},\"8365b589-ff9e-4598-a03d-e04878b52053\":{\"type\":\"optionsListControl\",\"order\":4,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"8365b589-ff9e-4598-a03d-e04878b52053\",\"fieldName\":\"source.geo.country_name\",\"title\":\"Source Country\",\"enhancements\":{}}},\"bb54f1a9-55ae-4b05-8a10-236a5a785ece\":{\"type\":\"optionsListControl\",\"order\":5,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"bb54f1a9-55ae-4b05-8a10-236a5a785ece\",\"fieldName\":\"source.ip\",\"title\":\"Source IP\",\"enhancements\":{}}},\"f82b774e-d4bf-4158-a7ba-291db87af52a\":{\"type\":\"optionsListControl\",\"order\":3,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"f82b774e-d4bf-4158-a7ba-291db87af52a\",\"fieldName\":\"cloudflare_logpush.gateway_http.account_id\",\"title\":\"Account ID\",\"enhancements\":{}}},\"bfbd03ec-0181-48e4-b6a9-07adbcbb4ae5\":{\"type\":\"optionsListControl\",\"order\":6,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"bfbd03ec-0181-48e4-b6a9-07adbcbb4ae5\",\"fieldName\":\"event.id\",\"title\":\"Session ID\",\"enhancements\":{}}}}"
+            "ignoreParentSettingsJSON": {
+                "ignoreFilters": false,
+                "ignoreQuery": false,
+                "ignoreTimerange": false,
+                "ignoreValidations": false
+            },
+            "panelsJSON": {
+                "1493457d-79d9-47e6-ba81-8741d24ecff6": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "agent.name",
+                        "id": "1493457d-79d9-47e6-ba81-8741d24ecff6",
+                        "title": "Agent name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "663d0468-2111-4dcc-a092-03b9f214f162": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "user.email",
+                        "id": "663d0468-2111-4dcc-a092-03b9f214f162",
+                        "title": "User Email"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "8365b589-ff9e-4598-a03d-e04878b52053": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.geo.country_name",
+                        "id": "8365b589-ff9e-4598-a03d-e04878b52053",
+                        "title": "Source Country"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b295f101-a23c-4a1d-9806-f7aa8f32992e": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "user.id",
+                        "id": "b295f101-a23c-4a1d-9806-f7aa8f32992e",
+                        "title": "User ID"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "bb54f1a9-55ae-4b05-8a10-236a5a785ece": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.ip",
+                        "id": "bb54f1a9-55ae-4b05-8a10-236a5a785ece",
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "bfbd03ec-0181-48e4-b6a9-07adbcbb4ae5": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "event.id",
+                        "id": "bfbd03ec-0181-48e4-b6a9-07adbcbb4ae5",
+                        "title": "Session ID"
+                    },
+                    "grow": true,
+                    "order": 6,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "f82b774e-d4bf-4158-a7ba-291db87af52a": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.gateway_http.account_id",
+                        "id": "f82b774e-d4bf-4158-a7ba-291db87af52a",
+                        "title": "Account ID"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
+            "showApplySelections": false
         },
         "description": "Zero Trust Network Session Logs collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
@@ -49,7 +140,8 @@
                         "title": "",
                         "type": "markdown",
                         "uiState": {}
-                    }
+                    },
+                    "type": "visualization"
                 },
                 "gridData": {
                     "h": 46,
@@ -61,7 +153,7 @@
                 "panelIndex": "1d4f74c6-35f0-42db-8592-362faed90dbe",
                 "title": "Table of contents",
                 "type": "visualization",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -152,7 +244,8 @@
                     },
                     "description": "",
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 6,
@@ -164,7 +257,7 @@
                 "panelIndex": "f522c181-4307-4bc3-8131-57ffcb2506b7",
                 "title": "[Cloudflare Logpush] Total Sessions",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -296,7 +389,8 @@
                     },
                     "description": "The number of bytes sent from the client to the origin during the network session.",
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 6,
@@ -308,7 +402,7 @@
                 "panelIndex": "3014e4ef-4e9b-47a6-8317-06dfa65d6ce6",
                 "title": "[Cloudflare Logpush] Total sent bytes",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -441,7 +535,8 @@
                     },
                     "description": "The number of bytes sent from the origin to the client during the network session.",
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 6,
@@ -453,7 +548,7 @@
                 "panelIndex": "4fdb96ed-77ad-476b-9805-7065d1cab2fc",
                 "title": "[Cloudflare Logpush] Total received bytes",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -577,7 +672,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -589,7 +685,7 @@
                 "panelIndex": "d9952030-6e1e-405c-b626-7f7573225080",
                 "title": "[Cloudflare Logpush] Top Network Sessions by Country",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -757,7 +853,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 14,
@@ -769,16 +866,231 @@
                 "panelIndex": "e10351c5-c387-4142-a302-d9454c532ae1",
                 "title": "[Cloudflare Logpush] Network Sessions Over Time ",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
                     "attributes": {
                         "description": "",
-                        "layerListJSON": "[{\"sourceDescriptor\":{\"type\":\"EMS_TMS\",\"isAutoSelect\":true,\"lightModeDefault\":\"road_map_desaturated\"},\"id\":\"84e94c8e-19d9-4dfe-8e37-c43c004c3f05\",\"label\":null,\"minZoom\":0,\"maxZoom\":24,\"alpha\":1,\"visible\":true,\"style\":{\"type\":\"TILE\"},\"includeInFitToBounds\":true,\"type\":\"EMS_VECTOR_TILE\"},{\"alpha\":0.75,\"id\":\"5f05840e-eb7e-45bd-9319-e6746cc4fa49\",\"includeInFitToBounds\":true,\"joins\":[],\"label\":\"Source IP country map [Cloudflare Logpush]\",\"maxZoom\":24,\"minZoom\":0,\"sourceDescriptor\":{\"applyForceRefresh\":true,\"applyGlobalQuery\":true,\"applyGlobalTime\":true,\"geoField\":\"source.geo.location\",\"id\":\"0f8532d1-8c6a-4c1d-900e-8d6eb49112df\",\"metrics\":[{\"type\":\"count\"}],\"requestType\":\"point\",\"resolution\":\"MOST_FINE\",\"type\":\"ES_GEO_GRID\",\"indexPatternRefName\":\"layer_1_source_index_pattern\"},\"style\":{\"isTimeAware\":true,\"properties\":{\"fillColor\":{\"options\":{\"color\":\"Yellow to Red\",\"colorCategory\":\"palette_0\",\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":false,\"sigma\":3},\"type\":\"ORDINAL\"},\"type\":\"DYNAMIC\"},\"icon\":{\"options\":{\"value\":\"marker\"},\"type\":\"STATIC\"},\"iconOrientation\":{\"options\":{\"orientation\":0},\"type\":\"STATIC\"},\"iconSize\":{\"options\":{\"field\":{\"name\":\"doc_count\",\"origin\":\"source\"},\"fieldMetaOptions\":{\"isEnabled\":false,\"sigma\":3},\"maxSize\":18,\"minSize\":7},\"type\":\"DYNAMIC\"},\"labelBorderColor\":{\"options\":{\"color\":\"#FFFFFF\"},\"type\":\"STATIC\"},\"labelBorderSize\":{\"options\":{\"size\":\"SMALL\"}},\"labelColor\":{\"options\":{\"color\":\"#000000\"},\"type\":\"STATIC\"},\"labelSize\":{\"options\":{\"size\":14},\"type\":\"STATIC\"},\"labelText\":{\"options\":{\"value\":\"\"},\"type\":\"STATIC\"},\"lineColor\":{\"options\":{\"color\":\"#3d3d3d\"},\"type\":\"STATIC\"},\"lineWidth\":{\"options\":{\"size\":1},\"type\":\"STATIC\"},\"symbolizeAs\":{\"options\":{\"value\":\"circle\"}}},\"type\":\"VECTOR\"},\"type\":\"GEOJSON_VECTOR\",\"visible\":true}]",
-                        "mapStateJSON": "{\"adHocDataViews\":[],\"zoom\":1.78,\"center\":{\"lon\":20.06436,\"lat\":22.01171},\"timeFilters\":{\"from\":\"now-1y\",\"to\":\"now\"},\"refreshConfig\":{\"isPaused\":true,\"interval\":0},\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filters\":[{\"meta\":{\"disabled\":false,\"negate\":false,\"alias\":null,\"index\":\"logs-*\",\"key\":\"data_stream.dataset\",\"field\":\"data_stream.dataset\",\"params\":{\"query\":\"cloudflare_logpush.network_session\"},\"type\":\"phrase\"},\"query\":{\"match_phrase\":{\"data_stream.dataset\":\"cloudflare_logpush.network_session\"}},\"$state\":{\"store\":\"appState\"}}],\"settings\":{\"autoFitToDataBounds\":false,\"backgroundColor\":\"#ffffff\",\"customIcons\":[],\"disableInteractive\":false,\"disableTooltipControl\":false,\"hideToolbarOverlay\":false,\"hideLayerControl\":false,\"hideViewControl\":false,\"initialLocation\":\"LAST_SAVED_LOCATION\",\"fixedLocation\":{\"lat\":0,\"lon\":0,\"zoom\":2},\"browserLocation\":{\"zoom\":2},\"keydownScrollZoom\":false,\"maxZoom\":24,\"minZoom\":0,\"showScaleControl\":false,\"showSpatialFilters\":true,\"showTimesliderToggleButton\":true,\"spatialFiltersAlpa\":0.3,\"spatialFiltersFillColor\":\"#DA8B45\",\"spatialFiltersLineColor\":\"#DA8B45\"}}",
+                        "layerListJSON": [
+                            {
+                                "alpha": 1,
+                                "id": "84e94c8e-19d9-4dfe-8e37-c43c004c3f05",
+                                "includeInFitToBounds": true,
+                                "label": null,
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "sourceDescriptor": {
+                                    "isAutoSelect": true,
+                                    "lightModeDefault": "road_map_desaturated",
+                                    "type": "EMS_TMS"
+                                },
+                                "style": {
+                                    "type": "TILE"
+                                },
+                                "type": "EMS_VECTOR_TILE",
+                                "visible": true
+                            },
+                            {
+                                "alpha": 0.75,
+                                "id": "5f05840e-eb7e-45bd-9319-e6746cc4fa49",
+                                "includeInFitToBounds": true,
+                                "joins": [],
+                                "label": "Source IP country map [Cloudflare Logpush]",
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "sourceDescriptor": {
+                                    "applyForceRefresh": true,
+                                    "applyGlobalQuery": true,
+                                    "applyGlobalTime": true,
+                                    "geoField": "source.geo.location",
+                                    "id": "0f8532d1-8c6a-4c1d-900e-8d6eb49112df",
+                                    "indexPatternRefName": "layer_1_source_index_pattern",
+                                    "metrics": [
+                                        {
+                                            "type": "count"
+                                        }
+                                    ],
+                                    "requestType": "point",
+                                    "resolution": "MOST_FINE",
+                                    "type": "ES_GEO_GRID"
+                                },
+                                "style": {
+                                    "isTimeAware": true,
+                                    "properties": {
+                                        "fillColor": {
+                                            "options": {
+                                                "color": "Yellow to Red",
+                                                "colorCategory": "palette_0",
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": false,
+                                                    "sigma": 3
+                                                },
+                                                "type": "ORDINAL"
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "icon": {
+                                            "options": {
+                                                "value": "marker"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconOrientation": {
+                                            "options": {
+                                                "orientation": 0
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "iconSize": {
+                                            "options": {
+                                                "field": {
+                                                    "name": "doc_count",
+                                                    "origin": "source"
+                                                },
+                                                "fieldMetaOptions": {
+                                                    "isEnabled": false,
+                                                    "sigma": 3
+                                                },
+                                                "maxSize": 18,
+                                                "minSize": 7
+                                            },
+                                            "type": "DYNAMIC"
+                                        },
+                                        "labelBorderColor": {
+                                            "options": {
+                                                "color": "#FFFFFF"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelBorderSize": {
+                                            "options": {
+                                                "size": "SMALL"
+                                            }
+                                        },
+                                        "labelColor": {
+                                            "options": {
+                                                "color": "#000000"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelSize": {
+                                            "options": {
+                                                "size": 14
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "labelText": {
+                                            "options": {
+                                                "value": ""
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "lineColor": {
+                                            "options": {
+                                                "color": "#3d3d3d"
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "lineWidth": {
+                                            "options": {
+                                                "size": 1
+                                            },
+                                            "type": "STATIC"
+                                        },
+                                        "symbolizeAs": {
+                                            "options": {
+                                                "value": "circle"
+                                            }
+                                        }
+                                    },
+                                    "type": "VECTOR"
+                                },
+                                "type": "GEOJSON_VECTOR",
+                                "visible": true
+                            }
+                        ],
+                        "mapStateJSON": {
+                            "adHocDataViews": [],
+                            "center": {
+                                "lat": 22.01171,
+                                "lon": 20.06436
+                            },
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "logs-*",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_session"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_session"
+                                        }
+                                    }
+                                }
+                            ],
+                            "query": {
+                                "language": "lucene",
+                                "query": ""
+                            },
+                            "refreshConfig": {
+                                "interval": 0,
+                                "isPaused": true
+                            },
+                            "settings": {
+                                "autoFitToDataBounds": false,
+                                "backgroundColor": "#ffffff",
+                                "browserLocation": {
+                                    "zoom": 2
+                                },
+                                "customIcons": [],
+                                "disableInteractive": false,
+                                "disableTooltipControl": false,
+                                "fixedLocation": {
+                                    "lat": 0,
+                                    "lon": 0,
+                                    "zoom": 2
+                                },
+                                "hideLayerControl": false,
+                                "hideToolbarOverlay": false,
+                                "hideViewControl": false,
+                                "initialLocation": "LAST_SAVED_LOCATION",
+                                "keydownScrollZoom": false,
+                                "maxZoom": 24,
+                                "minZoom": 0,
+                                "showScaleControl": false,
+                                "showSpatialFilters": true,
+                                "showTimesliderToggleButton": true,
+                                "spatialFiltersAlpa": 0.3,
+                                "spatialFiltersFillColor": "#DA8B45",
+                                "spatialFiltersLineColor": "#DA8B45"
+                            },
+                            "timeFilters": {
+                                "from": "now-1y",
+                                "to": "now"
+                            },
+                            "zoom": 1.78
+                        },
                         "title": "Top Traffic Countries Map [Cloudflare]",
-                        "uiStateJSON": "{\"isLayerTOCOpen\":true,\"openTOCDetails\":[]}"
+                        "uiStateJSON": {
+                            "isLayerTOCOpen": true,
+                            "openTOCDetails": []
+                        }
                     },
                     "enhancements": {},
                     "hiddenLayers": [],
@@ -795,7 +1107,8 @@
                         "lon": 20.06436,
                         "zoom": 1.78
                     },
-                    "openTOCDetails": []
+                    "openTOCDetails": [],
+                    "type": "map"
                 },
                 "gridData": {
                     "h": 26,
@@ -807,7 +1120,7 @@
                 "panelIndex": "6680fae8-ca12-4f4d-abb5-dcc0f3eb1ea1",
                 "title": "[Cloudflare Logpush] Top Traffic Countries",
                 "type": "map",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -1062,7 +1375,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -1074,7 +1388,7 @@
                 "panelIndex": "fd1ec8e7-e0a0-4503-a3bd-8a74a8c21c1b",
                 "title": "[Cloudflare Logpush] Client TCP Handshake Duration (Milliseconds)",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -1329,7 +1643,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -1341,7 +1656,7 @@
                 "panelIndex": "780c64f9-7ea1-47f9-b241-2e0c42de3209",
                 "title": "[Cloudflare Logpush] Client TLS Handshake Duration (Milliseconds)",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -1596,7 +1911,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -1608,7 +1924,7 @@
                 "panelIndex": "8c356466-a7ca-4148-aeea-8b00fde57b17",
                 "title": "[Cloudflare Logpush] Origin TLS Handshake Duration (Milliseconds)",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -1863,7 +2179,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -1875,19 +2192,16 @@
                 "panelIndex": "90c9a68b-2eac-40cb-8f8c-bf419d804276",
                 "title": "[Cloudflare Logpush] Rule Evaluation Time (Milliseconds)",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] Network Session Logs",
         "version": 1
     },
-    "coreMigrationVersion": "8.7.1",
-    "created_at": "2023-06-20T10:03:43.967Z",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-11e340a0-04bd-11ee-8373-5fabaa30ca64",
-    "migrationVersion": {
-        "dashboard": "8.7.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -2018,7 +2332,13 @@
             "id": "logs-*",
             "name": "controlGroup_bfbd03ec-0181-48e4-b6a9-07adbcbb4ae5:optionsListDataView",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }

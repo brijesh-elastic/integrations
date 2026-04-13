@@ -3,8 +3,92 @@
         "controlGroupInput": {
             "chainingSystem": "HIERARCHICAL",
             "controlStyle": "oneLine",
-            "ignoreParentSettingsJSON": "{\"ignoreFilters\":false,\"ignoreQuery\":false,\"ignoreTimerange\":false,\"ignoreValidations\":false}",
-            "panelsJSON": "{\"ad801e07-23f4-4740-8822-69fb17f5b1a2\":{\"type\":\"optionsListControl\",\"order\":0,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"ad801e07-23f4-4740-8822-69fb17f5b1a2\",\"fieldName\":\"agent.name\",\"title\":\"Agent Name\",\"enhancements\":{}}},\"fdc3f099-79ba-4e97-b3f1-7224e11bc14b\":{\"type\":\"optionsListControl\",\"order\":1,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"fdc3f099-79ba-4e97-b3f1-7224e11bc14b\",\"fieldName\":\"event.action\",\"title\":\"Action\",\"enhancements\":{},\"selectedOptions\":[]}},\"feef68e2-dbca-43d8-9de2-ca0cde7baf20\":{\"type\":\"optionsListControl\",\"order\":2,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"feef68e2-dbca-43d8-9de2-ca0cde7baf20\",\"fieldName\":\"source.ip\",\"title\":\"Source IP\",\"enhancements\":{},\"selectedOptions\":[]}},\"8fb8886a-e348-4753-87a3-584945fd21d9\":{\"type\":\"optionsListControl\",\"order\":3,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"8fb8886a-e348-4753-87a3-584945fd21d9\",\"fieldName\":\"destination.ip\",\"title\":\"Destination IP\",\"enhancements\":{},\"selectedOptions\":[]}},\"c5747b97-31df-4fcb-844c-0a31206a1157\":{\"type\":\"optionsListControl\",\"order\":4,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"c5747b97-31df-4fcb-844c-0a31206a1157\",\"fieldName\":\"network.transport\",\"title\":\"Transport Protocol\",\"enhancements\":{},\"selectedOptions\":[]}},\"615d2065-84c3-4aee-8c4f-69bcb953f963\":{\"type\":\"optionsListControl\",\"order\":5,\"grow\":true,\"width\":\"medium\",\"explicitInput\":{\"id\":\"615d2065-84c3-4aee-8c4f-69bcb953f963\",\"fieldName\":\"cloudflare_logpush.magic_ids.signature.message\",\"title\":\"Signature\",\"enhancements\":{},\"selectedOptions\":[]}}}"
+            "ignoreParentSettingsJSON": {
+                "ignoreFilters": false,
+                "ignoreQuery": false,
+                "ignoreTimerange": false,
+                "ignoreValidations": false
+            },
+            "panelsJSON": {
+                "615d2065-84c3-4aee-8c4f-69bcb953f963": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "cloudflare_logpush.magic_ids.signature.message",
+                        "id": "615d2065-84c3-4aee-8c4f-69bcb953f963",
+                        "selectedOptions": [],
+                        "title": "Signature"
+                    },
+                    "grow": true,
+                    "order": 5,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "8fb8886a-e348-4753-87a3-584945fd21d9": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "destination.ip",
+                        "id": "8fb8886a-e348-4753-87a3-584945fd21d9",
+                        "selectedOptions": [],
+                        "title": "Destination IP"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ad801e07-23f4-4740-8822-69fb17f5b1a2": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "agent.name",
+                        "id": "ad801e07-23f4-4740-8822-69fb17f5b1a2",
+                        "title": "Agent Name"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "c5747b97-31df-4fcb-844c-0a31206a1157": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "network.transport",
+                        "id": "c5747b97-31df-4fcb-844c-0a31206a1157",
+                        "selectedOptions": [],
+                        "title": "Transport Protocol"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "fdc3f099-79ba-4e97-b3f1-7224e11bc14b": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "event.action",
+                        "id": "fdc3f099-79ba-4e97-b3f1-7224e11bc14b",
+                        "selectedOptions": [],
+                        "title": "Action"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "feef68e2-dbca-43d8-9de2-ca0cde7baf20": {
+                    "explicitInput": {
+                        "enhancements": {},
+                        "fieldName": "source.ip",
+                        "id": "feef68e2-dbca-43d8-9de2-ca0cde7baf20",
+                        "selectedOptions": [],
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
+            "showApplySelections": false
         },
         "description": "Magic IDS logs collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
@@ -49,7 +133,8 @@
                         "title": "",
                         "type": "markdown",
                         "uiState": {}
-                    }
+                    },
+                    "type": "visualization"
                 },
                 "gridData": {
                     "h": 45,
@@ -61,7 +146,7 @@
                 "panelIndex": "2f608102-773f-4fee-98bf-c7721dd5951e",
                 "title": "Table of contents",
                 "type": "visualization",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -282,7 +367,8 @@
                         "visualizationType": "lnsXY"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -294,7 +380,7 @@
                 "panelIndex": "3491263f-85b9-4f4b-b2b6-74b275bac113",
                 "title": "[Cloudflare Logpush] Detections by Action",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -425,7 +511,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -437,7 +524,7 @@
                 "panelIndex": "e2fd2885-4175-46e1-9120-f4c3582e8d38",
                 "title": "[Cloudflare Logpush] Action Ratio",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -568,7 +655,8 @@
                         "visualizationType": "lnsPie"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -580,7 +668,7 @@
                 "panelIndex": "6b325841-d762-487d-8dca-cb4ebebb627d",
                 "title": "[Cloudflare Logpush] Top Destination Ports",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -746,7 +834,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -758,7 +847,7 @@
                 "panelIndex": "2048f6ff-25c6-4123-a609-3b931f6e817c",
                 "title": "[Cloudflare Logpush] Top Signatures Detected",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -888,7 +977,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -900,7 +990,7 @@
                 "panelIndex": "aa1ad025-cb18-45f0-8c07-1dc21e517b08",
                 "title": "[Cloudflare Logpush] Top Source IPs",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             },
             {
                 "embeddableConfig": {
@@ -1048,7 +1138,8 @@
                         "visualizationType": "lnsDatatable"
                     },
                     "enhancements": {},
-                    "hidePanelTitles": false
+                    "hidePanelTitles": false,
+                    "type": "lens"
                 },
                 "gridData": {
                     "h": 15,
@@ -1060,19 +1151,16 @@
                 "panelIndex": "e2ef88f9-ef66-4e64-bff5-cc4d367a47c2",
                 "title": "[Cloudflare Logpush] Top Destination IPs",
                 "type": "lens",
-                "version": "8.7.1"
+                "version": "8.9.0"
             }
         ],
         "timeRestore": false,
         "title": "[Logs Cloudflare Logpush] Magic IDS Detections",
         "version": 1
     },
-    "coreMigrationVersion": "8.7.1",
-    "created_at": "2023-09-21T22:23:47.956Z",
+    "coreMigrationVersion": "8.8.0",
+    "created_at": "2026-04-13T15:07:59.229Z",
     "id": "cloudflare_logpush-09ef2620-58a5-11ee-99a4-d186f5240e2e",
-    "migrationVersion": {
-        "dashboard": "8.7.0"
-    },
     "references": [
         {
             "id": "logs-*",
@@ -1158,7 +1246,13 @@
             "id": "logs-*",
             "name": "controlGroup_615d2065-84c3-4aee-8c4f-69bcb953f963:optionsListDataView",
             "type": "index-pattern"
+        },
+        {
+            "id": "cloudflare_logpush-security-solution-default",
+            "name": "tag-ref-security-solution-default",
+            "type": "tag"
         }
     ],
-    "type": "dashboard"
+    "type": "dashboard",
+    "typeMigrationVersion": "10.2.0"
 }
