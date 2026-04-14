@@ -9,7 +9,62 @@
                 "ignoreTimerange": false,
                 "ignoreValidations": false
             },
-            "panelsJSON": {},
+            "panelsJSON": {
+                "8ed02c04-a7c5-437b-a89b-110b106d3c94": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.nel_report.phase",
+                        "id": "8ed02c04-a7c5-437b-a89b-110b106d3c94",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Phase"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "a7809268-62e0-4cd9-a2f3-39b2425c4d61": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "error.type",
+                        "id": "a7809268-62e0-4cd9-a2f3-39b2425c4d61",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Type"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "c1f3b6f4-b3be-4ef5-bbfc-f983177bac50": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.nel_report.client.ip.country",
+                        "id": "c1f3b6f4-b3be-4ef5-bbfc-f983177bac50",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "ClientIP Country"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
             "showApplySelections": false
         },
         "description": "Overview of Cloudflare Logpush NEL Report",
@@ -343,16 +398,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-369c4c11-370e-43b1-9ecf-0e3d9fb66f98",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-369c4c11-370e-43b1-9ecf-0e3d9fb66f98",
+                                "name": "b08f5671-0943-41ec-8318-ac25b7086152",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -367,8 +423,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 },
@@ -416,10 +480,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "b08f5671-0943-41ec-8318-ac25b7086152",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.nel_report"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.nel_report"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.nel_report"
+                                "query": ""
                             },
                             "visualization": {
                                 "columns": [
@@ -468,16 +556,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-f9bf86eb-26ae-4ddb-9181-98538c308622",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-f9bf86eb-26ae-4ddb-9181-98538c308622",
+                                "name": "e0812c84-e936-4fc0-9b36-614598ba53e9",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -510,8 +599,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -521,10 +618,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "e0812c84-e936-4fc0-9b36-614598ba53e9",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.nel_report"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.nel_report"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.nel_report"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -532,7 +653,7 @@
                                         "categoryDisplay": "default",
                                         "layerId": "f9bf86eb-26ae-4ddb-9181-98538c308622",
                                         "layerType": "data",
-                                        "legendDisplay": "default",
+                                        "legendDisplay": "show",
                                         "legendSize": "auto",
                                         "metrics": [
                                             "9a90d872-9aed-4dbe-9004-a8b6e34449c1"
@@ -541,7 +662,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "72e4b51b-b59b-42ba-bfd8-bc61fe3fa8e0"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "pie"
@@ -571,7 +693,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:56:26.381Z",
+    "created_at": "2026-04-14T13:06:21.955Z",
     "id": "cloudflare_logpush-cc375d30-dc44-11ec-b76d-adcfe05cc1fe",
     "references": [
         {
@@ -581,22 +703,22 @@
         },
         {
             "id": "logs-*",
-            "name": "d6d36d84-cb11-4993-a30a-d82118413eda:indexpattern-datasource-current-indexpattern",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "d6d36d84-cb11-4993-a30a-d82118413eda:indexpattern-datasource-layer-369c4c11-370e-43b1-9ecf-0e3d9fb66f98",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "e28f00db-dc65-4c0c-84ce-dbf64b568c70:indexpattern-datasource-current-indexpattern",
+            "name": "d6d36d84-cb11-4993-a30a-d82118413eda:b08f5671-0943-41ec-8318-ac25b7086152",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
             "name": "e28f00db-dc65-4c0c-84ce-dbf64b568c70:indexpattern-datasource-layer-f9bf86eb-26ae-4ddb-9181-98538c308622",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "e28f00db-dc65-4c0c-84ce-dbf64b568c70:e0812c84-e936-4fc0-9b36-614598ba53e9",
             "type": "index-pattern"
         },
         {
@@ -708,6 +830,21 @@
             "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
             "name": "24c1cddd-499f-4b28-b0be-caa4b8f789c4:link_a27c8aa4-547e-420b-ab84-1c3bcc9ced77_dashboard",
             "type": "dashboard"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_fdaaebae-6f60-43e8-83e6-a16d17d04c28:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_b339cc34-a7a8-4417-aab1-1093291a09ae:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_229fc65e-6b06-441f-b47c-4c7dda09f1bf:optionsListDataView",
+            "type": "index-pattern"
         }
     ],
     "type": "dashboard",

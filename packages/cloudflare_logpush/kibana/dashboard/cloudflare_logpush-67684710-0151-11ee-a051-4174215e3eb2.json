@@ -10,101 +10,11 @@
                 "ignoreValidations": false
             },
             "panelsJSON": {
-                "0576df53-10bf-4409-897d-02bd3b79055f": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "source.ip",
-                        "id": "0576df53-10bf-4409-897d-02bd3b79055f",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Source IP"
-                    },
-                    "grow": true,
-                    "order": 1,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "2efad550-a21a-467d-8426-d6d1e3058bd9": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "client.ip",
-                        "id": "2efad550-a21a-467d-8426-d6d1e3058bd9",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Client IP"
-                    },
-                    "grow": true,
-                    "order": 3,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "42b16e99-b13c-4225-94e1-1a763eb6a1c2": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "event.action",
-                        "id": "42b16e99-b13c-4225-94e1-1a763eb6a1c2",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Action"
-                    },
-                    "grow": true,
-                    "order": 4,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "96ccaf74-2877-44bb-bf6b-6aa7e1232a2f": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "host.name",
-                        "id": "96ccaf74-2877-44bb-bf6b-6aa7e1232a2f",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Hostname"
-                    },
-                    "grow": true,
-                    "order": 7,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "9e9dcbd8-e858-40b3-8776-be35824f48a2": {
-                    "explicitInput": {
-                        "dataViewId": "logs-*",
-                        "fieldName": "destination.ip",
-                        "id": "9e9dcbd8-e858-40b3-8776-be35824f48a2",
-                        "searchTechnique": "prefix",
-                        "selectedOptions": [],
-                        "sort": {
-                            "by": "_count",
-                            "direction": "desc"
-                        },
-                        "title": "Destination IP"
-                    },
-                    "grow": true,
-                    "order": 2,
-                    "type": "optionsListControl",
-                    "width": "medium"
-                },
-                "ab780e28-2609-4087-809f-f084b2aa6928": {
+                "01c1a6e1-402e-40d1-a8f4-4dbf6da8b8be": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "client.geo.country_name",
-                        "id": "ab780e28-2609-4087-809f-f084b2aa6928",
+                        "id": "01c1a6e1-402e-40d1-a8f4-4dbf6da8b8be",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -118,11 +28,29 @@
                     "type": "optionsListControl",
                     "width": "small"
                 },
-                "c0593eda-2cb5-4abd-b82a-81116d06ddc4": {
+                "469df127-26d9-4368-9db4-ae474480ed79": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "event.action",
+                        "id": "469df127-26d9-4368-9db4-ae474480ed79",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Action"
+                    },
+                    "grow": true,
+                    "order": 4,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "4bc31e48-8636-4fe7-ab31-3466d2d882a9": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "source.geo.country_name",
-                        "id": "c0593eda-2cb5-4abd-b82a-81116d06ddc4",
+                        "id": "4bc31e48-8636-4fe7-ab31-3466d2d882a9",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -136,11 +64,29 @@
                     "type": "optionsListControl",
                     "width": "small"
                 },
-                "d0defab4-b35c-4297-9a11-e6ea477349a6": {
+                "6317fdf5-e041-4211-81e1-e00cbc40c196": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "source.ip",
+                        "id": "6317fdf5-e041-4211-81e1-e00cbc40c196",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Source IP"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "aa233171-a799-4e9f-a6bc-39fcbb65b64b": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
                         "fieldName": "agent.name",
-                        "id": "d0defab4-b35c-4297-9a11-e6ea477349a6",
+                        "id": "aa233171-a799-4e9f-a6bc-39fcbb65b64b",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
                         "sort": {
@@ -151,6 +97,60 @@
                     },
                     "grow": true,
                     "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "c04632ab-b2b6-44a1-9998-d6488c8283f7": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "client.ip",
+                        "id": "c04632ab-b2b6-44a1-9998-d6488c8283f7",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Client IP"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "d52b3c6c-d974-4853-b964-e84e9a48468f": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "host.name",
+                        "id": "d52b3c6c-d974-4853-b964-e84e9a48468f",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Hostname"
+                    },
+                    "grow": true,
+                    "order": 7,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "efb9dacf-d467-436d-b96a-3aafd41e6acc": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "destination.ip",
+                        "id": "efb9dacf-d467-436d-b96a-3aafd41e6acc",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Destination IP"
+                    },
+                    "grow": true,
+                    "order": 2,
                     "type": "optionsListControl",
                     "width": "medium"
                 }
@@ -542,7 +542,7 @@
                             },
                             {
                                 "id": "logs-*",
-                                "name": "a0d069ed-994f-4cfb-b188-c312032e03e2",
+                                "name": "b1b80a16-a58d-4af4-8996-78931fbcaadb",
                                 "type": "index-pattern"
                             }
                         ],
@@ -558,12 +558,19 @@
                                             ],
                                             "columns": {
                                                 "2c475ec0-c6e8-41d4-bed5-ef547cb2498b": {
+                                                    "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Count of records",
+                                                    "label": "Count",
                                                     "operationType": "count",
                                                     "params": {
-                                                        "emptyAsNull": true
+                                                        "emptyAsNull": true,
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
                                                     },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
@@ -612,7 +619,7 @@
                                         "alias": "Zero Trust dataset",
                                         "disabled": false,
                                         "field": "data_stream.dataset",
-                                        "index": "a0d069ed-994f-4cfb-b188-c312032e03e2",
+                                        "index": "b1b80a16-a58d-4af4-8996-78931fbcaadb",
                                         "key": "data_stream.dataset",
                                         "negate": false,
                                         "params": [
@@ -711,7 +718,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "83aab0f5-8206-4612-a6fb-262fb99b864d"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "donut"
@@ -746,7 +754,7 @@
                             },
                             {
                                 "id": "logs-*",
-                                "name": "1d40e615-b5f6-4ed4-ba86-165ee6f1ae78",
+                                "name": "c9bbb7c2-ea5b-4940-b218-02db01dd693e",
                                 "type": "index-pattern"
                             }
                         ],
@@ -762,9 +770,10 @@
                                             ],
                                             "columns": {
                                                 "0fd9cf8e-350b-4292-ae3a-715a3765ad42": {
+                                                    "customLabel": true,
                                                     "dataType": "string",
                                                     "isBucketed": true,
-                                                    "label": "Top 2 values of event.outcome",
+                                                    "label": "Outcome",
                                                     "operationType": "terms",
                                                     "params": {
                                                         "exclude": [],
@@ -787,12 +796,19 @@
                                                     "sourceField": "event.outcome"
                                                 },
                                                 "c8234568-a886-497c-a656-57c876fe0409": {
+                                                    "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Count of records",
+                                                    "label": "Count",
                                                     "operationType": "count",
                                                     "params": {
-                                                        "emptyAsNull": true
+                                                        "emptyAsNull": true,
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
                                                     },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
@@ -816,7 +832,7 @@
                                         "alias": "Zero Trust dataset",
                                         "disabled": false,
                                         "field": "data_stream.dataset",
-                                        "index": "1d40e615-b5f6-4ed4-ba86-165ee6f1ae78",
+                                        "index": "c9bbb7c2-ea5b-4940-b218-02db01dd693e",
                                         "key": "data_stream.dataset",
                                         "negate": false,
                                         "params": [
@@ -910,7 +926,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "0fd9cf8e-350b-4292-ae3a-715a3765ad42"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "donut"
@@ -945,7 +962,7 @@
                             },
                             {
                                 "id": "logs-*",
-                                "name": "edc433e8-a513-4723-a208-9b8fdf2dd97f",
+                                "name": "3c35d51b-d02b-431e-91d8-e9ea0517a211",
                                 "type": "index-pattern"
                             }
                         ],
@@ -967,7 +984,13 @@
                                                     "label": "Count",
                                                     "operationType": "count",
                                                     "params": {
-                                                        "emptyAsNull": true
+                                                        "emptyAsNull": true,
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
                                                     },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
@@ -1019,7 +1042,7 @@
                                         "alias": "Zero Trust dataset",
                                         "disabled": false,
                                         "field": "data_stream.dataset",
-                                        "index": "edc433e8-a513-4723-a208-9b8fdf2dd97f",
+                                        "index": "3c35d51b-d02b-431e-91d8-e9ea0517a211",
                                         "key": "data_stream.dataset",
                                         "negate": false,
                                         "params": [
@@ -1146,7 +1169,7 @@
                             },
                             {
                                 "id": "logs-*",
-                                "name": "1fffcce5-cda6-45af-9b4d-30e3bc605e6f",
+                                "name": "252e026f-419a-428a-9769-28076d68b23e",
                                 "type": "index-pattern"
                             }
                         ],
@@ -1168,7 +1191,13 @@
                                                     "label": "Count",
                                                     "operationType": "count",
                                                     "params": {
-                                                        "emptyAsNull": true
+                                                        "emptyAsNull": true,
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
                                                     },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
@@ -1218,7 +1247,7 @@
                                         "alias": "Zero Trust dataset",
                                         "disabled": false,
                                         "field": "data_stream.dataset",
-                                        "index": "1fffcce5-cda6-45af-9b4d-30e3bc605e6f",
+                                        "index": "252e026f-419a-428a-9769-28076d68b23e",
                                         "key": "data_stream.dataset",
                                         "negate": false,
                                         "params": [
@@ -1797,7 +1826,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:56:33.551Z",
+    "created_at": "2026-04-14T13:06:18.897Z",
     "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
     "references": [
         {
@@ -1812,7 +1841,7 @@
         },
         {
             "id": "logs-*",
-            "name": "17459f03-e774-4ca8-b17c-cbe1c2196437:a0d069ed-994f-4cfb-b188-c312032e03e2",
+            "name": "17459f03-e774-4ca8-b17c-cbe1c2196437:b1b80a16-a58d-4af4-8996-78931fbcaadb",
             "type": "index-pattern"
         },
         {
@@ -1822,7 +1851,7 @@
         },
         {
             "id": "logs-*",
-            "name": "39844e37-8f9f-4cfc-b337-e6b5402ebb9a:1d40e615-b5f6-4ed4-ba86-165ee6f1ae78",
+            "name": "39844e37-8f9f-4cfc-b337-e6b5402ebb9a:c9bbb7c2-ea5b-4940-b218-02db01dd693e",
             "type": "index-pattern"
         },
         {
@@ -1832,7 +1861,7 @@
         },
         {
             "id": "logs-*",
-            "name": "7941c734-ddfe-4483-bebc-d22f763dff7d:edc433e8-a513-4723-a208-9b8fdf2dd97f",
+            "name": "7941c734-ddfe-4483-bebc-d22f763dff7d:3c35d51b-d02b-431e-91d8-e9ea0517a211",
             "type": "index-pattern"
         },
         {
@@ -1842,7 +1871,7 @@
         },
         {
             "id": "logs-*",
-            "name": "f76c26eb-8ca7-48a5-b530-1077700d3f51:1fffcce5-cda6-45af-9b4d-30e3bc605e6f",
+            "name": "f76c26eb-8ca7-48a5-b530-1077700d3f51:252e026f-419a-428a-9769-28076d68b23e",
             "type": "index-pattern"
         },
         {
@@ -1967,42 +1996,42 @@
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_4794e46b-61b8-40fe-b2dd-caefbbd894f5:optionsListDataView",
+            "name": "controlGroup_a58a9751-12f0-47e5-a8e3-a108295dcad9:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_6e27518d-01eb-4ffb-af76-5e024fe99e51:optionsListDataView",
+            "name": "controlGroup_ec75971e-0fbc-4507-8859-aab4f008464c:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_5b476401-b55b-4bc9-b203-956ac323180d:optionsListDataView",
+            "name": "controlGroup_6ff5d3b5-11a2-473e-bec4-f3cb5f86baca:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_c5881208-2be3-4380-94f0-0ff55e3437ed:optionsListDataView",
+            "name": "controlGroup_7f99c24f-d00d-4848-858c-6366cfd33aac:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_8eef7991-1330-43ad-9b98-6a104c758de8:optionsListDataView",
+            "name": "controlGroup_9bce3b7e-2ef4-4b28-b094-d882b0333e98:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_31aecda0-0a2d-4b9c-a95b-74a5b8426b53:optionsListDataView",
+            "name": "controlGroup_1bc22ea8-b91c-4faa-b178-8eedcd7abd34:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_27e09afa-1406-4837-974f-7d48a8bea47d:optionsListDataView",
+            "name": "controlGroup_4440ef35-bb22-4145-831f-e4e2f819a280:optionsListDataView",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "controlGroup_e83cdbc6-cba4-4b41-be84-e1369eaadf38:optionsListDataView",
+            "name": "controlGroup_7ab0cd7d-479e-4dee-b289-cb343dbd144e:optionsListDataView",
             "type": "index-pattern"
         }
     ],

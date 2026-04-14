@@ -9,7 +9,80 @@
                 "ignoreTimerange": false,
                 "ignoreValidations": false
             },
-            "panelsJSON": {},
+            "panelsJSON": {
+                "9143b95b-75eb-4e0d-b6b8-756e1cc8186f": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "network.direction",
+                        "id": "9143b95b-75eb-4e0d-b6b8-756e1cc8186f",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Direction"
+                    },
+                    "grow": true,
+                    "order": 2,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "b7cbfd59-6a42-4b01-8dc2-bbee4b20ad8b": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.network_analytics.verdict",
+                        "id": "b7cbfd59-6a42-4b01-8dc2-bbee4b20ad8b",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "Verdict"
+                    },
+                    "grow": true,
+                    "order": 3,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "ba12908d-3803-44e0-a60d-0b268f76feea": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.network_analytics.dns.query.type",
+                        "id": "ba12908d-3803-44e0-a60d-0b268f76feea",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "DNS Query Type"
+                    },
+                    "grow": true,
+                    "order": 1,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                },
+                "fa9e9524-fe44-4900-b82a-fbe89f559191": {
+                    "explicitInput": {
+                        "dataViewId": "logs-*",
+                        "fieldName": "cloudflare_logpush.network_analytics.colo.code",
+                        "id": "fa9e9524-fe44-4900-b82a-fbe89f559191",
+                        "searchTechnique": "prefix",
+                        "selectedOptions": [],
+                        "sort": {
+                            "by": "_count",
+                            "direction": "desc"
+                        },
+                        "title": "ColoCode"
+                    },
+                    "grow": true,
+                    "order": 0,
+                    "type": "optionsListControl",
+                    "width": "medium"
+                }
+            },
             "showApplySelections": false
         },
         "description": "Overview of Cloudflare Logpush Network Analytics",
@@ -343,16 +416,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
+                                "name": "e57d8979-aa8f-4b79-9e42-a27b8f3b8fad",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -385,8 +459,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -396,10 +478,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "e57d8979-aa8f-4b79-9e42-a27b8f3b8fad",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -407,7 +513,7 @@
                                         "categoryDisplay": "default",
                                         "layerId": "6c5ec283-013e-440d-ba37-5c07a17e1029",
                                         "layerType": "data",
-                                        "legendDisplay": "default",
+                                        "legendDisplay": "show",
                                         "legendSize": "auto",
                                         "metrics": [
                                             "9d568821-2c1e-40c4-8d25-9f7d69a66b9e"
@@ -416,7 +522,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "71696bca-c718-4577-911c-6d9a801a48a7"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "pie"
@@ -446,16 +553,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
+                                "name": "02921eb3-d53e-4c0e-9a51-69d5de9f837a",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -488,8 +596,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -499,10 +615,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "02921eb3-d53e-4c0e-9a51-69d5de9f837a",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -510,7 +650,7 @@
                                         "categoryDisplay": "default",
                                         "layerId": "6c5ec283-013e-440d-ba37-5c07a17e1029",
                                         "layerType": "data",
-                                        "legendDisplay": "default",
+                                        "legendDisplay": "show",
                                         "legendSize": "auto",
                                         "metrics": [
                                             "9d568821-2c1e-40c4-8d25-9f7d69a66b9e"
@@ -519,7 +659,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "71696bca-c718-4577-911c-6d9a801a48a7"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "pie"
@@ -549,16 +690,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
+                                "name": "3ae97ad2-2e60-4e5b-aad8-568cdb7972c7",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -591,8 +733,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -602,10 +752,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "3ae97ad2-2e60-4e5b-aad8-568cdb7972c7",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -613,7 +787,7 @@
                                         "categoryDisplay": "default",
                                         "layerId": "6c5ec283-013e-440d-ba37-5c07a17e1029",
                                         "layerType": "data",
-                                        "legendDisplay": "default",
+                                        "legendDisplay": "show",
                                         "legendSize": "auto",
                                         "metrics": [
                                             "9d568821-2c1e-40c4-8d25-9f7d69a66b9e"
@@ -622,7 +796,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "71696bca-c718-4577-911c-6d9a801a48a7"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "pie"
@@ -652,16 +827,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
+                                "name": "0103c39a-e300-4b60-8c80-35f312312e5e",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -694,8 +870,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -705,10 +889,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "0103c39a-e300-4b60-8c80-35f312312e5e",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -716,7 +924,7 @@
                                         "categoryDisplay": "default",
                                         "layerId": "6c5ec283-013e-440d-ba37-5c07a17e1029",
                                         "layerType": "data",
-                                        "legendDisplay": "default",
+                                        "legendDisplay": "show",
                                         "legendSize": "auto",
                                         "metrics": [
                                             "9d568821-2c1e-40c4-8d25-9f7d69a66b9e"
@@ -725,7 +933,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "71696bca-c718-4577-911c-6d9a801a48a7"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "pie"
@@ -755,16 +964,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
+                                "name": "aa555f7e-7b37-4e59-bd21-a1d4e5ce32c6",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -797,8 +1007,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -808,10 +1026,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "aa555f7e-7b37-4e59-bd21-a1d4e5ce32c6",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -819,7 +1061,7 @@
                                         "categoryDisplay": "default",
                                         "layerId": "6c5ec283-013e-440d-ba37-5c07a17e1029",
                                         "layerType": "data",
-                                        "legendDisplay": "default",
+                                        "legendDisplay": "show",
                                         "legendSize": "auto",
                                         "metrics": [
                                             "9d568821-2c1e-40c4-8d25-9f7d69a66b9e"
@@ -828,7 +1070,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "71696bca-c718-4577-911c-6d9a801a48a7"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "pie"
@@ -858,16 +1101,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
+                                "name": "6c9bb2d0-0313-47e8-940d-1027560fd807",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -900,8 +1144,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -911,10 +1163,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "6c9bb2d0-0313-47e8-940d-1027560fd807",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -922,7 +1198,7 @@
                                         "categoryDisplay": "default",
                                         "layerId": "6c5ec283-013e-440d-ba37-5c07a17e1029",
                                         "layerType": "data",
-                                        "legendDisplay": "default",
+                                        "legendDisplay": "show",
                                         "legendSize": "auto",
                                         "metrics": [
                                             "9d568821-2c1e-40c4-8d25-9f7d69a66b9e"
@@ -931,7 +1207,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "71696bca-c718-4577-911c-6d9a801a48a7"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "pie"
@@ -961,16 +1238,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
+                                "name": "a01c3572-17b9-4ceb-bd07-4b655e65d622",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -1003,8 +1281,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -1014,10 +1300,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "a01c3572-17b9-4ceb-bd07-4b655e65d622",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -1064,16 +1374,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
+                                "name": "f0479133-dc5f-45ce-aadb-a8f6c810da77",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -1106,8 +1417,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 }
@@ -1117,10 +1436,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "f0479133-dc5f-45ce-aadb-a8f6c810da77",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "layers": [
@@ -1137,7 +1480,8 @@
                                         "numberDisplay": "percent",
                                         "primaryGroups": [
                                             "339a62c8-a6a0-4c14-acc8-a438dc906a08"
-                                        ]
+                                        ],
+                                        "truncateLegend": false
                                     }
                                 ],
                                 "shape": "treemap"
@@ -1167,16 +1511,17 @@
                         "references": [
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-current-indexpattern",
+                                "name": "indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
                                 "type": "index-pattern"
                             },
                             {
                                 "id": "logs-*",
-                                "name": "indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
+                                "name": "6aadd68b-437a-4d3a-8731-5730fb645a1f",
                                 "type": "index-pattern"
                             }
                         ],
                         "state": {
+                            "adHocDataViews": {},
                             "datasourceStates": {
                                 "formBased": {
                                     "layers": {
@@ -1210,8 +1555,16 @@
                                                     "customLabel": true,
                                                     "dataType": "number",
                                                     "isBucketed": false,
-                                                    "label": "Record",
+                                                    "label": "Count",
                                                     "operationType": "count",
+                                                    "params": {
+                                                        "format": {
+                                                            "id": "number",
+                                                            "params": {
+                                                                "decimals": 0
+                                                            }
+                                                        }
+                                                    },
                                                     "scale": "ratio",
                                                     "sourceField": "___records___"
                                                 },
@@ -1240,10 +1593,34 @@
                                     }
                                 }
                             },
-                            "filters": [],
+                            "filters": [
+                                {
+                                    "$state": {
+                                        "store": "appState"
+                                    },
+                                    "meta": {
+                                        "alias": null,
+                                        "disabled": false,
+                                        "field": "data_stream.dataset",
+                                        "index": "6aadd68b-437a-4d3a-8731-5730fb645a1f",
+                                        "key": "data_stream.dataset",
+                                        "negate": false,
+                                        "params": {
+                                            "query": "cloudflare_logpush.network_analytics"
+                                        },
+                                        "type": "phrase"
+                                    },
+                                    "query": {
+                                        "match_phrase": {
+                                            "data_stream.dataset": "cloudflare_logpush.network_analytics"
+                                        }
+                                    }
+                                }
+                            ],
+                            "internalReferences": [],
                             "query": {
                                 "language": "kuery",
-                                "query": "data_stream.dataset : cloudflare_logpush.network_analytics"
+                                "query": ""
                             },
                             "visualization": {
                                 "columns": [
@@ -1291,7 +1668,7 @@
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",
-    "created_at": "2026-04-13T17:56:40.528Z",
+    "created_at": "2026-04-14T13:06:06.731Z",
     "id": "cloudflare_logpush-3da7bd20-dc45-11ec-b76d-adcfe05cc1fe",
     "references": [
         {
@@ -1301,17 +1678,12 @@
         },
         {
             "id": "logs-*",
-            "name": "76dd9910-33ca-4380-84f9-0714b5162925:indexpattern-datasource-current-indexpattern",
-            "type": "index-pattern"
-        },
-        {
-            "id": "logs-*",
             "name": "76dd9910-33ca-4380-84f9-0714b5162925:indexpattern-datasource-layer-6c5ec283-013e-440d-ba37-5c07a17e1029",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
-            "name": "db9bd60f-97ff-4128-ac14-f50aad75c349:indexpattern-datasource-current-indexpattern",
+            "name": "76dd9910-33ca-4380-84f9-0714b5162925:e57d8979-aa8f-4b79-9e42-a27b8f3b8fad",
             "type": "index-pattern"
         },
         {
@@ -1321,7 +1693,7 @@
         },
         {
             "id": "logs-*",
-            "name": "a3ed8dcc-80c7-4b0b-b5ae-d367ca5399f2:indexpattern-datasource-current-indexpattern",
+            "name": "db9bd60f-97ff-4128-ac14-f50aad75c349:02921eb3-d53e-4c0e-9a51-69d5de9f837a",
             "type": "index-pattern"
         },
         {
@@ -1331,7 +1703,7 @@
         },
         {
             "id": "logs-*",
-            "name": "f8d6e38e-14f7-41d2-be81-0831c73cb443:indexpattern-datasource-current-indexpattern",
+            "name": "a3ed8dcc-80c7-4b0b-b5ae-d367ca5399f2:3ae97ad2-2e60-4e5b-aad8-568cdb7972c7",
             "type": "index-pattern"
         },
         {
@@ -1341,7 +1713,7 @@
         },
         {
             "id": "logs-*",
-            "name": "185e465f-bd48-48e2-a8be-59854a7c3021:indexpattern-datasource-current-indexpattern",
+            "name": "f8d6e38e-14f7-41d2-be81-0831c73cb443:0103c39a-e300-4b60-8c80-35f312312e5e",
             "type": "index-pattern"
         },
         {
@@ -1351,7 +1723,7 @@
         },
         {
             "id": "logs-*",
-            "name": "6a86f194-8e17-4b6c-8100-3fe42fbb85b0:indexpattern-datasource-current-indexpattern",
+            "name": "185e465f-bd48-48e2-a8be-59854a7c3021:aa555f7e-7b37-4e59-bd21-a1d4e5ce32c6",
             "type": "index-pattern"
         },
         {
@@ -1361,7 +1733,7 @@
         },
         {
             "id": "logs-*",
-            "name": "fefc98e2-ac0a-4929-92a1-3a8dcc396a8c:indexpattern-datasource-current-indexpattern",
+            "name": "6a86f194-8e17-4b6c-8100-3fe42fbb85b0:6c9bb2d0-0313-47e8-940d-1027560fd807",
             "type": "index-pattern"
         },
         {
@@ -1371,7 +1743,7 @@
         },
         {
             "id": "logs-*",
-            "name": "1b347819-7723-4250-9dfc-647d474d1044:indexpattern-datasource-current-indexpattern",
+            "name": "fefc98e2-ac0a-4929-92a1-3a8dcc396a8c:a01c3572-17b9-4ceb-bd07-4b655e65d622",
             "type": "index-pattern"
         },
         {
@@ -1381,12 +1753,17 @@
         },
         {
             "id": "logs-*",
-            "name": "108877cb-bc4f-4870-90d4-732d4755014f:indexpattern-datasource-current-indexpattern",
+            "name": "1b347819-7723-4250-9dfc-647d474d1044:f0479133-dc5f-45ce-aadb-a8f6c810da77",
             "type": "index-pattern"
         },
         {
             "id": "logs-*",
             "name": "108877cb-bc4f-4870-90d4-732d4755014f:indexpattern-datasource-layer-11a19196-0f9a-4d8f-9347-348869de935c",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "108877cb-bc4f-4870-90d4-732d4755014f:6aadd68b-437a-4d3a-8731-5730fb645a1f",
             "type": "index-pattern"
         },
         {
@@ -1498,6 +1875,26 @@
             "id": "cloudflare_logpush-67684710-0151-11ee-a051-4174215e3eb2",
             "name": "99d37459-fa7f-47ec-9322-d75ebf0e407c:link_f3eaf979-4efe-46ae-88a4-e3a900780bd7_dashboard",
             "type": "dashboard"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_8a4312ac-ed2d-4403-8829-6841a19cc6ca:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_216eca58-e905-4b1b-a81b-ee09e026e5f8:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_b806b23e-d84f-4ec4-9da6-adcb607b566a:optionsListDataView",
+            "type": "index-pattern"
+        },
+        {
+            "id": "logs-*",
+            "name": "controlGroup_1124b730-65e6-4cde-8212-d7a7f7c374ba:optionsListDataView",
+            "type": "index-pattern"
         }
     ],
     "type": "dashboard",
