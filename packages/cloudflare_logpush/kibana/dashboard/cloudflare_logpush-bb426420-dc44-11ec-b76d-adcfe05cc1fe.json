@@ -709,7 +709,7 @@
                                                         "size": 5
                                                     },
                                                     "scale": "ordinal",
-                                                    "sourceField": "cloudflare_logpush.http_request.client.device.type"
+                                                    "sourceField": "device.type"
                                                 },
                                                 "ce5dbaea-6c81-4e2f-89dd-78097bf4bd36": {
                                                     "customLabel": true,
