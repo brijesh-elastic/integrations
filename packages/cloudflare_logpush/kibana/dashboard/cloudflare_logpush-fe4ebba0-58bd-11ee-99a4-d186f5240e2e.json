@@ -157,7 +157,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Sinkhole HTTP logs collected by the Cloudflare Logpush integration.",
+        "description": "Sinkhole HTTP events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

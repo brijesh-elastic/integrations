@@ -85,7 +85,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Overview of Cloudflare Logpush Network Analytics",
+        "description": "Network Analytics events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

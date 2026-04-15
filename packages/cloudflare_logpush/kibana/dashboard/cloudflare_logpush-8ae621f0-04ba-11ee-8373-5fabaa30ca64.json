@@ -13,7 +13,7 @@
                 "024bc79a-e0cf-4ef9-b152-d449bd96b607": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.gateway_http.account_id",
+                        "fieldName": "cloudflare_logpush.gateway_network.account_id",
                         "id": "024bc79a-e0cf-4ef9-b152-d449bd96b607",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
@@ -31,7 +31,7 @@
                 "901c504a-f4c9-4816-996a-1ec1b240bab4": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.gateway_http.policy.name",
+                        "fieldName": "cloudflare_logpush.gateway_network.policy.name",
                         "id": "901c504a-f4c9-4816-996a-1ec1b240bab4",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
@@ -139,7 +139,7 @@
                 "bf7b0e22-2495-4fa6-ae50-dde2d5ef98d7": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.gateway_http.policy.id",
+                        "fieldName": "cloudflare_logpush.gateway_network.policy.id",
                         "id": "bf7b0e22-2495-4fa6-ae50-dde2d5ef98d7",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],

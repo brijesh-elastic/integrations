@@ -49,7 +49,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Overview of Cloudflare Logpush DLP Forensic Copies logs.",
+        "description": "DLP Forensic Copies events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

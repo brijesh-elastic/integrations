@@ -152,7 +152,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Workers Trace Events collected by the Cloudflare Logpush integration.",
+        "description": "Workers Trace events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
@@ -1496,7 +1496,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Cloudflare Logpush] Workers Trace Events",
+        "title": "[Logs Cloudflare Logpush] Workers Trace Events",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",

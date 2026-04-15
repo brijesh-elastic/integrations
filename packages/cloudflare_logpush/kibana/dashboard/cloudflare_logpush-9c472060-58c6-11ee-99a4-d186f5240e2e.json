@@ -157,7 +157,7 @@
             },
             "showApplySelections": false
         },
-        "description": "DNS Firewall logs collected by the Cloudflare Logpush integration.",
+        "description": "DNS Firewall events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

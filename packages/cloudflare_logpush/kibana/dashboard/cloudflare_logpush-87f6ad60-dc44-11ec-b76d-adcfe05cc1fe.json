@@ -67,7 +67,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Overview of Cloudflare Logpush DNS",
+        "description": "DNS events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

@@ -121,7 +121,7 @@
                 "e6b37ede-7dbe-484d-bc43-5ab39f561802": {
                     "explicitInput": {
                         "dataViewId": "logs-*",
-                        "fieldName": "cloudflare_logpush.gateway_http.account_id",
+                        "fieldName": "cloudflare_logpush.network_session.account_id",
                         "id": "e6b37ede-7dbe-484d-bc43-5ab39f561802",
                         "searchTechnique": "prefix",
                         "selectedOptions": [],
@@ -139,7 +139,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Zero Trust Network Session Logs collected by the Cloudflare Logpush integration.",
+        "description": "Network Session events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

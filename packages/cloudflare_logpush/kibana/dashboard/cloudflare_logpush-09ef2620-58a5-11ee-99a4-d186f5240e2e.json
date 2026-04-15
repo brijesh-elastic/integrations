@@ -121,7 +121,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Magic IDS logs collected by the Cloudflare Logpush integration.",
+        "description": "Magic IDS Detections events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
@@ -1479,7 +1479,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Cloudflare Logpush] Magic IDS Detections",
+        "title": "[Logs Cloudflare Logpush] Magic IDS Detections",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",

@@ -85,7 +85,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Overview of Cloudflare Logpush Email Security Alerts.",
+        "description": "Email Security Alert events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

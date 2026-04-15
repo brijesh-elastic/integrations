@@ -157,7 +157,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Overview of Zero Trust events collected by the Cloudflare Logpush integration.",
+        "description": "Zero Trust events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [

@@ -85,7 +85,7 @@
             },
             "showApplySelections": false
         },
-        "description": "Access Request events collected by the Cloudflare Logpush integration.",
+        "description": "CASB findings events collected by the Cloudflare Logpush integration.",
         "kibanaSavedObjectMeta": {
             "searchSourceJSON": {
                 "filter": [
