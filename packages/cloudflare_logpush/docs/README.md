@@ -165,12 +165,12 @@ Configure one of the following delivery pipelines before enabling the integratio
 - Configure [Cloudflare Logpush to Cloudflare R2](https://developers.cloudflare.com/logs/logpush/logpush-job/enable-destinations/r2/) (or another [S3-compatible endpoint](https://developers.cloudflare.com/logs/logpush/logpush-job/enable-destinations/s3-compatible-endpoints/)) to push logs into an R2 bucket.
 
 **Note:**
+- To obtain the **Access Key ID** and **Secret Access Key**, create an R2 API token by following the [R2 authentication documentation](https://developers.cloudflare.com/r2/api/tokens/). Once the token is created successfully, Cloudflare will display the **Access Key ID** and **Secret Access Key** values. Use these credentials to authenticate the integration.
 - When creating the R2 API token, make sure it has [Admin permissions](https://developers.cloudflare.com/r2/api/s3/tokens/#permissions). This is needed to list buckets and view bucket configuration.
 
 When configuring the integration to read from S3-Compatible Buckets such as Cloudflare R2, the following steps are required:
 - Enable the **Collect logs via S3 Bucket** toggle.
 - Set the **S3-Compatible Bucket Name** (shown as `[Global][S3] S3-Compatible Bucket Name` in the UI) to the R2 bucket name.
-- Although you have to create an R2 API token to obtain credentials, the token itself is not used to authenticate with the S3 API. Instead, use the **Access Key ID** and **Secret Access Key** that Cloudflare displays when the R2 API token is created.
 - Set the **Endpoint** field to the API endpoint shown in the bucket details. It must be a full URI used as the API endpoint of the service. For Cloudflare R2 buckets, the URI is typically of the form `https://<accountid>.r2.cloudflarestorage.com`.
 - Set the **Region** field to `auto`. This is required for all non-AWS S3-compatible buckets on Elastic Agent 8.19.12 and later. For Cloudflare R2, the region is always `auto` per the [R2 S3 API documentation](https://developers.cloudflare.com/r2/api/s3/api/#bucket-region).
 - **Bucket Prefix** is optional for each data stream.
