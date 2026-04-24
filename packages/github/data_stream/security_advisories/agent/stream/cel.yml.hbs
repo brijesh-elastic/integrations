@@ -11,9 +11,14 @@ state:
 {{/if}}
   advisory_type: {{advisory_type}}
   batch_size: {{batch_size}}
+{{#if api_key}}
 redact:
   fields:
     - api_key
+{{else}}
+redact:
+  fields: ~
+{{/if}}
 regexp:
   github_link_next: '<([^>]+)>; rel="next"'
 max_executions: 5000
