@@ -44,14 +44,6 @@ streams:
         required: true
         show_user: true
         description: 腾讯云 COS 的 Endpoint
-      - name: region
-        type: text
-        title: Region
-        multi: false
-        required: false
-        show_user: false
-        default: ""
-        description: The name of the region of the end point. Required when using a non-AWS S3-compatible bucket.
       - name: processors
         type: yaml
         title: Processors
