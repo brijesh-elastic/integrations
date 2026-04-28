@@ -11,7 +11,7 @@
           - Fix integer-to-keyword type casting in `gateway_dns`, `gateway_http`, and `gateway_network` by replacing rename with convert processors.
           - Fix swapped field descriptions in `firewall_event` (`origin.ray.id`/`origin.response.status`) and `http_request` (`cache.status`/`cache.response.status`).
       type: bugfix
-      link: https://github.com/elastic/integrations/pull/1
+      link: https://github.com/elastic/integrations/pull/18673
 - version: "1.44.0"
   changes:
     - description: Add SSL configuration option to the aws-s3 input.
