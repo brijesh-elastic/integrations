@@ -1,4 +1,17 @@
 # newer versions go on top
+- version: "1.44.1"
+  changes:
+    - description: |
+        Fix several ingest pipeline and field definition bugs across multiple data streams:
+          - Fix `email_security_alerts` timestamp normalization to reference the PascalCase `Timestamp` field.
+          - Fix `spectrum_event` broken grok guard condition and remove processor field reference.
+          - Fix `network_analytics` split processor case-sensitivity for the `TCPSackBlocks` field.
+          - Fix `audit` rename condition to use PascalCase for the `Interface` field.
+          - Fix `http_request` header naming to use plural `headers` to match field definitions.
+          - Fix integer-to-keyword type casting in `gateway_dns`, `gateway_http`, and `gateway_network` by replacing rename with convert processors.
+          - Fix swapped field descriptions in `firewall_event` (`origin.ray.id`/`origin.response.status`) and `http_request` (`cache.status`/`cache.response.status`).
+      type: bugfix
+      link: https://github.com/elastic/integrations/pull/1
 - version: "1.44.0"
   changes:
     - description: Add SSL configuration option to the aws-s3 input.
