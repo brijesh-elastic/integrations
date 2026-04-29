@@ -212,7 +212,7 @@
         - name: policy
           type: group
           fields:
-            - name: id
+            - name: ids
               type: keyword
               description: Resolver policy UUID, if any matched.
             - name: names

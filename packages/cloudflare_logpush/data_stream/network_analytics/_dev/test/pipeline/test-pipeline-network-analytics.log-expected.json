@@ -33,9 +33,6 @@
                     "direction": "ingress",
                     "gre": {
                         "checksum": 10,
-                        "ether": {
-                            "type": 10
-                        },
                         "header": {
                             "length": 1024
                         },
@@ -244,9 +241,6 @@
                     "direction": "ingress",
                     "gre": {
                         "checksum": 10,
-                        "ether": {
-                            "type": 10
-                        },
                         "header": {
                             "length": 1024
                         },
@@ -455,9 +449,6 @@
                     "direction": "ingress",
                     "gre": {
                         "checksum": 10,
-                        "ether": {
-                            "type": 10
-                        },
                         "header": {
                             "length": 1024
                         },
@@ -661,6 +652,9 @@
                     "direction": "ingress",
                     "gre": {
                         "checksum": 0,
+                        "ether": {
+                            "type": 0
+                        },
                         "header": {
                             "length": 0
                         },
@@ -853,6 +847,9 @@
                     "direction": "ingress",
                     "gre": {
                         "checksum": 0,
+                        "ether": {
+                            "type": 0
+                        },
                         "header": {
                             "length": 0
                         },
