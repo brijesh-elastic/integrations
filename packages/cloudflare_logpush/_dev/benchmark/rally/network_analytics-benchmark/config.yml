@@ -36,21 +36,21 @@ fields:
   - name: gre_checksum
     value: 10
   - name: gre_ether_type
-    value: 10
+    enum: [2048, 34525]
   - name: gre_header_length
-    value: 1024
+    enum: [4, 8, 12, 16]
   - name: gre_key
     value: 10
   - name: gre_sequence_number
     value: 10
   - name: gre_version
-    value: 0
+    enum: [0, 1]
   - name: icmp_checksum
     value: 10
   - name: icmp_code
-    value: 10
+    enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   - name: icmp_type
-    value: 10
+    enum: [0, 3, 5, 8, 9, 10, 11, 12, 13, 14]
   - name: ip_destination_address
     cardinality: 5000
   - name: ip_destination_subnet
@@ -58,11 +58,11 @@ fields:
   - name: ip_fragment_offset
     value: 0
   - name: ip_header_length
-    value: 20
+    enum: [20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60]
   - name: ip_more_fragments
-    value: 0
+    enum: [0, 1]
   - name: ip_protocol
-    value: 6
+    enum: [1, 6, 17, 47]
   - name: ip_protocol_name
     enum: [tcp, udp, icmp, gre]
   - name: ip_source_address
@@ -84,19 +84,19 @@ fields:
   - name: ipv4_checksum
     value: 0
   - name: ipv4_dont_fragment
-    value: 0
+    enum: [0, 1]
   - name: ipv4_dscp
-    value: 46
+    enum: [0, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 46, 48, 56]
   - name: ipv4_ecn
-    value: 1
+    enum: [0, 1, 2, 3]
   - name: ipv4_identification
     value: 1
   - name: ipv4_options
     value: 0
   - name: ipv6_dscp
-    value: 46
+    enum: [0, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 46, 48, 56]
   - name: ipv6_ecn
-    value: 1
+    enum: [0, 1, 2, 3]
   - name: ipv6_extension_headers
     cardinality: 100
   - name: ipv6_flow_label
@@ -122,7 +122,7 @@ fields:
   - name: ruleset_override_id
     cardinality: 100
   - name: sample_interval
-    value: 100
+    enum: [100, 1000, 10000]
   - name: source_asn
     range:
       min: 1
@@ -142,19 +142,19 @@ fields:
   - name: tcp_checksum
     value: 10
   - name: tcp_data_offset
-    value: 0
+    enum: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
   - name: tcp_flags
-    value: 1
+    enum: [2, 16, 17, 18, 20, 24, 25]
   - name: tcp_flags_string
     cardinality: 100
   - name: tcp_mss
-    value: 512
+    enum: [536, 1380, 1440, 1452, 1460]
   - name: tcp_options
     cardinality: 50
   - name: tcp_sack_blocks
     value: 1
   - name: tcp_sack_permitted
-    value: 1
+    enum: [0, 1]
   - name: tcp_sequence_number
     value: 100
   - name: tcp_timestamp_ecr
@@ -164,7 +164,7 @@ fields:
   - name: tcp_urgent_pointer
     value: 0
   - name: tcp_window_scale
-    value: 10
+    enum: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
   - name: tcp_window_size
     value: 10
   - name: udp_checksum
