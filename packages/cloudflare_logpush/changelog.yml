@@ -3,7 +3,7 @@
   changes:
     - description: Update ECS to 9.3.0 and add new fields across multiple data streams.
       type: enhancement
-      link: https://github.com/elastic/integrations/pull/1
+      link: https://github.com/elastic/integrations/pull/18685
 - version: "1.44.0"
   changes:
     - description: Add SSL configuration option to the aws-s3 input.
