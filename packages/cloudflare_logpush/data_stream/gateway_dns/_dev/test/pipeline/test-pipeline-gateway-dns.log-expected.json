@@ -138,7 +138,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -336,7 +336,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -534,7 +534,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -677,7 +677,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
@@ -803,7 +803,7 @@
                 "response_code": "0"
             },
             "ecs": {
-                "version": "8.11.0"
+                "version": "9.3.0"
             },
             "event": {
                 "category": [
