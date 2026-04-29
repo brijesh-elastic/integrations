@@ -98,7 +98,7 @@
           type: keyword
           description: Name or names of category that the queried domains belongs to.
     - name: initial_resolved_ips
-      type: keyword
+      type: ip
       description: The IPs used to correlate existing FQDN matching policy between Gateway DNS and Gateway proxy.
     - name: internal_dns
       type: group

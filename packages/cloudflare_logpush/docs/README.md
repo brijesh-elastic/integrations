@@ -1977,7 +1977,7 @@ An example event for `gateway_dns` looks as following:
 | cloudflare_logpush.gateway_dns.host.name | The name of the device where the HTTP request originated from. | keyword |
 | cloudflare_logpush.gateway_dns.initial_category.ids | ID or IDs of category that the queried domains belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.initial_category.names | Name or names of category that the queried domains belongs to. | keyword |
-| cloudflare_logpush.gateway_dns.initial_resolved_ips | The IPs used to correlate existing FQDN matching policy between Gateway DNS and Gateway proxy. | keyword |
+| cloudflare_logpush.gateway_dns.initial_resolved_ips | The IPs used to correlate existing FQDN matching policy between Gateway DNS and Gateway proxy. | ip |
 | cloudflare_logpush.gateway_dns.internal_dns.duration_ms | The time it took for the internal DNS to respond. | long |
 | cloudflare_logpush.gateway_dns.internal_dns.fallback_strategy | The fallback strategy applied over the internal DNS response. | keyword |
 | cloudflare_logpush.gateway_dns.internal_dns.rcode | The return code sent back by the internal DNS service. | long |
