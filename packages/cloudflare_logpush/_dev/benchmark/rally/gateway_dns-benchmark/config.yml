@@ -42,15 +42,11 @@ fields:
       min: 20
       max: 512
   - name: query_type
-    range:
-      min: 1
-      max: 255
+    enum: [1, 2, 5, 6, 12, 15, 16, 28, 33]
   - name: query_type_name
     enum: [A, AAAA, CNAME, MX, TXT, NS, SOA, SRV, PTR]
   - name: rcode
-    range:
-      min: 0
-      max: 5
+    enum: [0, 1, 2, 3, 4, 5]
   - name: resolver_decision
     enum: [allowedOnNoPolicyMatch, allowedByQueryName, blockedByQueryName, allowedRule, blockedRule, safeSearchBlock, allowedOnNoLocation]
   - name: src_ip

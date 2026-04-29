@@ -30,7 +30,7 @@ fields:
   - name: edge_colo_code
     enum: [SFO, JFK, LAX, LHR, FRA, NRT, SIN, SYD, GRU, MRS]
   - name: edge_response_status
-    value: 200
+    enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
   - name: kind
     enum: [firewall]
   - name: match_index
@@ -38,7 +38,7 @@ fields:
       min: 0
       max: 10
   - name: origin_response_status
-    value: 200
+    enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
   - name: originator_ray_id
     cardinality: 100000
   - name: ray_id
