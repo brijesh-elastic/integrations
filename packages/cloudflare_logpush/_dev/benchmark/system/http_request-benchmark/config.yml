@@ -14,7 +14,7 @@ fields:
       min: 0
       max: 10000000
   - name: cache_response_status
-    value: 200
+    enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
   - name: cache_tiered_fill
     enum: ["true", "false"]
   - name: client_asn
@@ -68,7 +68,7 @@ fields:
   - name: edge_response_content_type
     enum: [text/html, application/json, text/css, application/javascript, image/png, image/jpeg]
   - name: edge_response_status
-    value: 200
+    enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
   - name: edge_server_ip
     cardinality: 1000
   - name: edge_time_to_first_byte_ms
@@ -86,7 +86,7 @@ fields:
       min: 0
       max: 30000
   - name: origin_response_status
-    value: 200
+    enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
   - name: origin_response_time
     range:
       min: 0

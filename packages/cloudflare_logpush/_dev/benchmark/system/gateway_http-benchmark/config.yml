@@ -34,7 +34,7 @@ fields:
   - name: http_method
     enum: [GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS, CONNECT]
   - name: http_status_code
-    value: 200
+    enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
   - name: http_version
     enum: [HTTP/1.0, HTTP/1.1, HTTP/2, HTTP/3]
   - name: is_isolated
