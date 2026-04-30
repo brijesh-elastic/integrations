@@ -13,8 +13,6 @@ fields:
     range:
       min: 0
       max: 10000000
-  - name: cache_response_status
-    enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
   - name: cache_tiered_fill
     enum: ["true", "false"]
   - name: client_asn
@@ -77,27 +75,19 @@ fields:
       max: 30000
   - name: origin_ip
     cardinality: 5000
-  - name: origin_response_bytes
-    range:
-      min: 0
-      max: 10000000
   - name: origin_response_duration_ms
     range:
       min: 0
       max: 30000
   - name: origin_response_status
     enum: [200, 301, 302, 304, 400, 401, 403, 404, 500, 502, 503]
-  - name: origin_response_time
-    range:
-      min: 0
-      max: 30000000000
   - name: parent_ray_id
     cardinality: 100000
   - name: ray_id
     cardinality: 100000
   - name: security_level
     enum: [off, essentially_off, low, medium, high, under_attack]
-  - name: waf_action
+  - name: security_action
     enum: [unknown, allow, drop, challenge, jschallenge, log, connectionClose, simulate]
   - name: zone_id
     range:

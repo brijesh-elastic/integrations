@@ -8,8 +8,6 @@
   type: keyword
 - name: cache_response_bytes
   type: long
-- name: cache_response_status
-  type: long
 - name: cache_tiered_fill
   type: boolean
 - name: client_asn
@@ -58,13 +56,9 @@
   type: long
 - name: origin_ip
   type: ip
-- name: origin_response_bytes
-  type: long
 - name: origin_response_duration_ms
   type: long
 - name: origin_response_status
-  type: long
-- name: origin_response_time
   type: long
 - name: parent_ray_id
   type: keyword
@@ -72,7 +66,7 @@
   type: keyword
 - name: security_level
   type: keyword
-- name: waf_action
+- name: security_action
   type: keyword
 - name: zone_id
   type: long

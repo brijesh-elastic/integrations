@@ -15,6 +15,6 @@
 {{- $source_ip := generate "source_ip" -}}
 {{- $source_internal_ip := generate "source_internal_ip" -}}
 {{- $source_port := generate "source_port" -}}
-{{- $transport := generate "transport" -}}
+{{- $transport_protocol := generate "transport_protocol" -}}
 {{- $user_id := generate "user_id" -}}
-{"AccountID":"{{ $account_id }}","Action":"{{ $action }}","Datetime":"{{ $timestamp.Format "2006-01-02T15:04:05Z07:00" }}","DestinationIP":"{{ $destination_ip }}","DestinationPort":{{ $destination_port }},"DeviceID":"{{ $device_id }}","DeviceName":"{{ $device_name }}","Email":"{{ $email }}","OverrideIP":"{{ $override_ip }}","OverridePort":{{ $override_port }},"PolicyID":"{{ $policy_id }}","PolicyName":"{{ $policy_name }}","SNI":"{{ $sni }}","SessionID":"{{ $session_id }}","SourceIP":"{{ $source_ip }}","SourceInternalIP":"{{ $source_internal_ip }}","SourcePort":{{ $source_port }},"Transport":"{{ $transport }}","UserID":"{{ $user_id }}"}
+{"AccountID":"{{ $account_id }}","Action":"{{ $action }}","Datetime":"{{ $timestamp.Format "2006-01-02T15:04:05Z07:00" }}","DestinationIP":"{{ $destination_ip }}","DestinationPort":{{ $destination_port }},"DeviceID":"{{ $device_id }}","DeviceName":"{{ $device_name }}","Email":"{{ $email }}","OverrideIP":"{{ $override_ip }}","OverridePort":{{ $override_port }},"PolicyID":"{{ $policy_id }}","PolicyName":"{{ $policy_name }}","SNI":"{{ $sni }}","SessionID":"{{ $session_id }}","SourceIP":"{{ $source_ip }}","SourceInternalIP":"{{ $source_internal_ip }}","SourcePort":{{ $source_port }},"TransportProtocol":"{{ $transport_protocol }}","UserID":"{{ $user_id }}"}
