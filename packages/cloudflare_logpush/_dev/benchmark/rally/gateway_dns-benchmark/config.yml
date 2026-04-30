@@ -27,7 +27,7 @@ fields:
     cardinality: 100
   - name: location_id
     cardinality: 100
-  - name: policy
+  - name: policy_name
     cardinality: 100
   - name: policy_id
     cardinality: 100
