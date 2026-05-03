@@ -3,7 +3,7 @@
   changes:
     - description: Fix parsing of "logon-authentication-failed" & "user-logged-on" audit events.
       type: bugfix
-      link: https://github.com/elastic/integrations/pull/1
+      link: https://github.com/elastic/integrations/pull/18775
 - version: "3.3.1"
   changes:
     - description: Fix handling of timestamp values with missing seconds.
