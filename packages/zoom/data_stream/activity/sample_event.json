@@ -1,22 +1,22 @@
 {
     "@timestamp": "2026-07-01T10:00:00.000Z",
     "agent": {
-        "ephemeral_id": "c7f73f6e-0e67-4523-9808-16ec85f3c9a9",
-        "id": "c0eff8e1-a4fa-443a-975b-5f96819f5760",
-        "name": "elastic-agent-47774",
+        "ephemeral_id": "bccd735f-96cf-4486-b3dd-51ed5c2f3103",
+        "id": "93a4ccfb-5f31-4449-9f9c-25acc67912b9",
+        "name": "elastic-agent-61640",
         "type": "filebeat",
         "version": "8.19.0"
     },
     "data_stream": {
         "dataset": "zoom.activity",
-        "namespace": "33305",
+        "namespace": "32155",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "c0eff8e1-a4fa-443a-975b-5f96819f5760",
+        "id": "93a4ccfb-5f31-4449-9f9c-25acc67912b9",
         "snapshot": false,
         "version": "8.19.0"
     },
@@ -28,7 +28,7 @@
             "session"
         ],
         "dataset": "zoom.activity",
-        "ingested": "2026-07-02T05:22:11Z",
+        "ingested": "2026-07-02T14:08:25Z",
         "kind": "event",
         "outcome": "success",
         "type": [

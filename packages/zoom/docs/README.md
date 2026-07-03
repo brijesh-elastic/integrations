@@ -24,7 +24,7 @@ The **activity** data stream periodically queries the Zoom REST API using Server
 The Zoom integration collects the following data:
 
 - `webhook`: real-time Zoom event notifications, including account, team chat (channel and message), meeting, phone, recording, user, webinar, and Zoom Room events.
-- `activity`: account-wide sign in and sign out activity logs from the Zoom REST API reports endpoint. Please note that the API does not provide data for failed sign-in or authentication attempts, so those logs will not be available here.
+- `activity`: account-wide sign in and sign out activity logs from the Zoom REST API reports endpoint. Note that the API does not provide data for failed sign-in or authentication attempts, so those logs will not be available here.
 
 ### Supported use cases
 
@@ -375,22 +375,22 @@ An example event for `activity` looks as following:
 {
     "@timestamp": "2026-07-01T10:00:00.000Z",
     "agent": {
-        "ephemeral_id": "c7f73f6e-0e67-4523-9808-16ec85f3c9a9",
-        "id": "c0eff8e1-a4fa-443a-975b-5f96819f5760",
-        "name": "elastic-agent-47774",
+        "ephemeral_id": "bccd735f-96cf-4486-b3dd-51ed5c2f3103",
+        "id": "93a4ccfb-5f31-4449-9f9c-25acc67912b9",
+        "name": "elastic-agent-61640",
         "type": "filebeat",
         "version": "8.19.0"
     },
     "data_stream": {
         "dataset": "zoom.activity",
-        "namespace": "33305",
+        "namespace": "32155",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "c0eff8e1-a4fa-443a-975b-5f96819f5760",
+        "id": "93a4ccfb-5f31-4449-9f9c-25acc67912b9",
         "snapshot": false,
         "version": "8.19.0"
     },
@@ -402,7 +402,7 @@ An example event for `activity` looks as following:
             "session"
         ],
         "dataset": "zoom.activity",
-        "ingested": "2026-07-02T05:22:11Z",
+        "ingested": "2026-07-02T14:08:25Z",
         "kind": "event",
         "outcome": "success",
         "type": [

@@ -13,6 +13,12 @@ resource.ssl: {{ssl}}
 {{#if http_client_timeout}}
 resource.timeout: {{http_client_timeout}}
 {{/if}}
+{{#if resource_rate_limit_limit}}
+resource.rate_limit.limit: {{resource_rate_limit_limit}}
+{{/if}}
+{{#if resource_rate_limit_burst}}
+resource.rate_limit.burst: {{resource_rate_limit_burst}}
+{{/if}}
 resource.url: {{url}}
 auth.oauth2:
   client.id: {{client_id}}
@@ -30,13 +36,18 @@ redact:
 program: |-
   (
     // Workflow overview: Zoom GET /v2/report/activities returns sign-in / sign-out
-    // records for a [from, to] date window (date granularity; max 1-month window;
+    // records for a date window (date granularity; max 1-month window;
     // ~6 months of history). Each poll drains one window page-by-page via
     // next_page_token, then advances cursor.poll_start so the next interval resumes
     // after the data already collected. Only `cursor` persists across runs; `next`
     // holds the in-progress page token within a single poll. Dates are
     // "YYYY-MM-DD" strings, which sort chronologically and so can be compared and
     // min/max'd directly.
+    //
+    // The current code supports both [from, to] and [from, to) window
+    // inclusiveness. If Zoom treats the window as [from, to], the last day may be
+    // fetched more than once; downstream fingerprinting ensures the duplicated
+    // events are not ingested into Elasticsearch twice.
     //
     // Step 1 - pick the window start. If a page token is in flight we are mid-way
     // through a window: keep state as-is so the token drives the next page and
@@ -48,7 +59,7 @@ program: |-
     (state.?next.page_token.orValue("") != "") ?
       state
     :
-      state.drop(["next"]).with(
+      state.drop("next").with(
         {
           "from_date": state.?cursor.poll_start.orValue(
             (now - duration(state.initial_interval)).format("2006-01-02")
@@ -59,10 +70,13 @@ program: |-
     // Step 2 - clamp the window.
     // from_date: requested start, floored at 6 months ago (Zoom retention).
     // to_date:   from_date + 1 month, capped at today (1-month max, no future).
-    [
+    // Zoom mentions that 1 month of window can be queried, and at least the last
+    // 6 months of data can be fetched. So we keep the assumption that 1 month is
+    // 30 days (720h) and 6 months is 180 days (4320h).
+    max(
       state.from_date,
-      (now - duration("4320h")).format("2006-01-02"),
-    ].max().as(from_date,
+      (now - duration("4320h")).format("2006-01-02")
+    ).as(from_date,
       min(
         (timestamp(from_date + "T00:00:00Z") + duration("720h")).format("2006-01-02"),
         now.format("2006-01-02")
@@ -70,11 +84,14 @@ program: |-
         // Step 3 - if the window start already passed the end, everything up to now
         // is collected: emit a dropped placeholder (no API call) and hold the cursor.
         (from_date > to_date) ?
-          {
-            "events": dyn([{"retry": true}]),
-            "want_more": false,
-            "cursor": {"poll_start": from_date},
-          }
+          state.with(
+            {
+              "events": dyn([{"retry": true}]),
+              "want_more": false,
+              "next": {},
+              "cursor": {"poll_start": from_date},
+            }
+          )
         :
           // Step 4 - fetch one page of the window. next_page_token is sent only when
           // resuming pagination within the same poll.
@@ -106,31 +123,20 @@ program: |-
                         // windows to backfill). This drains the whole lookback in one
                         // polling cycle.
                         "want_more": next_token != "" || to_date != now.format("2006-01-02"),
-                        // Carry the token within this poll; cleared when the chain ends.
-                        "next": {
-                          ?"page_token": (next_token != "") ?
-                            optional.of(next_token)
-                          :
-                            optional.none(),
-                        },
+                        // Carry the page token within this poll; cleared when the chain ends.
+                        "next": (next_token != "") ?
+                          {"page_token": next_token}
+                        :
+                          {},
                         // Step 6 - cursor advancement. While still paging, freeze
-                        // poll_start at from_date so the whole window is drained first.
-                        // When the chain ends, advance to the day after the latest
-                        // in-window event (or the day after to_date for an empty
-                        // window), clamped to today so the cursor never lands in the
-                        // future. The candidate is always >= from_date (and from_date
-                        // never regresses), so this cannot move the cursor backwards.
+                        // poll_start at from_date so a mid-window restart re-drains the
+                        // whole window (resuming at to_date would skip un-fetched pages).
+                        // Once the window is fully drained, advance to to_date.
                         "cursor": {
                           "poll_start": (next_token != "") ?
                             from_date
                           :
-                            min(
-                              (size(logs) > 0 && logs.map(e, e.time).max() >= from_date + "T00:00:00Z") ?
-                                (timestamp(logs.map(e, e.time).max()) + duration("24h")).format("2006-01-02")
-                              :
-                                (timestamp(to_date + "T00:00:00Z") + duration("24h")).format("2006-01-02"),
-                              now.format("2006-01-02")
-                            ),
+                            to_date,
                         },
                       }
                     )
@@ -146,12 +152,12 @@ program: |-
                   "events": {
                     "error": {
                       "code": string(resp.StatusCode),
-                      "id": string(resp.Status),
+                      "id": resp.Status,
                       "message": "GET " + state.url.trim_right("/") + "/v2/report/activities: " + (
                         (size(resp.Body) != 0) ?
                           string(resp.Body)
                         :
-                          string(resp.Status) + " (" + string(resp.StatusCode) + ")"
+                          resp.Status + " (" + string(resp.StatusCode) + ")"
                       ),
                     },
                   },

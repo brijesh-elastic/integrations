@@ -24,7 +24,7 @@ streams:
       - name: page_size
         type: integer
         title: Page Size
-        description: Page size for the response of the Zoom API .
+        description: Page size for the response of the Zoom API.
         required: true
         show_user: false
         default: 100
@@ -44,6 +44,20 @@ streams:
         required: true
         show_user: false
         default: 30s
+      - name: resource_rate_limit_limit
+        type: text
+        title: Rate Limit
+        description: The maximum number of API requests allowed per second. Leave empty to disable client-side rate limiting. Zoom's `/report/activities` endpoint is a Heavy API whose per-second and daily quotas vary by account plan.
+        multi: false
+        required: false
+        show_user: false
+      - name: resource_rate_limit_burst
+        type: integer
+        title: Rate Limit Burst
+        description: The maximum number of API requests that can be made in a burst following an idle period. Leave empty to disable client-side rate limiting.
+        multi: false
+        required: false
+        show_user: false
       - name: tags
         type: text
         title: Tags
