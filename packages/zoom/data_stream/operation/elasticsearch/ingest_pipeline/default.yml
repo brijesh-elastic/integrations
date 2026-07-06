@@ -64,16 +64,6 @@ processors:
       tag: set_event_action_from_action
       copy_from: zoom.operation.action
       ignore_empty_value: true
-  - lowercase:
-      field: event.action
-      tag: lowercase_event_action
-      ignore_missing: true
-  - gsub:
-      field: event.action
-      pattern: '\s+'
-      replacement: '-'
-      tag: gsub_event_action_whitespace
-      ignore_missing: true
   - append:
       field: event.category
       tag: append_event_category_configuration
@@ -87,10 +77,6 @@ processors:
           ctx.zoom.operation.category_type.toLowerCase().contains('user') ||
           ctx.zoom.operation.category_type.toLowerCase().contains('role')
         )
-  - append:
-      field: event.type
-      tag: append_event_type_info
-      value: info
   - append:
       field: event.type
       tag: append_event_type_change
@@ -113,6 +99,11 @@ processors:
           ctx.event.action.toLowerCase().contains('delete') ||
           ctx.event.action.toLowerCase().contains('remove')
         )
+  - append:
+      field: event.type
+      tag: append_event_type_info
+      value: info
+      if: ctx.event?.type != null && !ctx.event.type.contains('creation') && !ctx.event.type.contains('deletion')
 
   # user.*
   - rename:

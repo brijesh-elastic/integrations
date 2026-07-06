@@ -6,7 +6,7 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "update",
+                "action": "Update",
                 "category": [
                     "configuration",
                     "iam"
@@ -14,8 +14,8 @@
                 "kind": "event",
                 "original": "{\"action\":\"Update\",\"category_type\":\"User\",\"operation_detail\":\"Activate User alice@example.com\",\"operator\":\"admin@example.com\",\"time\":\"2024-06-07T10:00:00Z\"}",
                 "type": [
-                    "info",
-                    "change"
+                    "change",
+                    "info"
                 ]
             },
             "related": {
@@ -44,7 +44,7 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "add",
+                "action": "Add",
                 "category": [
                     "configuration",
                     "iam"
@@ -52,7 +52,6 @@
                 "kind": "event",
                 "original": "{\"action\":\"Add\",\"category_type\":\"User\",\"operation_detail\":\"Add User bob@example.com\",\"operator\":\"admin@example.com\",\"time\":\"2024-06-07T11:15:00Z\"}",
                 "type": [
-                    "info",
                     "change",
                     "creation"
                 ]
@@ -83,14 +82,13 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "delete",
+                "action": "Delete",
                 "category": [
                     "configuration"
                 ],
                 "kind": "event",
                 "original": "{\"action\":\"Delete\",\"category_type\":\"Recording\",\"operation_detail\":\"Delete cloud recording for meeting 11122223333\",\"operator\":\"admin@example.com\",\"time\":\"2024-06-07T12:30:00Z\"}",
                 "type": [
-                    "info",
                     "change",
                     "deletion"
                 ]
@@ -121,15 +119,15 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "update",
+                "action": "Update",
                 "category": [
                     "configuration"
                 ],
                 "kind": "event",
                 "original": "{\"action\":\"Update\",\"category_type\":\"Account\",\"operation_detail\":\"Change account setting Cloud Recording from ON to OFF\",\"operator\":\"superadmin@example.com\",\"time\":\"2024-06-08T09:00:00Z\"}",
                 "type": [
-                    "info",
-                    "change"
+                    "change",
+                    "info"
                 ]
             },
             "related": {
@@ -164,8 +162,8 @@
                 "kind": "event",
                 "original": "{\"category_type\":\"Billing\",\"operation_detail\":\"Update billing contact information\",\"time\":\"2024-06-08T10:00:00Z\"}",
                 "type": [
-                    "info",
-                    "change"
+                    "change",
+                    "info"
                 ]
             },
             "tags": [

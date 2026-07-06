@@ -93,6 +93,24 @@ Elastic Agent is required to receive the Zoom webhook callbacks or to poll the Z
 
 For help with Elastic ingest tools, check [Common problems](https://www.elastic.co/docs/troubleshoot/ingest/fleet/common-problems).
 
+### Zoom REST API rate limits
+
+The REST API data streams (`activity` and `operation`) query Zoom's Report endpoints, which are classified as **Heavy** APIs. Zoom enforces both a per-second (QPS) limit and a daily request quota, and **both are shared across every app and user on the account, as well as across all of the Report data streams in this integration**:
+
+| Plan | Per second | Per day (shared by Heavy and Resource-intensive APIs) |
+|---|---|---|
+| Pro | 10 requests/second | 30,000 requests/day |
+| Business+ (Business, Education, Enterprise, and Partner) | 40 requests/second | 60,000 requests/day |
+
+To keep the Report data streams within this shared budget, each REST API data stream has client-side rate limiting enabled by default (**Rate Limit** and **Rate Limit Burst** in the data stream settings). The default values are conservative so that the streams can run together without exhausting the account quota, which matters most during the initial backfill when many requests are made.
+
+If you hit an `HTTP 429 Too Many Requests` response, or you want to tune throughput, adjust these settings per data stream:
+
+- **Reduce the rate** (lower the **Rate Limit**, for example to `0.05`) if you are seeing `429` errors, if other applications share the same Zoom account quota, or if the daily quota is being consumed too quickly. A daily-limit `429` is only cleared at `00:00 UTC`, so it is better to run slower than to be locked out.
+- **Increase the rate** (raise the **Rate Limit**) if you are on a Business+ plan, run fewer Report data streams, or need the initial backfill to complete faster. Keep the combined rate of all enabled Report data streams below your plan's per-second limit.
+
+You can also reduce the total number of requests by increasing the **Page Size** (up to Zoom's maximum of `300`), since fewer, larger pages consume less of the shared quota.
+
 ## Scaling
 
 For more information on architectures that can be used for scaling this integration, check the [Ingest Architectures](https://www.elastic.co/docs/manage-data/ingest/ingest-reference-architectures) documentation.
