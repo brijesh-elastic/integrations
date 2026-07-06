@@ -8,5 +8,5 @@
       type: keyword
       description: The category of the operation that was performed.
     - name: operation_detail
-      type: keyword
+      type: match_only_text
       description: A detailed description of the operation that was performed.

@@ -48,7 +48,7 @@ streams:
         type: text
         title: Rate Limit
         description: >-
-          The maximum number of API requests allowed per second. Zoom's `/report/activities` endpoint is a Heavy API, and the per-second and daily request quotas are shared across all Zoom Report data streams and apps on the account Leave empty to disable client-side rate limiting.
+          The maximum number of API requests allowed per second. Zoom's `/report/activities` endpoint is a Heavy API, and the per-second and daily request quotas are shared across all Zoom Report data streams and apps on the account. Leave empty to disable client-side rate limiting.
         multi: false
         required: false
         show_user: false

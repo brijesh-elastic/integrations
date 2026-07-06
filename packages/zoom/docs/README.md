@@ -510,22 +510,22 @@ An example event for `operation` looks as following:
 {
     "@timestamp": "2026-07-05T10:00:00.000Z",
     "agent": {
-        "ephemeral_id": "95070115-a0bb-4a95-9693-f0dedcb16b95",
-        "id": "dcffa072-8755-44bc-8edd-de8210eec27a",
-        "name": "elastic-agent-31110",
+        "ephemeral_id": "c57755af-e69d-4f7d-ace8-918c91a349e8",
+        "id": "ec73b436-1e5f-43c4-877e-870a10693449",
+        "name": "elastic-agent-70306",
         "type": "filebeat",
         "version": "8.19.0"
     },
     "data_stream": {
         "dataset": "zoom.operation",
-        "namespace": "24348",
+        "namespace": "85002",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "dcffa072-8755-44bc-8edd-de8210eec27a",
+        "id": "ec73b436-1e5f-43c4-877e-870a10693449",
         "snapshot": false,
         "version": "8.19.0"
     },
@@ -537,7 +537,7 @@ An example event for `operation` looks as following:
             "iam"
         ],
         "dataset": "zoom.operation",
-        "ingested": "2026-07-06T11:05:51Z",
+        "ingested": "2026-07-06T12:16:55Z",
         "kind": "event",
         "type": [
             "change",
@@ -584,7 +584,7 @@ An example event for `operation` looks as following:
 | log.offset | Log offset. | long |
 | zoom.operation.action | The action performed in the operation. | keyword |
 | zoom.operation.category_type | The category of the operation that was performed. | keyword |
-| zoom.operation.operation_detail | A detailed description of the operation that was performed. | keyword |
+| zoom.operation.operation_detail | A detailed description of the operation that was performed. | match_only_text |
 
 
 ### Inputs used
