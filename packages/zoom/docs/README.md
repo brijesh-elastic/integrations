@@ -7,28 +7,34 @@
 This integration collects data using two complementary methods:
 
 - **Webhook**: a real-time HTTP listener that receives event notifications pushed by Zoom (meeting, webinar, recording, user, account, phone, team chat, and Zoom Room events).
-- **REST API**: a periodic poll of the Zoom REST API to collect the admin and user **operation** logs report for an account.
+- **REST API**: a periodic poll of the Zoom REST API to collect the sign in / sign out **activity** report and the **operation** logs report for an account.
 
 ### Compatibility
 
+- The **activity** data stream uses the Zoom REST API [`GET /report/activities`](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/activities) endpoint and requires a Zoom Pro (or higher) plan.
 - The **operation** data stream uses the Zoom REST API [`GET /report/operationlogs`](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/operationlogs) endpoint and requires a Zoom Pro plan or above.
 
 ### How it works
 
 The **webhook** data stream creates an HTTP listener that accepts incoming webhook callbacks from Zoom. The Elastic Agent running this integration must be reachable from the internet so that Zoom can connect to it. Zoom requires that webhooks are delivered over HTTPS, so you must either configure the integration with a valid TLS certificate or place a reverse proxy that terminates TLS in front of the integration. Incoming events are then routed to the appropriate ingest pipeline based on the Zoom event type.
 
-The **operation** data stream periodically queries the Zoom REST API using Server-to-Server OAuth. On each interval it requests operation logs within a date window (a maximum of one month per request, within the last six months of available history), paginates through the results, and advances a cursor so that subsequent runs collect only new operations.
+The **activity** and **operation** data streams both poll the Zoom REST API using Server-to-Server OAuth. On each interval, they request records within a date window (a maximum of one month per request, within the last six months of available history) and paginate through the results.
 
 ## What data does this integration collect?
 
 The Zoom integration collects the following data:
 
 - `webhook`: real-time Zoom event notifications, including account, team chat (channel and message), meeting, phone, recording, user, webinar, and Zoom Room events.
+- `activity`: account-wide sign in and sign out activity logs from the Zoom REST API reports endpoint. Note that the API does not provide data for failed sign-in or authentication attempts, so those logs will not be available here.
 - `operation`: account-wide admin and user operation logs from the Zoom REST API reports endpoint, such as adding a user, changing account settings, or deleting a recording.
 
 ### Supported use cases
 
-Integrating Zoom with Elastic SIEM provides centralized visibility into collaboration and administrative activity. Webhook events support real-time monitoring and detection across meetings, recordings, users, and administrative changes, while the operation logs report provides an account-wide audit trail of admin and user operations for investigating configuration changes, detecting unauthorized actions, and meeting compliance requirements.
+Integrating Zoom with Elastic SIEM provides centralized visibility into collaboration and administrative activity:
+
+- **Webhook** events enable real-time monitoring across meetings, recordings, users, and account changes.
+- The **activity** report provides an account-wide sign in / sign out audit trail for investigating user access and anomalous logins.
+- The **operation** logs report tracks admin and user operations for auditing configuration changes and detecting unauthorized actions.
 
 ## What do I need to use this integration?
 
@@ -44,7 +50,7 @@ Integrating Zoom with Elastic SIEM provides centralized visibility into collabor
 
 1. Create a **Server-to-Server OAuth** app in the [Zoom App Marketplace](https://marketplace.zoom.us/) by following the [Server-to-Server OAuth documentation](https://developers.zoom.us/docs/internal-apps/s2s-oauth/).
 2. Record the app's **Account ID**, **Client ID**, and **Client Secret**.
-3. Add the `report:read:admin` scope (or the granular `report:read:operation_logs:admin` scope) to the app and activate it. A Zoom Pro plan or above is required.
+3. Add the `report:read:admin` scope (or the granular `report:read:user_activities:admin` & `report:read:operation_logs:admin` scopes) to the app and activate it. A Zoom Pro plan or above is required.
 
 ## How do I deploy this integration?
 
@@ -365,6 +371,117 @@ An example event for `webhook` looks as following:
 | zoom.zoomroom.room_name | The configured name of the Zoom room | keyword |
 
 
+### activity
+
+This is the `activity` data stream. It collects sign in / sign out activity logs from the Zoom REST API.
+
+An example event for `activity` looks as following:
+
+```json
+{
+    "@timestamp": "2026-07-01T10:00:00.000Z",
+    "agent": {
+        "ephemeral_id": "bccd735f-96cf-4486-b3dd-51ed5c2f3103",
+        "id": "93a4ccfb-5f31-4449-9f9c-25acc67912b9",
+        "name": "elastic-agent-61640",
+        "type": "filebeat",
+        "version": "8.19.0"
+    },
+    "data_stream": {
+        "dataset": "zoom.activity",
+        "namespace": "32155",
+        "type": "logs"
+    },
+    "ecs": {
+        "version": "8.11.0"
+    },
+    "elastic_agent": {
+        "id": "93a4ccfb-5f31-4449-9f9c-25acc67912b9",
+        "snapshot": false,
+        "version": "8.19.0"
+    },
+    "event": {
+        "action": "sign-in",
+        "agent_id_status": "verified",
+        "category": [
+            "authentication",
+            "session"
+        ],
+        "dataset": "zoom.activity",
+        "ingested": "2026-07-02T14:08:25Z",
+        "kind": "event",
+        "outcome": "success",
+        "type": [
+            "start"
+        ]
+    },
+    "input": {
+        "type": "cel"
+    },
+    "related": {
+        "ip": [
+            "192.0.2.10"
+        ],
+        "user": [
+            "alice@example.com"
+        ]
+    },
+    "source": {
+        "as": {
+            "number": 64500,
+            "organization": {
+                "name": "Documentation ASN"
+            }
+        },
+        "geo": {
+            "city_name": "Las Vegas",
+            "continent_name": "North America",
+            "country_iso_code": "US",
+            "country_name": "United States",
+            "location": {
+                "lat": 36.17497,
+                "lon": -115.13722
+            },
+            "region_iso_code": "US-NV",
+            "region_name": "Nevada"
+        },
+        "ip": "192.0.2.10"
+    },
+    "tags": [
+        "forwarded",
+        "zoom-activity"
+    ],
+    "user": {
+        "email": "alice@example.com",
+        "name": "alice@example.com"
+    },
+    "zoom": {
+        "activity": {
+            "client_type": "Browser",
+            "client_version": "6.0.0.1000",
+            "type": "Sign in"
+        }
+    }
+}
+```
+
+**Exported fields**
+
+| Field | Description | Type |
+|---|---|---|
+| @timestamp | Date/time when the event originated. This is the date/time extracted from the event, typically representing when the event was generated by the source. If the event source has no original timestamp, this value is typically populated by the first time the event was received by the pipeline. Required field for all events. | date |
+| data_stream.dataset | The field can contain anything that makes sense to signify the source of the data. Examples include `nginx.access`, `prometheus`, `endpoint` etc. For data streams that otherwise fit, but that do not have dataset set we use the value "generic" for the dataset value. `event.dataset` should have the same value as `data_stream.dataset`. Beyond the Elasticsearch data stream naming criteria noted above, the `dataset` value has additional restrictions:   \* Must not contain `-`   \* No longer than 100 characters | constant_keyword |
+| data_stream.namespace | A user defined namespace. Namespaces are useful to allow grouping of data. Many users already organize their indices this way, and the data stream naming scheme now provides this best practice as a default. Many users will populate this field with `default`. If no value is used, it falls back to `default`. Beyond the Elasticsearch index naming criteria noted above, `namespace` value has the additional restrictions:   \* Must not contain `-`   \* No longer than 100 characters | constant_keyword |
+| data_stream.type | An overarching type for the data stream. Currently allowed values are "logs" and "metrics". We expect to also add "traces" and "synthetics" in the near future. | constant_keyword |
+| event.dataset | Name of the dataset. If an event source publishes more than one type of log or events (e.g. access log, error log), the dataset is used to specify which one the event comes from. It's recommended but not required to start the dataset name with the module name, followed by a dot, then the dataset name. | constant_keyword |
+| event.module | Name of the module this data is coming from. If your monitoring agent supports the concept of modules or plugins to process events of a given source (e.g. Apache logs), `event.module` should contain the name of this module. | constant_keyword |
+| input.type | Type of filebeat input. | keyword |
+| log.offset | Log offset. | long |
+| zoom.activity.client_type | The client interface type using which the activity was performed. | keyword |
+| zoom.activity.client_version | Zoom client version of the user. | keyword |
+| zoom.activity.type | The type of activity. | keyword |
+
+
 ### operation
 
 This is the `operation` data stream. It collects admin and user operation logs from the Zoom REST API.
@@ -463,4 +580,5 @@ These inputs are used in this integration:
 
 This integration uses the following APIs:
 
+- `activity`: [Get sign in / sign out activity report](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/activities).
 - `operation`: [Get operation logs report](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/operationlogs).

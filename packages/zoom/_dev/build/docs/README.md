@@ -7,28 +7,34 @@
 This integration collects data using two complementary methods:
 
 - **Webhook**: a real-time HTTP listener that receives event notifications pushed by Zoom (meeting, webinar, recording, user, account, phone, team chat, and Zoom Room events).
-- **REST API**: a periodic poll of the Zoom REST API to collect the admin and user **operation** logs report for an account.
+- **REST API**: a periodic poll of the Zoom REST API to collect the sign in / sign out **activity** report and the **operation** logs report for an account.
 
 ### Compatibility
 
+- The **activity** data stream uses the Zoom REST API [`GET /report/activities`](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/activities) endpoint and requires a Zoom Pro (or higher) plan.
 - The **operation** data stream uses the Zoom REST API [`GET /report/operationlogs`](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/operationlogs) endpoint and requires a Zoom Pro plan or above.
 
 ### How it works
 
 The **webhook** data stream creates an HTTP listener that accepts incoming webhook callbacks from Zoom. The Elastic Agent running this integration must be reachable from the internet so that Zoom can connect to it. Zoom requires that webhooks are delivered over HTTPS, so you must either configure the integration with a valid TLS certificate or place a reverse proxy that terminates TLS in front of the integration. Incoming events are then routed to the appropriate ingest pipeline based on the Zoom event type.
 
-The **operation** data stream periodically queries the Zoom REST API using Server-to-Server OAuth. On each interval it requests operation logs within a date window (a maximum of one month per request, within the last six months of available history), paginates through the results, and advances a cursor so that subsequent runs collect only new operations.
+The **activity** and **operation** data streams both poll the Zoom REST API using Server-to-Server OAuth. On each interval, they request records within a date window (a maximum of one month per request, within the last six months of available history) and paginate through the results.
 
 ## What data does this integration collect?
 
 The Zoom integration collects the following data:
 
 - `webhook`: real-time Zoom event notifications, including account, team chat (channel and message), meeting, phone, recording, user, webinar, and Zoom Room events.
+- `activity`: account-wide sign in and sign out activity logs from the Zoom REST API reports endpoint. Note that the API does not provide data for failed sign-in or authentication attempts, so those logs will not be available here.
 - `operation`: account-wide admin and user operation logs from the Zoom REST API reports endpoint, such as adding a user, changing account settings, or deleting a recording.
 
 ### Supported use cases
 
-Integrating Zoom with Elastic SIEM provides centralized visibility into collaboration and administrative activity. Webhook events support real-time monitoring and detection across meetings, recordings, users, and administrative changes, while the operation logs report provides an account-wide audit trail of admin and user operations for investigating configuration changes, detecting unauthorized actions, and meeting compliance requirements.
+Integrating Zoom with Elastic SIEM provides centralized visibility into collaboration and administrative activity:
+
+- **Webhook** events enable real-time monitoring across meetings, recordings, users, and account changes.
+- The **activity** report provides an account-wide sign in / sign out audit trail for investigating user access and anomalous logins.
+- The **operation** logs report tracks admin and user operations for auditing configuration changes and detecting unauthorized actions.
 
 ## What do I need to use this integration?
 
@@ -44,7 +50,7 @@ Integrating Zoom with Elastic SIEM provides centralized visibility into collabor
 
 1. Create a **Server-to-Server OAuth** app in the [Zoom App Marketplace](https://marketplace.zoom.us/) by following the [Server-to-Server OAuth documentation](https://developers.zoom.us/docs/internal-apps/s2s-oauth/).
 2. Record the app's **Account ID**, **Client ID**, and **Client Secret**.
-3. Add the `report:read:admin` scope (or the granular `report:read:operation_logs:admin` scope) to the app and activate it. A Zoom Pro plan or above is required.
+3. Add the `report:read:admin` scope (or the granular `report:read:user_activities:admin` & `report:read:operation_logs:admin` scopes) to the app and activate it. A Zoom Pro plan or above is required.
 
 ## How do I deploy this integration?
 
@@ -101,6 +107,14 @@ This is the `webhook` data stream. It collects real-time event notifications pus
 
 {{fields "webhook"}}
 
+### activity
+
+This is the `activity` data stream. It collects sign in / sign out activity logs from the Zoom REST API.
+
+{{event "activity"}}
+
+{{fields "activity"}}
+
 ### operation
 
 This is the `operation` data stream. It collects admin and user operation logs from the Zoom REST API.
@@ -120,4 +134,5 @@ These inputs are used in this integration:
 
 This integration uses the following APIs:
 
+- `activity`: [Get sign in / sign out activity report](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/activities).
 - `operation`: [Get operation logs report](https://developers.zoom.us/docs/api/meetings/#tag/reports/get/report/operationlogs).
