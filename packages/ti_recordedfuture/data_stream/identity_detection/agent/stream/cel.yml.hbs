@@ -24,12 +24,8 @@ state:
     - {{id}}
 {{/each}}
 {{/if}}
-{{#if include_enterprise_level}}
   include_enterprise_level: {{include_enterprise_level}}
-{{/if}}
-{{#if novel_only}}
   novel_only: {{novel_only}}
-{{/if}}
 {{#if detection_types}}
   detection_types:
 {{#each detection_types as |t|}}
@@ -62,7 +58,7 @@ program: |-
     state.?want_more.orValue(false) ?
       state
     :
-      state.drop(["offset"]).with(
+      state.drop("next").with(
         {
           "start_time": state.?cursor.last_timestamp.orValue((now - duration(state.initial_interval)).format(time_layout.RFC3339)),
         }
@@ -74,15 +70,15 @@ program: |-
         "application/json",
         {
           "limit": int(state.batch_size),
-          ?"offset": (state.?offset.orValue("") != "") ? optional.of(string(state.offset)) : optional.none(),
-          ?"organization_id": state.?organization_id[0].hasValue() ? optional.of(state.organization_id) : optional.none(),
-          ?"include_enterprise_level": state.?include_enterprise_level.orValue(false) ? optional.of(true) : optional.none(),
+          ?"offset": state.?next.offset,
+          ?"organization_id": state.?organization_id,
+          "include_enterprise_level": state.include_enterprise_level,
           "filter": {
             "created": {"gte": string(state.start_time)},
-            ?"novel_only": state.?novel_only.orValue(false) ? optional.of(true) : optional.none(),
-            ?"detection_types": state.?detection_types[0].hasValue() ? optional.of(state.detection_types) : optional.none(),
-            ?"source_type": state.?source_types[0].hasValue() ? optional.of(state.source_types) : optional.none(),
-            ?"domains": state.?domains[0].hasValue() ? optional.of(state.domains) : optional.none(),
+            "novel_only": state.novel_only,
+            ?"detection_types": state.?detection_types,
+            ?"source_type": state.?source_types,
+            ?"domains": state.?domains,
           },
         }.encode_json()
       ).with(
@@ -94,60 +90,50 @@ program: |-
         }
       ).do_request().as(resp, (resp.StatusCode == 200) ?
         resp.Body.decode_json().as(body,
-          body.?next_offset.orValue("").as(next_offset,
+          body.?next_offset.as(next_offset,
             (
               (has(body.detections) && body.detections.size() > 0) ?
-                string(body.detections.map(e, timestamp(e.created)).max())
+                body.detections.map(e, timestamp(e.created)).max()
               :
-                ""
+                timestamp(0)
             ).as(page_max,
-              (
-                (page_max > state.?cursor.max_created.orValue("")) ?
-                  page_max
-                :
-                  state.?cursor.max_created.orValue("")
-              ).as(max_created,
+              max(page_max, timestamp(state.?cursor.max_created.orValue("1970-01-01T00:00:00Z"))).as(max_created,
                 {
                   "events": (has(body.detections) && body.detections.size() > 0) ?
                     body.detections.map(d,
                       {
-                        "message": d.as(d,
-                          (state.?hash_password.orValue(false) && has(d.password) &&
-                          has(d.password.cleartext)) ?
-                            d.with({"password": d.password.with({"cleartext": d.password.cleartext.hmac("sha256", bytes(state.?hashing_key.orValue(""))).hex()})})
-                          :
-                            d
-                        ).as(d,
-                          (state.?hash_cookies.orValue(false) && has(d.cookies) &&
-                          d.cookies.size() > 0) ?
-                            d.with(
-                              {
-                                "cookies": d.cookies.map(c,
-                                  has(c.value) ?
-                                    c.with({"value": c.value.hmac("sha256", bytes(state.?hashing_key.orValue(""))).hex()})
-                                  :
-                                    c
-                                ),
-                              }
-                            )
-                          :
-                            d
-                        ).encode_json(),
+                        // Optionally replace leaked secrets with keyed HMAC-SHA256 hashes before
+                        // indexing. Each patch key is only merged when its flag is on and the field
+                        // is present; otherwise the ?"key" entry is dropped and the original is kept.
+                        "message": bytes(state.?hashing_key.orValue("")).as(key,
+                          d.with({
+                            ?"password": (state.hash_password && has(d.password) && has(d.password.cleartext)) ?
+                              optional.of(d.password.with({"cleartext": d.password.cleartext.hmac("sha256", key).hex()}))
+                            :
+                              optional.none(),
+                            ?"cookies": (state.hash_cookies && has(d.cookies)) ?
+                              optional.of(d.cookies.map(c, has(c.value) ? c.with({"value": c.value.hmac("sha256", key).hex()}) : c))
+                            :
+                              optional.none(),
+                          }).encode_json()
+                        ),
                       }
                     )
                   :
                     [],
-                  "want_more": next_offset != "",
-                  ?"offset": (next_offset != "") ? optional.of(next_offset) : optional.none(),
-                  "cursor": (next_offset != "") ?
+                  "want_more": next_offset.hasValue(),
+                  "next": {
+                    ?"offset": next_offset,
+                  },
+                  "cursor": next_offset.hasValue() ?
                     {
                       ?"last_timestamp": state.?cursor.last_timestamp,
                       "max_created": max_created,
                     }
                   :
                     {
-                      ?"last_timestamp": (max_created != "") ?
-                        optional.of(max_created)
+                      ?"last_timestamp": (max_created > timestamp(0)) ?
+                        optional.of(string(max_created))
                       :
                         state.?cursor.last_timestamp,
                     },
@@ -161,12 +147,12 @@ program: |-
           "events": {
             "error": {
               "code": string(resp.StatusCode),
-              "id": string(resp.Status),
+              "id": resp.Status,
               "message": "POST " + state.url.trim_right("/") + "/identity/detections: " + (
                 (size(resp.Body) != 0) ?
                   string(resp.Body)
                 :
-                  string(resp.Status) + " (" + string(resp.StatusCode) + ")"
+                  resp.Status + " (" + string(resp.StatusCode) + ")"
               ),
             },
           },

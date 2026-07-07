@@ -1411,22 +1411,22 @@ An example event for `identity_detection` looks as following:
 {
     "@timestamp": "2026-06-02T15:45:19.097Z",
     "agent": {
-        "ephemeral_id": "19b4f3a4-36e2-49c7-9027-6339aec2254d",
-        "id": "71c6aae0-777b-4eaa-be06-d4e4526dd27e",
-        "name": "elastic-agent-95531",
+        "ephemeral_id": "e22180ec-78bb-400c-808a-8619e2b36ede",
+        "id": "4e6b7fd3-6a89-458e-91af-e575de3edb62",
+        "name": "elastic-agent-94028",
         "type": "filebeat",
         "version": "8.18.0"
     },
     "data_stream": {
         "dataset": "ti_recordedfuture.identity_detection",
-        "namespace": "89069",
+        "namespace": "17517",
         "type": "logs"
     },
     "ecs": {
         "version": "8.17.0"
     },
     "elastic_agent": {
-        "id": "71c6aae0-777b-4eaa-be06-d4e4526dd27e",
+        "id": "4e6b7fd3-6a89-458e-91af-e575de3edb62",
         "snapshot": false,
         "version": "8.18.0"
     },
@@ -1439,7 +1439,7 @@ An example event for `identity_detection` looks as following:
         "created": "2026-06-02T15:45:19.097Z",
         "dataset": "ti_recordedfuture.identity_detection",
         "id": "6bfef2aafe63ba8ad9752f29e7fcfbb9",
-        "ingested": "2026-06-30T14:21:44Z",
+        "ingested": "2026-07-07T07:28:41Z",
         "kind": "event",
         "original": "{\"authorization_service\":{\"domain\":\"norsegods.online\",\"fqdn\":\"norsegods.online\",\"protocols\":[\"https\"],\"technology\":[{\"id\":\"Ig409I\",\"name\":\"Virtual Desktop\"},{\"category\":\"Ig409I\",\"id\":\"ZNkiC2\",\"name\":\"Citrix Virtual Apps and Desktops\"}],\"url\":\"https://norsegods.online/DesktopWeb/\"},\"cookies\":[{\"dns\":\".norsegods.online\",\"expiration\":\"2026-08-25T09:57:39.000Z\",\"http\":true,\"name\":\"session_id\",\"secure\":true,\"value\":\"3a2d5f8b-9e4c-4a1d-b8f9-c6e7d8f9a0b1\"}],\"created\":\"2026-06-02T15:45:19.097Z\",\"dump\":{\"compromise\":{\"antivirus\":[\"Windows Defender\"],\"computer_name\":\"DEMO-ANNHDOFG\",\"exfiltration_date\":\"2026-06-02T12:45:00.000Z\",\"os\":\"Windows 10 Enterprise\",\"os_username\":\"demo_user_sxwxml\",\"timezone\":\"UTC+05:00\"},\"description\":\"This credential data was derived from stealer malware logs.\",\"downloaded\":\"2026-06-02T15:30:37.000Z\",\"infrastructure\":{\"ip\":\"198.51.100.137\"},\"location\":{\"country\":{\"alpha2Code\":\"FR\",\"alpha3Code\":\"FRA\",\"countryCode\":\"250\",\"displayName\":\"France\",\"name\":\"France\"}},\"name\":\"Stealer Malware Logs 2026-06-02\",\"source\":\"s3://rf-id-outbox/malware_logs/raw/2026-06-02/demo/vidar/9ab54b58.zip\"},\"id\":\"6bfef2aafe63ba8ad9752f29e7fcfbb9\",\"malware_family\":{\"id\":\"YuDlEm\",\"name\":\"Vidar\"},\"novel\":true,\"password\":{\"cleartext_hint\":\"ja\",\"hashes\":[{\"algorithm\":\"SHA256\",\"hash_prefix\":\"b82d246e\"},{\"algorithm\":\"NTLM\",\"hash\":\"0eda17a1607b2e519a7f2baf3884dfc6\"}],\"properties\":[\"Letter\",\"Number\",\"UpperCase\",\"LowerCase\",\"AtLeast12Characters\"],\"type\":\"clear\"},\"source_type\":\"MalwareLogs\",\"subject\":\"aegir.ymirsson@norsegods.online\",\"type\":\"External\"}",
         "type": [
