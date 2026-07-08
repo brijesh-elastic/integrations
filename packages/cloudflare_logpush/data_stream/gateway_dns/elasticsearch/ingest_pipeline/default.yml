@@ -348,6 +348,7 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.account_id
       ignore_missing: true
   - convert:
+      tag: convert_json_ApplicationID_to_cloudflare_logpush_gateway_dns_application_id_f98d72e5
       field: json.ApplicationID
       target_field: cloudflare_logpush.gateway_dns.application_id
       type: string
@@ -370,6 +371,7 @@ processors:
             field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - convert:
+      tag: convert_json_CNAMECategoryIDs_to_cloudflare_logpush_gateway_dns_cname_category_ids_0bde2b01
       field: json.CNAMECategoryIDs
       target_field: cloudflare_logpush.gateway_dns.cname_category.ids
       type: string
@@ -431,11 +433,13 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.dot_subdomain
       ignore_missing: true
   - convert:
+      tag: convert_json_EDEErrors_to_cloudflare_logpush_gateway_dns_extended_dns_error_codes_fdab34d0
       field: json.EDEErrors
       target_field: cloudflare_logpush.gateway_dns.extended_dns_error_codes
       type: string
       ignore_missing: true
   - convert:
+      tag: convert_json_InitialCategoryIDs_to_cloudflare_logpush_gateway_dns_initial_category_ids_461fbfd1
       field: json.InitialCategoryIDs
       target_field: cloudflare_logpush.gateway_dns.initial_category.ids
       type: string
@@ -467,6 +471,7 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.location.id
       ignore_missing: true
   - convert:
+      tag: convert_json_MatchedCategoryIDs_to_cloudflare_logpush_gateway_dns_matched_category_ids_183270a4
       field: json.MatchedCategoryIDs
       target_field: cloudflare_logpush.gateway_dns.matched.category.ids
       type: string
@@ -477,6 +482,7 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.matched.category.names
       ignore_missing: true
   - convert:
+      tag: convert_json_MatchedIndicatorFeedIDs_to_cloudflare_logpush_gateway_dns_matched_indicator_feed_ids_d9c12ab1
       field: json.MatchedIndicatorFeedIDs
       target_field: cloudflare_logpush.gateway_dns.matched.indicator_feed.ids
       type: string
@@ -509,6 +515,7 @@ processors:
       if: ctx.cloudflare_logpush?.gateway_dns?.policy?.name == null
       ignore_missing: true
   - convert:
+      tag: convert_json_QueryCategoryIDs_to_cloudflare_logpush_gateway_dns_question_category_ids_487f453a
       field: json.QueryCategoryIDs
       target_field: cloudflare_logpush.gateway_dns.question.category.ids
       type: string
@@ -519,6 +526,7 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.question.id
       ignore_missing: true
   - convert:
+      tag: convert_json_QueryIndicatorFeedIDs_to_cloudflare_logpush_gateway_dns_question_indicator_feed_ids_25d5f9f1
       field: json.QueryIndicatorFeedIDs
       target_field: cloudflare_logpush.gateway_dns.question.indicator_feed.ids
       type: string
@@ -555,6 +563,7 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.question.type_id
       ignore_missing: true
   - convert:
+      tag: convert_json_ResolvedIPCategoryIDs_to_cloudflare_logpush_gateway_dns_resolved_ip_details_category_ids_03060dca
       field: json.ResolvedIPCategoryIDs
       target_field: cloudflare_logpush.gateway_dns.resolved_ip_details.category.ids
       type: string
@@ -575,15 +584,18 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.resolved_ip_details.country_codes
       ignore_missing: true
   - convert:
+      tag: convert_json_ResolvedIPs_to_cloudflare_logpush_gateway_dns_resolved_ip_details_ips_d1c23f97
       field: json.ResolvedIPs
       target_field: cloudflare_logpush.gateway_dns.resolved_ip_details.ips
       type: ip
       ignore_missing: true
       on_failure:
         - append:
+            tag: append_error_message_07879ae5
             field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - set:
+      tag: set_dns_resolved_ip_e8621df1
       field: dns.resolved_ip
       copy_from: cloudflare_logpush.gateway_dns.resolved_ip_details.ips
       ignore_empty_value: true

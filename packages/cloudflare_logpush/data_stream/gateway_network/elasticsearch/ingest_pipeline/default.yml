@@ -311,6 +311,7 @@ processors:
       target_field: cloudflare_logpush.gateway_network.account_id
       ignore_missing: true
   - convert:
+      tag: convert_json_ApplicationIDs_to_cloudflare_logpush_gateway_network_application_ids_541dd06b
       field: json.ApplicationIDs
       target_field: cloudflare_logpush.gateway_network.application.ids
       type: string
@@ -321,6 +322,7 @@ processors:
       target_field: cloudflare_logpush.gateway_network.application.names
       ignore_missing: true
   - convert:
+      tag: convert_json_CategoryIDs_to_cloudflare_logpush_gateway_network_category_ids_bd855f5b
       field: json.CategoryIDs
       target_field: cloudflare_logpush.gateway_network.category.ids
       type: string
