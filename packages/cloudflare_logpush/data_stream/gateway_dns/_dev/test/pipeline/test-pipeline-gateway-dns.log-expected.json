@@ -18,7 +18,7 @@
                             "type": "1"
                         }
                     ],
-                    "application_id": 0,
+                    "application_id": "0",
                     "colo": {
                         "code": "ORD",
                         "id": 14
@@ -38,8 +38,8 @@
                     "matched": {
                         "category": {
                             "ids": [
-                                7,
-                                163
+                                "7",
+                                "163"
                             ],
                             "names": [
                                 "Photography",
@@ -55,8 +55,8 @@
                     "question": {
                         "category": {
                             "ids": [
-                                26,
-                                155
+                                "26",
+                                "155"
                             ],
                             "names": [
                                 "Technology",
@@ -224,7 +224,7 @@
                             "type": "1"
                         }
                     ],
-                    "application_id": 0,
+                    "application_id": "0",
                     "colo": {
                         "code": "ORD",
                         "id": 14
@@ -244,8 +244,8 @@
                     "matched": {
                         "category": {
                             "ids": [
-                                7,
-                                163
+                                "7",
+                                "163"
                             ],
                             "names": [
                                 "Photography",
@@ -261,8 +261,8 @@
                     "question": {
                         "category": {
                             "ids": [
-                                26,
-                                155
+                                "26",
+                                "155"
                             ],
                             "names": [
                                 "Technology",
@@ -430,7 +430,7 @@
                             "type": "1"
                         }
                     ],
-                    "application_id": 0,
+                    "application_id": "0",
                     "colo": {
                         "code": "ORD",
                         "id": 14
@@ -450,8 +450,8 @@
                     "matched": {
                         "category": {
                             "ids": [
-                                7,
-                                163
+                                "7",
+                                "163"
                             ],
                             "names": [
                                 "Photography",
@@ -467,8 +467,8 @@
                     "question": {
                         "category": {
                             "ids": [
-                                26,
-                                155
+                                "26",
+                                "155"
                             ],
                             "names": [
                                 "Technology",
@@ -622,7 +622,7 @@
             "@timestamp": "2025-04-02T04:07:26.000Z",
             "cloudflare_logpush": {
                 "gateway_dns": {
-                    "application_id": 0,
+                    "application_id": "0",
                     "colo": {
                         "code": "LHR",
                         "id": 736
@@ -749,7 +749,7 @@
             "@timestamp": "2025-04-02T04:07:26.000Z",
             "cloudflare_logpush": {
                 "gateway_dns": {
-                    "application_id": 0,
+                    "application_id": "0",
                     "colo": {
                         "code": "LHR",
                         "id": 736
@@ -877,7 +877,7 @@
             "cloudflare_logpush": {
                 "gateway_dns": {
                     "account_id": "e1836771179f98aabb828da5ea69a348",
-                    "application_id": 0,
+                    "application_id": "0",
                     "colo": {
                         "code": "ORD",
                         "id": 14
@@ -923,8 +923,8 @@
                         },
                         "category": {
                             "ids": [
-                                26,
-                                155
+                                "26",
+                                "155"
                             ],
                             "names": [
                                 "Technology",

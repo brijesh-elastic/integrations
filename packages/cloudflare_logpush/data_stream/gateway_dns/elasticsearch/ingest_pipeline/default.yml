@@ -347,10 +347,10 @@ processors:
       field: json.AccountID
       target_field: cloudflare_logpush.gateway_dns.account_id
       ignore_missing: true
-  - rename:
-      tag: rename_json_ApplicationID_to_cloudflare_logpush_gateway_dns_application_id_e0d58a41
+  - convert:
       field: json.ApplicationID
       target_field: cloudflare_logpush.gateway_dns.application_id
+      type: string
       ignore_missing: true
   - rename:
       tag: rename_json_ApplicationName_to_cloudflare_logpush_gateway_dns_application_name_ba9cfc41
@@ -466,10 +466,10 @@ processors:
       field: json.LocationID
       target_field: cloudflare_logpush.gateway_dns.location.id
       ignore_missing: true
-  - rename:
-      tag: rename_json_MatchedCategoryIDs_to_cloudflare_logpush_gateway_dns_matched_category_ids_41228506
+  - convert:
       field: json.MatchedCategoryIDs
       target_field: cloudflare_logpush.gateway_dns.matched.category.ids
+      type: string
       ignore_missing: true
   - rename:
       tag: rename_json_MatchedCategoryNames_to_cloudflare_logpush_gateway_dns_matched_category_names_6ebe505e
@@ -508,20 +508,20 @@ processors:
       target_field: cloudflare_logpush.gateway_dns.policy.name
       if: ctx.cloudflare_logpush?.gateway_dns?.policy?.name == null
       ignore_missing: true
-  - rename:
-      tag: rename_json_QueryCategoryIDs_to_cloudflare_logpush_gateway_dns_question_category_ids_cbae315e
+  - convert:
       field: json.QueryCategoryIDs
       target_field: cloudflare_logpush.gateway_dns.question.category.ids
+      type: string
       ignore_missing: true
   - rename:
       tag: rename_json_QueryID_to_cloudflare_logpush_gateway_dns_question_id_2f8c08b6
       field: json.QueryID
       target_field: cloudflare_logpush.gateway_dns.question.id
       ignore_missing: true
-  - rename:
-      tag: rename_json_QueryIndicatorFeedIDs_to_cloudflare_logpush_gateway_dns_question_indicator_feed_ids_b5a1274b
+  - convert:
       field: json.QueryIndicatorFeedIDs
       target_field: cloudflare_logpush.gateway_dns.question.indicator_feed.ids
+      type: string
       ignore_missing: true
   - rename:
       tag: rename_json_QueryIndicatorFeedNames_to_cloudflare_logpush_gateway_dns_question_indicator_feed_names_8336b1f3

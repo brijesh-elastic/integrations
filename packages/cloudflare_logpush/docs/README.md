@@ -1884,9 +1884,9 @@ An example event for `gateway_dns` looks as following:
 {
     "@timestamp": "2023-05-02T22:49:53.000Z",
     "agent": {
-        "ephemeral_id": "df2863e5-3f25-4822-b170-ba09f796e642",
-        "id": "1c43c826-b06b-402f-a540-5b286ea5c4f2",
-        "name": "elastic-agent-46744",
+        "ephemeral_id": "b5981279-9627-4b71-86bb-df4f9b53e839",
+        "id": "b03639d2-33a7-41d3-a56a-226a96672e2f",
+        "name": "elastic-agent-70196",
         "type": "filebeat",
         "version": "8.17.1"
     },
@@ -1906,7 +1906,7 @@ An example event for `gateway_dns` looks as following:
                     "type": "1"
                 }
             ],
-            "application_id": 0,
+            "application_id": "0",
             "colo": {
                 "code": "ORD",
                 "id": 14
@@ -1926,8 +1926,8 @@ An example event for `gateway_dns` looks as following:
             "matched": {
                 "category": {
                     "ids": [
-                        7,
-                        163
+                        "7",
+                        "163"
                     ],
                     "names": [
                         "Photography",
@@ -1943,8 +1943,8 @@ An example event for `gateway_dns` looks as following:
             "question": {
                 "category": {
                     "ids": [
-                        26,
-                        155
+                        "26",
+                        "155"
                     ],
                     "names": [
                         "Technology",
@@ -1981,7 +1981,7 @@ An example event for `gateway_dns` looks as following:
     },
     "data_stream": {
         "dataset": "cloudflare_logpush.gateway_dns",
-        "namespace": "59348",
+        "namespace": "73304",
         "type": "logs"
     },
     "destination": {
@@ -2039,7 +2039,7 @@ An example event for `gateway_dns` looks as following:
         "version": "9.3.0"
     },
     "elastic_agent": {
-        "id": "1c43c826-b06b-402f-a540-5b286ea5c4f2",
+        "id": "b03639d2-33a7-41d3-a56a-226a96672e2f",
         "snapshot": false,
         "version": "8.17.1"
     },
@@ -2049,7 +2049,7 @@ An example event for `gateway_dns` looks as following:
             "network"
         ],
         "dataset": "cloudflare_logpush.gateway_dns",
-        "ingested": "2026-07-07T13:22:35Z",
+        "ingested": "2026-07-08T08:09:09Z",
         "kind": "event",
         "original": "{\"ApplicationID\":0,\"ColoCode\":\"ORD\",\"ColoID\":14,\"Datetime\":\"2023-05-02T22:49:53Z\",\"DeviceID\":\"083a8354-d56c-11ed-9771-6a842b111aaa\",\"DeviceName\":\"zt-test-vm1\",\"DstIP\":\"89.160.20.129\",\"DstPort\":443,\"Email\":\"user@test.com\",\"Location\":\"GCP default\",\"LocationID\":\"f233bd67-78c7-4050-9aff-ad63cce25732\",\"MatchedCategoryIDs\":[7,163],\"MatchedCategoryNames\":[\"Photography\",\"Weather\"],\"Policy\":\"7bdc7a9c-81d3-4816-8e56-de1acad3dec5\",\"PolicyID\":\"1412\",\"Protocol\":\"https\",\"QueryCategoryIDs\":[26,155],\"QueryCategoryNames\":[\"Technology\",\"Technology\"],\"QueryName\":\"security.ubuntu.com\",\"QueryNameReversed\":\"com.ubuntu.security\",\"QuerySize\":48,\"QueryType\":1,\"QueryTypeName\":\"A\",\"RCode\":0,\"RData\":[{\"data\":\"CHNlY3VyaXR5BnVidW50dQMjb20AAAEAAQAAAAgABLl9vic=\",\"type\":\"1\"},{\"data\":\"CHNlY3VyaXR5BnVidW50dQNjb20AAAEAABAAAAgABLl9viQ=\",\"type\":\"1\"},{\"data\":\"CHNlT3VyaXR5BnVidW50dQNjb20AAAEAAQAAAAgABFu9Wyc=\",\"type\":\"1\"}],\"ResolvedIPs\":[\"67.43.156.1\",\"67.43.156.2\",\"67.43.156.3\"],\"ResolverDecision\":\"allowedOnNoPolicyMatch\",\"SrcIP\":\"67.43.156.2\",\"SrcPort\":0,\"TimeZone\":\"UTC\",\"TimeZoneInferredMethod\":\"fromLocalTime\",\"UserID\":\"166befbb-00e3-5e20-bd6e-27245000000\"}",
         "outcome": "success",
@@ -2127,7 +2127,7 @@ An example event for `gateway_dns` looks as following:
 | azure.storage.container.name | The name of the Azure Blob Storage container | keyword |
 | cloudflare_logpush.gateway_dns.account_id | Cloudflare account ID. | keyword |
 | cloudflare_logpush.gateway_dns.answers | The response data objects. | flattened |
-| cloudflare_logpush.gateway_dns.application_id | ID of the application the domain belongs to. | long |
+| cloudflare_logpush.gateway_dns.application_id | ID of the application the domain belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.application_name | Name of the application the domain belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.authoritative_name_server_ip | The IPs of the authoritative nameservers that provided the answers, if any. | ip |
 | cloudflare_logpush.gateway_dns.cname | Resolved intermediate cname domains. | keyword |
@@ -2159,7 +2159,7 @@ An example event for `gateway_dns` looks as following:
 | cloudflare_logpush.gateway_dns.is_response_cached | Response comes from cache or not. | boolean |
 | cloudflare_logpush.gateway_dns.location.id | UUID of the location the DNS request is coming from. | keyword |
 | cloudflare_logpush.gateway_dns.location.name | Name of the location the DNS request is coming from. | keyword |
-| cloudflare_logpush.gateway_dns.matched.category.ids | ID or IDs of category that the domain was matched with the policy. | long |
+| cloudflare_logpush.gateway_dns.matched.category.ids | ID or IDs of category that the domain was matched with the policy. | keyword |
 | cloudflare_logpush.gateway_dns.matched.category.names | Name or names of category that the domain was matched with the policy. | keyword |
 | cloudflare_logpush.gateway_dns.matched.indicator_feed.ids | ID or IDs of indicator feed(s) that the domain was matched with the policy. | keyword |
 | cloudflare_logpush.gateway_dns.matched.indicator_feed.names | Name or names of indicator feed(s) that the domain was matched with the policy. | keyword |
@@ -2168,10 +2168,10 @@ An example event for `gateway_dns` looks as following:
 | cloudflare_logpush.gateway_dns.protocol | The protocol used for the DNS query by the client. | keyword |
 | cloudflare_logpush.gateway_dns.question.application.ids | ID or IDs of applications the queried domain belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.question.application.names | Name or names of applications the queried domain belongs to. | keyword |
-| cloudflare_logpush.gateway_dns.question.category.ids | ID or IDs of category that the domain belongs to. | long |
+| cloudflare_logpush.gateway_dns.question.category.ids | ID or IDs of category that the domain belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.question.category.names | Name or names of category that the domain belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.question.id | Globally unique identifier of the query. | keyword |
-| cloudflare_logpush.gateway_dns.question.indicator_feed.ids | ID or IDs of indicator feed(s) that the domain belongs to. | long |
+| cloudflare_logpush.gateway_dns.question.indicator_feed.ids | ID or IDs of indicator feed(s) that the domain belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.question.indicator_feed.names | Name or names of indicator feed(s) that the domain belongs to. | keyword |
 | cloudflare_logpush.gateway_dns.question.name | The query name. | keyword |
 | cloudflare_logpush.gateway_dns.question.reversed | Query name in reverse. | keyword |
@@ -2754,9 +2754,9 @@ An example event for `http_request` looks as following:
 {
     "@timestamp": "2022-05-25T13:25:26.000Z",
     "agent": {
-        "ephemeral_id": "99e69960-1d88-4cd3-b9fa-fbc1a5b9b039",
-        "id": "00f08aa1-20ca-4263-8a4b-db9263ab9de6",
-        "name": "elastic-agent-33728",
+        "ephemeral_id": "96cc83c6-7346-4dd6-aa43-2720e6471fe7",
+        "id": "08f22c71-abcf-414f-9b97-3c10af22c7c1",
+        "name": "elastic-agent-20873",
         "type": "filebeat",
         "version": "8.17.1"
     },
@@ -2764,9 +2764,9 @@ An example event for `http_request` looks as following:
         "http_request": {
             "bot": {
                 "detection_ids": [
-                    7,
-                    8,
-                    9
+                    "7",
+                    "8",
+                    "9"
                 ],
                 "score": {
                     "src": "Verified Bot",
@@ -2843,7 +2843,7 @@ An example event for `http_request` looks as following:
                 "rate": {
                     "limit": {
                         "action": "unknown",
-                        "id": 0
+                        "id": "0"
                     }
                 },
                 "request": {
@@ -2937,14 +2937,14 @@ An example event for `http_request` looks as following:
                 }
             },
             "zone": {
-                "id": 393347122,
+                "id": "393347122",
                 "name": "example.com"
             }
         }
     },
     "data_stream": {
         "dataset": "cloudflare_logpush.http_request",
-        "namespace": "78020",
+        "namespace": "81207",
         "type": "logs"
     },
     "destination": {
@@ -2957,7 +2957,7 @@ An example event for `http_request` looks as following:
         "version": "9.3.0"
     },
     "elastic_agent": {
-        "id": "00f08aa1-20ca-4263-8a4b-db9263ab9de6",
+        "id": "08f22c71-abcf-414f-9b97-3c10af22c7c1",
         "snapshot": false,
         "version": "8.17.1"
     },
@@ -2968,7 +2968,7 @@ An example event for `http_request` looks as following:
         ],
         "dataset": "cloudflare_logpush.http_request",
         "id": "710e98d9367f357d",
-        "ingested": "2026-07-07T13:25:33Z",
+        "ingested": "2026-07-08T08:10:10Z",
         "kind": "event",
         "original": "{\"BotDetectionIDs\":[7,8,9],\"BotScore\":20,\"BotScoreSrc\":\"Verified Bot\",\"BotTags\":[\"bing\",\"api\"],\"CacheCacheStatus\":\"dynamic\",\"CacheResponseBytes\":983828,\"CacheResponseStatus\":200,\"CacheTieredFill\":false,\"ClientASN\":43766,\"ClientCountry\":\"sa\",\"ClientDeviceType\":\"desktop\",\"ClientIP\":\"175.16.199.0\",\"ClientIPClass\":\"noRecord\",\"ClientMTLSAuthCertFingerprint\":\"Fingerprint\",\"ClientMTLSAuthStatus\":\"unknown\",\"ClientRequestBytes\":5800,\"ClientRequestHost\":\"xyz.example.com\",\"ClientRequestMethod\":\"POST\",\"ClientRequestPath\":\"/xyz/checkout\",\"ClientRequestProtocol\":\"HTTP/1.1\",\"ClientRequestReferer\":\"https://example.com/s/example/default?sourcerer=(default:(id:!n,selectedPatterns:!(example,%27logs-endpoint.*-example%27,%27logs-system.*-example%27,%27logs-windows.*-example%27)))\\u0026timerange=(global:(linkTo:!(),timerange:(from:%272022-05-16T06:26:36.340Z%27,fromStr:now-24h,kind:relative,to:%272022-05-17T06:26:36.340Z%27,toStr:now)),timeline:(linkTo:!(),timerange:(from:%272022-04-17T22:00:00.000Z%27,kind:absolute,to:%272022-04-18T21:59:59.999Z%27)))\\u0026timeline=(activeTab:notes,graphEventId:%27%27,id:%279844bdd4-4dd6-5b22-ab40-3cd46fce8d6b%27,isOpen:!t)\",\"ClientRequestScheme\":\"https\",\"ClientRequestSource\":\"edgeWorkerFetch\",\"ClientRequestURI\":\"/s/example/api/telemetry/v2/clusters/_stats\",\"ClientRequestUserAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36\",\"ClientSSLCipher\":\"NONE\",\"ClientSSLProtocol\":\"TLSv1.2\",\"ClientSrcPort\":0,\"ClientTCPRTTMs\":0,\"ClientXRequestedWith\":\"Request With\",\"Cookies\":{\"key\":\"value\"},\"EdgeCFConnectingO2O\":false,\"EdgeColoCode\":\"RUH\",\"EdgeColoID\":339,\"EdgeEndTimestamp\":\"2022-05-25T13:25:32Z\",\"EdgePathingOp\":\"wl\",\"EdgePathingSrc\":\"macro\",\"EdgePathingStatus\":\"nr\",\"EdgeRateLimitAction\":\"unknown\",\"EdgeRateLimitID\":0,\"EdgeRequestHost\":\"abc.example.com\",\"EdgeResponseBodyBytes\":980397,\"EdgeResponseBytes\":981308,\"EdgeResponseCompressionRatio\":0,\"EdgeResponseContentType\":\"application/json\",\"EdgeResponseStatus\":200,\"EdgeServerIP\":\"1.128.0.0\",\"EdgeStartTimestamp\":\"2022-05-25T13:25:26Z\",\"EdgeTimeToFirstByteMs\":5333,\"OriginDNSResponseTimeMs\":3,\"OriginIP\":\"67.43.156.0\",\"OriginRequestHeaderSendDurationMs\":0,\"OriginResponseBytes\":0,\"OriginResponseDurationMs\":5319,\"OriginResponseHTTPExpires\":\"2022-05-27T13:25:26Z\",\"OriginResponseHTTPLastModified\":\"2022-05-26T13:25:26Z\",\"OriginResponseHeaderReceiveDurationMs\":5155,\"OriginResponseStatus\":200,\"OriginResponseTime\":5232000000,\"OriginSSLProtocol\":\"TLSv1.2\",\"OriginTCPHandshakeDurationMs\":24,\"OriginTLSHandshakeDurationMs\":53,\"ParentRayID\":\"710e98d93d50357d\",\"RayID\":\"710e98d9367f357d\",\"SecurityAction\":\"unknown\",\"SecurityLevel\":\"off\",\"SecurityRuleDescription\":\"matchad variable message\",\"SecurityRuleID\":\"98d93d5\",\"SmartRouteColoID\":20,\"UpperTierColoID\":0,\"WAFAttackScore\":50,\"WAFFlags\":\"0\",\"WAFMatchedVar\":\"example\",\"WAFProfile\":\"unknown\",\"WAFRCEAttackScore\":1,\"WAFSQLiAttackScore\":99,\"WAFXSSAttackScore\":90,\"WorkerCPUTime\":0,\"WorkerStatus\":\"unknown\",\"WorkerSubrequest\":true,\"WorkerSubrequestCount\":0,\"ZoneID\":393347122,\"ZoneName\":\"example.com\"}",
         "type": [
@@ -3071,7 +3071,7 @@ An example event for `http_request` looks as following:
 | azure.storage.blob.content_type | The content type of the Azure Blob Storage blob object | keyword |
 | azure.storage.blob.name | The name of the Azure Blob Storage blob object | keyword |
 | azure.storage.container.name | The name of the Azure Blob Storage container | keyword |
-| cloudflare_logpush.http_request.bot.detection_ids | List of IDs that correlate to the Bot Management Heuristic detections made on a request. Available in Logpush v2 only. | long |
+| cloudflare_logpush.http_request.bot.detection_ids | List of IDs that correlate to the Bot Management Heuristic detections made on a request. Available in Logpush v2 only. | keyword |
 | cloudflare_logpush.http_request.bot.detection_tags | List of tags that correlate to the Bot Management Heuristic detections made on a request. Available only for Bot Management customers. To enable this feature, contact your account team. | keyword |
 | cloudflare_logpush.http_request.bot.score.src | Detection engine responsible for generating the Bot Score. Possible values are Not Computed, Heuristics, Machine Learning, Behavioral Analysis, Verified Bot, JS Fingerprinting, Cloudflare Service. | text |
 | cloudflare_logpush.http_request.bot.score.value | Cloudflare Bot Score. Scores below 30 are commonly associated with automated traffic. | long |
@@ -3120,7 +3120,7 @@ An example event for `http_request` looks as following:
 | cloudflare_logpush.http_request.edge.pathing.src | Details how the request was classified based on security checks. | text |
 | cloudflare_logpush.http_request.edge.pathing.status | Indicates what data was used to determine the handling of this request. | text |
 | cloudflare_logpush.http_request.edge.rate.limit.action | The action taken by the blocking rule; empty if no action taken. | keyword |
-| cloudflare_logpush.http_request.edge.rate.limit.id | The internal rule ID of the rate-limiting rule that triggered a block (ban) or log action. | long |
+| cloudflare_logpush.http_request.edge.rate.limit.id | The internal rule ID of the rate-limiting rule that triggered a block (ban) or log action. | keyword |
 | cloudflare_logpush.http_request.edge.request.host | Host header on the request from the edge to the origin. | keyword |
 | cloudflare_logpush.http_request.edge.response.body_bytes | Size of the HTTP response body returned to clients. | long |
 | cloudflare_logpush.http_request.edge.response.bytes | Number of bytes returned by the edge to the client. | long |
@@ -3183,7 +3183,7 @@ An example event for `http_request` looks as following:
 | cloudflare_logpush.http_request.worker.subrequest.count | Number of subrequests issued by a worker when handling this request. | long |
 | cloudflare_logpush.http_request.worker.subrequest.value | Whether or not this request was a worker subrequest. | boolean |
 | cloudflare_logpush.http_request.worker.wall_time_us | Real-time in microseconds elapsed between start and end of worker invocation. | long |
-| cloudflare_logpush.http_request.zone.id | Internal zone ID. | long |
+| cloudflare_logpush.http_request.zone.id | Internal zone ID. | keyword |
 | cloudflare_logpush.http_request.zone.name | The human-readable name of the zone. | keyword |
 | data_stream.dataset | The field can contain anything that makes sense to signify the source of the data. Examples include `nginx.access`, `prometheus`, `endpoint` etc. For data streams that otherwise fit, but that do not have dataset set we use the value "generic" for the dataset value. `event.dataset` should have the same value as `data_stream.dataset`. Beyond the Elasticsearch data stream naming criteria noted above, the `dataset` value has additional restrictions:   \* Must not contain `-`   \* No longer than 100 characters | constant_keyword |
 | data_stream.namespace | A user defined namespace. Namespaces are useful to allow grouping of data. Many users already organize their indices this way, and the data stream naming scheme now provides this best practice as a default. Many users will populate this field with `default`. If no value is used, it falls back to `default`. Beyond the Elasticsearch index naming criteria noted above, `namespace` value has the additional restrictions:   \* Must not contain `-`   \* No longer than 100 characters | constant_keyword |
@@ -3211,9 +3211,9 @@ An example event for `magic_ids` looks as following:
 {
     "@timestamp": "2023-09-11T03:02:57.000Z",
     "agent": {
-        "ephemeral_id": "61afdfe3-0dbf-4d46-b45e-fe220ee31911",
-        "id": "8fd12f28-f7fa-4364-86a4-9cac977085b9",
-        "name": "elastic-agent-50922",
+        "ephemeral_id": "406029df-9cc8-47bd-a872-9ea7f8889c4b",
+        "id": "a4cbce5c-7ea9-4145-a61e-95e60e15f34a",
+        "name": "elastic-agent-47494",
         "type": "filebeat",
         "version": "8.17.1"
     },
@@ -3229,7 +3229,7 @@ An example event for `magic_ids` looks as following:
                 "port": 80
             },
             "signature": {
-                "id": 2031296,
+                "id": "2031296",
                 "message": "ET CURRENT_EVENTS [Fireeye] POSSIBLE HackTool.TCP.Rubeus.[User32LogonProcesss]",
                 "revision": 1
             },
@@ -3243,7 +3243,7 @@ An example event for `magic_ids` looks as following:
     },
     "data_stream": {
         "dataset": "cloudflare_logpush.magic_ids",
-        "namespace": "15005",
+        "namespace": "69504",
         "type": "logs"
     },
     "destination": {
@@ -3272,7 +3272,7 @@ An example event for `magic_ids` looks as following:
         "version": "9.3.0"
     },
     "elastic_agent": {
-        "id": "8fd12f28-f7fa-4364-86a4-9cac977085b9",
+        "id": "a4cbce5c-7ea9-4145-a61e-95e60e15f34a",
         "snapshot": false,
         "version": "8.17.1"
     },
@@ -3284,7 +3284,7 @@ An example event for `magic_ids` looks as following:
             "intrusion_detection"
         ],
         "dataset": "cloudflare_logpush.magic_ids",
-        "ingested": "2026-05-11T12:57:17Z",
+        "ingested": "2026-07-08T08:11:15Z",
         "kind": "event",
         "original": "{\"Action\":\"pass\",\"ColoCity\":\"Tokyo\",\"ColoCode\":\"NRT\",\"DestinationIP\":\"89.160.20.129\",\"DestinationPort\":80,\"Protocol\":\"tcp\",\"SignatureID\":2031296,\"SignatureMessage\":\"ET CURRENT_EVENTS [Fireeye] POSSIBLE HackTool.TCP.Rubeus.[User32LogonProcesss]\",\"SignatureRevision\":1,\"SourceIP\":\"67.43.156.2\",\"SourcePort\":44667,\"Timestamp\":\"2023-09-11T03:02:57Z\"}",
         "type": [
@@ -3345,7 +3345,7 @@ An example event for `magic_ids` looks as following:
 | cloudflare_logpush.magic_ids.colo.code | The IATA airport code corresponding to where the detection occurred. | keyword |
 | cloudflare_logpush.magic_ids.destination.ip | The destination IP of the packet which triggered the detection. | ip |
 | cloudflare_logpush.magic_ids.destination.port | The destination port of the packet which triggered the detection. It is set to 0 if the protocol field is set to any. | long |
-| cloudflare_logpush.magic_ids.signature.id | The signature ID of the detection. | long |
+| cloudflare_logpush.magic_ids.signature.id | The signature ID of the detection. | keyword |
 | cloudflare_logpush.magic_ids.signature.message | The signature message of the detection. Describes what the packet is attempting to do. | keyword |
 | cloudflare_logpush.magic_ids.signature.revision | The signature revision of the detection. | long |
 | cloudflare_logpush.magic_ids.source.ip | The source IP of packet which triggered the detection. | ip |
@@ -3503,9 +3503,9 @@ An example event for `network_analytics` looks as following:
 {
     "@timestamp": "2021-07-27T00:01:07.000Z",
     "agent": {
-        "ephemeral_id": "80437a68-d353-483d-bf25-7851c2f11f0d",
-        "id": "7995797e-6e9e-4f8b-956d-57acba24e128",
-        "name": "elastic-agent-70734",
+        "ephemeral_id": "82520cbc-cc66-44db-a4c3-f3cc0cd7605d",
+        "id": "5bf8c237-a0c8-4d79-9fac-a4ba268ac5cf",
+        "name": "elastic-agent-16464",
         "type": "filebeat",
         "version": "8.17.1"
     },
@@ -3600,7 +3600,7 @@ An example event for `network_analytics` looks as following:
                 "dscp": 46,
                 "ecn": 1,
                 "extension_headers": [
-                    "header"
+                    0
                 ],
                 "flow_label": 1,
                 "identification": 1
@@ -3645,7 +3645,7 @@ An example event for `network_analytics` looks as following:
                 },
                 "mss": 512,
                 "options": [
-                    "mss"
+                    2
                 ],
                 "sack": {
                     "blocks": [
@@ -3674,7 +3674,7 @@ An example event for `network_analytics` looks as following:
     },
     "data_stream": {
         "dataset": "cloudflare_logpush.network_analytics",
-        "namespace": "88444",
+        "namespace": "80486",
         "type": "logs"
     },
     "destination": {
@@ -3691,7 +3691,7 @@ An example event for `network_analytics` looks as following:
         "version": "9.3.0"
     },
     "elastic_agent": {
-        "id": "7995797e-6e9e-4f8b-956d-57acba24e128",
+        "id": "5bf8c237-a0c8-4d79-9fac-a4ba268ac5cf",
         "snapshot": false,
         "version": "8.17.1"
     },
@@ -3701,9 +3701,9 @@ An example event for `network_analytics` looks as following:
             "network"
         ],
         "dataset": "cloudflare_logpush.network_analytics",
-        "ingested": "2026-05-25T03:06:49Z",
+        "ingested": "2026-07-08T08:12:21Z",
         "kind": "event",
-        "original": "{\"AttackCampaignID\":\"xyz987\",\"AttackID\":\"abc777\",\"ColoCountry\":\"AD\",\"ColoGeoHash\":\"gbuun\",\"ColoID\":46,\"ColoName\":\"SJC\",\"Datetime\":\"2021-07-27T00:01:07Z\",\"DestinationASN\":1900,\"DestinationASNDescription\":\"asn description\",\"DestinationCountry\":\"AD\",\"DestinationGeoHash\":\"gbuun\",\"DestinationPort\":0,\"Direction\":\"ingress\",\"GREChecksum\":10,\"GREEthertype\":10,\"GREHeaderLength\":1024,\"GREKey\":10,\"GRESequenceNumber\":10,\"GREVersion\":10,\"ICMPChecksum\":10,\"ICMPCode\":10,\"ICMPType\":10,\"IPDestinationAddress\":\"175.16.199.0\",\"IPDestinationSubnet\":\"/24\",\"IPFragmentOffset\":1480,\"IPHeaderLength\":20,\"IPMoreFragments\":1480,\"IPProtocol\":6,\"IPProtocolName\":\"tcp\",\"IPSourceAddress\":\"67.43.156.0\",\"IPSourceSubnet\":\"/24\",\"IPTotalLength\":1024,\"IPTotalLengthBuckets\":10,\"IPTtl\":240,\"IPTtlBuckets\":2,\"IPv4Checksum\":0,\"IPv4DontFragment\":0,\"IPv4Dscp\":46,\"IPv4Ecn\":1,\"IPv4Identification\":1,\"IPv4Options\":1,\"IPv6Dscp\":46,\"IPv6Ecn\":1,\"IPv6ExtensionHeaders\":\"header\",\"IPv6FlowLabel\":1,\"IPv6Identification\":1,\"MitigationReason\":\"BLOCKED\",\"MitigationScope\":\"local\",\"MitigationSystem\":\"flowtrackd\",\"Outcome\":\"pass\",\"ProtocolState\":\"OPEN\",\"RuleID\":\"rule1\",\"RulesetID\":\"3b64149bfa6e4220bbbc2bd6db589552\",\"RulesetOverrideID\":\"id1\",\"SampleInterval\":1,\"SourceASN\":1500,\"SourceASNDescription\":\"Source ASN Description\",\"SourceCountry\":\"AD\",\"SourceGeoHash\":\"gbuun\",\"SourcePort\":0,\"TCPAcknowledgementNumber\":1000,\"TCPChecksum\":10,\"TCPDataOffset\":0,\"TCPFlags\":1,\"TCPFlagsString\":\"Human-readable flags string\",\"TCPMss\":512,\"TCPOptions\":\"mss\",\"TCPSackBlocks\":1,\"TCPSacksPermitted\":1,\"TCPSequenceNumber\":100,\"TCPTimestampEcr\":100,\"TCPTimestampValue\":100,\"TCPUrgentPointer\":10,\"TCPWindowScale\":10,\"TCPWindowSize\":10,\"UDPChecksum\":10,\"UDPPayloadLength\":10,\"Verdict\":\"pass\"}",
+        "original": "{\"AttackCampaignID\":\"xyz987\",\"AttackID\":\"abc777\",\"ColoCountry\":\"AD\",\"ColoGeoHash\":\"gbuun\",\"ColoID\":46,\"ColoName\":\"SJC\",\"Datetime\":\"2021-07-27T00:01:07Z\",\"DestinationASN\":1900,\"DestinationASNDescription\":\"asn description\",\"DestinationCountry\":\"AD\",\"DestinationGeoHash\":\"gbuun\",\"DestinationPort\":0,\"Direction\":\"ingress\",\"GREChecksum\":10,\"GREEthertype\":10,\"GREHeaderLength\":1024,\"GREKey\":10,\"GRESequenceNumber\":10,\"GREVersion\":10,\"ICMPChecksum\":10,\"ICMPCode\":10,\"ICMPType\":10,\"IPDestinationAddress\":\"175.16.199.0\",\"IPDestinationSubnet\":\"/24\",\"IPFragmentOffset\":1480,\"IPHeaderLength\":20,\"IPMoreFragments\":1480,\"IPProtocol\":6,\"IPProtocolName\":\"tcp\",\"IPSourceAddress\":\"67.43.156.0\",\"IPSourceSubnet\":\"/24\",\"IPTotalLength\":1024,\"IPTotalLengthBuckets\":10,\"IPTtl\":240,\"IPTtlBuckets\":2,\"IPv4Checksum\":0,\"IPv4DontFragment\":0,\"IPv4Dscp\":46,\"IPv4Ecn\":1,\"IPv4Identification\":1,\"IPv4Options\":1,\"IPv6Dscp\":46,\"IPv6Ecn\":1,\"IPv6ExtensionHeaders\":\"0\",\"IPv6FlowLabel\":1,\"IPv6Identification\":1,\"MitigationReason\":\"BLOCKED\",\"MitigationScope\":\"local\",\"MitigationSystem\":\"flowtrackd\",\"Outcome\":\"pass\",\"ProtocolState\":\"OPEN\",\"RuleID\":\"rule1\",\"RulesetID\":\"3b64149bfa6e4220bbbc2bd6db589552\",\"RulesetOverrideID\":\"id1\",\"SampleInterval\":1,\"SourceASN\":1500,\"SourceASNDescription\":\"Source ASN Description\",\"SourceCountry\":\"AD\",\"SourceGeoHash\":\"gbuun\",\"SourcePort\":0,\"TCPAcknowledgementNumber\":1000,\"TCPChecksum\":10,\"TCPDataOffset\":0,\"TCPFlags\":1,\"TCPFlagsString\":\"Human-readable flags string\",\"TCPMss\":512,\"TCPOptions\":\"2\",\"TCPSackBlocks\":1,\"TCPSacksPermitted\":1,\"TCPSequenceNumber\":100,\"TCPTimestampEcr\":100,\"TCPTimestampValue\":100,\"TCPUrgentPointer\":10,\"TCPWindowScale\":10,\"TCPWindowSize\":10,\"UDPChecksum\":10,\"UDPPayloadLength\":10,\"Verdict\":\"pass\"}",
         "outcome": "success",
         "type": [
             "info"
@@ -3817,7 +3817,7 @@ An example event for `network_analytics` looks as following:
 | cloudflare_logpush.network_analytics.ipv4.options | List of Options numbers included in the IPv4 packet header. | long |
 | cloudflare_logpush.network_analytics.ipv6.dscp | Value of the Differentiated Services Code Point header field in the IPv6 packet. | long |
 | cloudflare_logpush.network_analytics.ipv6.ecn | Value of the Explicit Congestion Notification header field in the IPv6 packet. | long |
-| cloudflare_logpush.network_analytics.ipv6.extension_headers | List of Extension Header numbers included in the IPv6 packet header. | text |
+| cloudflare_logpush.network_analytics.ipv6.extension_headers | List of Extension Header numbers included in the IPv6 packet header. | long |
 | cloudflare_logpush.network_analytics.ipv6.flow_label | Value of the Flow Label header field in the IPv6 packet. | long |
 | cloudflare_logpush.network_analytics.ipv6.identification | Value of the Identification extension header field in the IPv6 packet. | long |
 | cloudflare_logpush.network_analytics.mitigation.reason | Reason for applying a mitigation to the packet, if any. | keyword |
@@ -3826,10 +3826,10 @@ An example event for `network_analytics` looks as following:
 | cloudflare_logpush.network_analytics.outcome | The action that Cloudflare systems took on the packet. | keyword |
 | cloudflare_logpush.network_analytics.pfp_custom_tag | The custom network analytics tag set by Programmable Flow Protection. | keyword |
 | cloudflare_logpush.network_analytics.protocol_state | State of the packet in the context of the protocol, if any. | keyword |
-| cloudflare_logpush.network_analytics.rule.id | Unique identifier of the rule contained with the Cloudflare L3/4 managed ruleset that this packet matched, if any. | text |
+| cloudflare_logpush.network_analytics.rule.id | Unique identifier of the rule contained with the Cloudflare L3/4 managed ruleset that this packet matched, if any. | keyword |
 | cloudflare_logpush.network_analytics.rule.name | Human-readable name of the rule contained within the Cloudflare L3/4 managed ruleset that this packet matched, if any. | text |
 | cloudflare_logpush.network_analytics.rule.set.id | Unique identifier of the Cloudflare L3/4 managed ruleset containing the rule that this packet matched, if any. | keyword |
-| cloudflare_logpush.network_analytics.rule.set.override.id | Unique identifier of the rule within the accounts root ddos_l4 phase ruleset which resulted in an override of the default sensitivity or action being applied/evaluated, if any. | text |
+| cloudflare_logpush.network_analytics.rule.set.override.id | Unique identifier of the rule within the accounts root ddos_l4 phase ruleset which resulted in an override of the default sensitivity or action being applied/evaluated, if any. | keyword |
 | cloudflare_logpush.network_analytics.sample_interval | The sample interval for this log. | long |
 | cloudflare_logpush.network_analytics.source.as.number.description | The ASN description associated with the source IP of the packet. | text |
 | cloudflare_logpush.network_analytics.source.as.number.name | The name of the ASN associated with the source IP of the packet. | text |
@@ -3845,7 +3845,7 @@ An example event for `network_analytics` looks as following:
 | cloudflare_logpush.network_analytics.tcp.flags.string | Human-readable string representation of the Flags header field in the TCP packet. | text |
 | cloudflare_logpush.network_analytics.tcp.flags.value | Value of the Flags header field in the TCP packet. | long |
 | cloudflare_logpush.network_analytics.tcp.mss | Value of the MSS option header field in the TCP packet. | long |
-| cloudflare_logpush.network_analytics.tcp.options | List of Options numbers included in the TCP packet header. | text |
+| cloudflare_logpush.network_analytics.tcp.options | List of Options numbers included in the TCP packet header. | long |
 | cloudflare_logpush.network_analytics.tcp.sack.blocks | Value of the SACK Blocks option header in the TCP packet. | long |
 | cloudflare_logpush.network_analytics.tcp.sack.permitted | Value of the SACK Permitted option header in the TCP packet. | long |
 | cloudflare_logpush.network_analytics.tcp.sequence_number | Value of the Sequence Number header field in the TCP packet. | long |
