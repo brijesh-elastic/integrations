@@ -66,16 +66,6 @@ processors:
       tag: set_event_action_from_activity_category
       copy_from: zoom.meeting_activity.activity_category
       ignore_empty_value: true
-  - lowercase:
-      field: event.action
-      tag: lowercase_event_action
-      ignore_missing: true
-  - gsub:
-      field: event.action
-      pattern: '\s+'
-      replacement: '-'
-      tag: gsub_event_action_whitespace
-      ignore_missing: true
   - append:
       field: event.type
       tag: append_event_type_info

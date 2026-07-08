@@ -26,6 +26,10 @@ screenshots:
     title: Zoom Operation Overview Dashboard Screenshot
     size: 600x600
     type: image/png
+  - src: /img/zoom-meeting-activity-dashboard.png
+    title: Zoom Meeting Activity Overview Dashboard Screenshot
+    size: 600x600
+    type: image/png
 policy_templates:
   - name: zoom
     title: Zoom logs

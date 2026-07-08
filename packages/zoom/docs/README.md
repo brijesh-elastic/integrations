@@ -7,7 +7,7 @@
 This integration collects data using two complementary methods:
 
 - **Webhook**: a real-time HTTP listener that receives event notifications pushed by Zoom (meeting, webinar, recording, user, account, phone, team chat, and Zoom Room events).
-- **REST API**: a periodic poll of the Zoom REST API to collect the sign in / sign out **activity** report and the **operation** logs report for an account.
+- **REST API**: a periodic poll of the Zoom REST API to collect the sign in / sign out **activity** report, the **operation** logs report, and the **meeting_activity** logs report for an account.
 
 ### Compatibility
 
@@ -19,7 +19,7 @@ This integration collects data using two complementary methods:
 
 The **webhook** data stream creates an HTTP listener that accepts incoming webhook callbacks from Zoom. The Elastic Agent running this integration must be reachable from the internet so that Zoom can connect to it. Zoom requires that webhooks are delivered over HTTPS, so you must either configure the integration with a valid TLS certificate or place a reverse proxy that terminates TLS in front of the integration. Incoming events are then routed to the appropriate ingest pipeline based on the Zoom event type.
 
-The **activity**, **operation** and **meeting_activity** data streams poll the Zoom REST API using Server-to-Server OAuth. On each interval, they request records within a date window (a maximum of one month per request, within the last six months of available history) and paginate through the results.
+The **activity**, **operation** and **meeting_activity** data streams poll the Zoom REST API using Server-to-Server OAuth. On each interval, they request records within a date window (a maximum of one month per request) and paginate through the results.
 
 ## What data does this integration collect?
 
@@ -98,7 +98,7 @@ For help with Elastic ingest tools, check [Common problems](https://www.elastic.
 
 ### Zoom REST API rate limits
 
-The REST API data streams (`activity` and `operation`) query Zoom's Report endpoints, which are classified as **Heavy** APIs. Zoom enforces both a per-second (QPS) limit and a daily request quota, and **both are shared across every app and user on the account, as well as across all of the Report data streams in this integration**:
+The REST API data streams (`activity`, `operation`, and `meeting_activity`) query Zoom's Report endpoints, which are classified as **Heavy** APIs. Zoom enforces both a per-second (QPS) limit and a daily request quota, and **both are shared across every app and user on the account, as well as across all of the Report data streams in this integration**:
 
 | Plan | Per second | Per day (shared by Heavy and Resource-intensive APIs) |
 |---|---|---|
@@ -598,32 +598,32 @@ An example event for `meeting_activity` looks as following:
 
 ```json
 {
-    "@timestamp": "2024-03-21T07:09:03.216Z",
+    "@timestamp": "2026-07-07T07:09:03.216Z",
     "agent": {
-        "ephemeral_id": "03b6f4fb-dfde-44c9-87b9-2e42dbf545f7",
-        "id": "429eb285-b0ae-49a4-84ed-7f45cca62e58",
-        "name": "elastic-agent-31060",
+        "ephemeral_id": "dbde6c6c-c58a-46dd-9717-53b52f8e90fb",
+        "id": "850c4616-3e26-4704-bedd-5244708e2dd3",
+        "name": "elastic-agent-50752",
         "type": "filebeat",
         "version": "8.19.0"
     },
     "data_stream": {
         "dataset": "zoom.meeting_activity",
-        "namespace": "62815",
+        "namespace": "35726",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "429eb285-b0ae-49a4-84ed-7f45cca62e58",
+        "id": "850c4616-3e26-4704-bedd-5244708e2dd3",
         "snapshot": false,
         "version": "8.19.0"
     },
     "event": {
-        "action": "meeting-started",
+        "action": "Meeting Started",
         "agent_id_status": "verified",
         "dataset": "zoom.meeting_activity",
-        "ingested": "2026-06-15T13:03:44Z",
+        "ingested": "2026-07-08T14:14:37Z",
         "kind": "event",
         "type": [
             "info"

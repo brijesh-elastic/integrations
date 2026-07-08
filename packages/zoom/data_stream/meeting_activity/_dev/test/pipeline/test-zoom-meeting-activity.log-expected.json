@@ -6,7 +6,7 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "meeting-started",
+                "action": "Meeting Started",
                 "kind": "event",
                 "original": "{\"meeting_number\":\"982 610 0285\",\"activity_time\":\"2024-03-21 07:09:03:216\",\"operator\":\"Jill Chill\",\"operator_email\":\"jillchill@example.com\",\"activity_category\":\"Meeting Started\",\"activity_detail\":\"Meeting Started\"}",
                 "type": [
@@ -40,7 +40,7 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "user-joined",
+                "action": "User joined",
                 "kind": "event",
                 "original": "{\"meeting_number\":\"982 610 0285\",\"activity_time\":\"2024-03-21 07:09:45:002\",\"operator\":\"Bob Brown\",\"operator_email\":\"bob@example.com\",\"activity_category\":\"User joined\",\"activity_detail\":\"Bob Brown joined the meeting\"}",
                 "type": [
@@ -74,7 +74,7 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "user-left",
+                "action": "User left",
                 "kind": "event",
                 "original": "{\"meeting_number\":\"982 610 0285\",\"activity_time\":\"2024-03-21 07:35:12:880\",\"operator\":\"Bob Brown\",\"operator_email\":\"bob@example.com\",\"activity_category\":\"User left\",\"activity_detail\":\"Bob Brown left the meeting\"}",
                 "type": [
@@ -108,7 +108,7 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "meeting-ended",
+                "action": "Meeting ended",
                 "kind": "event",
                 "original": "{\"meeting_number\":\"982 610 0285\",\"activity_time\":\"2024-03-21 07:40:00:120\",\"operator\":\"Jill Chill\",\"operator_email\":\"jillchill@example.com\",\"activity_category\":\"Meeting ended\",\"activity_detail\":\"Meeting ended\"}",
                 "type": [
@@ -142,7 +142,7 @@
                 "version": "8.11.0"
             },
             "event": {
-                "action": "meeting-created",
+                "action": "Meeting created",
                 "kind": "event",
                 "original": "{\"meeting_number\":\"112 233 4455\",\"activity_time\":\"2024-03-22 09:00:10:500\",\"operator\":\"Alice Adams\",\"activity_category\":\"Meeting created\",\"activity_detail\":\"Meeting created\"}",
                 "type": [
