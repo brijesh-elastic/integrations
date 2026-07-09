@@ -124,7 +124,7 @@
                             {
                                 "destinationRefName": "link_2ceaef72-9ed5-4cd6-b7a0-da710d1894ea_dashboard",
                                 "id": "2ceaef72-9ed5-4cd6-b7a0-da710d1894ea",
-                                "label": "Meeting Activity Overview ￼ ￼",
+                                "label": "Meeting Activity Overview",
                                 "options": {
                                     "openInNewTab": false,
                                     "useCurrentDateRange": false,
@@ -613,7 +613,7 @@
             }
         ],
         "timeRestore": false,
-        "title": "[Logs Zoom] Meeting Activity Overview ￼ ￼",
+        "title": "[Logs Zoom] Meeting Activity Overview",
         "version": 3
     },
     "coreMigrationVersion": "8.8.0",

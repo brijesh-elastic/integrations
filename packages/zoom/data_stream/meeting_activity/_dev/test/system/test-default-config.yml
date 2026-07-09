@@ -15,6 +15,6 @@ data_stream:
     page_size: 300
     tags:
       - forwarded
-      - zoom-meeting-activity
+      - zoom-meeting_activity
 assert:
   hit_count: 5

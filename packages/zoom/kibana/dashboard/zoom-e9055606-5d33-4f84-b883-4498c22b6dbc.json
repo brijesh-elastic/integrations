@@ -580,7 +580,7 @@
                             {
                                 "destinationRefName": "link_75126e52-9f8a-4e72-a9fc-d30e8da52553_dashboard",
                                 "id": "75126e52-9f8a-4e72-a9fc-d30e8da52553",
-                                "label": "Meeting Activity Overview ￼ ￼",
+                                "label": "Meeting Activity Overview",
                                 "options": {
                                     "openInNewTab": false,
                                     "useCurrentDateRange": false,
