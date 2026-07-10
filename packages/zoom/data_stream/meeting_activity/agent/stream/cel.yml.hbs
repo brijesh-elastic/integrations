@@ -107,7 +107,9 @@ program: |-
               (resp.StatusCode == 200) ?
                 resp.Body.decode_json().as(body,
                   body.?meeting_activity_logs.orValue([]).as(logs,
-                    body.?next_page_token.as(next_token,
+                    body.?next_page_token.optFlatMap(v,
+                      (v != "") ? optional.of(v) : optional.none()
+                    ).as(next_token,
                       {
                         // Step 5 - one event per record; emit a dropped placeholder for
                         // an empty page so want_more / cursor still take effect.

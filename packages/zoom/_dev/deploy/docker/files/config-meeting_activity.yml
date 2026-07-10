@@ -72,7 +72,8 @@ rules:
                 "activity_detail": "Meeting ended"
               }
             ],
-            "page_size": 300
+            "page_size": 300,
+            "next_page_token": ""
           }
   # Initial page (round 1) and cursor-resumed page (round 2).
   - path: /v2/report/meeting_activities
