@@ -236,11 +236,41 @@ processors:
             tag: append_error_message_ee256292
             field: error.message
             value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
-  - set:
-      tag: set_dns_response_code_3de8fbb6
-      field: dns.response_code
-      copy_from: cloudflare_logpush.gateway_dns.response_code
-      ignore_empty_value: true
+  - script:
+      lang: painless
+      tag: script_map_dns_response_code
+      params:
+        "0": NoError
+        "1": FormErr
+        "2": ServFail
+        "3": NXDomain
+        "4": NotImp
+        "5": Refused
+        "6": YXDomain
+        "7": YXRRSet
+        "8": NXRRSet
+        "9": NotAuth
+        "10": NotZone
+        "11": DSOTYPENI
+        "16": BADVERS
+        "17": BADKEY
+        "18": BADTIME
+        "19": BADMODE
+        "20": BADNAME
+        "21": BADALG
+        "22": BADTRUNC
+        "23": BADCOOKIE
+      source: |
+        ctx.dns = ctx.dns ?: [:];
+        def code = ctx.cloudflare_logpush?.gateway_dns?.response_code;
+        if (code != null && params.containsKey(code)) {
+          ctx.dns.response_code = params[code];
+        }
+      on_failure:
+        - append:
+            tag: append_error_message_3de8fbb6
+            field: error.message
+            value: 'Processor {{{_ingest.on_failure_processor_type}}} with tag {{{_ingest.on_failure_processor_tag}}} in pipeline {{{_ingest.on_failure_pipeline}}} failed with message: {{{_ingest.on_failure_message}}}'
   - rename:
       tag: rename_json_RData_to_cloudflare_logpush_gateway_dns_answers_9bdd6d3f
       field: json.RData

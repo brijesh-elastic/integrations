@@ -140,7 +140,7 @@
                     "67.43.156.2",
                     "67.43.156.3"
                 ],
-                "response_code": "0"
+                "response_code": "NoError"
             },
             "ecs": {
                 "version": "9.3.0"
@@ -346,7 +346,7 @@
                     "67.43.156.2",
                     "67.43.156.3"
                 ],
-                "response_code": "0"
+                "response_code": "NoError"
             },
             "ecs": {
                 "version": "9.3.0"
@@ -552,7 +552,7 @@
                     "67.43.156.2",
                     "67.43.156.3"
                 ],
-                "response_code": "0"
+                "response_code": "NoError"
             },
             "ecs": {
                 "version": "9.3.0"
@@ -698,7 +698,7 @@
                     "name": "epicunitscan.info",
                     "type": "AAAA"
                 },
-                "response_code": "0"
+                "response_code": "NoError"
             },
             "ecs": {
                 "version": "9.3.0"
@@ -825,7 +825,7 @@
                     "name": "epicunitscan.info",
                     "type": "AAAA"
                 },
-                "response_code": "0"
+                "response_code": "NoError"
             },
             "ecs": {
                 "version": "9.3.0"
@@ -1004,7 +1004,7 @@
                     "203.0.113.45",
                     "203.0.113.46"
                 ],
-                "response_code": "0"
+                "response_code": "NoError"
             },
             "ecs": {
                 "version": "9.3.0"

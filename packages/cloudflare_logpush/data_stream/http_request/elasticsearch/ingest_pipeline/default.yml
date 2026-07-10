@@ -986,12 +986,12 @@ processors:
       copy_from: cloudflare_logpush.http_request.ray.id
       ignore_empty_value: true
   - rename:
-      tag: rename_json_RequestHeaders_to_cloudflare_logpush_http_request_request_header_88514ca5
+      tag: rename_json_RequestHeaders_to_cloudflare_logpush_http_request_request_headers_88514ca5
       field: json.RequestHeaders
       target_field: cloudflare_logpush.http_request.request.headers
       ignore_missing: true
   - rename:
-      tag: rename_json_ResponseHeaders_to_cloudflare_logpush_http_request_response_header_a8900b0d
+      tag: rename_json_ResponseHeaders_to_cloudflare_logpush_http_request_response_headers_a8900b0d
       field: json.ResponseHeaders
       target_field: cloudflare_logpush.http_request.response.headers
       ignore_missing: true
