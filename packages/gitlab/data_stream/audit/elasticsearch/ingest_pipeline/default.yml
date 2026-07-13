@@ -77,6 +77,22 @@ processors:
       field: gitlab.audit.correlation_id
       target_field: event.id
       ignore_missing: true
+  - rename:
+      field: gitlab.audit.details.custom_message
+      tag: rename_custom_message
+      target_field: gitlab.audit.details.custom_message_object
+      ignore_missing: true
+      if: ctx.gitlab?.audit?.details?.custom_message instanceof Map
+  - set:
+      field: network.protocol
+      tag: set_network_protocol
+      copy_from: gitlab.audit.details.custom_message_object.protocol
+      ignore_empty_value: true
+  - set:
+      field: event.action
+      tag: set_event_action
+      copy_from: gitlab.audit.details.custom_message_object.action
+      ignore_empty_value: true
   - dot_expander:
       path: gitlab.audit
       field: "*"
