@@ -6,7 +6,15 @@
             },
             "event": {
                 "action": "ComputerPolicyFinished",
-                "kind": "event"
+                "category": [
+                    "configuration"
+                ],
+                "kind": "event",
+                "outcome": "success",
+                "type": [
+                    "change",
+                    "info"
+                ]
             },
             "host": {
                 "address": [

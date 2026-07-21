@@ -6,7 +6,15 @@
             },
             "event": {
                 "action": "SmartGroupUserMembershipChange",
-                "kind": "event"
+                "category": [
+                    "iam"
+                ],
+                "kind": "event",
+                "type": [
+                    "change",
+                    "group",
+                    "info"
+                ]
             },
             "host": {
                 "entity": {

@@ -6,7 +6,16 @@
             },
             "event": {
                 "action": "ComputerPatchPolicyCompleted",
-                "kind": "event"
+                "category": [
+                    "configuration",
+                    "package"
+                ],
+                "kind": "event",
+                "outcome": "success",
+                "type": [
+                    "change",
+                    "info"
+                ]
             },
             "host": {
                 "address": [

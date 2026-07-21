@@ -6,7 +6,16 @@
             },
             "event": {
                 "action": "RestAPIOperation",
-                "kind": "event"
+                "category": [
+                    "api"
+                ],
+                "kind": "event",
+                "outcome": "success",
+                "type": [
+                    "change",
+                    "admin",
+                    "info"
+                ]
             },
             "host": {
                 "entity": {

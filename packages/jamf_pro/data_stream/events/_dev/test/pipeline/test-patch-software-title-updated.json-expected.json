@@ -6,7 +6,15 @@
             },
             "event": {
                 "action": "PatchSoftwareTitleUpdated",
-                "kind": "event"
+                "category": [
+                    "configuration",
+                    "package"
+                ],
+                "kind": "event",
+                "type": [
+                    "change",
+                    "info"
+                ]
             },
             "host": {
                 "entity": {

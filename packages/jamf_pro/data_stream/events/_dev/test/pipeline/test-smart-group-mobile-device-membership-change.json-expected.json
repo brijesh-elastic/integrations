@@ -6,7 +6,16 @@
             },
             "event": {
                 "action": "SmartGroupMobileDeviceMembershipChange",
-                "kind": "event"
+                "category": [
+                    "host",
+                    "iam"
+                ],
+                "kind": "event",
+                "type": [
+                    "change",
+                    "group",
+                    "info"
+                ]
             },
             "host": {
                 "entity": {

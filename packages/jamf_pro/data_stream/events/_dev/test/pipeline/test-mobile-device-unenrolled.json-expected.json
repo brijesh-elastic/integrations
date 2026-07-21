@@ -6,7 +6,15 @@
             },
             "event": {
                 "action": "MobileDeviceUnEnrolled",
-                "kind": "event"
+                "category": [
+                    "host"
+                ],
+                "kind": "event",
+                "type": [
+                    "change",
+                    "end",
+                    "info"
+                ]
             },
             "host": {
                 "address": [
