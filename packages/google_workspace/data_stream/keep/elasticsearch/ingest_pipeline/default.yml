@@ -95,9 +95,14 @@ processors:
       value: event
   - append:
       field: event.category
-      tag: set_iam_into_event_category
+      tag: append_iam_into_event_category
       value: iam
       if: ctx.google_workspace?.keep?.name == "modified_acl"
+  - append:
+      field: event.category
+      tag: append_file_into_event_category
+      value: file
+      if: ctx.google_workspace?.keep?.name != null && ["uploaded_attachment", "deleted_attachment"].contains(ctx.google_workspace.keep.name)
   - script:
       description: Set event type based on event name.
       if: ctx.google_workspace?.keep?.name != null

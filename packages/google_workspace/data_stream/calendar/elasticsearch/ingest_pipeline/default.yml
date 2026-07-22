@@ -108,7 +108,9 @@ processors:
         create_calendar: configuration
         delete_calendar: configuration
         change_calendar_description: configuration
+        export_calendar: configuration
         change_calendar_location: configuration
+        print_preview_calendar: configuration
         change_calendar_timezone: configuration
         change_calendar_title: configuration	
         add_subscription: configuration
@@ -123,12 +125,21 @@ processors:
         remove_event_guest:	configuration
         change_event_guest_response: configuration
         change_event: configuration
+        print_preview_event: configuration
         remove_event_from_trash: configuration
         restore_event: configuration
         change_event_start_time: configuration
         change_event_title:	configuration
         transfer_event_completed: configuration
         transfer_event_requested: configuration
+        interop_freebusy_lookup_outbound_successful: configuration
+        interop_freebusy_lookup_inbound_successful: configuration
+        interop_exchange_resource_availability_lookup_successful: configuration
+        interop_exchange_resource_list_lookup_successful: configuration
+        interop_freebusy_lookup_outbound_unsuccessful: configuration
+        interop_freebusy_lookup_inbound_unsuccessful: configuration
+        interop_exchange_resource_availability_lookup_unsuccessful: configuration
+        interop_exchange_resource_list_lookup_unsuccessful: configuration
       source: |-
         ctx.event = ctx.event ?: [:];
         def category = [];

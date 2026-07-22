@@ -107,12 +107,18 @@ processors:
       lang: painless
       params:
         add_room_member: configuration
+        attachment_download: file
+        attachment_upload: file
         block_room: configuration
         block_user: configuration
+        custom_status_updated: configuration
         emoji_created: configuration
         emoji_deleted: configuration
         history_turned_off: configuration
         history_turned_on: configuration
+        invite_accept: configuration
+        invite_decline: configuration
+        invite_send: configuration
         remove_room_member: configuration
         room_created: configuration
         room_deleted: configuration
