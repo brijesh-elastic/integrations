@@ -27,6 +27,10 @@ processors:
       field: event.kind
       value: event
   - append:
+      field: event.category
+      value: configuration
+      tag: append_configuration_into_event_category
+  - append:
       field: event.type
       value: creation
       if: ctx.github?.issues?.created_at == ctx.github?.issues?.updated_at
@@ -38,6 +42,21 @@ processors:
       field: event.type
       value: change
       if: ctx.github?.issues?.created_at != ctx.github?.issues?.updated_at && ctx.github?.issues?.closed_at == null && ctx.github?.issues?.pull_request?.merged_at == null
+  - set:
+      field: event.action
+      value: reopened
+      tag: set_event_action_reopened
+      if: ctx.github?.issues?.state == 'open' && ctx.github?.issues?.state_reason == 'reopened'
+  - set:
+      field: event.action
+      value: opened
+      tag: set_event_action_opened
+      if: ctx.github?.issues?.state == 'open' && ctx.github?.issues?.state_reason != 'reopened'
+  - set:
+      field: event.action
+      value: closed
+      tag: set_event_action_closed
+      if: ctx.github?.issues?.state == 'closed'
   - date:
       field: github.issues.updated_at
       formats:

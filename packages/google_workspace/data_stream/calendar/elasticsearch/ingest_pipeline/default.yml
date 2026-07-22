@@ -112,7 +112,7 @@ processors:
         change_calendar_location: configuration
         print_preview_calendar: configuration
         change_calendar_timezone: configuration
-        change_calendar_title: configuration	
+        change_calendar_title: configuration
         add_subscription: configuration
         delete_subscription: configuration
         change_appointment_schedule: configuration
