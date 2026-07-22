@@ -55,34 +55,34 @@ An example event for `activity` looks as following:
 
 ```json
 {
-    "@timestamp": "2025-10-07T10:29:39.283Z",
+    "@timestamp": "2026-07-22T09:40:48.477Z",
     "agent": {
-        "ephemeral_id": "2899cf43-154c-43bf-8e38-6dd8fcdddeb8",
-        "id": "ec7a2ba3-4ffe-4b9d-98cf-dce8eccd9455",
-        "name": "elastic-agent-76548",
+        "ephemeral_id": "9e24ed1c-c73a-41e6-a63f-dd1026e4884f",
+        "id": "4912077b-b7ff-4757-a721-3ad4ab97fead",
+        "name": "elastic-agent-48882",
         "type": "filebeat",
         "version": "8.19.4"
     },
     "data_stream": {
         "dataset": "lumos.activity_logs",
-        "namespace": "18028",
+        "namespace": "91086",
         "type": "logs"
     },
     "ecs": {
         "version": "8.11.0"
     },
     "elastic_agent": {
-        "id": "ec7a2ba3-4ffe-4b9d-98cf-dce8eccd9455",
+        "id": "4912077b-b7ff-4757-a721-3ad4ab97fead",
         "snapshot": false,
         "version": "8.19.4"
     },
     "event": {
         "action": "SOD_POLICY_DELETED",
         "agent_id_status": "verified",
-        "created": "2025-10-07T10:29:39.283Z",
+        "created": "2026-07-22T09:40:48.477Z",
         "dataset": "lumos.activity_logs",
-        "id": "630b90cedc35a8a5f43361534099bee51e032f42dd442085fc76ef094d228f543c78fbe59c132df992cf71a6b8496504e8ebbc6020fbae1f34206676985412e7",
-        "ingested": "2025-10-07T10:29:42Z",
+        "id": "1111111111111111111111111111111111111111111111111111111111111111",
+        "ingested": "2026-07-22T09:40:51Z",
         "kind": "event",
         "outcome": "success",
         "type": [
@@ -90,20 +90,20 @@ An example event for `activity` looks as following:
         ]
     },
     "host": {
-        "architecture": "x86_64",
+        "architecture": "aarch64",
         "containerized": false,
-        "hostname": "elastic-agent-76548",
+        "hostname": "elastic-agent-48882",
         "ip": [
-            "192.168.241.2",
-            "192.168.240.4"
+            "172.19.0.2",
+            "172.18.0.4"
         ],
         "mac": [
-            "12-2A-F7-F2-2C-D7",
-            "DE-BF-74-CA-85-68"
+            "26-E9-8B-78-AF-7F",
+            "E6-AD-7E-E1-1B-0B"
         ],
-        "name": "elastic-agent-76548",
+        "name": "elastic-agent-48882",
         "os": {
-            "kernel": "5.15.0-156-generic",
+            "kernel": "6.12.76-linuxkit",
             "name": "Wolfi",
             "platform": "wolfi",
             "type": "linux",
@@ -117,9 +117,9 @@ An example event for `activity` looks as following:
         "activity_logs": {
             "actor": {
                 "actor_type": "Lumos user",
-                "email": "wile.e.coyote@lumos.com",
-                "family_name": "Wile",
-                "given_name": "Coyote"
+                "email": "wile.e.coyote@example.com",
+                "family_name": "Coyote",
+                "given_name": "Wile"
             },
             "event_began_at": "2024-03-12T16:09:14",
             "event_type_user_friendly": "A user deleted a SOD Policy",
@@ -131,6 +131,6 @@ An example event for `activity` looks as following:
             ]
         }
     },
-    "message": "{\"actor\":{\"actor_type\":\"Lumos user\",\"email\":\"wile.e.coyote@lumos.com\",\"family_name\":\"Wile\",\"given_name\":\"Coyote\"},\"event_began_at\":\"2024-03-12T16:09:14\",\"event_hash\":\"630b90cedc35a8a5f43361534099bee51e032f42dd442085fc76ef094d228f543c78fbe59c132df992cf71a6b8496504e8ebbc6020fbae1f34206676985412e7\",\"event_metadata\":{},\"event_type\":\"SOD_POLICY_DELETED\",\"event_type_user_friendly\":\"A user deleted a SOD Policy\",\"outcome\":\"Succeeded\",\"targets\":[{\"name\":\"Untitled Rule\",\"target_type\":\"SOD Policy\"}]}"
+    "message": "{\"actor\":{\"actor_type\":\"Lumos user\",\"email\":\"wile.e.coyote@example.com\",\"family_name\":\"Coyote\",\"given_name\":\"Wile\"},\"event_began_at\":\"2024-03-12T16:09:14\",\"event_hash\":\"1111111111111111111111111111111111111111111111111111111111111111\",\"event_metadata\":{},\"event_type\":\"SOD_POLICY_DELETED\",\"event_type_user_friendly\":\"A user deleted a SOD Policy\",\"outcome\":\"Succeeded\",\"targets\":[{\"name\":\"Untitled Rule\",\"target_type\":\"SOD Policy\"}]}"
 }
 ```
