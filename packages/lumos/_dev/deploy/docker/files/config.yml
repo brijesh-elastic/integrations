@@ -25,7 +25,7 @@ rules:
                           "actor_type": "Lumos user",
                           "email": "wile.e.coyote@example.com",
                           "family_name": "Coyote",
-                          "given_name": "Wile"
+                          "given_name": "Wile E."
                       },
                       "event_began_at": "2024-03-12T16:09:14",
                       "event_hash": "1111111111111111111111111111111111111111111111111111111111111111",
